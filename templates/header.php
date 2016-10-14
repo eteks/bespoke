@@ -178,7 +178,7 @@
                 <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 no-margin no-padding">
                     <div class="pull-right">
                         <ul class="userMenu">
-                            <li><a href="account-1.html"><span class="hidden-xs"> My Account</span> <i
+                            <li><a href="account-1.php"><span class="hidden-xs"> My Account</span> <i
                                     class="glyphicon glyphicon-user hide visible-xs "></i></a></li>
                             <li><a href="#" data-toggle="modal" data-target="#ModalLogin"> <span class="hidden-xs">Sign In</span>
                                 <i class="glyphicon glyphicon-log-in hide visible-xs "></i> </a></li>
