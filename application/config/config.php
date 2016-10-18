@@ -24,6 +24,7 @@
 */
 $path = "http://" . $_SERVER['HTTP_HOST'] . str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 $config['base_url'] = $path;
+$config['admin_base_url'] = '/bespoke/admin';
 
 /*
 |--------------------------------------------------------------------------
@@ -233,7 +234,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'MAmYvOixfIC0t6PRWPm6cFEDBuJBcOcL';
 
 /*
 |--------------------------------------------------------------------------
