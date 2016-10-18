@@ -215,21 +215,17 @@
 <script src="<?php echo base_url(); ?>assets/js/footable.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>assets/js/footable.sortable.js" type="text/javascript"></script>
 <script type="text/javascript">
-    $(function () {
-        $('.footable').footable();
-    });
+  var baseurl = "<?php echo base_url(); ?>";
 </script>
+<script>
+    paceOptions = {
+        elements: true
+    };
+</script>
+<script src="<?php echo base_url(); ?>assets/js/pace.min.js"></script>
 
-  <script>
-        paceOptions = {
-            elements: true
-        };
-    </script>
-    <script src="<?php echo base_url(); ?>assets/js/pace.min.js"></script>
-
-  
+<!-- external javascript --> 
 <script src="<?php echo base_url(); ?>assets/js/custom.js"></script>  
 <script src="<?php echo base_url(); ?>assets/js/ajax-call.js"></script> 
-
 </body>
 </html>

@@ -598,10 +598,8 @@
                         <li class="megamenu-content ProductDetailsList">
                             <h3 class="promo-1 no-margin hidden-xs">60 + HTML PAGES || AVAILABLE ONLY AT WRAP
                                 BOOTSTRAP </h3>
-
                             <h3 class="promo-1sub hidden-xs"> Complete Parallax E-Commerce Boostrap Template, Responsive
                                 on any Device, 10+ color Theme + Parallax Effect </h3>
-
                             <ul class="col-lg-2  col-sm-2 col-md-2 unstyled">
                                 <li class="no-border">
                                     <p><strong> Home Pages </strong></p>
@@ -616,12 +614,10 @@
                                 </li>
                                 <li><a href="index-header2.html"> Header Version 2 </a></li>
                                 <li><a href="index-header3.html"> Header Version 3 </a></li>
-
                                 <li><a href="index-logged-in.html">Topbar Logged In user menu <span class="label label-success">new</span></a></li>
                                 <li><a href="sidebar-shopping-cart.php">Sidebar Shopping cart <span
                                         class="label label-success">new</span></a></li>
                             </ul>
-
                             <ul class="col-lg-2  col-sm-2 col-md-2 unstyled">
                                 <li class="no-border">
                                     <p><strong> Featured Pages </strong></p>
@@ -632,13 +628,11 @@
                                 <li><a href="category-list.html"> Category List View </a></li>
                                 <li><a href="category-product-hover.html"> Category [Product Hover] </a></li>
                                 <li><a href="category-product-slide.html"> Category [Product Slide] </a></li>
-
                                 <li><a href="cart.php"> Cart </a></li>
                                 <li><a href="about-us-3.html"> About Us V3 <span
                                         class="label label-success">NEW</span> </a></li>
                                 <li><a href="about-us-2.html"> About Us V2 </a></li>
                                 <li><a href="about-us.html"> About Us V1 </a></li>
-
                                 <li><a href="contact-us.html"> Contact us </a></li>
                                 <li><a href="contact-us-2.html"> Contact us 2 (No Fixed Map) </a></li>
                                 <li><a href="terms-conditions.html"> Terms &amp; Conditions </a></li>
@@ -652,8 +646,6 @@
                                 <li><a href="product-details-style3.html"> Product Details v 3 (Custom Thumbnail
                                     Position)</a></li>
                                 <li><a href="product-details-style4.html"> Product Details v 4 (with litebox)</a></li>
-
-
                                 <li><a href="product-details-style5.html"> Product Details v 5 (Flat) <span
                                         class="label label-success">NEW</span> </a></li>
                                 <li><a href="product-details-style5-1.html"> Product Details v 5.1 <span
@@ -673,7 +665,6 @@
                                 <li><a href="product-details-style5-4.1-with-zoom.html"> Product Details v 5.4.1
                                     <small>(zoom + litebox)</small> <span
                                             class="label label-success">NEW</span></a></li>
-
                             </ul>
                             <ul class="col-lg-2  col-sm-2 col-md-2 unstyled">
                                 <li class="no-border">
