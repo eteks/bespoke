@@ -102,18 +102,11 @@
                        data-placement="left">
                         <i class="glyphicon glyphicon-heart"></i>
                     </a>
-
                     <div class="image">
-                        <div class="quickview">
-                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                               data-target="#productSetailsModalAjax">Quick View </a>
-                        </div>
                         <a href="product-details.php">
                             <img src="<?php echo base_url(); ?>assets/img/product/34.jpg" alt="img" class="img-responsive">
                         </a>
-
-                        <div class="promotion"><span class="new-product"> NEW</span> <span
-                                class="discount">15% OFF</span></div>
+                        <div class="product_name"><a><span>Product Name</span></a></div>
                     </div>
                     <div class="description">
                         <h4><a href="product-details.php">consectetuer adipiscing </a></h4>
@@ -121,8 +114,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                         <span class="size">XL / XXL / S </span></div>
                     <div class="price"><span>$25</span></div>
-                    <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                            class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                    <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                 </div>
             </div>
             <div class="item">
@@ -133,23 +125,17 @@
                     </a>
 
                     <div class="image">
-                        <div class="quickview">
-                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                               data-target="#productSetailsModalAjax">Quick View </a>
-                        </div>
                         <a href="product-details.php">
                             <img src="<?php echo base_url(); ?>assets/img/product/30.jpg" alt="img" class="img-responsive">
                         </a>
-                        <div class="promotion"><span class="discount">15% OFF</span></div>
+                        <div class="product_name"><a><span>Product Name</span></a></div>
                     </div>
                     <div class="description">
                         <h4><a href="product-details.php">luptatum zzril delenit</a></h4>
-
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                         <span class="size">XL / XXL / S </span></div>
                     <div class="price"><span>$25</span></div>
-                    <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                            class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                    <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                 </div>
             </div>
             <div class="item">
@@ -160,14 +146,10 @@
                     </a>
 
                     <div class="image">
-                        <div class="quickview">
-                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                               data-target="#productSetailsModalAjax">Quick View </a>
-                        </div>
                         <a href="product-details.php">
                             <img src="<?php echo base_url(); ?>assets/img/product/36.jpg" alt="img" class="img-responsive">
                         </a>
-                        <div class="promotion"><span class="new-product"> NEW</span></div>
+                        <div class="product_name"><a><span>Product Name</span></a></div>
                     </div>
                     <div class="description">
                         <h4><a href="product-details.php">eleifend option </a></h4>
@@ -175,8 +157,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                         <span class="size">XL / XXL / S </span></div>
                     <div class="price"><span>$25</span></div>
-                    <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                            class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                    <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                 </div>
             </div>
             <div class="item">
@@ -185,24 +166,18 @@
                        data-placement="left">
                         <i class="glyphicon glyphicon-heart"></i>
                     </a>
-
                     <div class="image">
-                        <div class="quickview">
-                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                               data-target="#productSetailsModalAjax">Quick View </a>
-                        </div>
                         <a href="product-details.php">
                             <img src="<?php echo base_url(); ?>assets/img/product/9.jpg" alt="img" class="img-responsive">
                         </a>
+                        <div class="product_name"><a><span>Product Name</span></a></div>
                     </div>
                     <div class="description">
                         <h4><a href="product-details.php">mutationem consuetudium </a></h4>
-
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                         <span class="size">XL / XXL / S </span></div>
                     <div class="price"><span>$25</span></div>
-                    <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                            class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                    <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                 </div>
             </div>
             <div class="item">
@@ -213,13 +188,10 @@
                     </a>
 
                     <div class="image">
-                        <div class="quickview">
-                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                               data-target="#productSetailsModalAjax">Quick View </a>
-                        </div>
                         <a href="product-details.php">
                             <img src="<?php echo base_url(); ?>assets/img/product/12.jpg" alt="img" class="img-responsive">
                         </a>
+                        <div class="product_name"><a><span>Product Name</span></a></div>
                     </div>
                     <div class="description">
                         <h4><a href="product-details.php">sequitur mutationem </a></h4>
@@ -227,8 +199,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                         <span class="size">XL / XXL / S </span></div>
                     <div class="price"><span>$25</span></div>
-                    <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                            class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                    <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                 </div>
             </div>
             <div class="item">
@@ -239,22 +210,17 @@
                     </a>
 
                     <div class="image">
-                        <div class="quickview">
-                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                               data-target="#productSetailsModalAjax">Quick View </a>
-                        </div>
                         <a href="product-details.php">
                             <img src="<?php echo base_url(); ?>assets/img/product/13.jpg" alt="img" class="img-responsive">
                         </a>
+                        <div class="product_name"><a><span>Product Name</span></a></div>
                     </div>
                     <div class="description">
                         <h4><a href="product-details.php">consuetudium lectorum.</a></h4>
-
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                         <span class="size">XL / XXL / S </span></div>
                     <div class="price"><span>$25</span></div>
-                    <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                            class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                    <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                 </div>
             </div>
             <div class="item">
@@ -265,21 +231,17 @@
                     </a>
 
                     <div class="image">
-                        <div class="quickview">
-                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                               data-target="#productSetailsModalAjax">Quick View </a>
-                        </div>
                         <a href="product-details.php">
                             <img src="<?php echo base_url(); ?>assets/img/product/21.jpg" alt="img" class="img-responsive">
                         </a>
+                        <div class="product_name"><a><span>Product Name</span></a></div>
                     </div>
                     <div class="description">
                         <h4><a href="product-details.php">parum claram</a></h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                         <span class="size">XL / XXL / S </span></div>
                     <div class="price"><span>$25</span></div>
-                    <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                            class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                    <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                 </div>
             </div>
             <div class="item">
@@ -290,13 +252,10 @@
                     </a>
 
                     <div class="image">
-                        <div class="quickview">
-                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                               data-target="#productSetailsModalAjax">Quick View </a>
-                        </div>
                         <a href="product-details.php">
-                            <img src="images/product/24.jpg" alt="img" class="img-responsive">
+                            <img src="<?php echo base_url(); ?>assets/img/product/24.jpg" alt="img" class="img-responsive">
                         </a>
+                        <div class="product_name"><a><span>Product Name</span></a></div>
                     </div>
                     <div class="description">
                         <h4><a href="product-details.php">duis dolore </a></h4>
@@ -304,8 +263,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                         <span class="size">XL / XXL / S </span></div>
                     <div class="price"><span>$25</span></div>
-                    <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                            class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                    <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                 </div>
             </div>
             <div class="item">
@@ -316,13 +274,10 @@
                     </a>
 
                     <div class="image">
-                        <div class="quickview">
-                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                               data-target="#productSetailsModalAjax">Quick View </a>
-                        </div>
                         <a href="product-details.php">
-                            <img src="images/product/15.jpg" alt="img" class="img-responsive">
+                            <img src="<?php echo base_url(); ?>assets/img/product/15.jpg" alt="img" class="img-responsive">
                         </a>
+                        <div class="product_name"><a><span>Product Name</span></a></div>
                     </div>
                     <div class="description">
                         <h4><a href="product-details.php">feugait nulla facilisi</a></h4>
@@ -330,8 +285,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                         <span class="size">XL / XXL / S </span></div>
                     <div class="price"><span>$25</span></div>
-                    <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                            class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                    <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                 </div>
             </div>
         </div>
@@ -383,12 +337,8 @@
                            data-placement="left">
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
-
-
                         <div class="imageHover">
-
                             <div class="promotion"><span class="discount">15% OFF</span></div>
-
                             <div id="carousel-id-1" class="carousel slide" data-ride="carousel" data-interval="0">
                                 <!-- Indicators -->
                                 <ol class="carousel-indicators">
@@ -396,7 +346,6 @@
                                     <li data-target="#carousel-id-1" data-slide-to="1"></li>
                                     <li data-target="#carousel-id-1" data-slide-to="2"></li>
                                 </ol>
-
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner" role="listbox">
                                     <div class="item active">
@@ -415,7 +364,6 @@
                                         </a>
                                     </div>
                                 </div>
-
                                 <!-- Controls -->
                                 <a class="left carousel-control" href="#carousel-id-1" role="button" data-slide="prev">
                                     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -447,8 +395,7 @@
                             </div>
                             <span class="size">XL / XXL / S </span></div>
                         <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                                class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                     </div>
                 </div>
                 <!--/.item-->
@@ -522,8 +469,7 @@
                             </div>
                             <span class="size">XL / XXL / S </span></div>
                         <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                                class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                     </div>
                 </div>
 
@@ -561,8 +507,7 @@
                             </div>
                             <span class="size">XL / XXL / S </span></div>
                         <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                                class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                     </div>
                 </div>
                 <!--/.item-->
@@ -600,8 +545,7 @@
                             </div>
                             <span class="size">XL / XXL / S </span></div>
                         <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                                class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                     </div>
                 </div>
                 <!--/.item-->
@@ -628,15 +572,8 @@
                         </a>
 
                         <div class="image">
-                            <div class="quickview">
-                                <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                                   data-target="#productSetailsModalAjax">Quick View </a>
-                            </div>
-                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/30.jpg" alt="img"
-                                                                class="img-responsive"></a>
-
-                            <div class="promotion"><span class="new-product"> NEW</span> <span
-                                    class="discount">15% OFF</span></div>
+                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/30.jpg" alt="img" class="img-responsive"></a>
+                            <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
                             <h4><a href="product-details.php">aliquam erat volutpat</a></h4>
@@ -644,8 +581,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                             <span class="size">XL / XXL / S </span></div>
                         <div class="price"><span>$25</span> <span class="old-price">$75</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                                class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                     </div>
                 </div>
                 <!--/.item-->
@@ -657,14 +593,8 @@
                         </a>
 
                         <div class="image">
-                            <div class="quickview">
-                                <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                                   data-target="#productSetailsModalAjax">Quick View </a>
-                            </div>
-                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/31.jpg" alt="img"
-                                                                class="img-responsive"></a>
-
-                            <div class="promotion"><span class="discount">15% OFF</span></div>
+                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/31.jpg" alt="img" class="img-responsive"></a>
+							<div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
                             <h4><a href="product-details.php">ullamcorper suscipit lobortis </a></h4>
@@ -672,8 +602,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                             <span class="size">XL / XXL / S </span></div>
                         <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                                class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                     </div>
                 </div>
                 <!--/.item-->
@@ -685,14 +614,8 @@
                         </a>
 
                         <div class="image">
-                            <div class="quickview">
-                                <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                                   data-target="#productSetailsModalAjax">Quick View </a>
-                            </div>
-                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/34.jpg" alt="img"
-                                                                class="img-responsive"></a>
-
-                            <div class="promotion"><span class="new-product"> NEW</span></div>
+                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/34.jpg" alt="img" class="img-responsive"></a>
+                            <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
                             <h4><a href="product-details.php">demonstraverunt lectores </a></h4>
@@ -700,8 +623,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                             <span class="size">XL / XXL / S </span></div>
                         <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                                class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                     </div>
                 </div>
                 <!--/.item-->
@@ -713,20 +635,16 @@
                         </a>
 
                         <div class="image">
-                            <div class="quickview">
-                                <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                                   data-target="#productSetailsModalAjax">Quick View </a>
-                            </div>
-                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/12.jpg" alt="img"
-                                                                class="img-responsive"></a></div>
+                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/12.jpg" alt="img" class="img-responsive"></a>
+                            <div class="product_name"><a><span>Product Name</span></a></div>
+                        </div>
                         <div class="description">
                             <h4><a href="product-details.php">humanitatis per</a></h4>
 
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                             <span class="size">XL / XXL / S </span></div>
                         <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                                class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                     </div>
                 </div>
                 <!--/.item-->
@@ -738,20 +656,16 @@
                         </a>
 
                         <div class="image">
-                            <div class="quickview">
-                                <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                                   data-target="#productSetailsModalAjax">Quick View </a>
-                            </div>
-                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/33.jpg" alt="img"
-                                                                class="img-responsive"></a></div>
+                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/33.jpg" alt="img" class="img-responsive"></a>
+                        	<div class="product_name"><a><span>Product Name</span></a></div>
+                        </div>
                         <div class="description">
                             <h4><a href="product-details.php">Eodem modo typi</a></h4>
 
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                             <span class="size">XL / XXL / S </span></div>
                         <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                                class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                     </div>
                 </div>
                 <!--/.item-->
@@ -763,20 +677,16 @@
                         </a>
 
                         <div class="image">
-                            <div class="quickview">
-                                <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                                   data-target="#productSetailsModalAjax">Quick View </a>
-                            </div>
-                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/10.jpg" alt="img"
-                                                                class="img-responsive"></a></div>
+                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/10.jpg" alt="img" class="img-responsive"></a>
+                            <div class="product_name"><a><span>Product Name</span></a></div>
+                        </div>
                         <div class="description">
                             <h4><a href="product-details.php">sequitur mutationem </a></h4>
 
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                             <span class="size">XL / XXL / S </span></div>
                         <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                                class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                     </div>
                 </div>
                 <!--/.item-->
@@ -788,20 +698,16 @@
                         </a>
 
                         <div class="image">
-                            <div class="quickview">
-                                <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                                   data-target="#productSetailsModalAjax">Quick View </a>
-                            </div>
-                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/37.jpg" alt="img"
-                                                                class="img-responsive"></a></div>
+                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/37.jpg" alt="img" class="img-responsive"></a>
+                            <div class="product_name"><a><span>Product Name</span></a></div>
+                        </div>
                         <div class="description">
                             <h4><a href="product-details.php">consuetudium lectorum.</a></h4>
 
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                             <span class="size">XL / XXL / S </span></div>
                         <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                                class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                     </div>
                 </div>
                 <!--/.item-->
@@ -813,20 +719,16 @@
                         </a>
 
                         <div class="image">
-                            <div class="quickview">
-                                <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                                   data-target="#productSetailsModalAjax">Quick View </a>
-                            </div>
-                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/35.jpg" alt="img"
-                                                                class="img-responsive"></a></div>
+                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/35.jpg" alt="img" class="img-responsive"></a>
+                            <div class="product_name"><a><span>Product Name</span></a></div>
+                        </div>
                         <div class="description">
                             <h4><a href="product-details.php">parum claram</a></h4>
 
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                             <span class="size">XL / XXL / S </span></div>
                         <div class="price"><span>$25</span> <span class="old-price">$75</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                                class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                     </div>
                 </div>
                 <!--/.item-->
@@ -838,20 +740,16 @@
                         </a>
 
                         <div class="image">
-                            <div class="quickview">
-                                <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                                   data-target="#productSetailsModalAjax">Quick View </a>
-                            </div>
-                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/13.jpg" alt="img"
-                                                                class="img-responsive"></a></div>
+                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/13.jpg" alt="img" class="img-responsive"></a>
+                            <div class="product_name"><a><span>Product Name</span></a></div>
+                        </div>
                         <div class="description">
                             <h4><a href="product-details.php">duis dolore </a></h4>
 
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                             <span class="size">XL / XXL / S </span></div>
                         <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                                class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                     </div>
                 </div>
                 <!--/.item-->
@@ -863,24 +761,15 @@
                         </a>
 
                         <div class="image">
-                            <div class="quickview">
-                                <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                                   data-target="#productSetailsModalAjax">Quick View </a>
-                            </div>
-                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/21.jpg" alt="img"
-                                                                class="img-responsive"></a>
-
-                            <div class="promotion"><span class="new-product"> NEW</span> <span
-                                    class="discount">15% OFF</span></div>
+                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/21.jpg" alt="img" class="img-responsive"></a>
+                            <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
                             <h4><a href="product-details.php">aliquam erat volutpat</a></h4>
-
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                             <span class="size">XL / XXL / S </span></div>
                         <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                                class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                     </div>
                 </div>
                 <!--/.item-->
@@ -892,23 +781,15 @@
                         </a>
 
                         <div class="image">
-                            <div class="quickview">
-                                <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                                   data-target="#productSetailsModalAjax">Quick View </a>
-                            </div>
-                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/14.jpg" alt="img"
-                                                                class="img-responsive"></a>
-
-                            <div class="promotion"><span class="discount">15% OFF</span></div>
+                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/14.jpg" alt="img" class="img-responsive"></a>
+							<div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
                             <h4><a href="product-details.php">ullamcorper suscipit lobortis </a></h4>
-
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                             <span class="size">XL / XXL / S </span></div>
                         <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                                class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                     </div>
                 </div>
                 <!--/.item-->
@@ -920,14 +801,8 @@
                         </a>
 
                         <div class="image">
-                            <div class="quickview">
-                                <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
-                                   data-target="#productSetailsModalAjax">Quick View </a>
-                            </div>
-                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/17.jpg" alt="img"
-                                                                class="img-responsive"></a>
-
-                            <div class="promotion"><span class="new-product"> NEW</span></div>
+                            <a href="product-details.php"><img src="<?php echo base_url(); ?>assets/img/product/17.jpg" alt="img" class="img-responsive"></a>
+                            <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
                             <h4><a href="product-details.php">demonstraverunt lectores </a></h4>
@@ -935,8 +810,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                             <span class="size">XL / XXL / S </span></div>
                         <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
-                                class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" href="ajax/product.html" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
                     </div>
                 </div>
                 <!--/.item-->
