@@ -18,7 +18,7 @@ class Index extends CI_Controller {
 		$data['new_arrivals'] = $product_list['new_arrivals'];
 
 
-
+		
 		$this->load->view('index',$data);
 	}
 

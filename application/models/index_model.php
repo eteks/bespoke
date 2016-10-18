@@ -55,7 +55,7 @@ class Index_Model extends CI_Model {
   // Home page products list
   public function get_product_list()
   { 
-    // New arrivals
+    // New arrivals.
     $new_arrivals_limit = 10;  
     $new_arrivals_where = '(pro.product_status=1)';
     $this->db->select('*');
