@@ -53,7 +53,7 @@ class Catalog extends CI_Model {
 
 		$this->db->select('sub.*,cat.category_name');
 		$this->db->from('shopping_subcategory AS sub');
-		$this->db->join('shopping_subcategory_category AS subcat', 'subcat.subcategory_mapping_id = sub.subcategory_id', 'inner');
+		$this->db->join('shopping_subcategory_category_and_recipient AS subcat', 'subcat.subcategory_mapping_id = sub.subcategory_id', 'inner');
 		$this->db->join('shopping_category AS cat', 'cat.category_id = subcat.category_mapping_id', 'inner');
 		// $this->db->group_by('subcategory_id');
 		$this->db->order_by('subcategory_createddate','desc');
