@@ -1,0 +1,13 @@
+/*
+
+ Css for front-end side 
+ Created by siva
+
+*/
+
+.registration_status {
+  color: #c24641;
+  display: none;
+  margin: 10px 0;
+  text-align: center;
+}
