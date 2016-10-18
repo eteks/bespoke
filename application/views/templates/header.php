@@ -26,6 +26,7 @@
     <!-- styles needed by footable  -->
     <link href="<?php echo base_url(); ?>assets/css/footable-0.1.css" rel="stylesheet" type="text/css"/>
     <link href="<?php echo base_url(); ?>assets/css/footable.sortable-0.1.css" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo base_url(); ?>assets/css/front-end.css" rel="stylesheet">
     <!-- include pace script for automatic web page progress bar  -->
 </head>
 <body>
@@ -38,30 +39,33 @@
                     <h3 class="modal-title-site text-center"> Login to Bespoke </h3>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group login-username">
-                        <div>
-                            <input name="log" id="login-user" class="form-control input" size="20" placeholder="Enter Username" type="text">
-                        </div>
-                    </div>
-                    <div class="form-group login-password">
-                        <div>
-                            <input name="Password" id="login-password" class="form-control input" size="20" placeholder="Password" type="password">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <div class="checkbox login-remember">
-                                <label>
-                                    <input name="rememberme" value="forever" checked="checked" type="checkbox"> Remember Me 
-                                </label>
+                    <form action="ajax_controller/login" method="POST" id="login_section" class="registration_login">
+                        <p class="registration_status"> </p>
+                        <div class="form-group login-username">
+                            <div>
+                                <input name="email" id="login-user" class="form-control input" size="20" placeholder="Enter Email" type="text">
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <div>
-                            <input name="submit" class="btn  btn-block btn-lg btn-primary" value="LOGIN" type="submit">
+                        <div class="form-group login-password">
+                            <div>
+                                <input name="password" id="login-password" class="form-control input" size="20" placeholder="Password" type="password">
+                            </div>
                         </div>
-                    </div> <!--userForm-->
+                        <div class="form-group">
+                            <div>
+                                <div class="checkbox login-remember">
+                                    <label>
+                                        <input name="rememberme" value="forever" checked="checked" type="checkbox"> Remember Me 
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <input name="submit" class="btn  btn-block btn-lg btn-primary" value="LOGIN" type="submit">
+                            </div>
+                        </div> 
+                    </form> <!--userForm-->
                 </div>
                 <div class="modal-footer">
                     <p class="text-center"> Not here before? 
@@ -86,35 +90,38 @@
                         FACEBOOK </a>
                     </div>
                     <h5 style="padding:10px 0 10px 0;" class="text-center"> OR </h5>
-                    <div class="form-group reg-username">
-                        <div>
-                            <input name="login" class="form-control input" size="20" placeholder="Enter Username" type="text">
-                       </div>
-                    </div>
-                    <div class="form-group reg-email">
-                        <div>
-                            <input name="reg" class="form-control input" size="20" placeholder="Enter Email" type="text">
+                    <form action="ajax_controller/registration" method="POST" id="registration_section" class="registration_login">
+                        <p class="registration_status"> </p>
+                        <div class="form-group reg-username">
+                            <div>
+                                <input name="username" class="form-control input" size="20" placeholder="Enter Username" type="text">
+                           </div>
                         </div>
-                    </div>
-                    <div class="form-group reg-password">
-                        <div>
-                            <input name="password" class="form-control input" size="20" placeholder="Password" type="password">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <div class="checkbox login-remember">
-                                <label>
-                                    <input name="rememberme" id="rememberme" value="forever" checked="checked" type="checkbox"> Remember Me 
-                                </label>
+                        <div class="form-group reg-email">
+                            <div>
+                                <input name="email" class="form-control input" size="20" placeholder="Enter Email" type="text">
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <div>
-                            <input name="submit" class="btn  btn-block btn-lg btn-primary" value="REGISTER" type="submit">
+                        <div class="form-group reg-password">
+                            <div>
+                                <input name="password" class="form-control input" size="20" placeholder="Password" type="password">
+                            </div>
                         </div>
-                    </div> <!--userForm-->
+                        <div class="form-group">
+                            <div>
+                                <div class="checkbox login-remember">
+                                    <label>
+                                        <input name="rememberme" id="rememberme" value="forever" checked="checked" type="checkbox"> Remember Me 
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <input name="submit" class="btn  btn-block btn-lg btn-primary" value="REGISTER" type="submit">
+                            </div>
+                        </div>
+                    </form> <!--userForm-->
                 </div>
                 <div class="modal-footer">
                     <p class="text-center"> Already member? 
@@ -135,8 +142,7 @@
                             <li><a href="#"> <span class="hidden-xs">HELP</span><i
                                     class="glyphicon glyphicon-info-sign hide visible-xs "></i> </a></li>
                             <li class="phone-number"><a href="callto:+12025550151"> <span> <i
-                                    class="glyphicon glyphicon-phone-alt "></i></span> <span class="hidden-xs"
-                                                                                             style="margin-left:5px"> +1-202-555-0151 </span>
+                                    class="glyphicon glyphicon-phone-alt "></i></span> <span class="hidden-xs" style="margin-left:5px"> +1-202-555-0151 </span>
                             </a></li>
                         </ul>
                     </div>
@@ -144,12 +150,44 @@
                 <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 no-margin no-padding">
                     <div class="pull-right">
                         <ul class="userMenu">
-                            <li><a href="account-1.php"><span class="hidden-xs"> My Account</span> <i
-                                    class="glyphicon glyphicon-user hide visible-xs "></i></a></li>
-                            <li><a href="#" data-toggle="modal" data-target="#ModalLogin"> <span class="hidden-xs">Sign In</span>
-                                <i class="glyphicon glyphicon-log-in hide visible-xs "></i> </a></li>
-                            <li class="hidden-xs"><a href="#" data-toggle="modal" data-target="#ModalSignup"> Create
-                                Account </a></li>
+                            <?php if(!empty($this->session->userdata("login_status"))): 
+                                    $session_data = $this->session->userdata("login_session");
+                            ?>
+                            <li>
+                                <a href="account-1.php">
+                                    <span class="hidden-xs"> Welcome <?php echo $session_data['user_name']; ?></span> 
+                                    <i class="glyphicon glyphicon-user hide visible-xs "></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="account-1.php">
+                                    <span class="hidden-xs"> My Account</span> 
+                                    <i class="glyphicon glyphicon-user hide visible-xs "></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url(); ?>index/logout/"> 
+                                    <span class="hidden-xs">Sign Out</span>
+                                    <i class="glyphicon glyphicon-log-in hide visible-xs "></i> 
+                                </a>
+                            </li>
+                            <?php 
+                            else :
+                            ?>
+                            <li>
+                                <a href="#" data-toggle="modal" data-target="#ModalLogin"> 
+                                    <span class="hidden-xs">Sign In</span>
+                                    <i class="glyphicon glyphicon-log-in hide visible-xs "></i> 
+                                </a>
+                            </li>
+                            <li class="hidden-xs">
+                                <a href="#" data-toggle="modal" data-target="#ModalSignup">         Create Account 
+                                </a>
+                            </li>
+
+                            <?php
+                            endif;
+                            ?>
                         </ul>
                     </div>
                 </div>

@@ -45,7 +45,5 @@ $route['404_override'] = '';
 /* Routes for end user side */
 $route['products_view'] = 'index/products_list';
 
-
-
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
