@@ -51,8 +51,31 @@ class Index_Model extends CI_Model {
       }
     }
   }	
+
+  // Home page products list
+  public function get_product_list()
+  { 
+    // New arrivals
+    $new_arrivals_limit = 10;  
+    $new_arrivals_where = '(pro.product_status=1)';
+    $this->db->select('*');
+    $this->db->from('shopping_product pro');
+    $this->db->join('shopping_product_upload_image spui', 'pro.product_id=spui.product_mapping_id','inner');
+    $this->db->group_by('spui.product_mapping_id');
+    $this->db->order_by('pro.product_createddate','desc');
+    $this->db->limit($new_arrivals_limit,'0');
+    $this->db->where($new_arrivals_where);
+    $query['new_arrivals'] = $this->db->get()->result_array();
+
+
+
+
+    return $query;
+  }
+  
     	
 }
 
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */
+

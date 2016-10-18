@@ -14,7 +14,12 @@ class Index extends CI_Controller {
 	public function index()
 	{
 		$default_credentials = $this->index_model->get_credentials();
-		$this->load->view('index');
+		$product_list = $this->index_model->get_product_list();
+		$data['new_arrivals'] = $product_list['new_arrivals'];
+
+
+
+		$this->load->view('index',$data);
 	}
 
 	// Product list page
