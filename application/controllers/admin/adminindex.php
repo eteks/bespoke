@@ -551,7 +551,7 @@ class Adminindex extends CI_Controller {
 		//call the product views i.e rendered page and pass the product data in the array variable 'product'
 		$this->load->view('admin/giftproduct',$product);
 	}
-	public function add_giftproduct()
+	public function add_product()
 	{	
 		$status = array();//array is initialized
 		$errors='';
@@ -631,7 +631,7 @@ class Adminindex extends CI_Controller {
 		// print_r($status);	
 		$status['category_list'] = $this->catalog->get_categories();
 		$status['attribute_list'] = $this->catalog->get_product_attributes();
-		$this->load->view('admin/add_giftproduct',$status);
+		$this->load->view('admin/add_product',$status);
 	}
 	public function edit_giftproduct()
 	{
