@@ -1,8 +1,6 @@
 <?php include "templates/header.php"; ?>
 <div class="container main-container headerOffset">
-
     <!-- Main component call to action -->
-
     <div class="row">
         <div class="breadcrumbDiv col-lg-12">
             <ul class="breadcrumb">
@@ -12,11 +10,8 @@
         </div>
     </div>
     <!-- /.row  -->
-
     <div class="row">
-
         <!--left column-->
-
         <div class="col-lg-3 col-md-3 col-sm-12">
             <div class="panel-group" id="accordionNo">
                 <!--Category-->
@@ -97,7 +92,6 @@
                                 Don't know</label>
                             <hr>
                             <p>Enter a Price range </p>
-
                             <form class="form-inline " role="form">
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="exampleInputEmail2"
