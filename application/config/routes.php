@@ -43,7 +43,11 @@ $route['404_override'] = '';
 
 
 /* Routes for end user side */
-$route['products_view'] = 'index/products_list';
+$route['products_view/(:any)'] = 'index/products_list/$1';
+$route['recipients_view/(:any)'] = 'index/recipients_list/$1';
+$route['about_us'] = 'index/about_details';
+$route['contact_us'] = 'index/contact_details';
+
 
 //Route url for admin
 $route['admin'] = 'admin/login/index_login';

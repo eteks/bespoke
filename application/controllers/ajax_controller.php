@@ -24,6 +24,15 @@ class Ajax_Controller extends CI_Controller {
         $data = $this->ajax_model->get_login_status();
         echo $data;
     }
+
+    // load more featured products
+    public function load_more_featured()
+    {   
+        $data_values = $this->ajax_model->get_load_more_featured();
+        $data['featured_products'] = $data_values['featured_products'];
+        $data['featured_remaining_products'] = $data_values['featured_remaining_products'];
+        $this->load->view('index',$data);
+    }
 }
 
 /* End of file welcome.php */
