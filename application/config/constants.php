@@ -36,6 +36,14 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
+//Custom constants
+define('ADMIN_MEDIA_PATH','assets/admin/img/uploads/');
+define('FILETYPE_ALLOWED','jpg|jpeg|png|gif');
+//array for product attributes input tags
+define('INPUT_TAGS',serialize(array("dropdown"=>"Dropdown",
+						  "textfield"=>"Texfield"))); 
+
+
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

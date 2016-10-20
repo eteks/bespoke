@@ -37,7 +37,7 @@
         <input type="hidden" class="table_name" value="shopping_product">
         <input type="hidden" class="field_name" value="product_id">
         <input type="hidden" class="action" value="<?php echo base_url(); ?>index.php/admin/delete">
-        <a class="btn btn-success" id="add" href="<?php echo base_url(); ?>index.php/admin/adminindex/add_giftproduct">
+        <a class="btn btn-success" id="add" href="<?php echo base_url(); ?>index.php/admin/adminindex/add_product">
         <i class="glyphicon glyphicon-edit icon-white"></i>
         Add
         </a>

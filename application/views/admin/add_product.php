@@ -43,7 +43,7 @@
              <span class="product_error"></span>
              <span class="photo_labelError">Invalid file type</span> 
              <p class="error_msg_reg test_product"><?php if (isset($error_message)) echo $error_message; ?></p>
-             <form role="form" method="POST" action="<?php echo base_url(); ?>index.php/admin/adminindex/add_giftproduct" enctype="multipart/form-data" name="product_form" id="add_giftproduct" class="form_submit">
+             <form role="form" method="POST" action="<?php echo base_url(); ?>index.php/admin/adminindex/add_product" enctype="multipart/form-data" name="product_form" id="add_product" class="form_submit">
              <input type="hidden" value="0">
              <input type="hidden" class="attribute_check_status" name="attribute_check_status" value="<?php if(isset($attribute_check_status)) 
                 echo $attribute_check_status; ?>">
