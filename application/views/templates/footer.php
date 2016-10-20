@@ -187,7 +187,6 @@
 <script src="<?php echo base_url(); ?>assets/plugins/rating/bootstrap-rating.min.js"></script>
 <script>
     $(function () {
-
         $('.rating-tooltip-manual').rating({
             extendSymbol: function () {
                 var title;
@@ -208,7 +207,6 @@
                         });
             }
         });
-
     });
 </script>
 <!-- include footable plugin -->

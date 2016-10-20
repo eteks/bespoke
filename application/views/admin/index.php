@@ -73,7 +73,9 @@
             <div class="box-content row">
                 <div class="col-lg-12 col-md-12">
                    <div class="user-admin">
-                       <i class="glyphicon glyphicon-user"></i>
+                   	  <div class="users_gly_icons">
+                         <i class="glyphicon glyphicon-user"></i>
+                      </div>
                        <?php 
                         // print_r($this->session->userdata('logged_in'));
                         $session_data = $this->session->userdata('logged_in');
@@ -82,24 +84,254 @@
                    </div>
                 </div>
                 <div class="col-md-12">
-                    <section class="regular slider">
+                 <div class="hidden-xs"> 	
+                   <h3 class="category_name">Mens Collection</h3>
+                	<section class="center slider">
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat1.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat2.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat3.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat4.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat5.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat6.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat1.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat5.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat6.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+					</section>
+					<h3 class="category_name">Womens Collection</h3>
+                	<section class="center slider">
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat1.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat2.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat3.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat4.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat5.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat6.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat1.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat5.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat6.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+					</section>
+					<h3 class="category_name">Kids Collection</h3>
+                	<section class="center slider">
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat1.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat2.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat3.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat4.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat5.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat6.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat1.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat5.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat6.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+					</section>
+					<h3 class="category_name">Home & Decor</h3>
+                	<section class="center slider">
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat1.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat2.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat3.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat4.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat5.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat6.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat1.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat5.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+						    <div class="image">
+						      <a href="#">
+						      <img src="<?php echo base_url(); ?>assets/admin/img/cat6.jpg">
+						      </a>
+						      <div class="product_name"><a><span>Product Name</span></a></div>
+						    </div>
+					</section>
+					</div>
+                    <section class="regular slider visible-xs hidden-lg">
                             <div>
-                              <img src="<?php echo base_url(); ?>assets/admin/img/gift1.jpg">
+                              <img src="<?php echo base_url(); ?>assets/admin/img/cat1.jpg">
                             </div>
                             <div>
-                              <img src="<?php echo base_url(); ?>assets/admin/img/gift2.jpg">
+                              <img src="<?php echo base_url(); ?>assets/admin/img/cat2.jpg">
                             </div>
                             <div>
-                              <img src="<?php echo base_url(); ?>assets/admin/img/gift3.jpg">
+                              <img src="<?php echo base_url(); ?>assets/admin/img/cat3.jpg">
                             </div>
                             <div>
-                              <img src="<?php echo base_url(); ?>assets/admin/img/gift4.jpg">
+                              <img src="<?php echo base_url(); ?>assets/admin/img/cat4.jpg">
                             </div>
                             <div>
-                              <img src="<?php echo base_url(); ?>assets/admin/img/gift5.jpg">
+                              <img src="<?php echo base_url(); ?>assets/admin/img/cat5.jpg">
                             </div>
                             <div>
-                              <img src="<?php echo base_url(); ?>assets/admin/img/gift6.jpg">
+                              <img src="<?php echo base_url(); ?>assets/admin/img/cat6.jpg">
                             </div>
                     </section>
            </div>
