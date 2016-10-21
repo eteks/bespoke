@@ -12,7 +12,6 @@
     <title>Bespoke</title>
     <!-- Bootstrap core CSS -->
     <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <!-- styles needed by smoothproducts.js for product zoom  -->
@@ -81,7 +80,6 @@
                     </div>
                 </div>
                 <!--userForm-->
-
             </div>
             <div class="modal-footer">
                 <p class="text-center"> Not here before? <a data-toggle="modal" data-dismiss="modal"
