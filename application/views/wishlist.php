@@ -4,7 +4,7 @@
         <div class="breadcrumbDiv col-lg-12">
             <ul class="breadcrumb">
                 <li><a href="index.php">Home</a></li>
-                <li><a href="account.html">My Account</a></li>
+                <li><a href="<?php echo base_url(); ?>account">My Account</a></li>
                 <li class="active"> Wisthlist</li>
             </ul>
         </div>
@@ -23,11 +23,11 @@
                         <tbody>
                         <tr class="CartProduct">
                             <td style="width:10%" class="CartProductThumb">
-                                <div><a href="product-details.php"><img src="images/product/9.jpg" alt="img"></a></div>
+                                <div><a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/9.jpg" alt="img"></a></div>
                             </td>
                             <td style="width:40%">
                                 <div class="CartDescription">
-                                    <h4><a href="product-details.php">Denim T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details">Denim T shirt Black </a></h4>
                                     <span class="size">12 x 1.5 L</span>
 
                                     <div class="price"><span>$85</span></div>
@@ -44,12 +44,12 @@
 
                         <tr class="CartProduct">
                             <td style="width:10%" class="CartProductThumb">
-                                <div><a href="product-details.php">
-                                    <img src="images/product/11.jpg" alt="img"></a></div>
+                                <div><a href="<?php echo base_url(); ?>product_details">
+                                    <img src="<?php echo base_url(); ?>assets/img/product/11.jpg" alt="img"></a></div>
                             </td>
                             <td style="width:40%">
                                 <div class="CartDescription">
-                                    <h4><a href="product-details.php">Denim T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details">Denim T shirt Black </a></h4>
                                     <span class="size">12 x 1.5 L</span>
 
                                     <div class="price"><span>$80</span></div>
@@ -63,12 +63,12 @@
 
                         <tr class="CartProduct">
                             <td style="width:10%" class="CartProductThumb">
-                                <div><a href="product-details.php">
-                                    <img src="images/product/a2.jpg" alt="img"></a></div>
+                                <div><a href="<?php echo base_url(); ?>product_details">
+                                    <img src="<?php echo base_url(); ?>assets/img/product/a2.jpg" alt="img"></a></div>
                             </td>
                             <td style="width:40%">
                                 <div class="CartDescription">
-                                    <h4><a href="product-details.php">Denim T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details">Denim T shirt Black </a></h4>
                                     <span class="size">12 x 1.5 L</span>
 
                                     <div class="price"><span>$88</span></div>
@@ -82,12 +82,12 @@
 
                         <tr class="CartProduct">
                             <td style="width:10%" class="CartProductThumb">
-                                <div><a href="product-details.php">
-                                    <img src="images/product/a5.jpg" alt="img"></a></div>
+                                <div><a href="<?php echo base_url(); ?>product_details">
+                                    <img src="<?php echo base_url(); ?>assets/img/product/a5.jpg" alt="img"></a></div>
                             </td>
                             <td style="width:40%">
                                 <div class="CartDescription">
-                                    <h4><a href="product-details.php">Denim T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details">Denim T shirt Black </a></h4>
                                     <span class="size">12 x 1.5 L</span>
 
                                     <div class="price"><span>$70</span></div>
@@ -101,12 +101,12 @@
 
                         <tr class="CartProduct">
                             <td style="width:10%" class="CartProductThumb">
-                                <div><a href="product-details.php">
-                                    <img src="images/product/a4.jpg" alt="img"></a></div>
+                                <div><a href="<?php echo base_url(); ?>product_details">
+                                    <img src="<?php echo base_url(); ?>assets/img/product/a4.jpg" alt="img"></a></div>
                             </td>
                             <td style="width:40%">
                                 <div class="CartDescription">
-                                    <h4><a href="product-details.php">Denim T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details">Denim T shirt Black </a></h4>
                                     <span class="size">12 x 1.5 L</span>
 
                                     <div class="price"><span>$55</span></div>
@@ -120,12 +120,12 @@
 
                         <tr class="CartProduct">
                             <td style="width:10%" class="CartProductThumb">
-                                <div><a href="product-details.php">
-                                    <img src="images/product/a3.jpg" alt="img"></a></div>
+                                <div><a href="<?php echo base_url(); ?>product_details">
+                                    <img src="<?php echo base_url(); ?>assets/img/product/a3.jpg" alt="img"></a></div>
                             </td>
                             <td style="width:40%">
                                 <div class="CartDescription">
-                                    <h4><a href="product-details.php">Denim T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details">Denim T shirt Black </a></h4>
                                     <span class="size">12 x 1.5 L</span>
 
                                     <div class="price"><span>$60</span></div>

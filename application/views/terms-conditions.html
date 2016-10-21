@@ -78,7 +78,7 @@
             <div class="modal-footer">
                 <p class="text-center"> Not here before? <a data-toggle="modal" data-dismiss="modal"
                                                             href="#ModalSignup"> Sign Up. </a> <br>
-                    <a href="forgot-password.php"> Lost your password? </a></p>
+                    <a href="<?php echo base_url(); ?>forgot_password"> Lost your password? </a></p>
             </div>
         </div>
         <!-- /.modal-content -->
@@ -169,7 +169,7 @@
                 <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 no-margin no-padding">
                     <div class="pull-right">
                         <ul class="userMenu">
-                            <li><a href="account-1.php"><span class="hidden-xs"> My Account</span> <i
+                            <li><a href="<?php echo base_url(); ?>account_1"><span class="hidden-xs"> My Account</span> <i
                                     class="glyphicon glyphicon-user hide visible-xs "></i></a></li>
                             <li><a href="#" data-toggle="modal" data-target="#ModalLogin"> <span class="hidden-xs">Sign In</span>
                                 <i class="glyphicon glyphicon-log-in hide visible-xs "></i> </a></li>
@@ -318,8 +318,8 @@
 
                 <div class="miniCartFooter  miniCartFooterInMobile text-right">
                     <h3 class="text-right subtotal"> Subtotal: $210 </h3>
-                    <a class="btn btn-sm btn-danger" href="cart.php"> <i class="fa fa-shopping-cart"> </i> VIEW CART
-                    </a> <a href="checkout-0.php"
+                    <a class="btn btn-sm btn-danger" href="<?php echo base_url(); ?>cart"> <i class="fa fa-shopping-cart"> </i> VIEW CART
+                    </a> <a href="<?php echo base_url(); ?>checkout_0"
                             class="btn btn-sm btn-primary"> CHECKOUT </a></div>
                 <!--/.miniCartFooter-->
 
@@ -339,11 +339,11 @@
                                 <li class="no-border">
                                     <p class="promo-1"><strong> NEW COLLECTION </strong></p>
                                 </li>
-                                <li><a href="category.php"> ALL NEW PRODUCTS </a></li>
-                                <li><a href="category.php"> NEW TOPS </a></li>
-                                <li><a href="category.php"> NEW SHOES </a></li>
-                                <li><a href="category.php"> NEW TSHIRT </a></li>
-                                <li><a href="category.php"> NEW TSHOP </a></li>
+                                <li><a href="<?php echo base_url(); ?>category"> ALL NEW PRODUCTS </a></li>
+                                <li><a href="<?php echo base_url(); ?>category"> NEW TOPS </a></li>
+                                <li><a href="<?php echo base_url(); ?>category"> NEW SHOES </a></li>
+                                <li><a href="<?php echo base_url(); ?>category"> NEW TSHIRT </a></li>
+                                <li><a href="<?php echo base_url(); ?>category"> NEW TSHOP </a></li>
                             </ul>
                             <ul class="col-lg-3  col-sm-3 col-md-3  col-xs-4">
                                 <li><a class="newProductMenuBlock" href="product-details.php"> <img
@@ -459,7 +459,7 @@
                                 <li><a href="index-header3.html"> Header Version 3 </a></li>
                                   <li><a href="index-logged-in.html">Topbar Logged In user menu <span
                                         class="label label-success">new</span></a></li>
-                                <li><a href="sidebar-shopping-cart.php">Sidebar Shopping cart <span
+                                <li><a href="sidebar-shopping-<?php echo base_url(); ?>cart">Sidebar Shopping cart <span
                                         class="label label-success">new</span></a></li>
                             </ul>
 
@@ -467,19 +467,19 @@
                                 <li class="no-border">
                                     <p><strong> Featured Pages </strong></p>
                                 </li>
-                                <li><a href="category.php"> Category </a></li>
+                                <li><a href="<?php echo base_url(); ?>category"> Category </a></li>
                                 <li><a href="category2.html"> Category Style 2 [Parallax] </a></li>
-                                <li><a href="sub-category.php"> Sub Category </a></li>
+                                <li><a href="sub-<?php echo base_url(); ?>category"> Sub Category </a></li>
                                 <li><a href="category-list.html"> Category List View </a></li>
                                 <li><a href="category-product-hover.html"> Category [Product Hover] </a></li>
                                 <li><a href="category-product-slide.html"> Category [Product Slide] </a></li>
 
-                                <li><a href="cart.php"> Cart </a></li>
+                                <li><a href="<?php echo base_url(); ?>cart"> Cart </a></li>
                                 <li><a href="about-us-3.html"> About Us V3 <span
                                         class="label label-success">NEW</span> </a></li>
                                 <li><a href="about-us-2.html"> About Us V2 </a></li>
-                                <li><a href="about-us.php"> About Us V1 </a></li>
-                                <li><a href="contact-us.php"> Contact us </a></li>
+                                <li><a href="<?php echo base_url(); ?>about_us"> About Us V1 </a></li>
+                                <li><a href="<?php echo base_url(); ?>contact_us"> Contact us </a></li>
                                 <li><a href="contact-us-2.html"> Contact us 2 (No Fixed Map) </a></li>
                                 <li><a href="terms-conditions.html"> Terms &amp; Conditions </a></li>
 
@@ -521,12 +521,12 @@
                                 <li class="no-border">
                                     <p><strong> Checkout </strong></p>
                                 </li>
-                                <li><a href="checkout-0.php"> Checkout Before </a></li>
-                                <li><a href="checkout-1.php"> checkout step 1 </a></li>
-                                <li><a href="checkout-2.php"> checkout step 2 </a></li>
-                                <li><a href="checkout-3.php"> checkout step 3 </a></li>
-                                <li><a href="checkout-4.php"> checkout step 4 </a></li>
-                                <li><a href="checkout-5.php"> checkout step 5 </a></li>
+                                <li><a href="<?php echo base_url(); ?>checkout_0"> Checkout Before </a></li>
+                                <li><a href="<?php echo base_url(); ?>checkout_1"> checkout step 1 </a></li>
+                                <li><a href="<?php echo base_url(); ?>checkout_2"> checkout step 2 </a></li>
+                                <li><a href="<?php echo base_url(); ?>checkout_3"> checkout step 3 </a></li>
+                                <li><a href="<?php echo base_url(); ?>checkout_4"> checkout step 4 </a></li>
+                                <li><a href="<?php echo base_url(); ?>checkout_5"> checkout step 5 </a></li>
                                 <li><a href="one-page-checkout.html"> One page checkout <span
                                         class="label label-success">NEW</span> </a></li>
                                 <li><a href="thanks-for-order.php"> Thanks for order</a></li>
@@ -535,14 +535,14 @@
                                 <li class="no-border">
                                     <p><strong> User Account </strong></p>
                                 </li>
-                                <li><a href="account-1.php"> Account Login </a></li>
-                                <li><a href="account.php"> My Account </a></li>
-                                <li><a href="my-address.php"> My Address </a></li>
+                                <li><a href="<?php echo base_url(); ?>account_1"> Account Login </a></li>
+                                <li><a href="<?php echo base_url(); ?>account"> My Account </a></li>
+                                <li><a href="<?php echo base_url(); ?>my_address"> My Address </a></li>
                                 <li><a href="user-information.php"> User information </a></li>
                                 <li><a href="wishlist.php"> Wish List </a></li>
                                 <li><a href="order-list.php"> Order list </a></li>
                                 <li><a href="order-status.php"> Order Status </a></li>
-                                <li><a href="forgot-password.php"> Forgot Password </a></li>
+                                <li><a href="<?php echo base_url(); ?>forgot_password"> Forgot Password </a></li>
                             </ul>
                             <ul class="col-lg-2  col-sm-2 col-md-2 unstyled">
                                 <li class="no-border">
@@ -552,8 +552,8 @@
                                 <li><a href="blog-details.html"> Blog Details </a></li>
                                 <li><a href="single-product-modal.html"> Single Product Details Modal</a></li>
                                 <li><a href="single-subscribe-modal.html"> Single Subscribe Modal</a></li>
-                                <li><a href="error-page.php"> Error Page </a></li>
-                                <li><a href="blank-page.html"> Blank Page </a></li>   <li><a href="form.php"> Basic Form Element </a></li>
+                                <li><a href="<?php echo base_url(); ?>error_page"> Error Page </a></li>
+                                <li><a href="blank-page.html"> Blank Page </a></li>   <li><a href="<?php echo base_url(); ?>form"> Basic Form Element </a></li>
                             </ul>
                         </li>
                     </ul>
@@ -681,7 +681,7 @@
 
                         <div class="miniCartFooter text-right">
                             <h3 class="text-right subtotal"> Subtotal: $210 </h3>
-                            <a class="btn btn-sm btn-danger" href="cart.php"> <i class="fa fa-shopping-cart"> </i> VIEW
+                            <a class="btn btn-sm btn-danger" href="<?php echo base_url(); ?>cart"> <i class="fa fa-shopping-cart"> </i> VIEW
                                 CART </a><a
                                 class="btn btn-sm btn-primary"> CHECKOUT </a></div>
                         <!--/.miniCartFooter-->
@@ -919,8 +919,8 @@
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
                     <h3> My Account </h3>
                     <ul>
-                        <li><a href="account.php"> My Account </a></li>
-                        <li><a href="my-address.php"> My Address </a></li>
+                        <li><a href="<?php echo base_url(); ?>account"> My Account </a></li>
+                        <li><a href="<?php echo base_url(); ?>my_address"> My Address </a></li>
                         <li><a href="wishlist.php"> Wish List </a></li>
                         <li><a href="order-list.php"> Order list </a></li>
                         <li><a href="order-status.php"> Order Status </a></li>

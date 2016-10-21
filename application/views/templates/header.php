@@ -144,7 +144,7 @@
                 <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 no-margin no-padding">
                     <div class="pull-right">
                         <ul class="userMenu">
-                            <li><a href="account-1.php"><span class="hidden-xs"> My Account</span> <i
+                            <li><a href="<?php echo base_url(); ?>account_1"><span class="hidden-xs"> My Account</span> <i
                                     class="glyphicon glyphicon-user hide visible-xs "></i></a></li>
                             <li><a href="#" data-toggle="modal" data-target="#ModalLogin"> <span class="hidden-xs">Sign In</span>
                                 <i class="glyphicon glyphicon-log-in hide visible-xs "></i> </a></li>
@@ -188,12 +188,12 @@
                         <tbody>
                         <tr class="miniCartProduct">
                             <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
+                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
                                 </div>
                             </td>
                             <td style="width:40%">
                                 <div class="miniCartDescription">
-                                    <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                     <span class="size"> 12 x 1.5 L </span>
 
                                     <div class="price"><span> $8.80 </span></div>
@@ -205,12 +205,12 @@
                         </tr>
                         <tr class="miniCartProduct">
                             <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/2.jpg" alt="img"> </a>
+                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/2.jpg" alt="img"> </a>
                                 </div>
                             </td>
                             <td style="width:40%">
                                 <div class="miniCartDescription">
-                                    <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                     <span class="size"> 12 x 1.5 L </span>
 
                                     <div class="price"><span> $8.80 </span></div>
@@ -222,12 +222,12 @@
                         </tr>
                         <tr class="miniCartProduct">
                             <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/5.jpg" alt="img"> </a>
+                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/5.jpg" alt="img"> </a>
                                 </div>
                             </td>
                             <td style="width:40%">
                                 <div class="miniCartDescription">
-                                    <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                     <span class="size"> 12 x 1.5 L </span>
 
                                     <div class="price"><span> $8.80 </span></div>
@@ -239,12 +239,12 @@
                         </tr>
                         <tr class="miniCartProduct">
                             <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
+                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
                                 </div>
                             </td>
                             <td style="width:40%">
                                 <div class="miniCartDescription">
-                                    <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                     <span class="size"> 12 x 1.5 L </span>
 
                                     <div class="price"><span> $8.80 </span></div>
@@ -256,12 +256,12 @@
                         </tr>
                         <tr class="miniCartProduct">
                             <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
+                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
                                 </div>
                             </td>
                             <td style="width:40%">
                                 <div class="miniCartDescription">
-                                    <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                     <span class="size"> 12 x 1.5 L </span>
 
                                     <div class="price"><span> $8.80 </span></div>
@@ -273,12 +273,12 @@
                         </tr>
                         <tr class="miniCartProduct">
                             <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/4.jpg" alt="img"> </a>
+                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/4.jpg" alt="img"> </a>
                                 </div>
                             </td>
                             <td style="width:40%">
                                 <div class="miniCartDescription">
-                                    <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                     <span class="size"> 12 x 1.5 L </span>
 
                                     <div class="price"><span> $8.80 </span></div>
@@ -295,7 +295,7 @@
 
                 <div class="miniCartFooter  miniCartFooterInMobile text-right">
                     <h3 class="text-right subtotal"> Subtotal: $210 </h3>
-                    <a class="btn btn-sm btn-danger" href="cart.php"> <i class="fa fa-shopping-cart"> </i> VIEW CART
+                    <a class="btn btn-sm btn-danger" href="<?php echo base_url(); ?>cart"> <i class="fa fa-shopping-cart"> </i> VIEW CART
                     </a> <a href="checkout-0.html"
                             class="btn btn-sm btn-primary"> CHECKOUT </a></div>
                 <!--/.miniCartFooter-->
@@ -323,48 +323,48 @@
                                     <p><strong> Women Collection </strong></p>
                                 </li>
                                 <li><a href="<?php echo base_url(); ?>products_view"> Kameez </a></li>
-                                <li><a href="category.php"> Tops </a></li>
-                                <li><a href="category.php"> Shoes </a></li>
-                                <li><a href="category.php"> T shirt </a></li>
-                                <li><a href="category.php"> TSHOP </a></li>
-                                <li><a href="category.php"> Party Dress </a></li>
-                                <li><a href="category.php"> Women Fragrances </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Tops </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Shoes </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> T shirt </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> TSHOP </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Party Dress </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Women Fragrances </a></li>
                             </ul>
                             <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
                                 <li>
                                     <p><strong> Men Collection </strong></p>
                                 </li>
-                                <li><a href="category.php"> Panjabi </a></li>
-                                <li><a href="category.php"> Male Fragrances </a></li>
-                                <li><a href="category.php"> Scarf </a></li>
-                                <li><a href="category.php"> Sandal </a></li>
-                                <li><a href="category.php"> Underwear </a></li>
-                                <li><a href="category.php"> Winter Collection </a></li>
-                                <li><a href="category.php"> Men Accessories </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Panjabi </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Male Fragrances </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Scarf </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Sandal </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Underwear </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Winter Collection </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Men Accessories </a></li>
                             </ul>
                             <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
                                 <li>
                                     <p><strong> Top Brands </strong></p>
                                 </li>
-                                <li><a href="category.php"> Diesel </a></li>
-                                <li><a href="category.php"> Farah </a></li>
-                                <li><a href="category.php"> G-Star RAW </a></li>
-                                <li><a href="category.php"> Lyle & Scott </a></li>
-                                <li><a href="category.php"> Pretty Green </a></li>
-                                <li><a href="category.php"> TSHOP </a></li>
-                                <li><a href="category.php"> TANJIM </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Diesel </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Farah </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> G-Star RAW </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Lyle & Scott </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Pretty Green </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> TSHOP </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> TANJIM </a></li>
                             </ul>
                             <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
-                                <li class="no-margin productPopItem "><a href="product-details.php"> <img
+                                <li class="no-margin productPopItem "><a href="<?php echo base_url(); ?>product_details"> <img
                                         class="img-responsive" src="<?php echo base_url(); ?>assets/img/site/g4.jpg" alt="img"> </a> <a
-                                        class="text-center productInfo alpha90" href="product-details.php"> Eodem modo
+                                        class="text-center productInfo alpha90" href="<?php echo base_url(); ?>product_details"> Eodem modo
                                     typi <br>
                                     <span> $60 </span> </a></li>
                             </ul>
                             <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
-                                <li class="no-margin productPopItem relative"><a href="product-details.php"> <img
+                                <li class="no-margin productPopItem relative"><a href="<?php echo base_url(); ?>product_details"> <img
                                         class="img-responsive" src="<?php echo base_url(); ?>assets/img/site/g5.jpg" alt="img"> </a> <a
-                                        class="text-center productInfo alpha90" href="product-details.php"> Eodem modo
+                                        class="text-center productInfo alpha90" href="<?php echo base_url(); ?>product_details"> Eodem modo
                                     typi <br>
                                     <span> $60 </span> </a></li>
                             </ul>
@@ -383,49 +383,49 @@
                                 <li>
                                     <p><strong> Women Collection </strong></p>
                                 </li>
-                                <li><a href="category.php"> Kameez </a></li>
-                                <li><a href="category.php"> Tops </a></li>
-                                <li><a href="category.php"> Shoes </a></li>
-                                <li><a href="category.php"> T shirt </a></li>
-                                <li><a href="category.php"> TSHOP </a></li>
-                                <li><a href="category.php"> Party Dress </a></li>
-                                <li><a href="category.php"> Women Fragrances </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Kameez </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Tops </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Shoes </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> T shirt </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> TSHOP </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Party Dress </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Women Fragrances </a></li>
                             </ul>
                             <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
                                 <li>
                                     <p><strong> Men Collection </strong></p>
                                 </li>
-                                <li><a href="category.php"> Panjabi </a></li>
-                                <li><a href="category.php"> Male Fragrances </a></li>
-                                <li><a href="category.php"> Scarf </a></li>
-                                <li><a href="category.php"> Sandal </a></li>
-                                <li><a href="category.php"> Underwear </a></li>
-                                <li><a href="category.php"> Winter Collection </a></li>
-                                <li><a href="category.php"> Men Accessories </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Panjabi </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Male Fragrances </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Scarf </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Sandal </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Underwear </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Winter Collection </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Men Accessories </a></li>
                             </ul>
                             <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
                                 <li>
                                     <p><strong> Top Brands </strong></p>
                                 </li>
-                                <li><a href="category.php"> Diesel </a></li>
-                                <li><a href="category.php"> Farah </a></li>
-                                <li><a href="category.php"> G-Star RAW </a></li>
-                                <li><a href="category.php"> Lyle & Scott </a></li>
-                                <li><a href="category.php"> Pretty Green </a></li>
-                                <li><a href="category.php"> TSHOP </a></li>
-                                <li><a href="category.php"> TANJIM </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Diesel </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Farah </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> G-Star RAW </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Lyle & Scott </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Pretty Green </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> TSHOP </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> TANJIM </a></li>
                             </ul>
                             <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
-                                <li class="no-margin productPopItem "><a href="product-details.php"> <img
+                                <li class="no-margin productPopItem "><a href="<?php echo base_url(); ?>product_details"> <img
                                         class="img-responsive" src="<?php echo base_url(); ?>assets/img/site/g4.jpg" alt="img"> </a> <a
-                                        class="text-center productInfo alpha90" href="product-details.php"> Eodem modo
+                                        class="text-center productInfo alpha90" href="<?php echo base_url(); ?>product_details"> Eodem modo
                                     typi <br>
                                     <span> $60 </span> </a></li>
                             </ul>
                             <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
-                                <li class="no-margin productPopItem relative"><a href="product-details.php"> <img
+                                <li class="no-margin productPopItem relative"><a href="<?php echo base_url(); ?>product_details"> <img
                                         class="img-responsive" src="<?php echo base_url(); ?>assets/img/site/g5.jpg" alt="img"> </a> <a
-                                        class="text-center productInfo alpha90" href="product-details.php"> Eodem modo
+                                        class="text-center productInfo alpha90" href="<?php echo base_url(); ?>product_details"> Eodem modo
                                     typi <br>
                                     <span> $60 </span> </a></li>
                             </ul>
@@ -444,49 +444,49 @@
                                 <li>
                                     <p><strong> Women Collection </strong></p>
                                 </li>
-                                <li><a href="category.php"> Kameez </a></li>
-                                <li><a href="category.php"> Tops </a></li>
-                                <li><a href="category.php"> Shoes </a></li>
-                                <li><a href="category.php"> T shirt </a></li>
-                                <li><a href="category.php"> TSHOP </a></li>
-                                <li><a href="category.php"> Party Dress </a></li>
-                                <li><a href="category.php"> Women Fragrances </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Kameez </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Tops </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Shoes </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> T shirt </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> TSHOP </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Party Dress </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Women Fragrances </a></li>
                             </ul>
                             <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
                                 <li>
                                     <p><strong> Men Collection </strong></p>
                                 </li>
-                                <li><a href="category.php"> Panjabi </a></li>
-                                <li><a href="category.php"> Male Fragrances </a></li>
-                                <li><a href="category.php"> Scarf </a></li>
-                                <li><a href="category.php"> Sandal </a></li>
-                                <li><a href="category.php"> Underwear </a></li>
-                                <li><a href="category.php"> Winter Collection </a></li>
-                                <li><a href="category.php"> Men Accessories </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Panjabi </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Male Fragrances </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Scarf </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Sandal </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Underwear </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Winter Collection </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Men Accessories </a></li>
                             </ul>
                             <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
                                 <li>
                                     <p><strong> Top Brands </strong></p>
                                 </li>
-                                <li><a href="category.php"> Diesel </a></li>
-                                <li><a href="category.php"> Farah </a></li>
-                                <li><a href="category.php"> G-Star RAW </a></li>
-                                <li><a href="category.php"> Lyle & Scott </a></li>
-                                <li><a href="category.php"> Pretty Green </a></li>
-                                <li><a href="category.php"> TSHOP </a></li>
-                                <li><a href="category.php"> TANJIM </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Diesel </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Farah </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> G-Star RAW </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Lyle & Scott </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Pretty Green </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> TSHOP </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> TANJIM </a></li>
                             </ul>
                             <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
-                                <li class="no-margin productPopItem "><a href="product-details.php"> <img
+                                <li class="no-margin productPopItem "><a href="<?php echo base_url(); ?>product_details"> <img
                                         class="img-responsive" src="<?php echo base_url(); ?>assets/img/site/g4.jpg" alt="img"> </a> <a
-                                        class="text-center productInfo alpha90" href="product-details.php"> Eodem modo
+                                        class="text-center productInfo alpha90" href="<?php echo base_url(); ?>product_details"> Eodem modo
                                     typi <br>
                                     <span> $60 </span> </a></li>
                             </ul>
                             <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
-                                <li class="no-margin productPopItem relative"><a href="product-details.php"> <img
+                                <li class="no-margin productPopItem relative"><a href="<?php echo base_url(); ?>product_details"> <img
                                         class="img-responsive" src="<?php echo base_url(); ?>assets/img/site/g5.jpg" alt="img"> </a> <a
-                                        class="text-center productInfo alpha90" href="product-details.php"> Eodem modo
+                                        class="text-center productInfo alpha90" href="<?php echo base_url(); ?>product_details"> Eodem modo
                                     typi <br>
                                     <span> $60 </span> </a></li>
                             </ul>
@@ -505,49 +505,49 @@
                                 <li>
                                     <p><strong> Women Collection </strong></p>
                                 </li>
-                                <li><a href="category.php"> Kameez </a></li>
-                                <li><a href="category.php"> Tops </a></li>
-                                <li><a href="category.php"> Shoes </a></li>
-                                <li><a href="category.php"> T shirt </a></li>
-                                <li><a href="category.php"> TSHOP </a></li>
-                                <li><a href="category.php"> Party Dress </a></li>
-                                <li><a href="category.php"> Women Fragrances </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Kameez </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Tops </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Shoes </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> T shirt </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> TSHOP </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Party Dress </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Women Fragrances </a></li>
                             </ul>
                             <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
                                 <li>
                                     <p><strong> Men Collection </strong></p>
                                 </li>
-                                <li><a href="category.php"> Panjabi </a></li>
-                                <li><a href="category.php"> Male Fragrances </a></li>
-                                <li><a href="category.php"> Scarf </a></li>
-                                <li><a href="category.php"> Sandal </a></li>
-                                <li><a href="category.php"> Underwear </a></li>
-                                <li><a href="category.php"> Winter Collection </a></li>
-                                <li><a href="category.php"> Men Accessories </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Panjabi </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Male Fragrances </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Scarf </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Sandal </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Underwear </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Winter Collection </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Men Accessories </a></li>
                             </ul>
                             <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
                                 <li>
                                     <p><strong> Top Brands </strong></p>
                                 </li>
-                                <li><a href="category.php"> Diesel </a></li>
-                                <li><a href="category.php"> Farah </a></li>
-                                <li><a href="category.php"> G-Star RAW </a></li>
-                                <li><a href="category.php"> Lyle & Scott </a></li>
-                                <li><a href="category.php"> Pretty Green </a></li>
-                                <li><a href="category.php"> TSHOP </a></li>
-                                <li><a href="category.php"> TANJIM </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Diesel </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Farah </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> G-Star RAW </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Lyle & Scott </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> Pretty Green </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> TSHOP </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view"> TANJIM </a></li>
                             </ul>
                             <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
-                                <li class="no-margin productPopItem "><a href="product-details.php"> <img
+                                <li class="no-margin productPopItem "><a href="<?php echo base_url(); ?>product_details"> <img
                                         class="img-responsive" src="<?php echo base_url(); ?>assets/img/site/g4.jpg" alt="img"> </a> <a
-                                        class="text-center productInfo alpha90" href="product-details.php"> Eodem modo
+                                        class="text-center productInfo alpha90" href="<?php echo base_url(); ?>product_details"> Eodem modo
                                     typi <br>
                                     <span> $60 </span> </a></li>
                             </ul>
                             <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
-                                <li class="no-margin productPopItem relative"><a href="product-details.php"> <img
+                                <li class="no-margin productPopItem relative"><a href="<?php echo base_url(); ?>product_details"> <img
                                         class="img-responsive" src="<?php echo base_url(); ?>assets/img/site/g5.jpg" alt="img"> </a> <a
-                                        class="text-center productInfo alpha90" href="product-details.php"> Eodem modo
+                                        class="text-center productInfo alpha90" href="<?php echo base_url(); ?>product_details"> Eodem modo
                                     typi <br>
                                     <span> $60 </span> </a></li>
                             </ul>
@@ -577,20 +577,20 @@
                                 <li><a href="index-header2.html"> Header Version 2 </a></li>
                                 <li><a href="index-header3.html"> Header Version 3 </a></li>
                                 <li><a href="index-logged-in.html">Topbar Logged In user menu <span class="label label-success">new</span></a></li>
-                                <li><a href="sidebar-shopping-cart.php">Sidebar Shopping cart <span
+                                <li><a href="sidebar-shopping-<?php echo base_url(); ?>cart">Sidebar Shopping cart <span
                                         class="label label-success">new</span></a></li>
                             </ul>
                             <ul class="col-lg-2  col-sm-2 col-md-2 unstyled">
                                 <li class="no-border">
                                     <p><strong> Featured Pages </strong></p>
                                 </li>
-                                <li><a href="category.php"> Category </a></li>
+                                <li><a href="<?php echo base_url(); ?>category"> Category </a></li>
                                 <li><a href="category2.html"> Category Style 2 [Parallax] </a></li>
-                                <li><a href="sub-category.php"> Sub Category </a></li>
+                                <li><a href="sub-<?php echo base_url(); ?>category"> Sub Category </a></li>
                                 <li><a href="category-list.html"> Category List View </a></li>
                                 <li><a href="category-product-hover.html"> Category [Product Hover] </a></li>
                                 <li><a href="category-product-slide.html"> Category [Product Slide] </a></li>
-                                <li><a href="cart.php"> Cart </a></li>
+                                <li><a href="<?php echo base_url(); ?>cart"> Cart </a></li>
                                 <li><a href="about-us-3.html"> About Us V3 <span
                                         class="label label-success">NEW</span> </a></li>
                                 <li><a href="about-us-2.html"> About Us V2 </a></li>
@@ -603,7 +603,7 @@
                                 <li class="no-border">
                                     <p><strong> Product Details </strong></p>
                                 </li>
-                                <li><a href="product-details.php"> Product Details v1 </a></li>
+                                <li><a href="<?php echo base_url(); ?>product_details"> Product Details v1 </a></li>
                                 <li><a href="product-details-style2.html"> Product Details v 2 </a></li>
                                 <li><a href="product-details-style3.html"> Product Details v 3 (Custom Thumbnail
                                     Position)</a></li>
@@ -640,7 +640,7 @@
                                 <li><a href="checkout-5.html"> checkout step 5 </a></li>
                                 <li><a href="one-page-checkout.html"> One page checkout <span
                                         class="label label-success">NEW</span> </a></li>
-                                <li><a href="thanks-for-order.php"> Thanks for order</a></li>
+                                <li><a href="<?php echo base_url(); ?>thanks_for_order"> Thanks for order</a></li>
                             </ul>
                             <ul class="col-lg-1  col-sm-1 col-md-1 no-padding unstyled">
                                 <li class="no-border">
@@ -648,11 +648,11 @@
                                 </li>
                                 <li><a href="account-1.html"> Account Login </a></li>
                                 <li><a href="account.html"> My Account </a></li>
-                                <li><a href="my-address.php"> My Address </a></li>
-                                <li><a href="user-information.php"> User information </a></li>
-                                <li><a href="wishlist.php"> Wish List </a></li>
-                                <li><a href="order-list.php"> Order list </a></li>
-                                <li><a href="order-status.php"> Order Status </a></li>
+                                <li><a href="<?php echo base_url(); ?>my_address"> My Address </a></li>
+                                <li><a href="<?php echo base_url(); ?>user_information"> User information </a></li>
+                                <li><a href="<?php echo base_url(); ?>wishlist"> Wish List </a></li>
+                                <li><a href="<?php echo base_url(); ?>order_list"> Order list </a></li>
+                                <li><a href="<?php echo base_url(); ?>order_status"> Order Status </a></li>
                                 <li><a href="forgot-password.html"> Forgot Password </a></li>
                             </ul>
                             <ul class="col-lg-2  col-sm-2 col-md-2 unstyled">
@@ -685,12 +685,12 @@
                                 <tbody>
                                 <tr class="miniCartProduct">
                                     <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img">
+                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img">
                                         </a></div>
                                     </td>
                                     <td style="width:40%">
                                         <div class="miniCartDescription">
-                                            <h4><a href="product-details.php"> TSHOP Tshirt DO9 </a></h4>
+                                            <h4><a href="<?php echo base_url(); ?>product_details"> TSHOP Tshirt DO9 </a></h4>
                                             <span class="size"> 12 x 1.5 L </span>
 
                                             <div class="price"><span> $22 </span></div>
@@ -702,12 +702,12 @@
                                 </tr>
                                 <tr class="miniCartProduct">
                                     <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/2.jpg" alt="img">
+                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/2.jpg" alt="img">
                                         </a></div>
                                     </td>
                                     <td style="width:40%">
                                         <div class="miniCartDescription">
-                                            <h4><a href="product-details.php"> TShir TSHOP 09 </a></h4>
+                                            <h4><a href="<?php echo base_url(); ?>product_details"> TShir TSHOP 09 </a></h4>
                                             <span class="size"> 12 x 1.5 L </span>
 
                                             <div class="price"><span> $15 </span></div>
@@ -719,12 +719,12 @@
                                 </tr>
                                 <tr class="miniCartProduct">
                                     <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/5.jpg" alt="img">
+                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/5.jpg" alt="img">
                                         </a></div>
                                     </td>
                                     <td style="width:40%">
                                         <div class="miniCartDescription">
-                                            <h4><a href="product-details.php"> Tshir 2014 </a></h4>
+                                            <h4><a href="<?php echo base_url(); ?>product_details"> Tshir 2014 </a></h4>
                                             <span class="size"> 12 x 1.5 L </span>
 
                                             <div class="price"><span> $30 </span></div>
@@ -736,12 +736,12 @@
                                 </tr>
                                 <tr class="miniCartProduct">
                                     <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img">
+                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img">
                                         </a></div>
                                     </td>
                                     <td style="width:40%">
                                         <div class="miniCartDescription">
-                                            <h4><a href="product-details.php"> TSHOP T shirt DO20 </a></h4>
+                                            <h4><a href="<?php echo base_url(); ?>product_details"> TSHOP T shirt DO20 </a></h4>
                                             <span class="size"> 12 x 1.5 L </span>
 
                                             <div class="price"><span> $15 </span></div>
@@ -753,12 +753,12 @@
                                 </tr>
                                 <tr class="miniCartProduct">
                                     <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/4.jpg" alt="img">
+                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/4.jpg" alt="img">
                                         </a></div>
                                     </td>
                                     <td style="width:40%">
                                         <div class="miniCartDescription">
-                                            <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                            <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                             <span class="size"> 12 x 1.5 L </span>
 
                                             <div class="price"><span> $44 </span></div>
@@ -770,12 +770,12 @@
                                 </tr>
                                 <tr class="miniCartProduct">
                                     <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/site/winter.jpg"
+                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/site/winter.jpg"
                                                                                   alt="img"> </a></div>
                                     </td>
                                     <td style="width:40%">
                                         <div class="miniCartDescription">
-                                            <h4><a href="product-details.php"> G Star T shirt </a></h4>
+                                            <h4><a href="<?php echo base_url(); ?>product_details"> G Star T shirt </a></h4>
                                             <span class="size"> 12 x 1.5 L </span>
 
                                             <div class="price"><span> $80 </span></div>
@@ -792,7 +792,7 @@
 
                         <div class="miniCartFooter text-right">
                             <h3 class="text-right subtotal"> Subtotal: $210 </h3>
-                            <a class="btn btn-sm btn-danger" href="cart.php"> <i class="fa fa-shopping-cart"> </i> VIEW
+                            <a class="btn btn-sm btn-danger" href="<?php echo base_url(); ?>cart"> <i class="fa fa-shopping-cart"> </i> VIEW
                                 CART </a><a
                                 class="btn btn-sm btn-primary"> CHECKOUT </a></div>
                         <!--/.miniCartFooter-->

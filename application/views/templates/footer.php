@@ -46,11 +46,11 @@
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
                     <h3> My Account </h3>
                     <ul>
-                        <li><a href="account.php"> My Account </a></li>
-                        <li><a href="my-address.php"> My Address </a></li>
-                        <li><a href="wishlist.php"> Wish List </a></li>
-                        <li><a href="order-list.php"> Order list </a></li>
-                        <li><a href="order-status.php"> Order Status </a></li>
+                        <li><a href="<?php echo base_url(); ?>account"> My Account </a></li>
+                        <li><a href="<?php echo base_url(); ?>my_address"> My Address </a></li>
+                        <li><a href="<?php echo base_url(); ?>wishlist"> Wish List </a></li>
+                        <li><a href="<?php echo base_url(); ?>order_list"> Order list </a></li>
+                        <li><a href="<?php echo base_url(); ?>order_status"> Order Status </a></li>
                     </ul>
                 </div>
                 <div style="clear:both" class="hide visible-xs"></div>
@@ -94,8 +94,6 @@
     </div>
     <!--/.footer-bottom-->
 </footer>
-
-
 <!-- <div class="modal fade hide" id="modalAds" role="dialog">
     <div class="modal-dialog  modal-bg-1">
         <div class="modal-body-content">
@@ -117,7 +115,7 @@
                         </form>
                     </div>
 
-                    <p><a href="category.php" class="link shoplink"> SHOP NOW <i class="fa fa-caret-right"> </i> </a>
+                    <p><a href="<?php echo base_url(); ?>category" class="link shoplink"> SHOP NOW <i class="fa fa-caret-right"> </i> </a>
                     </p>
 
 

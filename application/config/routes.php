@@ -39,11 +39,38 @@
 */
 
 $route['default_controller'] = "index";
-$route['404_override'] = '';
+$route['404_override'] = 'index/nopage';
 
 
 /* Routes for end user side */
 $route['products_view'] = 'index/products_list';
+//Route url for end user
+$route['category'] = 'index/category';
+$route['sub_category'] = 'index/sub_category';
+$route['about_us'] = 'index/about_us';
+$route['account_1'] = 'index/account_1';
+$route['account'] = 'index/account';
+$route['cart'] = 'index/cart';
+$route['checkout_0'] = 'index/checkout_0';
+$route['checkout_1'] = 'index/checkout_1';
+$route['checkout_2'] = 'index/checkout_2';
+$route['checkout_3'] = 'index/checkout_3';
+$route['checkout_4'] = 'index/checkout_4';
+$route['checkout_5'] = 'index/checkout_5';
+$route['contact_us'] = 'index/contact_us';
+$route['forgot_password'] = 'index/forgot_password';
+$route['form'] = 'index/form';
+$route['error_page'] = 'index/error_page';
+$route['add_address'] = 'index/add_address';
+$route['login'] = 'index/login';
+$route['my_address'] = 'index/my_address';
+$route['order_list'] = 'index/order_list';
+$route['order_status'] = 'index/order_status';
+$route['product_details'] = 'index/product_details';
+$route['thanks_for_order'] = 'index/thanks_for_order';
+$route['user_information'] = 'index/user_information';
+$route['welcome_message'] = 'index/welcome_message';
+$route['wishlist'] = 'index/wishlist';
 
 //Route url for admin
 $route['admin'] = 'admin/login/index_login';

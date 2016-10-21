@@ -4,7 +4,7 @@
         <div class="breadcrumbDiv col-lg-12">
             <ul class="breadcrumb">
                 <li><a href="index.php">Home</a></li>
-                <li><a href="account-1.php">Authentication</a></li>
+                <li><a href="<?php echo base_url(); ?>account_1">Authentication</a></li>
                 <li class="active"> My account</li>
             </ul>
         </div>
@@ -21,24 +21,24 @@
                     </h2>
                     <ul class="myAccountList row">
                         <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
-                            <div class="thumbnail equalheight"><a title="Orders" href="order-list.php"><i
+                            <div class="thumbnail equalheight"><a title="Orders" href="<?php echo base_url(); ?>order_list"><i
                                     class="fa fa-calendar"></i> Order history </a></div>
                         </li>
                         <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
-                            <div class="thumbnail equalheight"><a title="My addresses" href="my-address.php"><i
+                            <div class="thumbnail equalheight"><a title="My addresses" href="<?php echo base_url(); ?>my_address"><i
                                     class="fa fa-map-marker"></i> My addresses</a></div>
                         </li>
                         <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
-                            <div class="thumbnail equalheight"><a title="Add  address" href="add-address.php"> <i
+                            <div class="thumbnail equalheight"><a title="Add  address" href="<?php echo base_url(); ?>add_address"> <i
                                     class="fa fa-edit"> </i> Add address</a></div>
                         </li>
                         <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
                             <div class="thumbnail equalheight"><a title="Personal information"
-                                                                  href="user-information.php"><i class="fa fa-cog"></i>
+                                                                  href="<?php echo base_url(); ?>user_information"><i class="fa fa-cog"></i>
                                 Personal information</a></div>
                         </li>
                         <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
-                            <div class="thumbnail equalheight"><a title="My wishlists" href="wishlist.php"><i
+                            <div class="thumbnail equalheight"><a title="My wishlists" href="<?php echo base_url(); ?>wishlist"><i
                                     class="fa fa-heart"></i> My wishlists </a></div>
                         </li>
                     </ul>

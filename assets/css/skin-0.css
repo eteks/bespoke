@@ -53,18 +53,18 @@ a.link,
 .pagination > .active > span:hover,
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
-    background-color: #66de97;
-    border-color: #66de97;
+    background-color: #c81d6a;
+    border-color: #c81d6a;
     color: #ffffff;
 }
 
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-    background-color: #66de97;
-    border-color: #66de97;
+    background-color: #c81d6a;
+    border-color: #c81d6a;
     color: #ffffff;
-    background: #4ec67f;
+    background: #c81d6a;
 }
 
 .navbar-top {
@@ -87,7 +87,7 @@ a.link,
 .nav .open > a:hover,
 .nav .open > a:focus,
 .cartMenu:hover > a.dropdown-toggle {
-    background: #27ae60;
+    background: #c81d6a;
 }
 
 .dropdown-menu {
@@ -95,7 +95,7 @@ a.link,
 }
 
 .search-box:hover .form-control {
-    background: #4ec67f;
+    background: #c81d6a;
 }
 
 .search-box:hover .btn-nobg {
@@ -103,7 +103,7 @@ a.link,
 }
 
 .mCS-dark-2 > .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-    background-color: #4ec67f !important;
+    background-color: #c81d6a !important;
     background-color: rgba(200, 26, 106, 0.5) !important;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#804ec67f, endColorstr=#804ec67f) !important;
     -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#804ec67f, endColorstr=#804ec67f) !important;
@@ -155,19 +155,19 @@ a.link,
 }
 
 .footer a:hover {
-    color: #4ec67f;
+    color: #c81d6a;
 }
 
 .modal-header {
-    background: #4ec67f;
+    background: #c81d6a;
 }
 
 .form-control:focus {
-    border-color: #4ec67f;
+    border-color: #c81d6a;
 }
 
 .new-product {
-    background-color: #4ec67f !important;
+    background-color: #c81d6a !important;
     background-color: rgba(78, 198, 127, 0.95) !important;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f24ec67f, endColorstr=#f24ec67f) !important;
     -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f24ec67f, endColorstr=#f24ec67f) !important;
@@ -205,19 +205,19 @@ a.link,
 }
 
 .socialIcon a:hover {
-    background: #4ec67f;
+    background: #c81d6a;
 }
 
 .cart-actions button,
 .cart-actions .wishlist {
-    background: none repeat scroll 0 0 #4ec67f;
-    border: 2px solid #27ae60;
+    background: none repeat scroll 0 0 #c81d6a;
+    border: 2px solid #c81d6a;
 }
 
 .cart-actions button:hover {
     background: #ffffff;
     color: #2a2a2a;
-    border: solid 2px #4ec67f;
+    border: solid 2px #c81d6a;
 }
 
 .sp-thumbs a:hover,
