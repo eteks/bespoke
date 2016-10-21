@@ -21,6 +21,9 @@
 .fl{
 	float:left;
 }
+.error_admin_check{
+   border: 5px solid red !important;
+}
 .image_icon{
 	height: 44px;
     width: 43px;

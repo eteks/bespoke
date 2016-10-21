@@ -6,14 +6,14 @@ $(document).ready(function() {
     });
 
     $(document).delegate(".attribute_status",'change',function () {
-    	if($(this).is(":checked")){
-    		$('.attribute_main_block').show();
+        if($(this).is(":checked")){
+            $('.attribute_main_block').show();
             $('.price_group,.items_group').hide();
             $('#product_price,#product_totalitems').removeClass('product_default_field');
             $('.attribute_check_status').val('1');
         }
-    	else{
-    		$('.attribute_main_block').hide();
+        else{
+            $('.attribute_main_block').hide();
             $('.price_group,.items_group').show();
             $('#product_price,#product_totalitems').addClass('product_default_field');
             $('.attribute_check_status').val('0');
@@ -28,37 +28,37 @@ $(document).ready(function() {
         var subcategory_options = '<option value="">Select SubCategory</option>'; 
         var recipient_options = '<option value="">Select Recipient</option>';  
         if(selected_category != 'Select Category'){
-	         $.ajax({
-	               type: "POST",
-	               url: baseurl+"index.php/admin/adminindex/loadcategory_reference",
-	               data: form_data,
-	               dataType: 'json',  
-	               cache: false,
-	                success: function(data) {  
-	                // alert(JSON.stringify(data)); 
-	                data_subcategory = data['subcategory_category'];
-	                data_recipient = data['recipient_category'];
-	                if(data_subcategory!=0){ 
-	                  $.each(data_subcategory, function(i){
-	                    subcategory_options += '<option value="'+data_subcategory[i].subcategory_id+'">'+data_subcategory[i].subcategory_name+'</option>';
-	                  });  
-	                }   
-	                else{
-	                    alert('No SubCategory added for '+selected_category);    
-	                }  
-	                if(data_recipient!=0){ 
-	                  $.each(data_recipient, function(i){
-	                    recipient_options += '<option value="'+data_recipient[i].recipient_id+'">'+data_recipient[i].recipient_type+'</option>';
-	                  });  
-	                }   
-	                else{
-	                    alert('No Recipient added for '+selected_category);    
-	                }    
-	                $('.subcategory_act').html(subcategory_options); 
-	    			$('.recipient_act').html(recipient_options);          
-	               }
-	        });
-	    }     
+             $.ajax({
+                   type: "POST",
+                   url: baseurl+"index.php/admin/adminindex/loadcategory_reference",
+                   data: form_data,
+                   dataType: 'json',  
+                   cache: false,
+                    success: function(data) {  
+                    // alert(JSON.stringify(data)); 
+                    data_subcategory = data['subcategory_category'];
+                    data_recipient = data['recipient_category'];
+                    if(data_subcategory!=0){ 
+                      $.each(data_subcategory, function(i){
+                        subcategory_options += '<option value="'+data_subcategory[i].subcategory_id+'">'+data_subcategory[i].subcategory_name+'</option>';
+                      });  
+                    }   
+                    else{
+                        alert('No SubCategory added for '+selected_category);    
+                    }  
+                    if(data_recipient!=0){ 
+                      $.each(data_recipient, function(i){
+                        recipient_options += '<option value="'+data_recipient[i].recipient_id+'">'+data_recipient[i].recipient_type+'</option>';
+                      });  
+                    }   
+                    else{
+                        alert('No Recipient added for '+selected_category);    
+                    }    
+                    $('.subcategory_act').html(subcategory_options); 
+                    $('.recipient_act').html(recipient_options);          
+                   }
+            });
+        }     
     });
     // Functionality code for product attribute group in add product form
     // ********* Start *********
@@ -90,7 +90,7 @@ $(document).ready(function() {
     });
     var cloneCount_att = 1;
     $(document).delegate('.attibute_add','click',function () {
-    	$error = false;
+        $error = false;
         $(this).parents('.attribute_group').find('.attribute_validate').each(function(){
             if($(this).val() == '')
             {        
@@ -142,7 +142,7 @@ $(document).ready(function() {
         $(this).parents('.attribute_group').remove();
     });
     // Commented for future use
-    // $("#add_product").submit(function(){ 
+    // $("#add_giftproduct").submit(function(){ 
     //     attribute_length = [];
     //     alert($('.attribute_group').length);
     //     if($('.attribute_group').length > 1){
@@ -175,8 +175,8 @@ $(document).ready(function() {
     //     // return false;   
     // });
 
-    $('body').delegate("#add_product,#edit_giftproduct",'submit',function(e){ 
-    // $("#add_product").submit(function(){ 
+    $('body').delegate("#add_giftproduct,#edit_giftproduct",'submit',function(e){ 
+    // $("#add_giftproduct").submit(function(){ 
         // e.preventDefault();
         var attribute_length = [];
         var sum = 0;
@@ -480,8 +480,9 @@ $(document).ready(function() {
             'removeContent': 'Remove'
         });
       }
-          /*Code for slide toggle in admin part added by thangam*/
-    $(".select_multiple_option a").on('click', function() {
-      $(".mutliSelect ul").slideToggle('fast');
-    });        
+  /*Code for slide toggle in admin part added by thangam*/
+    $(document).delegate(".select_multiple_option a",'click',function () {
+      $(this).parents('.multiple_dropdown').children('.mutliSelect').slideToggle('fast');
+      // $(".mutliSelect ul").slideToggle('fast');
+    });          
 });
