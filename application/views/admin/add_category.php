@@ -46,7 +46,7 @@
                 <?php if (isset($error_message)){ 
                     echo "<p class='error_msg_reg alert alert-info'>".$error_message."</p>";
                 }?>
-                <form role="form" method="POST" action="<?php echo base_url(); ?>index.php/admin/adminindex/add_category" enctype="multipart/form-data" class="form_submit" name="category_form">
+                <form role="form" method="POST" action="<?php echo base_url(); ?>admin/adminindex/add_category" enctype="multipart/form-data" class="form_submit" name="category_form">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Category Name<span class="fill_symbol"> *</span></label>
                         <input type="text" class="form-control" id="category_name" placeholder="Enter Category Name" name="category_name" value="<?php echo set_value('category_name');?>">

@@ -328,7 +328,6 @@ $(document).ready(function() {
     //         $('#repassword').removeClass("error_input_field");
     //     }}
     //************End *****************
-
     //************ Start ***********
     $(document).delegate('.form_submit','submit',function(e){
         // test code
@@ -481,5 +480,8 @@ $(document).ready(function() {
             'removeContent': 'Remove'
         });
       }
-      
+          /*Code for slide toggle in admin part added by thangam*/
+    $(".select_multiple_option a").on('click', function() {
+      $(".mutliSelect ul").slideToggle('fast');
+    });        
 });

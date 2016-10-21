@@ -45,8 +45,9 @@
     <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
     <thead>
     <tr>
-		<th class="product">Subcategory Name</th>
-		<th class="product">Categories</th>
+		<th class="product product_name_len">Subcategory Name</th>
+        <th class="product">Recipient Name & Categories</th>
+		<!-- <th class="product">Categories</th> -->
 		<th class="product_small">Status</th>
 		<th class="product_small">Created Date</th>
 		<th class="product_small">Actions</th>
@@ -56,7 +57,47 @@
     <?php foreach ($subcategory_list as $subcat): ?>
         <tr>
             <td><?php echo $subcat["subcategory_name"] ?></td>
-            <td class="product_categories_name">
+            <td class="subcategory_scroll_a"><?php //echo $subcat["recipient_type"] ?>
+<table>
+    <tr>
+        <th class="subcategory_scroll_title_a">Recipient Name</td>
+        <th class="subcategory_scroll_title_b">Category Name</td>
+
+    </tr>
+    <tr class="bottom_border_line">
+        <td><?php echo $subcat["recipient_type"] ?></td>
+        <td class="subcategory_scroll_b">
+        	<table>
+            <?php 
+                if(sizeof($subcat["category_name"]) > 1){
+                    foreach($subcat["category_name"] as $cat) 
+                        echo $cat."<br>";
+                }
+                else
+                    echo $subcat["category_name"];
+                ?>
+            </table></td>
+
+    </tr>
+     <tr  class="bottom_border_line">
+        <td><?php echo $subcat["recipient_type"] ?></td>
+        <td class="subcategory_scroll_b">
+        	<table>
+            <?php 
+                if(sizeof($subcat["category_name"]) > 1){
+                    foreach($subcat["category_name"] as $cat) 
+                        echo $cat."<br>";
+                }
+                else
+                    echo $subcat["category_name"];
+                ?>
+            </table></td>
+
+    </tr> 
+</table>
+     </td>
+
+<!-- <td class="product_categories_name">
                 <?php 
                 if(sizeof($subcat["category_name"]) > 1){
                     foreach($subcat["category_name"] as $cat) 
@@ -65,7 +106,7 @@
                 else
                     echo $subcat["category_name"];
                 ?>
-            </td>
+            </td> -->
             <td class="center"><span class="<?php if($subcat["subcategory_status"] ==1 ){ ?>label-success<?php } ?> label label-default">
             <?php if($subcat["subcategory_status"] ==1 )echo "Active";else echo "InActive"; ?></span></td>
             <td><?php echo date("d/m/Y", strtotime($subcat["subcategory_createddate"])); ?></td>
