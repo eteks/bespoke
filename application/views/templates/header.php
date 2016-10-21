@@ -161,13 +161,13 @@
                                     $session_data = $this->session->userdata("login_session");
                             ?>
                             <li>
-                                <a href="account-1.php">
+                                <a href="">
                                     <span class="hidden-xs"> Welcome <?php echo $session_data['user_name']; ?></span> 
                                     <i class="glyphicon glyphicon-user hide visible-xs "></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="account-1.php">
+                                <a href="<?php echo base_url(); ?>account">
                                     <span class="hidden-xs"> My Account</span> 
                                     <i class="glyphicon glyphicon-user hide visible-xs "></i>
                                 </a>
@@ -233,12 +233,12 @@
                         <tbody>
                         <tr class="miniCartProduct">
                             <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
+                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
                                 </div>
                             </td>
                             <td style="width:40%">
                                 <div class="miniCartDescription">
-                                    <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                     <span class="size"> 12 x 1.5 L </span>
 
                                     <div class="price"><span> $8.80 </span></div>
@@ -250,12 +250,12 @@
                         </tr>
                         <tr class="miniCartProduct">
                             <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/2.jpg" alt="img"> </a>
+                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/2.jpg" alt="img"> </a>
                                 </div>
                             </td>
                             <td style="width:40%">
                                 <div class="miniCartDescription">
-                                    <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                     <span class="size"> 12 x 1.5 L </span>
 
                                     <div class="price"><span> $8.80 </span></div>
@@ -267,12 +267,12 @@
                         </tr>
                         <tr class="miniCartProduct">
                             <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/5.jpg" alt="img"> </a>
+                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/5.jpg" alt="img"> </a>
                                 </div>
                             </td>
                             <td style="width:40%">
                                 <div class="miniCartDescription">
-                                    <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                     <span class="size"> 12 x 1.5 L </span>
 
                                     <div class="price"><span> $8.80 </span></div>
@@ -284,12 +284,12 @@
                         </tr>
                         <tr class="miniCartProduct">
                             <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
+                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
                                 </div>
                             </td>
                             <td style="width:40%">
                                 <div class="miniCartDescription">
-                                    <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                     <span class="size"> 12 x 1.5 L </span>
 
                                     <div class="price"><span> $8.80 </span></div>
@@ -301,12 +301,12 @@
                         </tr>
                         <tr class="miniCartProduct">
                             <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
+                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
                                 </div>
                             </td>
                             <td style="width:40%">
                                 <div class="miniCartDescription">
-                                    <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                     <span class="size"> 12 x 1.5 L </span>
 
                                     <div class="price"><span> $8.80 </span></div>
@@ -318,12 +318,12 @@
                         </tr>
                         <tr class="miniCartProduct">
                             <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/4.jpg" alt="img"> </a>
+                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/4.jpg" alt="img"> </a>
                                 </div>
                             </td>
                             <td style="width:40%">
                                 <div class="miniCartDescription">
-                                    <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                     <span class="size"> 12 x 1.5 L </span>
 
                                     <div class="price"><span> $8.80 </span></div>
@@ -340,7 +340,7 @@
 
                 <div class="miniCartFooter  miniCartFooterInMobile text-right">
                     <h3 class="text-right subtotal"> Subtotal: $210 </h3>
-                    <a class="btn btn-sm btn-danger" href="cart.php"> <i class="fa fa-shopping-cart"> </i> VIEW CART
+                    <a class="btn btn-sm btn-danger" href="<?php echo base_url(); ?>cart"> <i class="fa fa-shopping-cart"> </i> VIEW CART
                     </a> <a href="checkout-0.html"
                             class="btn btn-sm btn-primary"> CHECKOUT </a></div>
                 <!--/.miniCartFooter-->
@@ -406,12 +406,12 @@
                                 <tbody>
                                 <tr class="miniCartProduct">
                                     <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img">
+                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img">
                                         </a></div>
                                     </td>
                                     <td style="width:40%">
                                         <div class="miniCartDescription">
-                                            <h4><a href="product-details.php"> TSHOP Tshirt DO9 </a></h4>
+                                            <h4><a href="<?php echo base_url(); ?>product_details"> TSHOP Tshirt DO9 </a></h4>
                                             <span class="size"> 12 x 1.5 L </span>
 
                                             <div class="price"><span> $22 </span></div>
@@ -423,12 +423,12 @@
                                 </tr>
                                 <tr class="miniCartProduct">
                                     <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/2.jpg" alt="img">
+                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/2.jpg" alt="img">
                                         </a></div>
                                     </td>
                                     <td style="width:40%">
                                         <div class="miniCartDescription">
-                                            <h4><a href="product-details.php"> TShir TSHOP 09 </a></h4>
+                                            <h4><a href="<?php echo base_url(); ?>product_details"> TShir TSHOP 09 </a></h4>
                                             <span class="size"> 12 x 1.5 L </span>
 
                                             <div class="price"><span> $15 </span></div>
@@ -440,12 +440,12 @@
                                 </tr>
                                 <tr class="miniCartProduct">
                                     <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/5.jpg" alt="img">
+                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/5.jpg" alt="img">
                                         </a></div>
                                     </td>
                                     <td style="width:40%">
                                         <div class="miniCartDescription">
-                                            <h4><a href="product-details.php"> Tshir 2014 </a></h4>
+                                            <h4><a href="<?php echo base_url(); ?>product_details"> Tshir 2014 </a></h4>
                                             <span class="size"> 12 x 1.5 L </span>
 
                                             <div class="price"><span> $30 </span></div>
@@ -457,12 +457,12 @@
                                 </tr>
                                 <tr class="miniCartProduct">
                                     <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img">
+                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img">
                                         </a></div>
                                     </td>
                                     <td style="width:40%">
                                         <div class="miniCartDescription">
-                                            <h4><a href="product-details.php"> TSHOP T shirt DO20 </a></h4>
+                                            <h4><a href="<?php echo base_url(); ?>product_details"> TSHOP T shirt DO20 </a></h4>
                                             <span class="size"> 12 x 1.5 L </span>
 
                                             <div class="price"><span> $15 </span></div>
@@ -474,12 +474,12 @@
                                 </tr>
                                 <tr class="miniCartProduct">
                                     <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/4.jpg" alt="img">
+                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/4.jpg" alt="img">
                                         </a></div>
                                     </td>
                                     <td style="width:40%">
                                         <div class="miniCartDescription">
-                                            <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                            <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                             <span class="size"> 12 x 1.5 L </span>
 
                                             <div class="price"><span> $44 </span></div>
@@ -491,12 +491,12 @@
                                 </tr>
                                 <tr class="miniCartProduct">
                                     <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/site/winter.jpg"
+                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/site/winter.jpg"
                                                                                   alt="img"> </a></div>
                                     </td>
                                     <td style="width:40%">
                                         <div class="miniCartDescription">
-                                            <h4><a href="product-details.php"> G Star T shirt </a></h4>
+                                            <h4><a href="<?php echo base_url(); ?>product_details"> G Star T shirt </a></h4>
                                             <span class="size"> 12 x 1.5 L </span>
 
                                             <div class="price"><span> $80 </span></div>
@@ -513,7 +513,7 @@
 
                         <div class="miniCartFooter text-right">
                             <h3 class="text-right subtotal"> Subtotal: $210 </h3>
-                            <a class="btn btn-sm btn-danger" href="cart.php"> <i class="fa fa-shopping-cart"> </i> VIEW
+                            <a class="btn btn-sm btn-danger" href="<?php echo base_url(); ?>cart"> <i class="fa fa-shopping-cart"> </i> VIEW
                                 CART </a><a
                                 class="btn btn-sm btn-primary"> CHECKOUT </a></div>
                         <!--/.miniCartFooter-->

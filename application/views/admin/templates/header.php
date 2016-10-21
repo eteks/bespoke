@@ -20,7 +20,7 @@
     <link href="<?php echo base_url();?>assets/admin/css/simpleFilePreview.css" rel="stylesheet">
     <!-- jQuery -->
     <script src="<?php echo base_url(); ?>assets/admin/js/jquery.min.js"></script>
-    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/admin/img/favicon.ico">
+    <!-- <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/admin/img/favicon.ico"> -->
 </head>
 <body>
 <!-- topbar starts -->

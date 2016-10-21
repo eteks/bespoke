@@ -46,7 +46,8 @@
     <thead>
     <tr>
 		<th class="product">Subcategory Name</th>
-		<th class="product">Categories</th>
+        <th class="product">Recipient Name & Categories</th>
+		<!-- <th class="product">Categories</th> -->
 		<th class="product_small">Status</th>
 		<th class="product_small">Created Date</th>
 		<th class="product_small">Actions</th>
@@ -56,7 +57,55 @@
     <?php foreach ($subcategory_list as $subcat): ?>
         <tr>
             <td><?php echo $subcat["subcategory_name"] ?></td>
-            <td class="product_categories_name">
+            <td><?php //echo $subcat["recipient_type"] ?>
+<table border="1">
+    <tr>
+        <td>Recipient Name</td>
+        <td>Category Name</td>
+
+    </tr>
+    <tr>
+        <td><?php echo $subcat["recipient_type"] ?></td>
+        <td><table border="1">
+            <tr><td><?php 
+                if(sizeof($subcat["category_name"]) > 1){
+                    foreach($subcat["category_name"] as $cat) 
+                        echo $cat."<br>";
+                }
+                else
+                    echo $subcat["category_name"];
+                ?></td></tr>
+            <tr><td><?php 
+                if(sizeof($subcat["category_name"]) > 1){
+                    foreach($subcat["category_name"] as $cat) 
+                        echo $cat."<br>";
+                }
+                else
+                    echo $subcat["category_name"];
+                ?></td></tr>
+            <tr><td><?php 
+                if(sizeof($subcat["category_name"]) > 1){
+                    foreach($subcat["category_name"] as $cat) 
+                        echo $cat."<br>";
+                }
+                else
+                    echo $subcat["category_name"];
+                ?></td></tr>
+            </table></td>
+
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>  
+</table>
+     </td>
+
+<!--             <td class="product_categories_name">
                 <?php 
                 if(sizeof($subcat["category_name"]) > 1){
                     foreach($subcat["category_name"] as $cat) 
@@ -65,7 +114,7 @@
                 else
                     echo $subcat["category_name"];
                 ?>
-            </td>
+            </td> -->
             <td class="center"><span class="<?php if($subcat["subcategory_status"] ==1 ){ ?>label-success<?php } ?> label label-default">
             <?php if($subcat["subcategory_status"] ==1 )echo "Active";else echo "InActive"; ?></span></td>
             <td><?php echo date("d/m/Y", strtotime($subcat["subcategory_createddate"])); ?></td>

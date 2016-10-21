@@ -65,6 +65,7 @@
     color: white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    display: none !important;
 }
 
 .slick-prev
@@ -105,11 +106,12 @@
 .slick-dotted.slick-slider
 {
     margin-bottom: 30px;
+    margin-top: 30px;
 }
 .slick-dots
 {
     position: absolute;
-    bottom: -25px;
+    bottom: 0px;
     display: block;
     width: 100%;
     padding: 0;
@@ -164,12 +166,12 @@
     content: '•';
     text-align: center;
     opacity: 1;
-    color: #4fbfa8 !important;
+    color: #ccc !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 .slick-dots li.slick-active button:before
 {
-    opacity: .75;
-    color: black;
+    opacity: 1;
+    color: #c81d6a !important;
 }
