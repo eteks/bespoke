@@ -16,41 +16,68 @@
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
                     <h3> Shop </h3>
                     <ul>
-                        <li><a href="#">
-                            Men's
-                        </a></li>
-                        <li><a href="#">
-                            Women's</a></li>
-                        <li><a href="#">
-                            Kids'
-                        </a></li>
-                        <li><a href="#">Shoes
-                        </a></li>
-                        <li><a href="#">
-                            Gift Cards
-                        </a></li>
-
+                        <?php
+                        if(!empty($all_recipients)) :
+                        foreach($all_recipients as $rec) :
+                        ?>
+                        <li>
+                            <a href="<?php echo base_url(); ?>recipients_view/<?php echo $rec['recipient_id']; ?>">
+                                <?php echo $rec['recipient_type']; ?>
+                            </a>
+                        </li>
+                        <?php
+                        endforeach;
+                        endif;
+                        ?>
                     </ul>
                 </div>
                 <div style="clear:both" class="hide visible-xs"></div>
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
                     <h3> Information </h3>
                     <ul class="list-unstyled footer-nav">
-                        <li><a href="#">Questions? </a></li>
-                        <li><a href="#"> Order Status </a></li>
-                        <li><a href="#"> Sizing Charts </a></li>
-                        <li><a href="#"> Return Policy </a></li>
-                        <li><a href="#"> Contact Us </a></li>
+                        <!-- <li><a href="#">Questions? </a></li> -->
+                        <!-- <li><a href="#"> Order Status </a></li> -->
+                        <li><a href="<?php echo base_url(); ?>about_us"> About Us </a></li>
+                        <li><a href="<?php echo base_url(); ?>contact_us"> Contact Us </a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
                     <h3> My Account </h3>
                     <ul>
-                        <li><a href="account.php"> My Account </a></li>
-                        <li><a href="my-address.php"> My Address </a></li>
-                        <li><a href="wishlist.php"> Wish List </a></li>
-                        <li><a href="order-list.php"> Order list </a></li>
-                        <li><a href="order-status.php"> Order Status </a></li>
+                        <?php if(!empty($this->session->userdata("login_status"))): 
+                                    $session_data = $this->session->userdata("login_session");
+                            ?>
+                            <li>
+                                <a href="<?php echo base_url(); ?>account">
+                                    <span class="hidden-xs"> My Account</span> 
+                                    <i class="glyphicon glyphicon-user hide visible-xs "></i>
+                                </a>
+                            </li>
+                             <!-- <li><a href="<?php echo base_url(); ?>wishlist"> Wish List </a></li> -->
+                            <li>
+                                <a href="<?php echo base_url(); ?>index/logout/"> 
+                                    <span class="hidden-xs">Sign Out</span>
+                                    <i class="glyphicon glyphicon-log-in hide visible-xs "></i> 
+                                </a>
+                            </li>
+                            <?php 
+                            else :
+                            ?>
+                            <li>
+                                <a href="#" data-toggle="modal" data-target="#ModalLogin"> 
+                                    <span class="hidden-xs">Sign In</span>
+                                    <i class="glyphicon glyphicon-log-in hide visible-xs "></i> 
+                                </a>
+                            </li>
+                            <li class="hidden-xs">
+                                <a href="#" data-toggle="modal" data-target="#ModalSignup">         Create Account 
+                                </a>
+                            </li>
+
+                            <?php
+                            endif;
+                            ?>
+                        <li><a href="<?php echo base_url(); ?>order_status"> Order Status </a></li>
                     </ul>
                 </div>
                 <div style="clear:both" class="hide visible-xs"></div>
@@ -94,8 +121,6 @@
     </div>
     <!--/.footer-bottom-->
 </footer>
-
-
 <!-- <div class="modal fade hide" id="modalAds" role="dialog">
     <div class="modal-dialog  modal-bg-1">
         <div class="modal-body-content">
@@ -117,7 +142,7 @@
                         </form>
                     </div>
 
-                    <p><a href="category.php" class="link shoplink"> SHOP NOW <i class="fa fa-caret-right"> </i> </a>
+                    <p><a href="<?php echo base_url(); ?>category" class="link shoplink"> SHOP NOW <i class="fa fa-caret-right"> </i> </a>
                     </p>
 
 
@@ -187,7 +212,6 @@
 <script src="<?php echo base_url(); ?>assets/plugins/rating/bootstrap-rating.min.js"></script>
 <script>
     $(function () {
-
         $('.rating-tooltip-manual').rating({
             extendSymbol: function () {
                 var title;
@@ -208,7 +232,6 @@
                         });
             }
         });
-
     });
 </script>
 <!-- include footable plugin -->

@@ -548,5 +548,5 @@ class CI_Cart {
 
 }
 
-/* End of file Cart.php */
-/* Location: ./system/libraries/Cart.php */
+/* End of file <?php echo base_url(); ?>cart */
+/* Location: ./system/libraries/<?php echo base_url(); ?>cart */

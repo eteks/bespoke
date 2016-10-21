@@ -92,11 +92,9 @@
                     echo $subcat["category_name"];
                 ?>
             </table></td>
-
     </tr> 
 </table>
      </td>
-
 <!-- <td class="product_categories_name">
                 <?php 
                 if(sizeof($subcat["category_name"]) > 1){

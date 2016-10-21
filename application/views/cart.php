@@ -4,7 +4,7 @@
         <div class="breadcrumbDiv col-lg-12">
             <ul class="breadcrumb">
                 <li><a href="index.php">Home</a></li>
-                <li><a href="category.php">Category</a></li>
+                <li><a href="<?php echo base_url(); ?>category">Category</a></li>
                 <li class="active">Cart</li>
             </ul>
         </div>
@@ -16,7 +16,7 @@
                     class="glyphicon glyphicon-shopping-cart"></i> Shopping cart </span></h1>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-5 rightSidebar col-xs-6 col-xxs-12 text-center-xs">
-            <h4 class="caps"><a href="category.php"><i class="fa fa-chevron-left"></i> Back to shopping </a></h4>
+            <h4 class="caps"><a href="<?php echo base_url(); ?>category"><i class="fa fa-chevron-left"></i> Back to shopping </a></h4>
         </div>
     </div>
     <!--/.row-->
@@ -39,12 +39,12 @@
 
                             <tr class="CartProduct">
                                 <td class="CartProductThumb">
-                                    <div><a href="product-details.php"><img src="images/product/a1.jpg" alt="img"></a>
+                                    <div><a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/a1.jpg" alt="img"></a>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="CartDescription">
-                                        <h4><a href="product-details.php">Denim T shirt Black </a></h4>
+                                        <h4><a href="<?php echo base_url(); ?>product_details">Denim T shirt Black </a></h4>
                                         <span class="size">12 x 1.5 L</span>
 
                                         <div class="price"><span>$8.80</span></div>
@@ -59,12 +59,12 @@
 
                             <tr class="CartProduct">
                                 <td class="CartProductThumb">
-                                    <div><a href="product-details.php"><img src="images/product/a2.jpg" alt="img"></a>
+                                    <div><a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/a2.jpg" alt="img"></a>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="CartDescription">
-                                        <h4><a href="product-details.php">Denim T shirt Red </a></h4>
+                                        <h4><a href="<?php echo base_url(); ?>product_details">Denim T shirt Red </a></h4>
                                         <span class="size">12 x 1.5 L</span>
 
                                         <div class="price"><span>$30</span></div>
@@ -80,13 +80,13 @@
                             <tr class="CartProduct">
                                 <td class="CartProductThumb">
                                     <div>
-                                        <a href="product-details.php"><img src="images/product/a5.jpg" alt="img"></a>
+                                        <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/a5.jpg" alt="img"></a>
                                     </div>
                                 </td>
 
                                 <td>
                                     <div class="CartDescription">
-                                        <h4><a href="product-details.php">Denim T shirt Blue </a></h4>
+                                        <h4><a href="<?php echo base_url(); ?>product_details">Denim T shirt Blue </a></h4>
                                         <span class="size">12 x 1.5 L</span>
 
                                         <div class="price"><span>$8.80</span></div>
@@ -125,7 +125,7 @@
             <div class="contentBox">
                 <div class="w100 costDetails">
                     <div class="table-block" id="order-detail-content"><a class="btn btn-primary btn-lg btn-block "
-                                                                          title="checkout" href="checkout-0.php"
+                                                                          title="checkout" href="<?php echo base_url(); ?>checkout_0"
                                                                           style="margin-bottom:20px"> Proceed to
                         checkout &nbsp; <i class="fa fa-arrow-right"></i> </a>
 

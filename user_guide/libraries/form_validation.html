@@ -150,7 +150,7 @@ Form validation, while simple to create, is generally very messy and tedious to 
 
 <h2>The Form</h2>
 
-<p>Using a text editor, create a form called <dfn>myform.php</dfn>.  In it, place this code and save it to your <samp>applications/views/</samp>
+<p>Using a text editor, create a form called <dfn>my<?php echo base_url(); ?>form</dfn>.  In it, place this code and save it to your <samp>applications/views/</samp>
 folder:</p>
 
 
@@ -215,7 +215,7 @@ folder:</p>
 <a name="thecontroller"></a>
 <h2>The Controller</h2>
 
-<p>Using a text editor, create a controller called <dfn>form.php</dfn>.  In it, place this code and save it to your <samp>applications/controllers/</samp>
+<p>Using a text editor, create a controller called <dfn><?php echo base_url(); ?>form</dfn>.  In it, place this code and save it to your <samp>applications/controllers/</samp>
 folder:</p>
 
 
@@ -259,7 +259,7 @@ function only returns <kbd>TRUE</kbd> if it has successfully applied your rules 
 
 <p>You'll notice several things about the above pages:</p>
 
-<p>The <dfn>form</dfn> (myform.php) is a standard web form with a couple exceptions:</p>
+<p>The <dfn>form</dfn> (my<?php echo base_url(); ?>form) is a standard web form with a couple exceptions:</p>
 
 <ol>
 <li>It uses a <dfn>form helper</dfn> to create the form opening.
@@ -273,7 +273,7 @@ is that it generates the action URL for you, based on the URL in your config fil
 </li>
 </ol>
 
-<p>The <dfn>controller</dfn> (form.php) has one function: <dfn>index()</dfn>. This function initializes the validation class and
+<p>The <dfn>controller</dfn> (<?php echo base_url(); ?>form) has one function: <dfn>index()</dfn>. This function initializes the validation class and
 loads the <var>form helper</var> and <var>URL helper</var> used by your view files. It also <samp>runs</samp>
 the validation routine. Based on
 whether the validation was successful it either presents the form or the success page.</p>
@@ -299,7 +299,7 @@ at the same time. To set validation rules you will use the <dfn>set_rules()</dfn
 </ol>
 
 
-<p><br />Here is an example. In your <dfn>controller</dfn> (form.php), add this code just below the validation initialization function:</p>
+<p><br />Here is an example. In your <dfn>controller</dfn> (<?php echo base_url(); ?>form), add this code just below the validation initialization function:</p>
 
 <code>
 $this->form_validation->set_rules('username', 'Username', 'required');<br />
@@ -444,7 +444,7 @@ that permit you to do this. The one you will use most commonly is:</p>
 <code>set_value('field name')</code>
 
 
-<p>Open your <dfn>myform.php</dfn> view file and update the <strong>value</strong> in each field using the <dfn>set_value()</dfn> function:</p>
+<p>Open your <dfn>my<?php echo base_url(); ?>form</dfn> view file and update the <strong>value</strong> in each field using the <dfn>set_value()</dfn> function:</p>
 
 <p><strong>Don't forget to include each field name in the <dfn>set_value()</dfn> functions!</strong></p>
 

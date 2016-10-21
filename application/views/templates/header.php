@@ -86,10 +86,17 @@
                 </div>
                 <div class="modal-body">
                     <div class="control-group">
-                        <a class="fb_button btn  btn-block btn-lg " href="#"> SIGNUP WITH
+                        <a class="fb_button btn  btn-block btn-lg " href="<?php if(!empty($login_url)): echo $login_url; endif; ?>"> SIGNUP WITH
                         FACEBOOK </a>
                     </div>
                     <h5 style="padding:10px 0 10px 0;" class="text-center"> OR </h5>
+
+                    <div class="control-group">
+                        <a class="gplus_button btn  btn-block btn-lg " href=""> SIGNUP WITH
+                        GOOGLE + </a>
+                    </div>
+                    <h5 style="padding:10px 0 10px 0;" class="text-center"> OR </h5>
+
                     <form action="ajax_controller/registration" method="POST" id="registration_section" class="registration_login">
                         <p class="registration_status"> </p>
                         <div class="form-group reg-username">
@@ -154,13 +161,13 @@
                                     $session_data = $this->session->userdata("login_session");
                             ?>
                             <li>
-                                <a href="account-1.php">
+                                <a href="">
                                     <span class="hidden-xs"> Welcome <?php echo $session_data['user_name']; ?></span> 
                                     <i class="glyphicon glyphicon-user hide visible-xs "></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="account-1.php">
+                                <a href="<?php echo base_url(); ?>account">
                                     <span class="hidden-xs"> My Account</span> 
                                     <i class="glyphicon glyphicon-user hide visible-xs "></i>
                                 </a>
@@ -226,12 +233,12 @@
                         <tbody>
                         <tr class="miniCartProduct">
                             <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
+                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
                                 </div>
                             </td>
                             <td style="width:40%">
                                 <div class="miniCartDescription">
-                                    <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                     <span class="size"> 12 x 1.5 L </span>
 
                                     <div class="price"><span> $8.80 </span></div>
@@ -243,12 +250,12 @@
                         </tr>
                         <tr class="miniCartProduct">
                             <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/2.jpg" alt="img"> </a>
+                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/2.jpg" alt="img"> </a>
                                 </div>
                             </td>
                             <td style="width:40%">
                                 <div class="miniCartDescription">
-                                    <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                     <span class="size"> 12 x 1.5 L </span>
 
                                     <div class="price"><span> $8.80 </span></div>
@@ -260,12 +267,12 @@
                         </tr>
                         <tr class="miniCartProduct">
                             <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/5.jpg" alt="img"> </a>
+                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/5.jpg" alt="img"> </a>
                                 </div>
                             </td>
                             <td style="width:40%">
                                 <div class="miniCartDescription">
-                                    <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                     <span class="size"> 12 x 1.5 L </span>
 
                                     <div class="price"><span> $8.80 </span></div>
@@ -277,12 +284,12 @@
                         </tr>
                         <tr class="miniCartProduct">
                             <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
+                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
                                 </div>
                             </td>
                             <td style="width:40%">
                                 <div class="miniCartDescription">
-                                    <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                     <span class="size"> 12 x 1.5 L </span>
 
                                     <div class="price"><span> $8.80 </span></div>
@@ -294,12 +301,12 @@
                         </tr>
                         <tr class="miniCartProduct">
                             <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
+                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
                                 </div>
                             </td>
                             <td style="width:40%">
                                 <div class="miniCartDescription">
-                                    <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                     <span class="size"> 12 x 1.5 L </span>
 
                                     <div class="price"><span> $8.80 </span></div>
@@ -311,12 +318,12 @@
                         </tr>
                         <tr class="miniCartProduct">
                             <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/4.jpg" alt="img"> </a>
+                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/4.jpg" alt="img"> </a>
                                 </div>
                             </td>
                             <td style="width:40%">
                                 <div class="miniCartDescription">
-                                    <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                     <span class="size"> 12 x 1.5 L </span>
 
                                     <div class="price"><span> $8.80 </span></div>
@@ -333,7 +340,7 @@
 
                 <div class="miniCartFooter  miniCartFooterInMobile text-right">
                     <h3 class="text-right subtotal"> Subtotal: $210 </h3>
-                    <a class="btn btn-sm btn-danger" href="cart.php"> <i class="fa fa-shopping-cart"> </i> VIEW CART
+                    <a class="btn btn-sm btn-danger" href="<?php echo base_url(); ?>cart"> <i class="fa fa-shopping-cart"> </i> VIEW CART
                     </a> <a href="checkout-0.html"
                             class="btn btn-sm btn-primary"> CHECKOUT </a></div>
                 <!--/.miniCartFooter-->
@@ -345,368 +352,44 @@
 
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="<?php echo base_url(); ?>"> Home </a></li>              
+                <li class="active"><a href="<?php echo base_url(); ?>"> Home </a></li>
                 <!-- change width of megamenu = use class > megamenu-fullwidth, megamenu-60width, megamenu-40width -->
+                <?php
+                if(!empty($menubar_fields)):
+                foreach ($menubar_fields as $rec_key => $rec_value) :
+                ?>
                 <li class="dropdown megamenu-80width ">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"> MEN
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="<?php echo base_url(); ?>recipients_view/<?php echo $rec_key; ?>"> 
+                        <?php echo $rec_value['recipient_type']; ?>
                         <b class="caret"> </b> 
                     </a>
                     <ul class="dropdown-menu">
                         <li class="megamenu-content">
-
-                            <!-- megamenu-content -->
-
+                            <?php
+                            foreach ($rec_value['category_id'] as $cat_key => $cat_value) :
+                            ?>
                             <ul class="col-lg-2  col-sm-2 col-md-2  unstyled noMarginLeft">
                                 <li>
-                                    <p><strong> Women Collection </strong></p>
+                                    <p><strong> <?php echo $cat_value['category_name']; ?> </strong></p>
                                 </li>
-                                <li><a href="<?php echo base_url(); ?>products_view"> Kameez </a></li>
-                                <li><a href="category.php"> Tops </a></li>
-                                <li><a href="category.php"> Shoes </a></li>
-                                <li><a href="category.php"> T shirt </a></li>
-                                <li><a href="category.php"> TSHOP </a></li>
-                                <li><a href="category.php"> Party Dress </a></li>
-                                <li><a href="category.php"> Women Fragrances </a></li>
+                                <?php
+                                foreach ($cat_value['subcategory_id'] as $sub_key => $sub_value) :
+                                ?>
+                                <li><a href="<?php echo base_url(); ?>products_view/<?php echo $sub_key; ?>"> <?php echo $sub_value; ?> </a></li>
+                                <?php
+                                endforeach;
+                                ?>
                             </ul>
-                            <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
-                                <li>
-                                    <p><strong> Men Collection </strong></p>
-                                </li>
-                                <li><a href="category.php"> Panjabi </a></li>
-                                <li><a href="category.php"> Male Fragrances </a></li>
-                                <li><a href="category.php"> Scarf </a></li>
-                                <li><a href="category.php"> Sandal </a></li>
-                                <li><a href="category.php"> Underwear </a></li>
-                                <li><a href="category.php"> Winter Collection </a></li>
-                                <li><a href="category.php"> Men Accessories </a></li>
-                            </ul>
-                            <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
-                                <li>
-                                    <p><strong> Top Brands </strong></p>
-                                </li>
-                                <li><a href="category.php"> Diesel </a></li>
-                                <li><a href="category.php"> Farah </a></li>
-                                <li><a href="category.php"> G-Star RAW </a></li>
-                                <li><a href="category.php"> Lyle & Scott </a></li>
-                                <li><a href="category.php"> Pretty Green </a></li>
-                                <li><a href="category.php"> TSHOP </a></li>
-                                <li><a href="category.php"> TANJIM </a></li>
-                            </ul>
-                            <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
-                                <li class="no-margin productPopItem "><a href="product-details.php"> <img
-                                        class="img-responsive" src="<?php echo base_url(); ?>assets/img/site/g4.jpg" alt="img"> </a> <a
-                                        class="text-center productInfo alpha90" href="product-details.php"> Eodem modo
-                                    typi <br>
-                                    <span> $60 </span> </a></li>
-                            </ul>
-                            <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
-                                <li class="no-margin productPopItem relative"><a href="product-details.php"> <img
-                                        class="img-responsive" src="<?php echo base_url(); ?>assets/img/site/g5.jpg" alt="img"> </a> <a
-                                        class="text-center productInfo alpha90" href="product-details.php"> Eodem modo
-                                    typi <br>
-                                    <span> $60 </span> </a></li>
-                            </ul>
+                            <?php
+                            endforeach;
+                            ?>
                         </li>
                     </ul>
                 </li>
-                <!-- change width of megamenu = use class > megamenu-fullwidth, megamenu-60width, megamenu-40width -->
-                <li class="dropdown megamenu-80width "><a data-toggle="dropdown" class="dropdown-toggle" href="#"> WOMEN
-                    <b class="caret"> </b> </a>
-                    <ul class="dropdown-menu">
-                        <li class="megamenu-content">
-
-                            <!-- megamenu-content -->
-
-                            <ul class="col-lg-2  col-sm-2 col-md-2  unstyled noMarginLeft">
-                                <li>
-                                    <p><strong> Women Collection </strong></p>
-                                </li>
-                                <li><a href="category.php"> Kameez </a></li>
-                                <li><a href="category.php"> Tops </a></li>
-                                <li><a href="category.php"> Shoes </a></li>
-                                <li><a href="category.php"> T shirt </a></li>
-                                <li><a href="category.php"> TSHOP </a></li>
-                                <li><a href="category.php"> Party Dress </a></li>
-                                <li><a href="category.php"> Women Fragrances </a></li>
-                            </ul>
-                            <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
-                                <li>
-                                    <p><strong> Men Collection </strong></p>
-                                </li>
-                                <li><a href="category.php"> Panjabi </a></li>
-                                <li><a href="category.php"> Male Fragrances </a></li>
-                                <li><a href="category.php"> Scarf </a></li>
-                                <li><a href="category.php"> Sandal </a></li>
-                                <li><a href="category.php"> Underwear </a></li>
-                                <li><a href="category.php"> Winter Collection </a></li>
-                                <li><a href="category.php"> Men Accessories </a></li>
-                            </ul>
-                            <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
-                                <li>
-                                    <p><strong> Top Brands </strong></p>
-                                </li>
-                                <li><a href="category.php"> Diesel </a></li>
-                                <li><a href="category.php"> Farah </a></li>
-                                <li><a href="category.php"> G-Star RAW </a></li>
-                                <li><a href="category.php"> Lyle & Scott </a></li>
-                                <li><a href="category.php"> Pretty Green </a></li>
-                                <li><a href="category.php"> TSHOP </a></li>
-                                <li><a href="category.php"> TANJIM </a></li>
-                            </ul>
-                            <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
-                                <li class="no-margin productPopItem "><a href="product-details.php"> <img
-                                        class="img-responsive" src="<?php echo base_url(); ?>assets/img/site/g4.jpg" alt="img"> </a> <a
-                                        class="text-center productInfo alpha90" href="product-details.php"> Eodem modo
-                                    typi <br>
-                                    <span> $60 </span> </a></li>
-                            </ul>
-                            <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
-                                <li class="no-margin productPopItem relative"><a href="product-details.php"> <img
-                                        class="img-responsive" src="<?php echo base_url(); ?>assets/img/site/g5.jpg" alt="img"> </a> <a
-                                        class="text-center productInfo alpha90" href="product-details.php"> Eodem modo
-                                    typi <br>
-                                    <span> $60 </span> </a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <!-- change width of megamenu = use class > megamenu-fullwidth, megamenu-60width, megamenu-40width -->
-                <li class="dropdown megamenu-80width "><a data-toggle="dropdown" class="dropdown-toggle" href="#"> KIDS
-                    <b class="caret"> </b> </a>
-                    <ul class="dropdown-menu">
-                        <li class="megamenu-content">
-
-                            <!-- megamenu-content -->
-
-                            <ul class="col-lg-2  col-sm-2 col-md-2  unstyled noMarginLeft">
-                                <li>
-                                    <p><strong> Women Collection </strong></p>
-                                </li>
-                                <li><a href="category.php"> Kameez </a></li>
-                                <li><a href="category.php"> Tops </a></li>
-                                <li><a href="category.php"> Shoes </a></li>
-                                <li><a href="category.php"> T shirt </a></li>
-                                <li><a href="category.php"> TSHOP </a></li>
-                                <li><a href="category.php"> Party Dress </a></li>
-                                <li><a href="category.php"> Women Fragrances </a></li>
-                            </ul>
-                            <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
-                                <li>
-                                    <p><strong> Men Collection </strong></p>
-                                </li>
-                                <li><a href="category.php"> Panjabi </a></li>
-                                <li><a href="category.php"> Male Fragrances </a></li>
-                                <li><a href="category.php"> Scarf </a></li>
-                                <li><a href="category.php"> Sandal </a></li>
-                                <li><a href="category.php"> Underwear </a></li>
-                                <li><a href="category.php"> Winter Collection </a></li>
-                                <li><a href="category.php"> Men Accessories </a></li>
-                            </ul>
-                            <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
-                                <li>
-                                    <p><strong> Top Brands </strong></p>
-                                </li>
-                                <li><a href="category.php"> Diesel </a></li>
-                                <li><a href="category.php"> Farah </a></li>
-                                <li><a href="category.php"> G-Star RAW </a></li>
-                                <li><a href="category.php"> Lyle & Scott </a></li>
-                                <li><a href="category.php"> Pretty Green </a></li>
-                                <li><a href="category.php"> TSHOP </a></li>
-                                <li><a href="category.php"> TANJIM </a></li>
-                            </ul>
-                            <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
-                                <li class="no-margin productPopItem "><a href="product-details.php"> <img
-                                        class="img-responsive" src="<?php echo base_url(); ?>assets/img/site/g4.jpg" alt="img"> </a> <a
-                                        class="text-center productInfo alpha90" href="product-details.php"> Eodem modo
-                                    typi <br>
-                                    <span> $60 </span> </a></li>
-                            </ul>
-                            <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
-                                <li class="no-margin productPopItem relative"><a href="product-details.php"> <img
-                                        class="img-responsive" src="<?php echo base_url(); ?>assets/img/site/g5.jpg" alt="img"> </a> <a
-                                        class="text-center productInfo alpha90" href="product-details.php"> Eodem modo
-                                    typi <br>
-                                    <span> $60 </span> </a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <!-- change width of megamenu = use class > megamenu-fullwidth, megamenu-60width, megamenu-40width -->
-                <li class="dropdown megamenu-80width "><a data-toggle="dropdown" class="dropdown-toggle" href="#"> HOME & DECOR
-                    <b class="caret"> </b> </a>
-                    <ul class="dropdown-menu">
-                        <li class="megamenu-content">
-
-                            <!-- megamenu-content -->
-
-                            <ul class="col-lg-2  col-sm-2 col-md-2  unstyled noMarginLeft">
-                                <li>
-                                    <p><strong> Women Collection </strong></p>
-                                </li>
-                                <li><a href="category.php"> Kameez </a></li>
-                                <li><a href="category.php"> Tops </a></li>
-                                <li><a href="category.php"> Shoes </a></li>
-                                <li><a href="category.php"> T shirt </a></li>
-                                <li><a href="category.php"> TSHOP </a></li>
-                                <li><a href="category.php"> Party Dress </a></li>
-                                <li><a href="category.php"> Women Fragrances </a></li>
-                            </ul>
-                            <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
-                                <li>
-                                    <p><strong> Men Collection </strong></p>
-                                </li>
-                                <li><a href="category.php"> Panjabi </a></li>
-                                <li><a href="category.php"> Male Fragrances </a></li>
-                                <li><a href="category.php"> Scarf </a></li>
-                                <li><a href="category.php"> Sandal </a></li>
-                                <li><a href="category.php"> Underwear </a></li>
-                                <li><a href="category.php"> Winter Collection </a></li>
-                                <li><a href="category.php"> Men Accessories </a></li>
-                            </ul>
-                            <ul class="col-lg-2  col-sm-2 col-md-2  unstyled">
-                                <li>
-                                    <p><strong> Top Brands </strong></p>
-                                </li>
-                                <li><a href="category.php"> Diesel </a></li>
-                                <li><a href="category.php"> Farah </a></li>
-                                <li><a href="category.php"> G-Star RAW </a></li>
-                                <li><a href="category.php"> Lyle & Scott </a></li>
-                                <li><a href="category.php"> Pretty Green </a></li>
-                                <li><a href="category.php"> TSHOP </a></li>
-                                <li><a href="category.php"> TANJIM </a></li>
-                            </ul>
-                            <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
-                                <li class="no-margin productPopItem "><a href="product-details.php"> <img
-                                        class="img-responsive" src="<?php echo base_url(); ?>assets/img/site/g4.jpg" alt="img"> </a> <a
-                                        class="text-center productInfo alpha90" href="product-details.php"> Eodem modo
-                                    typi <br>
-                                    <span> $60 </span> </a></li>
-                            </ul>
-                            <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-6">
-                                <li class="no-margin productPopItem relative"><a href="product-details.php"> <img
-                                        class="img-responsive" src="<?php echo base_url(); ?>assets/img/site/g5.jpg" alt="img"> </a> <a
-                                        class="text-center productInfo alpha90" href="product-details.php"> Eodem modo
-                                    typi <br>
-                                    <span> $60 </span> </a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <!-- <li class="dropdown megamenu-fullwidth"><a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                    PAGES <b class="caret"> </b> </a>
-                    <ul class="dropdown-menu">
-                        <li class="megamenu-content ProductDetailsList">
-                            <h3 class="promo-1 no-margin hidden-xs">60 + HTML PAGES || AVAILABLE ONLY AT WRAP
-                                BOOTSTRAP </h3>
-                            <h3 class="promo-1sub hidden-xs"> Complete Parallax E-Commerce Boostrap Template, Responsive
-                                on any Device, 10+ color Theme + Parallax Effect </h3>
-                            <ul class="col-lg-2  col-sm-2 col-md-2 unstyled">
-                                <li class="no-border">
-                                    <p><strong> Home Pages </strong></p>
-                                </li>
-                                <li><a href="index.php"> Home Version 1 </a></li>
-                                <li><a href="index2.html"> Home Version 2 </a></li>
-                                <li><a href="index3.html"> Home Version 3 (BOXES) </a></li>
-                                <li><a href="index4.html"> Home Version 4 (LOOK 2)</a></li>
-                                <li><a href="index5.html"> Home Version 5 (LOOK 3)</a></li>
-                                <li><a href="index6.html"> Home Version 6 (STORY)</a></li>
-                                <li><a href="index-v-7.html"> Home Version 7 (Flat) <span class="label label-success">new</span></a>
-                                </li>
-                                <li><a href="index-header2.html"> Header Version 2 </a></li>
-                                <li><a href="index-header3.html"> Header Version 3 </a></li>
-                                <li><a href="index-logged-in.html">Topbar Logged In user menu <span class="label label-success">new</span></a></li>
-                                <li><a href="sidebar-shopping-cart.php">Sidebar Shopping cart <span
-                                        class="label label-success">new</span></a></li>
-                            </ul>
-                            <ul class="col-lg-2  col-sm-2 col-md-2 unstyled">
-                                <li class="no-border">
-                                    <p><strong> Featured Pages </strong></p>
-                                </li>
-                                <li><a href="category.php"> Category </a></li>
-                                <li><a href="category2.html"> Category Style 2 [Parallax] </a></li>
-                                <li><a href="sub-category.php"> Sub Category </a></li>
-                                <li><a href="category-list.html"> Category List View </a></li>
-                                <li><a href="category-product-hover.html"> Category [Product Hover] </a></li>
-                                <li><a href="category-product-slide.html"> Category [Product Slide] </a></li>
-                                <li><a href="cart.php"> Cart </a></li>
-                                <li><a href="about-us-3.html"> About Us V3 <span
-                                        class="label label-success">NEW</span> </a></li>
-                                <li><a href="about-us-2.html"> About Us V2 </a></li>
-                                <li><a href="about-us.html"> About Us V1 </a></li>
-                                <li><a href="contact-us.html"> Contact us </a></li>
-                                <li><a href="contact-us-2.html"> Contact us 2 (No Fixed Map) </a></li>
-                                <li><a href="terms-conditions.html"> Terms &amp; Conditions </a></li>
-                            </ul>
-                            <ul class="col-lg-3  col-sm-3 col-md-3 unstyled ">
-                                <li class="no-border">
-                                    <p><strong> Product Details </strong></p>
-                                </li>
-                                <li><a href="product-details.php"> Product Details v1 </a></li>
-                                <li><a href="product-details-style2.html"> Product Details v 2 </a></li>
-                                <li><a href="product-details-style3.html"> Product Details v 3 (Custom Thumbnail
-                                    Position)</a></li>
-                                <li><a href="product-details-style4.html"> Product Details v 4 (with litebox)</a></li>
-                                <li><a href="product-details-style5.html"> Product Details v 5 (Flat) <span
-                                        class="label label-success">NEW</span> </a></li>
-                                <li><a href="product-details-style5-1.html"> Product Details v 5.1 <span
-                                        class="label label-success">NEW</span> </a></li>
-                                <li><a href="product-details-style5-2.html"> Product Details v 5.2 <span
-                                        class="label label-success">NEW</span> </a></li>
-                                <li><a href="product-details-style5-3.html"> Product Details v 5.3 <span
-                                        class="label label-success">NEW</span> </a></li>
-                                <li><a href="product-details-style5-3-fadein.html"> Product Details v 5.3.1
-                                    <small>(fadein)</small> <span
-                                            class="label label-success">NEW</span> </a></li>
-                                <li><a href="product-details-style5-4.html"> Product Details v 5.4  <span
-                                        class="label label-success">NEW</span> </a></li>
-                                <li><a href="product-details-style5-4.1-popup-video.html"> Product Details v 5.4.1
-                                    <small>(popup video)</small><span
-                                            class="label label-success">NEW</span> </a></li>
-                                <li><a href="product-details-style5-4.1-with-zoom.html"> Product Details v 5.4.1
-                                    <small>(zoom + litebox)</small> <span
-                                            class="label label-success">NEW</span></a></li>
-                            </ul>
-                            <ul class="col-lg-2  col-sm-2 col-md-2 unstyled">
-                                <li class="no-border">
-                                    <p><strong> Checkout </strong></p>
-                                </li>
-                                <li><a href="checkout-0.html"> Checkout Before </a></li>
-                                <li><a href="checkout-1.html"> checkout step 1 </a></li>
-                                <li><a href="checkout-2.html"> checkout step 2 </a></li>
-                                <li><a href="checkout-3.html"> checkout step 3 </a></li>
-                                <li><a href="checkout-4.html"> checkout step 4 </a></li>
-                                <li><a href="checkout-5.html"> checkout step 5 </a></li>
-                                <li><a href="one-page-checkout.html"> One page checkout <span
-                                        class="label label-success">NEW</span> </a></li>
-                                <li><a href="thanks-for-order.php"> Thanks for order</a></li>
-                            </ul>
-                            <ul class="col-lg-1  col-sm-1 col-md-1 no-padding unstyled">
-                                <li class="no-border">
-                                    <p><strong> User Account </strong></p>
-                                </li>
-                                <li><a href="account-1.html"> Account Login </a></li>
-                                <li><a href="account.html"> My Account </a></li>
-                                <li><a href="my-address.php"> My Address </a></li>
-                                <li><a href="user-information.php"> User information </a></li>
-                                <li><a href="wishlist.php"> Wish List </a></li>
-                                <li><a href="order-list.php"> Order list </a></li>
-                                <li><a href="order-status.php"> Order Status </a></li>
-                                <li><a href="forgot-password.html"> Forgot Password </a></li>
-                            </ul>
-                            <ul class="col-lg-2  col-sm-2 col-md-2 unstyled">
-                                <li class="no-border">
-                                    <p><strong> &nbsp; </strong></p>
-                                </li>
-                <li><a href="blog.html"> Blog </a></li>
-                <li><a href="blog-details.html"> Blog Details </a></li>
-                                <li><a href="single-product-modal.html"> Single Product Details Modal</a></li>
-                                <li><a href="single-subscribe-modal.html"> Single Subscribe Modal</a></li>
-                                <li><a href="error-page.html"> Error Page </a></li>
-                                <li><a href="blank-page.html"> Blank Page </a></li>   <li><a href="form.html"> Basic Form Element </a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li> -->
+                <?php
+                endforeach;
+                endif;
+                ?>
                 <li><a href="#"> PHOTO SHOOT </a></li>
             </ul>
             </ul>
@@ -723,12 +406,12 @@
                                 <tbody>
                                 <tr class="miniCartProduct">
                                     <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img">
+                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img">
                                         </a></div>
                                     </td>
                                     <td style="width:40%">
                                         <div class="miniCartDescription">
-                                            <h4><a href="product-details.php"> TSHOP Tshirt DO9 </a></h4>
+                                            <h4><a href="<?php echo base_url(); ?>product_details"> TSHOP Tshirt DO9 </a></h4>
                                             <span class="size"> 12 x 1.5 L </span>
 
                                             <div class="price"><span> $22 </span></div>
@@ -740,12 +423,12 @@
                                 </tr>
                                 <tr class="miniCartProduct">
                                     <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/2.jpg" alt="img">
+                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/2.jpg" alt="img">
                                         </a></div>
                                     </td>
                                     <td style="width:40%">
                                         <div class="miniCartDescription">
-                                            <h4><a href="product-details.php"> TShir TSHOP 09 </a></h4>
+                                            <h4><a href="<?php echo base_url(); ?>product_details"> TShir TSHOP 09 </a></h4>
                                             <span class="size"> 12 x 1.5 L </span>
 
                                             <div class="price"><span> $15 </span></div>
@@ -757,12 +440,12 @@
                                 </tr>
                                 <tr class="miniCartProduct">
                                     <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/5.jpg" alt="img">
+                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/5.jpg" alt="img">
                                         </a></div>
                                     </td>
                                     <td style="width:40%">
                                         <div class="miniCartDescription">
-                                            <h4><a href="product-details.php"> Tshir 2014 </a></h4>
+                                            <h4><a href="<?php echo base_url(); ?>product_details"> Tshir 2014 </a></h4>
                                             <span class="size"> 12 x 1.5 L </span>
 
                                             <div class="price"><span> $30 </span></div>
@@ -774,12 +457,12 @@
                                 </tr>
                                 <tr class="miniCartProduct">
                                     <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img">
+                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img">
                                         </a></div>
                                     </td>
                                     <td style="width:40%">
                                         <div class="miniCartDescription">
-                                            <h4><a href="product-details.php"> TSHOP T shirt DO20 </a></h4>
+                                            <h4><a href="<?php echo base_url(); ?>product_details"> TSHOP T shirt DO20 </a></h4>
                                             <span class="size"> 12 x 1.5 L </span>
 
                                             <div class="price"><span> $15 </span></div>
@@ -791,12 +474,12 @@
                                 </tr>
                                 <tr class="miniCartProduct">
                                     <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/product/4.jpg" alt="img">
+                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/4.jpg" alt="img">
                                         </a></div>
                                     </td>
                                     <td style="width:40%">
                                         <div class="miniCartDescription">
-                                            <h4><a href="product-details.php"> T shirt Black </a></h4>
+                                            <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
                                             <span class="size"> 12 x 1.5 L </span>
 
                                             <div class="price"><span> $44 </span></div>
@@ -808,12 +491,12 @@
                                 </tr>
                                 <tr class="miniCartProduct">
                                     <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="product-details.php"> <img src="<?php echo base_url(); ?>assets/img/site/winter.jpg"
+                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/site/winter.jpg"
                                                                                   alt="img"> </a></div>
                                     </td>
                                     <td style="width:40%">
                                         <div class="miniCartDescription">
-                                            <h4><a href="product-details.php"> G Star T shirt </a></h4>
+                                            <h4><a href="<?php echo base_url(); ?>product_details"> G Star T shirt </a></h4>
                                             <span class="size"> 12 x 1.5 L </span>
 
                                             <div class="price"><span> $80 </span></div>
@@ -830,7 +513,7 @@
 
                         <div class="miniCartFooter text-right">
                             <h3 class="text-right subtotal"> Subtotal: $210 </h3>
-                            <a class="btn btn-sm btn-danger" href="cart.php"> <i class="fa fa-shopping-cart"> </i> VIEW
+                            <a class="btn btn-sm btn-danger" href="<?php echo base_url(); ?>cart"> <i class="fa fa-shopping-cart"> </i> VIEW
                                 CART </a><a
                                 class="btn btn-sm btn-primary"> CHECKOUT </a></div>
                         <!--/.miniCartFooter-->

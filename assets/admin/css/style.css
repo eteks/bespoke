@@ -1,3 +1,23 @@
+@font-face {
+  font-family: 'Source Sans Pro';
+  src:  url('assets/admin/fonts/sourcesans/source-sans-pro.regular.ttf') format('ttf'),
+        url('assets/admin/fonts/sourcesans/source-sans-pro.light.ttf') format('ttf'),
+        url('assets/admin/fonts/sourcesans/source-sans-pro.italic.ttf') format('ttf'),
+        url('assets/admin/fonts/sourcesans/source-sans-pro.black-italic.ttf') format('ttf'),
+        url('assets/admin/fonts/sourcesans/source-sans-pro.extralight.ttf') format('ttf'),
+        url('assets/admin/fonts/sourcesans/source-sans-pro.light-italic.ttf') format('ttf'),
+        url('assets/admin/fonts/sourcesans/source-sans-pro.bold.ttf') format('ttf'),
+}
+@font-face {
+  font-family: 'Oswald';
+  src:  url('assets/admin/fonts/oswald/Oswald-Regular.ttf') format('ttf'),
+        url('assets/admin/fonts/oswald/Oswald-Medium.ttf') format('ttf'),
+        url('assets/admin/fonts/oswald/Oswald-Heavy.ttf') format('ttf'),
+        url('assets/admin/fonts/oswald/Oswald-Light.ttf') format('ttf'),
+        url('assets/admin/fonts/oswald/Oswald-Bold.ttf') format('ttf'),
+        url('assets/admin/fonts/oswald/Oswald-DemiBold.ttf') format('ttf'),
+        url('assets/admin/fonts/oswald/Oswald-ExtraLight.ttf') format('ttf'),
+}
 .fl{
 	float:left;
 }
@@ -157,13 +177,13 @@
     margin-top: 50px !important;
 }*/
 .users-icons{
-	color:#4FBFA8;
+	color:#b70b59;
 }
 .row{
 	margin-right:0px !important;
 }
 .login-btn{
-	background-color:#4FBFA8 !important;
+	background-color:#c81d6a !important;
 	border-color:none !important;
 	color: #fff !important;
 }
@@ -179,8 +199,9 @@
 .btn-info {
     background-image: none !important;
     background-repeat: no-repeat;
-    border-bottom: 1px solid #025aa5;
-    background-color: #025aa5 !important;
+    border-bottom: 1px solid #135090;
+    background-color: #135090 !important;
+    border-color: #135090 !important;
     filter: none;
     font-size: 12px;
     padding: 5px 5px;
@@ -188,11 +209,12 @@
 .btn-danger {
     background-image: none !important;
     background-repeat: no-repeat;
-    border-bottom: 1px solid #d9302c;
+    border-bottom: 1px solid #ba243a;
     filter: none;
     font-size: 12px;
     padding: 5px 5px;
-    background-color: #d9302c !important;
+    background-color: #ba243a !important;
+    border-color: #ba243a !important;
 }
 .label-boxes{
 	width:232px !important;
@@ -337,7 +359,7 @@
    margin-right: 439px;
 }
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
-	background-color: #4fbfa8 !important;
+	background-color: #c81d6a !important;
 	color:#fff !important;
 }
 .dropdown-menu{
@@ -349,6 +371,7 @@
 	width:95% !important;
 	/*border: 1px solid #ff0000;*/
 	border-color:none !important;
+	border-color: #c81d6a !important;
 }
 .breadcrumb{
 	width:99% !important;
@@ -404,6 +427,73 @@
     position: relative;
     right: 50px;*/
 }
+.users_gly_icons {
+    background-color: #d2d0d1 !important;
+    border-radius: 75px !important;
+    margin: 0 auto !important;
+    width: 150px !important;
+}
+.users_gly_icons > i{
+    top:15px !important;
+}
+.category_name {
+    color: #c81d6a;
+    text-align: center;
+    text-transform: uppercase;
+}
+.image div{
+  background: none repeat scroll 0 0 rgba( 183, 11, 89, 0.5) !important;
+}
+.image{
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  max-width: 160px !important;
+  z-index: 5 !important;
+  margin-bottom:30px !important;
+  overflow:hidden !important;
+}
+.image img{
+  max-width: 160px !important;
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 6 !important;
+  margin:0 auto !important;
+  cursor:pointer !important;
+  -moz-transition:all 1s !important;
+  -webkit-transition:all 1s !important;
+  -o-transition:all 1s !important;
+  -ms-transition:all 1s !important;
+  transition:all 1s !important;
+}
+.image div{
+  position:absolute !important;
+  top:0 !important;
+  left:0 !important;
+  z-index:10 !important;
+  width:100% !important;
+  height:100% !important;
+  text-align:center !important;
+  transform:scale(0) !important;
+  transition:all .6s !important;
+  opacity:0 !important;
+}
+.image:hover div{
+  transform:scale(1) !important;
+  opacity:1 !important;
+}
+.image div a{
+  color: #FFFFFF !important;
+  display: block !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  margin-top: 100px !important;
+  padding-bottom: 10px !important;
+  text-decoration: none !important;
+  cursor: default !important;
+  text-transform: capitalize !important;
+}
 .restrict_tooltip{
     background: #a2a3a5 none repeat scroll 0 0;
     border-radius: 5px;
@@ -428,7 +518,7 @@
     display: block;
 }
 .modal-content h5{
-  color: #4fbfa8;
+  color: #c81d6a;
 }
 .box {
   background: #fff;

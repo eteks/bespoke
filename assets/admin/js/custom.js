@@ -142,7 +142,7 @@ $(document).ready(function() {
         $(this).parents('.attribute_group').remove();
     });
     // Commented for future use
-    // $("#add_giftproduct").submit(function(){ 
+    // $("#add_product").submit(function(){ 
     //     attribute_length = [];
     //     alert($('.attribute_group').length);
     //     if($('.attribute_group').length > 1){
@@ -175,8 +175,8 @@ $(document).ready(function() {
     //     // return false;   
     // });
 
-    $('body').delegate("#add_giftproduct,#edit_giftproduct",'submit',function(e){ 
-    // $("#add_giftproduct").submit(function(){ 
+    $('body').delegate("#add_product,#edit_giftproduct",'submit',function(e){ 
+    // $("#add_product").submit(function(){ 
         // e.preventDefault();
         var attribute_length = [];
         var sum = 0;

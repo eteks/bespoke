@@ -530,6 +530,14 @@ fieldset[disabled] .btn-inverse.active {
   text-align: center;
   text-decoration: none;
 }
+.gplus_button {
+  background: #d96253;
+  color: #ffffff;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
 .btn-fb {
   background: #658ad0;
   color: #ffffff;
@@ -540,6 +548,15 @@ fieldset[disabled] .btn-inverse.active {
   color: #ffffff;
   text-decoration: none;
 }
+.gplus_button:hover {
+  background: #d34836 !important;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
+
+
 .btn-tw {
   background: #1dadeb;
   color: #ffffff;

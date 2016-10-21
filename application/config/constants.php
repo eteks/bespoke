@@ -41,9 +41,7 @@ define('ADMIN_MEDIA_PATH','assets/admin/img/uploads/');
 define('FILETYPE_ALLOWED','jpg|jpeg|png|gif');
 //array for product attributes input tags
 define('INPUT_TAGS',serialize(array("dropdown"=>"Dropdown",
-						  "textfield"=>"Texfield"))); 
-
-
+        "textfield"=>"Texfield")));
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

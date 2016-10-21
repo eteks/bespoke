@@ -39,11 +39,39 @@
 */
 
 $route['default_controller'] = "index";
-$route['404_override'] = '';
+$route['404_override'] = 'index/nopage';
 
 
-/* Routes for end user side */
-$route['products_view'] = 'index/products_list';
+/* Routes for end user side by siva*/
+
+$route['products_view/(:any)'] = 'index/products_list/$1';
+$route['recipients_view/(:any)'] = 'index/recipients_list/$1';
+$route['about_us'] = 'index/about_details';
+$route['contact_us'] = 'index/contact_details';
+
+/* Routes for end user side by vel*/
+
+$route['account'] = 'index/account';
+$route['cart'] = 'index/cart';
+$route['checkout_0'] = 'index/checkout_0';
+$route['checkout_1'] = 'index/checkout_1';
+$route['checkout_2'] = 'index/checkout_2';
+$route['checkout_3'] = 'index/checkout_3';
+$route['checkout_4'] = 'index/checkout_4';
+$route['checkout_5'] = 'index/checkout_5';
+$route['forgot_password'] = 'index/forgot_password';
+$route['form'] = 'index/form';
+$route['error_page'] = 'index/error_page';
+$route['add_address'] = 'index/add_address';
+$route['login'] = 'index/login';
+$route['my_address'] = 'index/my_address';
+$route['order_list'] = 'index/order_list';
+$route['order_status'] = 'index/order_status';
+$route['product_details'] = 'index/product_details';
+$route['thanks_for_order'] = 'index/thanks_for_order';
+$route['user_information'] = 'index/user_information';
+$route['welcome_message'] = 'index/welcome_message';
+$route['wishlist'] = 'index/wishlist';
 
 //Route url for admin
 $route['admin'] = 'admin/login/index_login';
@@ -66,7 +94,7 @@ $route['adminindex/recipient'] = 'adminindex/recipient';
 $route['adminindex/add_recipient'] = 'adminindex/add_recipient';
 $route['adminindex/edit_recipient'] = 'adminindex/edit_recipient';
 $route['adminindex/giftproduct'] = 'adminindex/giftproduct';
-$route['adminindex/add_giftproduct'] = 'adminindex/add_giftproduct';
+$route['adminindex/add_product'] = 'adminindex/add_product';
 $route['adminindex/edit_giftproduct'] = 'adminindex/edit_giftproduct';
 $route['adminindex/product_attributes'] = 'adminindex/product_attributes';
 $route['adminindex/add_product_attributes'] = 'adminindex/add_product_attributes';

@@ -6,8 +6,12 @@
 */
 
 .registration_status {
-  color: #c24641;
-  display: none;
-  margin: 10px 0;
-  text-align: center;
+	color: #c24641;
+	display: none;
+	margin: 10px 0;
+	text-align: center;
 }
+a {
+	cursor : pointer !important;
+}
+
