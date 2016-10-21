@@ -134,7 +134,7 @@ jQuery("#recipient_act").on('change',function () {
                 var options = '';   
                 if(obj.length!=0){               
                   $.each(obj, function(i){
-                    options += '<li><input type="checkbox" name="select_category[]" class="subcategory_name" value="" /><span class="multiple_checkbox multple_checkbox_inactive">'+obj[i].category_name+'</span></li>';
+                    options += '<li><input type="checkbox" name="select_category[]" class="subcategory_name" value="'+obj[i].category_id+'" /><span class="multiple_checkbox multple_checkbox_inactive">'+obj[i].category_name+'</span></li>';
                   });  
                 }   
                 else{

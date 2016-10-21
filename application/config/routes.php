@@ -39,7 +39,7 @@
 */
 
 $route['default_controller'] = "index";
-$route['404_override'] = 'index/nopage';
+// $route['404_override'] = 'index/nopage';
 
 
 /* Routes for end user side by siva*/
@@ -102,7 +102,7 @@ $route['adminindex/edit_product_attributes/(:any)'] = 'adminindex/edit_product_a
 $route['adminindex/loadcategory_reference'] = 'adminindex/loadcategory_reference';
 $route['adminindex/product_attribute_sets'] = 'adminindex/product_attribute_sets';
 // $route['adminindex/delete/(:any)/(:any)'] = 'adminindex/delete';
-
+$route['photography/add_photoshoot_type'] = 'photography/add_photoshoot_type';
 
 
 
@@ -124,6 +124,7 @@ $route['adminindex/edit_orderitem'] = 'adminindex/edit_orderitem';
 $route['adminindex/edit_transaction'] = 'adminindex/edit_transaction';
 // $route['adminindex/admin_404'] = 'admin/adminindex/admin_nopage';
 $route['admin/admin_404'] = 'admin/adminindex/admin_nopage';
+
 
 
 /* End of file routes.php */
