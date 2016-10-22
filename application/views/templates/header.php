@@ -92,7 +92,7 @@
                     <h5 style="padding:10px 0 10px 0;" class="text-center"> OR </h5>
 
                     <div class="control-group">
-                        <a class="gplus_button btn  btn-block btn-lg " href=""> SIGNUP WITH
+                        <a class="gplus_button btn  btn-block btn-lg " href="<?php echo $authUrl; ?>"> SIGNUP WITH
                         GOOGLE + </a>
                     </div>
                     <h5 style="padding:10px 0 10px 0;" class="text-center"> OR </h5>
@@ -359,7 +359,7 @@
                 foreach ($menubar_fields as $rec_key => $rec_value) :
                 ?>
                 <li class="dropdown megamenu-80width ">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="<?php echo base_url(); ?>recipients_view/<?php echo $rec_key; ?>"> 
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="<?php echo base_url(); ?>recipients_view/rec/<?php echo $rec_key; ?>"> 
                         <?php echo $rec_value['recipient_type']; ?>
                         <b class="caret"> </b> 
                     </a>
@@ -370,12 +370,17 @@
                             ?>
                             <ul class="col-lg-2  col-sm-2 col-md-2  unstyled noMarginLeft">
                                 <li>
-                                    <p><strong> <?php echo $cat_value['category_name']; ?> </strong></p>
+                                    <p>
+                                        <strong> 
+                                            <a href="<?php echo base_url(); ?>products_view/<?php echo $rec_key; ?>/cat/<?php echo $cat_key; ?>">
+                                                <?php echo $cat_value['category_name']; ?> 
+                                            </a>
+                                        </strong></p>
                                 </li>
                                 <?php
                                 foreach ($cat_value['subcategory_id'] as $sub_key => $sub_value) :
                                 ?>
-                                <li><a href="<?php echo base_url(); ?>products_view/<?php echo $sub_key; ?>"> <?php echo $sub_value; ?> </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view/<?php echo $rec_key; ?>/sub/<?php echo $sub_key; ?>"> <?php echo $sub_value; ?> </a></li>
                                 <?php
                                 endforeach;
                                 ?>

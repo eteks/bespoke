@@ -143,6 +143,7 @@
                 ?>
             </div> <!--/.productslider-->
         </div> <!--/.featuredPostContainer-->
+    </div> <!-- /main container -->
 
     <!-- ************  New Arrivals End  ***************  -->
 
@@ -172,7 +173,7 @@
     <!-- Main component call to action -->
 
     <!-- ************  Featured products Start  ***************  -->
-
+    <div class="container main-container">
     <div class="morePost row featuredPostContainer style2 globalPaddingTop ">
         <h3 class="section-title style2 text-center"><span>FEATURED PRODUCT</span></h3>
         <div class="container">
