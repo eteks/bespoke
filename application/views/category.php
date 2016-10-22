@@ -5,7 +5,27 @@
         <div class="breadcrumbDiv col-lg-12">
             <ul class="breadcrumb">
                 <li><a href="index.php">Home</a></li>
-                <li class="active">MEN COLLECTION</li>
+                <?php
+                if(!empty($cat_name)) :
+                ?>
+                <li class="">
+                    <a href="<?php echo base_url(); ?>products_view/<?php echo $this->uri->segment(2); ?>/cat/<?php echo $cat_name['category_id']; ?>"> <?php echo $cat_name['category_name']; ?>
+                    </a>
+                </li>
+                <?php
+                endif;
+                ?>
+                <?php
+                if(!empty($subcategory_name)) :
+                ?>
+                <li class="">
+                    <a href="<?php echo base_url(); ?>products_view/<?php echo $this->uri->segment(2); ?>/sub/<?php echo $subcategory_name['subcategory_id']; ?>"> <?php echo $subcategory_name['subcategory_name']; ?>
+                    </a>
+                </li>
+                <?php
+                endif;
+                ?>  
+
             </ul>
         </div>
     </div>
@@ -17,36 +37,61 @@
                 <!--Category-->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4 class="panel-title"><a data-toggle="collapse" href="#collapseCategory"
-                                                   class="collapseWill active ">
-                            <span class="pull-left"> <i class="fa fa-caret-right"></i></span> Category </a></h4>
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" href="#collapseCategory" class="collapseWill active ">
+                                <span class="pull-left"> 
+                                    <i class="fa fa-caret-right"></i>
+                                </span> 
+                                Category 
+                            </a>
+                        </h4>
                     </div>
                     <div id="collapseCategory" class="panel-collapse collapse in">
                         <div class="panel-body">
                             <ul class="nav nav-pills nav-stacked tree">
-                                <li class="active dropdown-tree open-tree"><a class="dropdown-tree-a"> <span
-                                        class="badge pull-right">42</span> WOMEN COLLECTION </a>
+                                <li class="active dropdown-tree open-tree">
+                                    <?php
+                                    if(!empty($cat_name)) :
+                                    ?> 
+                                    <a class="dropdown-tree-a" href="<?php echo base_url(); ?>products_view/<?php echo $this->uri->segment(2); ?>/cat/<?php echo $cat_name['category_id']; ?>">
+                                        <span class="badge pull-right">42</span>
+                                          <?php echo $cat_name['category_name']; ?> 
+                                    </a>
+                                    <?php
+                                    endif;
+                                    ?>
                                     <ul class="category-level-2 dropdown-menu-tree">
-                                        <li class="dropdown-tree"><a class="dropdown-tree-a" href="sub-<?php echo base_url(); ?>category">
-                                            Tshirt</a></li>
-                                        <li><a> Shoes</a></li>
-                                        <li><a> Shirt</a></li>
-                                        <li><a>T shirt</a></li>
-                                        <li><a href="sub-<?php echo base_url(); ?>category"> Shirt</a></li>
-                                        <li><a href="sub-<?php echo base_url(); ?>category">Fragrances</a></li>
-                                        <li><a href="sub-<?php echo base_url(); ?>category">Scarf</a></li>
-                                        <li><a href="sub-<?php echo base_url(); ?>category">Sandal</a></li>
-                                        <li><a href="sub-<?php echo base_url(); ?>category">Underwear</a></li>
-                                        <li><a href="sub-<?php echo base_url(); ?>category">Winter Collection</a></li>
-                                        <li><a href="sub-<?php echo base_url(); ?>category">Men Accessories</a></li>
+
+
+                                        <?php
+                                        if(!empty($subcategory_list)) :
+                                        foreach($subcategory_list as $sub_data) :
+                                        ?>
+                                        <?php
+                                        if($this->uri->segment(3)=='sub' && $this->uri->segment(4)==$sub_data['subcategory_id']) {
+                                        ?>
+                                        <li class="active_sub_cat">
+                                            <a href="<?php echo base_url(); ?>products_view/<?php echo $sub_data['recipient_mapping_id']; ?>/sub/<?php echo $sub_data['subcategory_id']; ?>">
+                                                <?php echo $sub_data['subcategory_name']; ?>
+                                            </a>
+                                        </li>
+                                        <?php
+                                        }
+                                        else
+                                        {
+                                        ?>
+                                        <li>
+                                            <a href="<?php echo base_url(); ?>products_view/<?php echo $sub_data['recipient_mapping_id']; ?>/sub/<?php echo $sub_data['subcategory_id']; ?>">
+                                                <?php echo $sub_data['subcategory_name']; ?>
+                                            </a>
+                                        </li>
+                                        <?php
+                                        }
+                                        endforeach;
+                                        endif;
+                                        ?>
                                     </ul>
                                 </li>
-                                <li><a href="#"> <span class="badge pull-right">42</span> MEN COLLECTION </a></li>
-                                <li><a href="#"> <span class="badge pull-right">42</span> Baby & Kids </a></li>
-                                <li><a href="#"> <span class="badge pull-right">42</span> Home & Kitchen </a></li>
-                                <li><a href="#"> <span class="badge pull-right">42</span> Baby & Kids </a></li>
-                                <li><a href="#"> <span class="badge pull-right">42</span> More Stores </a></li>
-                                <li><a href="#"> <span class="badge pull-right">42</span> Offers Zone </a></li>
                             </ul>
                         </div>
                     </div>
@@ -62,31 +107,20 @@
                     </div>
                     <div id="collapsePrice" class="panel-collapse collapse in">
                         <div class="panel-body priceFilterBody">
-                            <!-- -->
+
+
+
+
+
                             <label>
                                 <input type="radio" name="agree" value="0"/>
-                                100$ - 500$</label>
+                                100$ - 500$
+                            </label>
                             <br>
-                            <label>
-                                <input type="radio" name="agree" value="1"/>
-                                500$ - 1000$</label>
-                            <br>
-                            <label>
-                                <input type="radio" name="agree" value="2"/>
-                                1000$ - 1500$</label>
-                            <br>
-                            <label>
-                                <input type="radio" name="agree" value="3"/>
-                                1500$ - 2000$</label>
-                            <br>
-                            <label>
-                                <input type="radio" name="agree" value="4"/>
-                                2000$ - 2500$</label>
-                            <br>
-                            <label>
-                                <input type="radio" name="agree" value="5"/>
-                                2500$ - 3000$</label>
-                            <br>
+
+
+
+
                             <label>
                                 <input type="radio" name="agree" value="6" disabled checked/>
                                 Don't know</label>
@@ -430,7 +464,7 @@
 
                         <div class="image">
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/30.jpg" alt="img" class="img-responsive"></a>
-							<div class="product_name"><a><span>Product Name</span></a></div>
+                            <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
                             <h4><a href="<?php echo base_url(); ?>product_details">aliquam erat volutpat</a></h4>
@@ -526,7 +560,7 @@
                         <div class="image">
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/35.jpg" alt="img"
                                                                 class="img-responsive"></a>
-                        	<div class="product_name"><a><span>Product Name</span></a></div>
+                            <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
                             <h4><a href="<?php echo base_url(); ?>product_details">humanitatis per</a></h4>
@@ -558,7 +592,7 @@
                         <div class="image">
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/33.jpg" alt="img"
                                                                 class="img-responsive"></a>
-                     		<div class="product_name"><a><span>Product Name</span></a></div>
+                            <div class="product_name"><a><span>Product Name</span></a></div>
                          </div>
                         <div class="description">
                             <h4><a href="<?php echo base_url(); ?>product_details">Eodem modo typi</a></h4>
@@ -590,7 +624,7 @@
                         <div class="image">
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/10.jpg" alt="img"
                                                                 class="img-responsive"></a>
-                        	<div class="product_name"><a><span>Product Name</span></a></div>
+                            <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
                             <h4><a href="<?php echo base_url(); ?>product_details">sequitur mutationem </a></h4>
@@ -622,7 +656,7 @@
                         <div class="image">
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/37.jpg" alt="img"
                                                                 class="img-responsive"></a>
-                        	<div class="product_name"><a><span>Product Name</span></a></div>
+                            <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
                             <h4><a href="<?php echo base_url(); ?>product_details">consuetudium lectorum.</a></h4>
@@ -654,7 +688,7 @@
                         <div class="image">
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/16.jpg" alt="img"
                                                                 class="img-responsive"></a>
-                        	<div class="product_name"><a><span>Product Name</span></a></div>
+                            <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
                             <h4><a href="<?php echo base_url(); ?>product_details">parum claram</a></h4>
@@ -686,7 +720,7 @@
                         <div class="image">
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/19.jpg" alt="img"
                                                                 class="img-responsive"></a>
-                        	<div class="product_name"><a><span>Product Name</span></a></div>
+                            <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
                             <h4><a href="<?php echo base_url(); ?>product_details">duis dolore </a></h4>
@@ -838,7 +872,7 @@
      aria-labelledby="productSetailsModalAjaxLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-        	<button aria-hidden="true" data-dismiss="modal" class="close" type="button"> ×</button>
+            <button aria-hidden="true" data-dismiss="modal" class="close" type="button"> ×</button>
 <div class="col-lg-5 col-md-5 col-sm-5  col-xs-12">
 
     <!-- product Image -->

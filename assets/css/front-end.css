@@ -14,4 +14,7 @@
 a {
 	cursor : pointer !important;
 }
+.active_sub_cat a{
+	color: #c81d6a !important;
+}
 

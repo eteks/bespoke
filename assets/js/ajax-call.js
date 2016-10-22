@@ -2,6 +2,22 @@ $(document).ready(function() {
 
 	/*  -- Registration and Login section Start -- */
 
+
+
+
+
+// var array = ["aasdsa","dasdfasd","daSDAD","DASDSAD","DDSADA","DSADSB"];
+// array = array.filter(function(value) {
+//     return value.indexOf('D') < 0;
+// });
+// var test=0;
+// $.each(array , function(i, val) { 
+//   test += parseInt(array[i].length); 
+// });
+
+// alert(test);
+
+
 	// Registeration
 	$('.registration_login').on('submit',function(e) {
 		e.preventDefault();
