@@ -21,6 +21,9 @@
 .fl{
 	float:left;
 }
+.error_admin_check{
+   border: 5px solid red !important;
+}
 .image_icon{
 	height: 44px;
     width: 43px;
@@ -69,6 +72,12 @@
     /*width: 981px;*/
    width:95%;
 }
+.check{
+  display: block;
+}
+#subcategory_status{
+  display: block !important;
+}
 .attribute_block label{
 	width: 125px !important;
     margin-top: 10px ;
@@ -98,6 +107,13 @@
     height: auto;
     padding: 10px;
     width: 760px;
+    margin-bottom:10px;
+}
+.subcategory_group{
+  border: 1px solid #cccccc;
+    height: auto;
+    padding: 10px;
+    width: 333px;
     margin-bottom:10px;
 }
 #delete_btn{
@@ -566,7 +582,47 @@
 .visit_site{
   margin-left: 9px !important;
 }
-
+.border_line {
+  border-color: red; 
+}
+.subcategory_scroll_b {
+    max-height: 50px !important;
+    max-width: 120px !important;
+    min-height: 10px !important;
+    overflow: auto !important;
+    display: block;
+    /*border-bottom: 0 solid #000 !important;*/
+    border-left: 0 solid #000 !important;
+    border-top: 0 solid #000 !important;
+    line-height: 22px;
+}
+.subcategory_scroll_a{
+    max-height: 120px !important;
+    max-width: 320px !important;
+    min-height: 10px !important;
+    overflow: auto !important;
+    display: block;
+    border-left: 0 solid #000 !important;
+    border-top: 0 solid #000 !important;
+    line-height: 22px;
+    }
+.subcategory_scroll_title_a{    
+    font-size: 12px !important;
+    background-color:#eeeeee;
+    padding: 5px 10px;
+    }
+.subcategory_scroll_title_b{    
+    font-size: 12px !important;
+    background-color:#eeeeee;
+    padding: 5px 10px;
+    }
+.product_name_len{
+	min-width:200px !important;
+	max-width: 200px !important;
+}
+.bottom_border_line{
+	border-bottom: 1px solid #eeeeee !important;
+}
 // ===========================
 //        IMAGE UPLOAD
 // ===========================

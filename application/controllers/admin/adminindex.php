@@ -240,6 +240,13 @@ class Adminindex extends CI_Controller {
 	    $u = array_unique($ret);
 	    return (sizeof($u) == 1) ? $u[0] : $u;
 	}
+	public function ajax_subcategory()
+	{
+		// $city['state_list'] = $this->location->get_state();
+		// $city['city_list'] = $this->location->get_state();
+		$data = $this->catalog->get_ajax_subcategory_data();
+		echo json_encode($data);
+	}
 	public function subcategory()
 	{	
 		//get list of category from database and store it in array variable 'category' with key 'category_list'
@@ -271,6 +278,11 @@ class Adminindex extends CI_Controller {
 	             'label'   => 'Sub Category',
 	             'rules'   => 'trim|required|xss_clean|is_unique[shopping_subcategory.subcategory_name]'
 	          ),
+	       array(
+	             'field'   => 'select_recipient[]',
+	             'label'   => 'Select Recipient',
+	             'rules'   => 'required'
+	          ), 
 	       array(
 	             'field'   => 'select_category[]',
 	             'label'   => 'Select Category',
@@ -306,7 +318,8 @@ class Adminindex extends CI_Controller {
 						'subcategory_status' => $this->input->post('subcategory_status'),
 					);
 					$category_data = $this->input->post('select_category');
-					$result = $this->catalog->insert_subcategory($data,$category_data);
+					$recipient_data = $this->input->post('select_recipient');
+					$result = $this->catalog->insert_subcategory($data,$recipient_data,$category_data);
 					if($result)
 						$status['error_message'] = "SubCategory Inserted Successfully!";
 					else
@@ -316,6 +329,7 @@ class Adminindex extends CI_Controller {
     	}
 		// print_r($status);	
 		$status['category_list'] = $this->catalog->get_categories();
+		$status['recipient_list'] = $this->catalog->get_recipient();
 		$this->load->view('admin/add_subcategory',$status);
 	}
 	public function edit_subcategory()

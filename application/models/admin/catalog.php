@@ -45,16 +45,31 @@ class Catalog extends CI_Model {
 		$query = $this->db->get_where('shopping_category', array('category_id' => $id));
 		return $query->row_array();
 	}
+	public function get_ajax_subcategory_data()
+	 {
+		//  Get area data based on citypublic 
+		if($this->input->post('selected_recipient_id')) 
+		{
+			$subcategory_where='(rc.recipient_mapping_id="'.$this->input->post('selected_recipient_id').'" and c.category_status= 1)';
+			$this->db->select('*');
+			$this->db->from('shopping_recipient_category rc');
+			$this->db->join('shopping_category c','rc.category_mapping_id=c.category_id','inner');
+			$this->db->where($subcategory_where);
+			$query = $this->db->get()->result_array();
+		}
+		return $query;
+	 }
 	public function get_subcategories()
 	{	
 		//get list of subcategories from database using mysql query 
 		// $query = $this->db->query("SELECT * FROM shopping_subcategory order 
 		// 	by subcategory_createddate desc");	
 
-		$this->db->select('sub.*,cat.category_name');
+		$this->db->select('sub.*,cat.category_name,rec.recipient_type');
 		$this->db->from('shopping_subcategory AS sub');
 		$this->db->join('shopping_subcategory_category_and_recipient AS subcat', 'subcat.subcategory_mapping_id = sub.subcategory_id', 'inner');
 		$this->db->join('shopping_category AS cat', 'cat.category_id = subcat.category_mapping_id', 'inner');
+		$this->db->join('shopping_recipient AS rec', 'rec.recipient_id = subcat.recipient_mapping_id', 'inner');
 		// $this->db->group_by('subcategory_id');
 		$this->db->order_by('subcategory_createddate','desc');
 		
@@ -65,18 +80,19 @@ class Catalog extends CI_Model {
 		//return all records in array format to the controller
 		return $query->result_array();
 	}
-	public function insert_subcategory($data,$category_data)
+	public function insert_subcategory($data,$recipient_data,$category_data)
 	{	
 		// Query to insert data in database
 		$this->db->insert('shopping_subcategory', $data);
 		//get inserted subcategory id to map in subcategory category relationship table
 		$subcategory_id = $this->db->insert_id();
-		foreach($category_data as $key => $value) {
-			$subcategory_category_map = array(
+		foreach($category_data as $value) {
+		$subcategory_category_recipient_map = array(
                 					'subcategory_mapping_id' => $subcategory_id,
-                					'category_mapping_id' => $value,
+	               					'recipient_mapping_id' => $recipient_data,
+	               					'category_mapping_id' => $value
              						);
-			$this->db->insert('shopping_subcategory_category', $subcategory_category_map);
+		$this->db->insert('shopping_subcategory_category_and_recipient', $subcategory_category_recipient_map);
 		}
 		if ($this->db->affected_rows() > 0) {
 			return true;
@@ -122,7 +138,7 @@ class Catalog extends CI_Model {
 		$query['subcategory_data'] = $this->db->get_where('shopping_subcategory', array('subcategory_id' => $id))->row_array();
 		// $query['subcategory_category'] = $this->db->get_where('shopping_subcategory_category', array('subcategory_mapping_id' => $id))->result_array();
 		$this->db->select('category_mapping_id');
-		$this->db->from('shopping_subcategory_category');
+		$this->db->from('shopping_subcategory_category_and_recipient');
 		$this->db->where('subcategory_mapping_id',$id);
 		$get_data = $this->db->get()->result();
 		$query['subcategory_category'] = array();
@@ -133,17 +149,19 @@ class Catalog extends CI_Model {
 	}
 	public function get_recipient()
 	{	
-		//get list of subcategories from database using mysql query 	
-		$this->db->select('rec.*,cat.category_name');
-		$this->db->from('shopping_recipient AS rec');
-		$this->db->join('shopping_recipient_category AS reccat', 'reccat.recipient_mapping_id = rec.recipient_id', 'inner');
-		$this->db->join('shopping_category AS cat', 'cat.category_id = reccat.category_mapping_id', 'inner');
-		// $this->db->group_by('subcategory_id');
-		$this->db->order_by('recipient_createddate','desc');
+		$where = '(recipient_status=1)';
+		$query = $this->db->get_where('shopping_recipient',$where);
+		// //get list of subcategories from database using mysql query 	
+		// $this->db->select('rec.*,cat.category_name');
+		// $this->db->from('shopping_recipient AS rec');
+		// $this->db->join('shopping_recipient_category AS reccat', 'reccat.recipient_mapping_id = rec.recipient_id', 'inner');
+		// $this->db->join('shopping_category AS cat', 'cat.category_id = reccat.category_mapping_id', 'inner');
+		// // $this->db->group_by('subcategory_id');
+		// $this->db->order_by('recipient_createddate','desc');
 		
-		$query = $this->db->get();
+		// $query = $this->db->get();
 
-		//return all records in array format to the controller
+		 //return all records in array format to the controller
 		return $query->result_array();
 	}
 	public function insert_recipient($data,$category_data)

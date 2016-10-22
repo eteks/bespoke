@@ -45,7 +45,7 @@
     <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
     <thead>
     <tr>
-		<th class="product">Subcategory Name</th>
+		<th class="product product_name_len">Subcategory Name</th>
         <th class="product">Recipient Name & Categories</th>
 		<!-- <th class="product">Categories</th> -->
 		<th class="product_small">Status</th>
@@ -57,55 +57,45 @@
     <?php foreach ($subcategory_list as $subcat): ?>
         <tr>
             <td><?php echo $subcat["subcategory_name"] ?></td>
-            <td><?php //echo $subcat["recipient_type"] ?>
-<table border="1">
+            <td class="subcategory_scroll_a"><?php //echo $subcat["recipient_type"] ?>
+<table>
     <tr>
-        <td>Recipient Name</td>
-        <td>Category Name</td>
+        <th class="subcategory_scroll_title_a">Recipient Name</td>
+        <th class="subcategory_scroll_title_b">Category Name</td>
 
     </tr>
-    <tr>
+    <tr class="bottom_border_line">
         <td><?php echo $subcat["recipient_type"] ?></td>
-        <td><table border="1">
-            <tr><td><?php 
+        <td class="subcategory_scroll_b">
+        	<table>
+            <?php 
                 if(sizeof($subcat["category_name"]) > 1){
                     foreach($subcat["category_name"] as $cat) 
                         echo $cat."<br>";
                 }
                 else
                     echo $subcat["category_name"];
-                ?></td></tr>
-            <tr><td><?php 
-                if(sizeof($subcat["category_name"]) > 1){
-                    foreach($subcat["category_name"] as $cat) 
-                        echo $cat."<br>";
-                }
-                else
-                    echo $subcat["category_name"];
-                ?></td></tr>
-            <tr><td><?php 
-                if(sizeof($subcat["category_name"]) > 1){
-                    foreach($subcat["category_name"] as $cat) 
-                        echo $cat."<br>";
-                }
-                else
-                    echo $subcat["category_name"];
-                ?></td></tr>
+                ?>
             </table></td>
 
     </tr>
-    <tr>
-    </tr>
-    <tr>
-    </tr>
-    <tr>
-    </tr>
-    <tr>
-    </tr>  
+     <tr  class="bottom_border_line">
+        <td><?php echo $subcat["recipient_type"] ?></td>
+        <td class="subcategory_scroll_b">
+        	<table>
+            <?php 
+                if(sizeof($subcat["category_name"]) > 1){
+                    foreach($subcat["category_name"] as $cat) 
+                        echo $cat."<br>";
+                }
+                else
+                    echo $subcat["category_name"];
+                ?>
+            </table></td>
+    </tr> 
 </table>
      </td>
-
-<!--             <td class="product_categories_name">
+<!-- <td class="product_categories_name">
                 <?php 
                 if(sizeof($subcat["category_name"]) > 1){
                     foreach($subcat["category_name"] as $cat) 
