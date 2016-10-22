@@ -117,6 +117,14 @@
                                 <li><a href="<?php echo base_url(); ?>admin/adminindex/transaction">Transaction</a></li>
                             </ul>
                         </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-map-marker"></i><span> Photography</span></a>
+                            <ul class="nav nav-pills nav-stacked sub-menu">
+                                <li class="<?php if($uri_segment =="add_photoshoot_type"||$uri_segment =="edit_photoshoot_type"){echo "active";}?>"><a href="<?php echo base_url(); ?>admin/photography/add_photoshoot_type">Photo Shoot Type</a></li>
+                                <li class="<?php if($uri_segment =="add_photoshoot_person"||$uri_segment =="edit_photoshoot_person"){echo "active";}?>"><a href="<?php echo base_url(); ?>admin/adminindex/photoshoot_person">Photo shoot Person Details</a></li>
+
+                            </ul>
+                        </li>
                 </div>
             </div>
         </div>
