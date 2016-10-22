@@ -44,7 +44,7 @@ $route['404_override'] = 'index/nopage';
 
 /* Routes for end user side by siva*/
 
-$route['products_view/(:any)'] = 'index/products_list/$1';
+$route['products_view'] = 'index/products_list';
 $route['recipients_view/(:any)'] = 'index/recipients_list/$1';
 $route['about_us'] = 'index/about_details';
 $route['contact_us'] = 'index/contact_details';

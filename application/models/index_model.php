@@ -183,93 +183,108 @@ class Index_Model extends CI_Model {
 
   // sidebar list
   public function listing_data()
-  { 
+  {   
+    $param_len = count($this->input->get());
     $query['error'] = 0;
+    if($this->input->get('rec') && $this->input->get('cat') && $param_len==2) {
 
+      // Get recipient name
+      $recipient_name_where = '(recipient_id="'.$this->input->get('rec').'")';
+      $query['rec_name'] = $this->db->get_where('shopping_recipient',$recipient_name_where)->row_array();
 
-    if($this->uri->segment(2)) {
-      if($this->uri->segment(3) == 'sub') {
-        if($this->uri->segment(4)) {
+      // Get category name
+      $category_name_where = '(category_id="'.$this->input->get('cat').'")';
+      $query['cat_name'] = $this->db->get_where('shopping_category',$category_name_where)->row_array();
 
-          // Get subcategory name
-          $subcategory_name_where = '(subcategory_id="'.$this->uri->segment(4).'")';
-          $query['subcategory_name'] = $this->db->get_where('shopping_subcategory',$subcategory_name_where)->row_array();
- 
-          // Get category name
-          $category_name_where = '(scr.subcategory_mapping_id="'.$this->uri->segment(4).'" and scr.recipient_mapping_id="'.$this->uri->segment(2).'")';
-          $this->db->select('*');
-          $this->db->from('shopping_subcategory_category_and_recipient scr');
-          $this->db->join('shopping_category c','scr.category_mapping_id=c.category_id','inner');
-          $this->db->where($category_name_where);
-          $this->db->group_by('c.category_id');
-          $query['cat_name'] = $this->db->get()->row_array();
+      // Get subcategory name
+      $query['subcategory_name'] = array();
 
-          // Get subcategory list
-          $sub_data_where = '(scrs.category_mapping_id="'.$query['cat_name']['category_id'].'" and scrs.recipient_mapping_id="'.$this->uri->segment(2).'")';
-          $this->db->select('*');
-          $this->db->from('shopping_subcategory_category_and_recipient scrs');
-          $this->db->join('shopping_subcategory ss','scrs.subcategory_mapping_id=ss.subcategory_id','inner');
-          $this->db->where($sub_data_where);
-          $this->db->group_by('ss.subcategory_id');
-          $query['subcategory_list'] = $this->db->get()->result_array(); 
+      // Get subcategory list
+      $sub_data_where = '(scrs.category_mapping_id="'.$this->input->get('cat').'" and scrs.recipient_mapping_id="'.$this->input->get('rec').'")';
+      $this->db->select('*');
+      $this->db->from('shopping_subcategory_category_and_recipient scrs');
+      $this->db->join('shopping_subcategory ss','scrs.subcategory_mapping_id=ss.subcategory_id','inner');
+      $this->db->where($sub_data_where);
+      $this->db->group_by('ss.subcategory_id');
+      $query['subcategory_list'] = $this->db->get()->result_array();
 
-          // product list
-          // $pro_data_where = '(product_subcategory_id="'.$this->uri->segment(4).'")';
-          // $query['product_list'] = $this->db->order_by('product_price')->get_where('shopping_product',$pro_data_where)->result_array(); 
+      // Product list
+      $pro_data_where = '(p.product_recipient_id="'.$this->input->get('rec').'" and p.product_category_id="'.$this->input->get('cat').'")';
+      $this->db->select('*');
+      $this->db->from('shopping_product p');
+      $this->db->join('shopping_product_upload_image pui','p.product_id=pui.product_mapping_id','inner');
+      $this->db->where($pro_data_where);
+      $this->db->group_by('p.product_id');
+      $this->db->order_by('p.product_price');
+      $query['product_list'] = $this->db->get()->result_array();
 
-
-          // echo "<pre>";
-          // print_r($query['product_list']);
-
-          // echo "</pre>";
-
-
-
-
-
-
-
-        }     
-        else {
-          $query['error'] = 1;
-        }
-
-      }
-      else if($this->uri->segment(3) == 'cat') {
-        if($this->uri->segment(4)) {
-
-          // Get subcategory name
-          $query['subcategory_name'] = array();
-
-          // Get category name
-          $category_name_where = '(category_id="'.$this->uri->segment(4).'")';
-          $query['cat_name'] = $this->db->get_where('shopping_category',$category_name_where)->row_array();
-
-          // Get subcategory list
-          $sub_data_where = '(scrs.category_mapping_id="'.$this->uri->segment(4).'")';
-          $this->db->select('*');
-          $this->db->from('shopping_subcategory_category_and_recipient scrs');
-          $this->db->join('shopping_subcategory ss','scrs.subcategory_mapping_id=ss.subcategory_id','inner');
-          $this->db->where($sub_data_where);
-          $this->db->group_by('ss.subcategory_id');
-          $query['subcategory_list'] = $this->db->get()->result_array();
-        }
-        else {
-          $query['error'] = 1;
-        }
-
-
+      // Attribute list
+      $query['attribute_list'] = array();
+      $rec_id = $this->input->get('rec');
+      $cat_id = $this->input->get('cat');
+      $attribute_list_query = $this->db->query("SELECT * FROM shopping_product_attribute_value AS c INNER JOIN ( SELECT product_attribute_group_id,product_mapping_id, SUBSTRING_INDEX( SUBSTRING_INDEX( t.product_attribute_value_combination_id, ',', n.n ) , ',', -1 ) value FROM shopping_product_attribute_group t CROSS JOIN numbers n WHERE n.n <=1 + ( LENGTH( t.product_attribute_value_combination_id ) - LENGTH( REPLACE( t.product_attribute_value_combination_id, ',', ''))) ) AS a  ON a.value = c.product_attribute_value_id INNER JOIN shopping_product_attribute AS pa ON c.product_attribute_id=pa.product_attribute_id INNER JOIN shopping_product AS sp ON a.product_mapping_id=sp.product_id where sp.product_recipient_id=$rec_id and sp.product_category_id=$cat_id group by(c.product_attribute_value_id)");
+      if($attribute_list_query->num_rows() > 0) {
+        $query['attribute_list'] = $attribute_list_query->result_array();  
       }
 
-      else {
-      $query['error'] = 1;
+
+
+
+
+
+
+    }
+    else if($this->input->get('rec') && $this->input->get('cat') && $this->input->get('sub') && $param_len==3) {
+
+      // Get recipient name
+      $recipient_name_where = '(recipient_id="'.$this->input->get('rec').'")';
+      $query['rec_name'] = $this->db->get_where('shopping_recipient',$recipient_name_where)->row_array();
+
+      // Get category name
+      $category_name_where = '(category_id="'.$this->input->get('cat').'")';
+      $query['cat_name'] = $this->db->get_where('shopping_category',$category_name_where)->row_array();
+
+      // Get subcategory name
+      $subcategory_name_where = '(subcategory_id="'.$this->input->get('sub').'")';
+      $query['subcategory_name'] = $this->db->get_where('shopping_subcategory',$subcategory_name_where)->row_array();
+
+      // Get subcategory list
+      $sub_data_where = '(scrs.category_mapping_id="'.$this->input->get('cat').'" and scrs.recipient_mapping_id="'.$this->input->get('rec').'")';
+      $this->db->select('*');
+      $this->db->from('shopping_subcategory_category_and_recipient scrs');
+      $this->db->join('shopping_subcategory ss','scrs.subcategory_mapping_id=ss.subcategory_id','inner');
+      $this->db->where($sub_data_where);
+      $this->db->group_by('ss.subcategory_id');
+      $query['subcategory_list'] = $this->db->get()->result_array(); 
+
+      // product list
+      $pro_data_where = '(p.product_recipient_id="'.$this->input->get('rec').'" and p.product_category_id="'.$this->input->get('cat').'" and p.product_subcategory_id="'.$this->input->get('sub').'")';
+      $this->db->select('*');
+      $this->db->from('shopping_product p');
+      $this->db->join('shopping_product_upload_image pui','p.product_id=pui.product_mapping_id','inner');
+      $this->db->where($pro_data_where);
+      $this->db->group_by('p.product_id');
+      $this->db->order_by('p.product_price');
+      $query['product_list'] = $this->db->get()->result_array();
+
+      // Attribute list
+      $query['attribute_list'] = array();
+      $rec_id = $this->input->get('rec');
+      $cat_id = $this->input->get('cat');
+      $sub_id = $this->input->get('sub');
+      $attribute_list_query = $this->db->query("SELECT * FROM shopping_product_attribute_value AS c INNER JOIN ( SELECT product_attribute_group_id,product_mapping_id, SUBSTRING_INDEX( SUBSTRING_INDEX( t.product_attribute_value_combination_id, ',', n.n ) , ',', -1 ) value FROM shopping_product_attribute_group t CROSS JOIN numbers n WHERE n.n <=1 + ( LENGTH( t.product_attribute_value_combination_id ) - LENGTH( REPLACE( t.product_attribute_value_combination_id, ',', ''))) ) AS a  ON a.value = c.product_attribute_value_id INNER JOIN shopping_product_attribute AS pa ON c.product_attribute_id=pa.product_attribute_id INNER JOIN shopping_product AS sp ON a.product_mapping_id=sp.product_id where sp.product_recipient_id=$rec_id and sp.product_category_id=$cat_id and sp.product_subcategory_id=$sub_id group by(c.product_attribute_value_id)");
+      if($attribute_list_query->num_rows() > 0) {
+        $query['attribute_list'] = $attribute_list_query->result_array();  
       }
+
+
     }
     else {
       $query['error'] = 1;
     }
 
 
+  
 
 
 

@@ -372,7 +372,7 @@
                                 <li>
                                     <p>
                                         <strong> 
-                                            <a href="<?php echo base_url(); ?>products_view/<?php echo $rec_key; ?>/cat/<?php echo $cat_key; ?>">
+                                            <a href="<?php echo base_url(); ?>products_view/?rec=<?php echo $rec_key; ?>&cat=<?php echo $cat_key; ?>">
                                                 <?php echo $cat_value['category_name']; ?> 
                                             </a>
                                         </strong></p>
@@ -380,7 +380,7 @@
                                 <?php
                                 foreach ($cat_value['subcategory_id'] as $sub_key => $sub_value) :
                                 ?>
-                                <li><a href="<?php echo base_url(); ?>products_view/<?php echo $rec_key; ?>/sub/<?php echo $sub_key; ?>"> <?php echo $sub_value; ?> </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view/?rec=<?php echo $rec_key; ?>&cat=<?php echo $cat_key; ?>&sub=<?php echo $sub_key; ?>"> <?php echo $sub_value; ?> </a></li>
                                 <?php
                                 endforeach;
                                 ?>

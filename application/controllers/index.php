@@ -197,9 +197,29 @@ class Index extends CI_Controller {
 		$sidebar_list = $this->index_model->listing_data();
 		$data['error'] = $sidebar_list['error'];
 		if($data['error'] != 1) {
+			$data['rec_name'] = $sidebar_list['rec_name'];
 			$data['cat_name'] = $sidebar_list['cat_name'];
-			$data['subcategory_list'] = $sidebar_list['subcategory_list'];
 			$data['subcategory_name'] = $sidebar_list['subcategory_name'];
+			$data['subcategory_list'] = $sidebar_list['subcategory_list'];
+			$data['product_list'] = $sidebar_list['product_list'];
+			$data_atribute = $sidebar_list['attribute_list'];
+			$out = array();
+			if(!empty($data_atribute)) {
+				foreach ($data_atribute as $key => $row) {
+					foreach ($row as $k => $r) {
+						if(!isset($out[$row['product_attribute_id']][$row['product_attribute_value_id']])) {
+							$out[$row['product_attribute_id']]['product_attribute_value_id'][$row['product_attribute_value_id']] = $row['product_attribute_value'];
+				    	}
+				    	if($k == 'product_attribute') {
+	     					$out[$row['product_attribute_id']][$k] = $row[$k];
+	     				}
+			    	}
+				}
+			}
+			$data['attribute_list'] = $out;
+			// echo "<pre>";
+			// print_r($out);
+			// echo "</pre>";
 			$this->load->view('category',$data);
 		}
 		else {
