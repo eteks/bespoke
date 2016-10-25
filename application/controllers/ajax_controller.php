@@ -33,6 +33,46 @@ class Ajax_Controller extends CI_Controller {
         $data['featured_remaining_products'] = $data_values['featured_remaining_products'];
         $this->load->view('index',$data);
     }
+    // Product attributes combination
+    public function attribute_price()
+    {   
+        $data = $this->ajax_model->get_attribute_price();
+        echo json_encode($data);
+    }
+
+    // Product attributes in popup
+    public function popup_attributes()
+    { 
+        $product_details = $this->ajax_model->get_product_info_popup();
+        $data['error'] = $product_details['error'];
+        if($data['error'] != 1) {
+            $data['product_details'] = $product_details['product_details'];
+            $data_attributes_values = $product_details['product_attributes'];
+            $out = array();
+            if(!empty($data_attributes_values)) {
+                foreach ($data_attributes_values as $key => $row) {
+                    foreach ($row as $k => $r) {
+                        if(!isset($out[$row['product_attribute_id']][$row['product_attribute_value_id']])) {
+                            $out[$row['product_attribute_id']]['product_attribute_value_id'][$row['product_attribute_value_id']] = $row['product_attribute_value'];
+                        }
+                        if($k == 'product_attribute') {
+                            $out[$row['product_attribute_id']][$k] = $row[$k];
+                        }
+                    }
+                }
+            }
+            $data['product_attributes'] = $out;
+            $data['product_gallery'] = $product_details['product_gallery'];
+            $data['default_group'] = $product_details['default_group'];
+            $this->load->view('cart_popup',$data); 
+        }
+        else {
+            redirect(base_url().'nopage');
+        }   
+    }
+
+        
+
 }
 
 /* End of file welcome.php */

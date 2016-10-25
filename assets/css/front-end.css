@@ -87,3 +87,11 @@ a {
 }
 
 /* --------------         Price range slider end       --------------------- */
+
+
+.attribute_section_list {
+    margin-bottom: 15px;
+}
+.add_to_cart_status {
+    display: none;
+}
