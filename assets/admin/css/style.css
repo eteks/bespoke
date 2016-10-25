@@ -91,7 +91,7 @@
 	margin-left: 10px;
     margin-top: 50px;
 }*/
-.attribute_action_btn{
+.attribute_action_btn,.photoshoot_image_action_btn{
     margin-left: 10px;
     /*margin-top: 60px;*/
     font-size: 12px;
@@ -286,7 +286,7 @@
 /*.attibute_remove_btn{
     display: none;
 }*/
-.attribute_btn_disabled{
+.attribute_btn_disabled,.photoshoot_image_btn_disabled{
     cursor: default;
     pointer-events: none;
     background-color: #ffffff;
@@ -642,6 +642,16 @@
 .address_form_group > textarea{
   height: 116px;
 }
+.photoshoot_image_clone{
+    border: 1px solid #cccccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 280px;
+}
+.photoshoot_image_clone > .photoshoot_image_group_status{
+    width: 163px;
+}
+
 // ===========================
 //        IMAGE UPLOAD
 // ===========================

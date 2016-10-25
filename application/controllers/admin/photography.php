@@ -219,6 +219,7 @@ class Photography extends CI_Controller {
 					'photoshoot_type_status' => $this->input->post('photoshoot_type_status'),
 					);
 		// print_r($status['error_message']);
+		$status['photoshoot_type_list'] = $this->photographymodel->get_photoshoot_type();
 		$this->load->view('admin/add_photoshoot_person_detail',$status);
 	}
 }

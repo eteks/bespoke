@@ -484,5 +484,19 @@ $(document).ready(function() {
     $(document).delegate(".select_multiple_option a",'click',function () {
       $(this).parents('.multiple_dropdown').children('.mutliSelect').slideToggle('fast');
       // $(".mutliSelect ul").slideToggle('fast');
-    });          
+    });      
+    // Clone process for Photography Person Detail    
+    var cloneCount_image = 1;
+    $(document).delegate('.photoshoot_image_add_btn','click',function (e) {
+            cloneCount_image = cloneCount_image + 1;
+            cloneelement = $(this).parents('.photoshoot_image_group').find('.photoshoot_image_clone:last').clone();
+            //After clone the element, assign one unique id and append to particular parent class
+            cloneelement.attr('id', 'photoshoot_image_clone'+cloneCount_image).appendTo($(this).parents('.photoshoot_image_group'));
+            //To remove add button from previous clone attribute
+            cloneelement.siblings('#photoshoot_image_clone'+(cloneCount_image-1)).find('.photoshoot_image_add_btn').remove();
+            cloneelement.siblings('#photoshoot_image_clone'+(cloneCount_image-1)).find('.photoshoot_image_remove_btn').removeClass('photoshoot_image_btn_disabled');
+    });
+    $(document).delegate('.photoshoot_image_remove_btn','click',function () {
+        $(this).parents('.photoshoot_image_clone').remove();
+    });
 });

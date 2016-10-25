@@ -43,6 +43,7 @@
             </div>
             <div class="box-content">
 <?php } ?>
+                <span class="photo_labelError">Invalid file type</span>
                 <?php if (isset($error_message)){ 
                     echo "<p class='error_msg_reg alert alert-info'>".$error_message."</p>";
                 }?>
@@ -62,27 +63,53 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group address_form_group">
-                        <label for="description">Person Address<span class="fill_symbol"> *</span></label>
-                        <textarea type="text" class="form-control product_default_field" id="description" placeholder="Enter Person address" name="person_address"><?php echo set_value('person_address');?></textarea>
-                    </div> 
                     <div class="form-group couple_form_group">
                         <label for="exampleInputEmail1">Couple Name<span class="fill_symbol"> *</span></label>
                         <input type="text" class="form-control" id="category_name" placeholder="Mr." name="person_bride_name" value="<?php echo set_value('person_bride_name');?>">
                         <input type="text" class="form-control" id="category_name" placeholder="Mrs." name="person_groom_name" value="<?php echo set_value('person_groom_name');?>">
                     </div>  <!-- couple_form_group -->
+                    <div class="form-group address_form_group">
+                        <label for="description">Person Address<span class="fill_symbol"> *</span></label>
+                        <textarea type="text" class="form-control product_default_field" id="description" placeholder="Enter Person address" name="person_address"><?php echo set_value('person_address');?></textarea>
+                    </div> 
                     <div class="form-group">
                         <label for="exampleInputFile">Upload Image<span class="fill_symbol"> *</span></label>
-                        <input type="file" id="category_image" name="category_image">
-                        <span class="upload_limit">(Maximum Upload size 1MB and Max Upload dimensions 450px * 600px)</span>
+                        <!-- <input type="file" id="category_image" name="category_image"> -->
+                        <div class="photoshoot_image_group">
+                        	<div class="photoshoot_image_clone" id="photoshoot_image_clone1">
+		                  		<input type='file' id='image_upload' name='person_image[]' class="photoshoot_image_group_file" /> 
+		                        <select name="photoshoot_person_status[]" id="sel_a" class="product-type-filter form-control photoshoot_image_group_status">
+	                                <option value="">Select</option>
+	                                <option value="1" <?php echo set_select('photoshoot_person_status', '1',false); ?>>Active</option>
+	                                <option value="0" <?php echo set_select('photoshoot_person_status', '0',false); ?>>Inactive</option>
+	                            </select>
+	                            <div class="add-rmv-btn">
+	                                <input value="Add" class="btn submit-btn btn-default photoshoot_image_add_btn photoshoot_image_action_btn" type="button">
+	                                <input value="Remove" class="btn submit-btn btn-default photoshoot_image_remove_btn photoshoot_image_action_btn photoshoot_image_btn_disabled" type="button">
+                            	</div>
+                            </div>
+	                    </div> <!--  photoshoot_image_group -->
+                        <span class="product_error_message">The Product Image field is required</span>
+                        <span class="upload_limit">(Maximum Upload size 1MB and Max Upload dimensions 450px * 600px)</span>   
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="selectError">PhotoShoot Type<span class="fill_symbol"> *</span></label>
+                        <div class="controls">
+                            <select name="photoshoot_type" id="sel_a" class="product-type-filter form-control city_act">
+                                <option value="">Select</option>
+                                <?php foreach ($photoshoot_type_list as $ptype): ?>
+                                    <option value="<?php echo $ptype["display_id"]; ?>" <?php echo set_select('photoshoot_type', $key ,false); ?>><?php echo $ptype["display_title"]; ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="selectError">Status<span class="fill_symbol"> *</span></label>
                         <div class="controls">
-                            <select name="category_status" id="sel_a" class="product-type-filter form-control city_act">
+                            <select name="person_status" id="sel_a" class="product-type-filter form-control city_act">
                                 <option value="">Select</option>
-                                <option value="1" <?php echo set_select('category_status', '1',false); ?>>Active</option>
-                                <option value="0" <?php echo set_select('category_status', '0',false); ?>>Inactive</option>
+                                <option value="1" <?php echo set_select('person_status', '1',false); ?>>Active</option>
+                                <option value="0" <?php echo set_select('person_status', '0',false); ?>>Inactive</option>
                             </select>
                         </div>
                     </div>
