@@ -3,7 +3,9 @@ $(document).ready(function() {
 	/*  -- Registration and Login section Start -- */
 
 
-
+$(document).ajaxComplete(function() {
+    centerContent();
+});
 
 
 // var array = ["aasdsa","dasdfasd","daSDAD","DASDSAD","DDSADA","DSADSB"];
