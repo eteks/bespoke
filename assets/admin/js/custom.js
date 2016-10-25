@@ -75,6 +75,7 @@ $(document).ready(function() {
                 $(this).removeClass('attribute_error');
             }
         });
+
         if(!$error){
             cloneCount = cloneCount +1;
             cloneelement = $(this).parents('.clone_attribute_group').find('.clone_attribute:last').clone();
@@ -89,7 +90,7 @@ $(document).ready(function() {
         }
     });
     var cloneCount_att = 1;
-    $(document).delegate('.attibute_add','click',function () {
+    $(document).delegate('.attibute_add,subcategory_checkbox','click',function () {
         $error = false;
         $(this).parents('.attribute_group').find('.attribute_validate').each(function(){
             if($(this).val() == '')
@@ -102,6 +103,16 @@ $(document).ready(function() {
                 $(this).removeClass('attribute_error');
             }
         });
+
+        var num = $(this).parents('.attribute_group').find("input[name='select_category[]']:checked").length;
+       if(num <= 0){
+        $error = true; 
+        $(this).parents('.attribute_group').find('.attribute_validate_category').addClass('attribute_error');
+       // alert("test1");
+   }else {
+       $(this).parents('.attribute_group').find('.attribute_validate_category').removeClass('attribute_error');
+       // alert("test2");
+   }
         if(!$error){
             var equal_check_array = [];
             $(this).parents('.attribute_group').find('.att_equal').each(function(){
@@ -175,7 +186,7 @@ $(document).ready(function() {
     //     // return false;   
     // });
 
-    $('body').delegate("#add_giftproduct,#edit_giftproduct",'submit',function(e){ 
+    $('body').delegate("#add_giftproduct,#edit_giftproduct #admin_check",'submit',function(e){ 
     // $("#add_giftproduct").submit(function(){ 
         // e.preventDefault();
         var attribute_length = [];
@@ -484,5 +495,15 @@ $(document).ready(function() {
     $(document).delegate(".select_multiple_option a",'click',function () {
       $(this).parents('.multiple_dropdown').children('.mutliSelect').slideToggle('fast');
       // $(".mutliSelect ul").slideToggle('fast');
-    });          
+    });
+subcategory_array = [];
+    $(document).on('click','.subcategory_checkbox',function(){
+        if($(this). prop("checked") == true && $.inArray($(this).val(), subcategory_array) == -1)
+            subcategory_array.push($(this).val());
+        else if($(this). prop("checked") == false && $.inArray($(this).val(), subcategory_array) !== -1)
+            subcategory_array.splice( $.inArray($(this).val(), subcategory_array), 1 );
+        $(this).parents('.attribute_group').find('.multiple_checkbox_hidden').val(subcategory_array);
+        // alert($(this).parents('.attribute_group').find('.multiple_checkbox_hidden').val());
+    });
+
 });

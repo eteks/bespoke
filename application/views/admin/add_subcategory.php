@@ -61,7 +61,7 @@
                                         <div class="control-group">
                                             <label class="control-label" for="sel_c">Choose Recipient<span class="fill_symbol">*</span></label>
                                             <div class="controls">
-                                            <select name="select_recipient" id="recipient_act" class="product-type-filter form-control fl label-boxes field_validate attribute_option_validate attribute_validate att_equal">
+                                            <select name="select_recipient[]" id="select_recipient" class="product-type-filter form-control fl label-boxes field_validate attribute_option_validate attribute_validate att_equal recipient_checkbox">
                                                 <option value="">Select Recipient</option>
                                                     <?php foreach ($recipient_list as $recipient): ?>
                                                         <option name='select_recipient' id='subcategory_name' value="<?php echo $recipient["recipient_id"] ?>"><?php echo $recipient['recipient_type'] ?></option>
@@ -74,7 +74,7 @@
                     <label class="control-label" for="sel_c">Choose Category<span class="fill_symbol">*</span></label>
                         <div class="multiple_dropdown"> 
                             <div class="select_multiple_option">
-                                <a id="admin_check">
+                                <a class="attribute_validate_category">
                                     <span id="category_act">Select Category</span><i class="fa fa-caret-down"  aria-hidden="true"></i>  
                                     <p class="multiSel"></p>  
                                 </a>
@@ -82,7 +82,7 @@
                             <div class="mutliSelect">
                                 <ul>
                                 <?php foreach ($category_list as $cat):
-                                    echo "<li><input type='checkbox' name='select_category[]' class='admin_users_checkbox' id='subcategory_name' value='".$cat["category_id"]."'".set_checkbox('select_category[]', $cat["category_id"], false)."/><span class='multiple_checkbox multple_checkbox_inactive'>".$cat["category_name"]."</span></li>";
+                                    echo "<li><input type='checkbox' name='select_category[]' class='subcategory_checkbox' id='subcategory_name' value='".$cat["category_id"]."'".set_checkbox('select_category[]', $cat["category_id"], false)."/><span class='multiple_checkbox multple_checkbox_inactive subcategory_checkbox'>".$cat["category_name"]."</span></li>";
                                 endforeach ?>
                                 </ul>
                                     </div>
@@ -96,6 +96,7 @@
                                 <input type="button" value="Add" class="btn submit-btn btn-default attibute_add product-btns">
                                 <input type="button" value="Remove" class="btn submit-btn btn-default attibute_remove product-btns attribute_btn_disabled">      
                             </div>  
+                            <input type="hidden" class="multiple_checkbox_hidden" name="multiple_checkbox_hidden[]" value=""> 
                         </div> 
                     </div>
                      <div class="control-group">
@@ -135,7 +136,7 @@
                 var options = '';   
                 if(obj.length!=0){               
                   $.each(obj, function(i){
-                    options += '<li><input type="checkbox" name="select_category[]" class="subcategory_name" value="'+obj[i].category_id+'" /><span class="multiple_checkbox multple_checkbox_inactive">'+obj[i].category_name+'</span></li>';
+                    options += '<li><input type="checkbox" name="select_category[]" class="subcategory_name subcategory_checkbox" value="'+obj[i].category_id+'" /><span class="multiple_checkbox multple_checkbox_inactive">'+obj[i].category_name+'</span></li>';
                   });  
                 }   
                 else{

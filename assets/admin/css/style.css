@@ -21,9 +21,6 @@
 .fl{
 	float:left;
 }
-.error_admin_check{
-   border: 5px solid red !important;
-}
 .image_icon{
 	height: 44px;
     width: 43px;
@@ -291,7 +288,7 @@
     background-color: #ffffff;
 }
 .attribute_error{
-    border : 1px solid red;
+    border : 1px solid red !important;
 }
 /*Added by velpandi*/
 .footer_content {
@@ -310,6 +307,7 @@
 /* Style for multi select dropdown in subcategory and recipient page */
 .mutliSelect {
   position: relative;
+  /*width: 230px;*/
 }
 .select_multiple_option i {
    float: right;
