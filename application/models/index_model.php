@@ -54,7 +54,7 @@ class Index_Model extends CI_Model {
   }	
 
 
-   public function get_glogin_status($user_data=array())
+  public function get_glogin_status($user_data=array())
   { 
     $user_password = random_string('alnum',8);
     $user_name_id = random_string('alnum',4);
@@ -106,6 +106,21 @@ class Index_Model extends CI_Model {
     $query = $this->db->get()->result_array();
     return $query;
   }
+
+
+  public function get_add_to_cart_list() {
+
+    $cart_list_where = '(so.orderitem_session_id="'.$this->session->userdata("user_session_id").'")';
+    $this->db->select('*');
+    $this->db->from('shopping_orderitem so');
+    $this->db->join('shopping_product sp','so.orderitem_product_id=sp.product_id','inner');
+    $this->db->join('shopping_product_upload_image pui','sp.product_id=pui.product_mapping_id','inner');
+    $this->db->where($cart_list_where);
+    $this->db->group_by('so.orderitem_id');
+    $query = $this->db->get()->result_array();
+    return $query;
+  
+  } 
 
   /* --------          Header part end     -------- */
 
@@ -393,6 +408,28 @@ class Index_Model extends CI_Model {
 
   /* --------          Product details page end     -------- */
 
+  /* --------          Basket page start     -------- */
+
+  public function get_basket_product_values() {
+    $cart_list_where = '(so.orderitem_session_id="'.$this->session->userdata("user_session_id").'")';
+    $this->db->select('*');
+    $this->db->from('shopping_orderitem so');
+    $this->db->join('shopping_product sp','so.orderitem_product_id=sp.product_id','inner');
+    $this->db->join('shopping_product_upload_image pui','sp.product_id=pui.product_mapping_id','inner');
+    $this->db->where($cart_list_where);
+    $this->db->group_by('so.orderitem_id');
+    $query = $this->db->get()->result_array();
+    return $query;
+  
+  } 
+
+  /* --------          Basket page end     -------- */
+
+
+
+
+
+  
 
 
 }

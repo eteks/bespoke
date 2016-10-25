@@ -38,8 +38,82 @@ function add_to_cart_color_panel() {
 }
 $(document).ready(function() {
 
-    
     add_to_cart_color_panel();
 
+    $('body').bind("cut copy paste",function(e) {
+          e.preventDefault();
+    });
 
-});
+    if($('#total_amount').val() == 0 ) {
+        $('.basket_section_button').css('pointer-events','none');
+        $('.basket_section_button').attr('disabled',true);
+    }
+    else {
+        $('.basket_section_button').css('pointer-events','auto');
+        $('.basket_section_button').attr('disabled',false);
+    }   
+
+    //if the letter is not digit then display error and don't type anything
+    $('.product_quantity').on('keypress',function (e) {
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            return false;
+        }
+    });
+
+    $('.product_quantity').on('change',function() {
+        $('#checkout_button').addClass('update_error');
+        $('#checkout_button').prop('title',"To update the basket");
+ 
+    });
+    $('#checkout_button').on('click',function(e) {
+        if($(this).hasClass('update_error')) {
+            e.preventDefault();
+        }
+        else {
+            e.unbind();
+        }
+ 
+    });
+
+
+    $('.product_quantity').on('keyup',function() {
+        var this_value = $(this).val();
+        var this_parent = $(this).parents('.amount_structure');
+        var overall_updated_total = 0;
+
+        if(this_value <= 0) {
+            alert("Enter product quantity correctly");
+            $(this).val('1');
+            this_value = 1;
+        }
+        var orderitem_price = this_parent.find('.ordinary_orderitem_price').val();
+        var product_overall_total = $('.ordinary_product_total').val();
+        var unit_price = parseFloat(orderitem_price.replace(',',''));
+        var quantity_total = parseFloat(this_value);
+        var single_product_total = unit_price * quantity_total;
+        var shipping_amount = parseFloat($('.ordinary_shipping_amount').val().replace(',',''));
+
+        this_parent.find('.product_total').html(single_product_total.toLocaleString('en-US', {minimumFractionDigits: 2}));
+        this_parent.find('.updated_product_total').val(single_product_total.toLocaleString('en-US', {minimumFractionDigits: 2}));
+   
+        $('.updated_product_total').each(function(){
+            var this_amount = parseFloat($(this).val().replace(',', ''));
+            overall_updated_total += this_amount;
+        });
+
+        $('.product_overall_total').html(Math.ceil(overall_updated_total).toLocaleString('en-US', {minimumFractionDigits: 2}));
+        $('.overall_total_product_amount').val(overall_updated_total.toLocaleString('en-US', {minimumFractionDigits: 2}));
+
+        var total_final_amount = overall_updated_total + shipping_amount;
+
+        $('.product_final_amount').html(Math.ceil(overall_updated_total).toLocaleString('en-US', {minimumFractionDigits: 2}));
+        $('.ordinary_final_amount').val(Math.ceil(overall_updated_total).toLocaleString('en-US', {minimumFractionDigits: 2}));
+       
+        this_parent.find('.update_basket_details').attr('data-quantity',this_value);
+    });
+
+
+
+
+
+}); // End document
