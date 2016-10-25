@@ -270,6 +270,8 @@ class Adminindex extends CI_Controller {
 	}
 	public function add_subcategory()
 	{	
+		// print_r($_POST);
+		$subcategory_group = array();
 		$status = array();//array is initialized
 		$errors=''; // variable is initialized
 		$validation_rules = array(
@@ -309,17 +311,21 @@ class Adminindex extends CI_Controller {
         }
     	else{
     		if(!empty($_POST)){
+    			// echo "test";
 				if (!empty($errors)) {
 					$status['error_message'] = strip_tags($errors);
 				}
 				else{
-					$data = array(
+					$data['subcategory_basic'] = array(
 						'subcategory_name' => $this->input->post('subcategory_name'),
 						'subcategory_status' => $this->input->post('subcategory_status'),
 					);
-					$category_data = $this->input->post('select_category');
-					$recipient_data = $this->input->post('select_recipient');
-					$result = $this->catalog->insert_subcategory($data,$recipient_data,$category_data);
+					// print_r(implode(",",$_POST['multiple_checkbox_hidden']));
+					$data['subcategory_group'] = array_map(null,$_POST['select_recipient'],$_POST['multiple_checkbox_hidden']);
+					// print_r($subcategory_group);
+					// $data['category_data'] = $this->input->post('select_category');
+					// $recipient_data = $this->input->post('select_recipient');
+					$result = $this->catalog->insert_subcategory($data);
 					if($result)
 						$status['error_message'] = "SubCategory Inserted Successfully!";
 					else
@@ -327,7 +333,7 @@ class Adminindex extends CI_Controller {
 				}		
 			}
     	}
-		// print_r($status);	
+		 // print_r($subcategory_group);	
 		$status['category_list'] = $this->catalog->get_categories();
 		$status['recipient_list'] = $this->catalog->get_recipient();
 		$this->load->view('admin/add_subcategory',$status);

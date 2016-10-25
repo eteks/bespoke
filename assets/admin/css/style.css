@@ -21,8 +21,17 @@
 .fl{
 	float:left;
 }
+<<<<<<< HEAD
 .error_admin_check{
    border: 5px solid red !important;
+=======
+.image_icon{
+	height: 44px;
+    width: 43px;
+    cursor: pointer;
+    margin-left:5px;
+    margin-top:5px;
+>>>>>>> 820fa09382cd4ab86418b94b1f260a98aaf90d26
 }
 .edit_category_image{
 	cursor: pointer;
@@ -84,7 +93,7 @@
 	margin-left: 10px;
     margin-top: 50px;
 }*/
-.attribute_action_btn{
+.attribute_action_btn,.photoshoot_image_action_btn{
     margin-left: 10px;
     /*margin-top: 60px;*/
     font-size: 12px;
@@ -279,13 +288,13 @@
 /*.attibute_remove_btn{
     display: none;
 }*/
-.attribute_btn_disabled{
+.attribute_btn_disabled,.photoshoot_image_btn_disabled{
     cursor: default;
     pointer-events: none;
     background-color: #ffffff;
 }
 .attribute_error{
-    border : 1px solid red;
+    border : 1px solid red !important;
 }
 /*Added by velpandi*/
 .footer_content {
@@ -304,6 +313,7 @@
 /* Style for multi select dropdown in subcategory and recipient page */
 .mutliSelect {
   position: relative;
+  /*width: 230px;*/
 }
 .select_multiple_option i {
    float: right;
@@ -691,6 +701,15 @@
   text-decoration: none !important;
   cursor: pointer !important;
   text-transform: capitalize !important;
+}
+.photoshoot_image_clone{
+    border: 1px solid #cccccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 280px;
+}
+.photoshoot_image_clone > .photoshoot_image_group_status{
+    width: 163px;
 }
 // ===========================
 //        IMAGE UPLOAD
