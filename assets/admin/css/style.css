@@ -43,7 +43,7 @@
   color: #ff0000;
   font-size: 12px;
 }
-.error_msg_del,.photo_labelError,.product_error,.product_error_message,.person_error_message{
+.error_msg_del,.photo_labelError,.product_error,.product_error_message,.person_error_message,.person_photo_error_message{
   display: none;
 }
 @media(max-width: 640px){
