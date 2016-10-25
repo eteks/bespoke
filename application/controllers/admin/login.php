@@ -9,13 +9,19 @@ class Login extends CI_Controller {
 		$this->load->helper('form');
 		// Load form validation library
 		$this->load->library('form_validation');
+		$this->load->model('admin/catalog');
 	}
 	public function index_login()
 	{	
-		$id = 1337;
-		$data = array("name"=>"nisse", "age"=>"14", "sex"=>"male");
-		// $return_data  = $this->elasticsearch->add("people", $id, $data);
-		// echo $return_data;
+		// $id = 1337;
+		// // $data = array("name"=>"nisse", "age"=>"14", "sex"=>"male");
+		// $category = $this->catalog->get_categories();
+		// // echo $this->curl->simple_get('http://localhost/bespoke/');
+		// // $this->curl->simple_post('controller/method', array('foo'=>'bar'));
+		// $return_data  = $this->elasticsearch->add("category", $id, $category);
+		// // echo $return_data;
+		// // echo "sssss";
+		// echo $this->elasticsearch->get("category",$id);
 
 		if($this->session->userdata('logged_in'))
 			redirect('admin/dashboard');
