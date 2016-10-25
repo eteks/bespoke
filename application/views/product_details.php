@@ -117,19 +117,18 @@
                     ?>
                 </ul>
             </div>
+            <input type="hidden" class="color_panel product_details_attributes hidden_color_panel" id="hidden_color_panel" value=""/>
             <?php
             }
             endforeach;
             endif;
             ?>
-            <input type="hidden" class="color_panel product_details_attributes hidden_color_panel" id="hidden_color_panel" value=""/>
-
             <div class="productFilter productFilterLook2">
                 <div class="row"> 
                     <div class="col-lg-6 col-sm-6 col-xs-6 attribute_section_list">
                         <div class="filterBox">
                             <label> Quantity </label>
-                            <select class="form-control product_details_attributes_select" id="quantity_product_details">
+                            <select class="form-control" id="quantity_product_details">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -181,7 +180,8 @@
                 <p class="add_to_cart_status"> </p>
                 <div class="addto row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <button onclick="productAddToCartForm.submit(this);" class="button btn-block btn-cart cart first add_to_cart_button" data-check="true" title="Add to Cart" type="button"> Add to Cart
+                        <input type="hidden" class="add_to_cart_button_cond" value="true" />
+                        <button onclick="productAddToCartForm.submit(this);" class="button btn-block btn-cart cart first add_to_cart_button add_to_cart_option" data-check="true" title="Add to Cart" type="button"> Add to Cart
                         </button>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -272,10 +272,12 @@
             </div> <!--/ right column end -->
         </div> <!--/.row-->
         <div class="row recommended">
+            <?php
+            if(!empty($recommanded_products)) :
+            ?>
             <h1> YOU MAY ALSO LIKE </h1>
             <div id="SimilarProductSlider">
                 <?php
-                if(!empty($recommanded_products)) :
                 foreach($recommanded_products as $rec_data) :
                 ?>
                 <div class="item">

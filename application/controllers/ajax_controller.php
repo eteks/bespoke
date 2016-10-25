@@ -71,6 +71,55 @@ class Ajax_Controller extends CI_Controller {
         }   
     }
 
+    // Add to cart- add items in cart
+    public function add_to_cart_details()
+    {   
+        $data_values = $this->ajax_model->insert_product_to_cart();
+        $data['error'] = $data_values['error'];
+        if($data['error'] != 1) {
+            $data['status'] = $data_values['status'];
+            echo $data['status'];
+        }
+        else {
+            redirect(base_url().'nopage');
+        }
+    }
+
+    // Remove items in cart
+    public function remove_cart_product()
+    {   
+        $data_values = $this->ajax_model->get_status_remove_items();
+        $data['error'] = $data_values['error'];
+        if($data['error'] != 1) {
+            $data['status'] = $data_values['status'];
+            echo $data['status'];
+        }
+        else {
+            redirect(base_url().'nopage');
+        }
+    }
+
+    // Update products in basket
+    public function update_baseket_product()
+    {   
+        $data_values = $this->ajax_model->get_update_product();
+        $data['error'] = $data_values['error'];
+        if($data['error'] != 1) {
+            $data['status'] = $data_values['status'];
+            echo $data['status'];
+        }
+        else {
+            redirect(base_url().'nopage');
+        }
+
+
+
+
+    }
+
+
+
+
         
 
 }

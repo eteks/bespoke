@@ -140,7 +140,7 @@ class Ajax_Model extends CI_Model {
   //  Get product attribute price
   public function get_attribute_price() {
     $attribute_details = array();
-    if($this->input->post('atribute_combination') && $this->input->post('product_id') && $this->input->post('quantity')) {
+    if($this->input->post('atribute_combination') && $this->input->post('product_id')) {
       $attribute_where = '(product_mapping_id="'.$this->input->post('product_id').'" and  (product_attribute_group_totalitems - product_attribute_group_sold) != 0)';
       $this->db->where($attribute_where); 
       $this->db->where_in('product_attribute_value_combination_id',$this->input->post('atribute_combination'));
@@ -199,14 +199,163 @@ class Ajax_Model extends CI_Model {
     return $query;
   }
 
+  //  To insert product to cart and get status
+  public function insert_product_to_cart() {
+    $data['error'] = 0;
+    if($this->input->post('pro_id') && $this->input->post('quan')) {
 
+      $pro_id = $this->input->post('pro_id');
+      $order_session_id = $this->session->userdata('user_session_id');
+      $quan = $this->input->post('quan');
 
+      if($this->input->post('grp_id')) {
+        $grp_id = $this->input->post('grp_id');
+        $add_to_cart_where = '(product_attribute_group_id="'.$grp_id.'" and (product_attribute_group_totalitems - product_attribute_group_sold) >= "'.$quan.'")';
+        $add_to_cart_query = $this->db->get_where('shopping_product_attribute_group',$add_to_cart_where);
+        $add_to_cart_query_array =  $add_to_cart_query->row_array();
+        if(!empty($add_to_cart_query_array)) {
+          $items_status = 1;
+          $price = $add_to_cart_query_array['product_attribute_group_price'];
+        }
+        else {
+          $items_status = 0;
+          $group_status =1;
+        }
+      }
+      else {
+        $grp_id=0;
+        $add_to_cart_where = '(product_id="'.$pro_id.'" and (product_totalitems - product_sold) >= "'.$quan.'")';
+        $add_to_cart_query = $this->db->get_where('shopping_product',$add_to_cart_where);
+        $add_to_cart_query_array =  $add_to_cart_query->row_array();
+        if(!empty($add_to_cart_query_array)) {
+          $items_status = 1;
+          $price = $add_to_cart_query_array['product_price'];
+        }
+        else {
+          $items_status = 0;
+          $group_status = 0;
+        }
+      }
+         
+      if($items_status!=0) {
+        $add_to_cart_product_where = '( orderitem_product_id="'.$pro_id.'" and orderitem_product_attribute_group_id = "'.$grp_id.'" and orderitem_session_id="'.$order_session_id.'")';
+        $add_to_cart_product_query = $this->db->get_where('shopping_orderitem',$add_to_cart_product_where);
+        $add_to_cart_product_query_array =  $add_to_cart_product_query->row_array();
+        $orderitem_count = count($add_to_cart_product_query_array);
+        if($orderitem_count > 0) {
+          $unique_id = $add_to_cart_product_query_array['orderitem_id'];
+          $order_update_data = array( 
+                                'orderitem_product_attribute_group_id' => $grp_id,
+                                'orderitem_price' => $price,
+                                'orderitem_quantity' => $quan,
+                                'orderitem_status' => '1',
+                                'orderitem_session_id' => $order_session_id,
+                                'orderitem_product_id' => $pro_id
+                              );
+          $order_update_where = '( orderitem_id="'.$unique_id.'")'; 
+          $this->db->set($order_update_data); 
+          $this->db->where($order_update_where); 
+          $this->db->update("shopping_orderitem", $order_update_data);
+          $data['status'] = "Updated successfully";
+        }
+        else {
+          $order_insert_data = array(
+                                'orderitem_product_id' => $pro_id,
+                                'orderitem_product_attribute_group_id' => $grp_id,
+                                'orderitem_price' => $price,
+                                'orderitem_quantity' => $quan,
+                                'orderitem_session_id' => $order_session_id,
+                                'orderitem_status' => '1'
+                              );
+          $this->db->insert('shopping_orderitem', $order_insert_data);
+          $data['status'] = "Added successfully";
+        } 
+      }
+      else {
 
+        if($group_status!=0) {
+          $available_items_where = '(product_attribute_group_id="'.$grp_id.'")';
+          $available_items_query = $this->db->get_where('shopping_product_attribute_group',$available_items_where)->row_array();
+          $quantity = $available_items_query['product_attribute_group_totalitems'] - $available_items_query['product_attribute_group_sold'];
+          $data['status']  =  "Available only ".$quantity;
+        }
+        else {
+          $available_items_where = '(product_id="'.$pro_id.'")';
+          $available_items_query = $this->db->get_where('shopping_product',$available_items_where)->row_array();
+          $quantity = $available_items_query['product_totalitems'] - $available_items_query['product_sold'];
+          $data['status']  =  "Available only ".$quantity;
+        }
+      }
+    }
+    else {
+      $data['error'] = 1;
+    }
+    return $data;
 
+  }
 
+  //  Remove items in cart list
+  public function get_status_remove_items() {
+    $data['status'] = 0;
+    $data['error'] = 0;
+    if($this->input->post('cart_pro_id')) {
+      $order_session_id = $this->session->userdata('user_session_id');
+      $basket_remove_where='(orderitem_product_id="'.$this->input->post('cart_pro_id').'" and orderitem_session_id= "'.$order_session_id.'" and orderitem_product_attribute_group_id= "'.$this->input->post('cart_grp_id').'")';
+      $this->db->where($basket_remove_where);
+      $this->db->delete('shopping_orderitem');
+      $data['status'] = "success";
+    }
+    else {
+      $data['error'] = 1;
+    }
+    return $data;
+  }
 
-
-
+  //  Update quantity in basket
+  public function get_update_product() {
+    $data['error'] = 0;
+    if($this->input->post('updation_det')) {
+      $order_session_id = $this->session->userdata('user_session_id');
+      $updation_det = $this->input->post('updation_det');
+      foreach ($updation_det as $key => $value) {
+        $split_det = explode(',',$value);
+        $group_id = $split_det[0];
+        $quan = $split_det[1];
+        if($group_id != 0) {
+          $update_quantity_where = '(pag.product_attribute_group_id="'.$group_id.'")';
+          $this->db->select('*');
+          $this->db->from('shopping_product_attribute_group pag');
+          $this->db->join('shopping_product sp','pag.product_mapping_id=sp.product_id','inner');
+          $this->db->where($update_quantity_where);
+          $update_quantity_query =  $this->db->get()->row_array();
+          $update_quantity =  $update_quantity_query['product_attribute_group_totalitems'] - $update_quantity_query['product_attribute_group_sold'];
+        }
+        else {
+          $update_quantity_where = '(product_id="'.$key.'")';
+          $update_quantity_query = $this->db->get_where('shopping_product',$update_quantity_where)->row_array();
+          $update_quantity =  $update_quantity_query['product_totalitems'] - $update_quantity_query['product_sold'];
+        }
+        if($update_quantity >= $quan) {
+          $basket_update_data = array( 
+                                  'orderitem_quantity' => $quan,
+                                ); 
+          $basket_update_where = '(orderitem_product_id="'.$key.'" and orderitem_product_attribute_group_id="'.$group_id.'" and orderitem_session_id="'.$order_session_id.'")'; 
+          $this->db->set($basket_update_data); 
+          $this->db->where($basket_update_where); 
+          $this->db->update("shopping_orderitem", $basket_update_data);
+          $data['status'] ="success";
+        }
+        else {
+          $data['status'] ="".$update_quantity_query['product_title']." is not available. Available only ".$update_quantity; 
+          return $data;
+        }
+      }
+    }
+    else {
+      $data['error'] = 1;
+    }
+    return $data;
+  }
 
 
 

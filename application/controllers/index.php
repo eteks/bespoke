@@ -183,6 +183,13 @@ class Index extends CI_Controller {
 		$data['menubar_fields'] = $out;
 		$data['featured_remaining_products'] = $product_list['featured_remaining_products'];
 		$data['all_recipients'] = $this->index_model->get_all_recipients();
+
+		$data['add_to_cart_list'] = $this->index_model->get_add_to_cart_list();
+
+		// echo "<pre>";
+		// print_r($data['add_to_cart_list']);
+		// echo "<pre>";
+		
 		// print_r($data['login_url']);	
 		$this->load->view('index',$data);
 	}
@@ -291,14 +298,22 @@ class Index extends CI_Controller {
 
 	/* --------          Contact page end     -------- */
 	
+
+	/* --------          Contact page start     -------- */
+
+	public function cart()
+	{	
+		$data['product_details'] = $this->index_model->get_basket_product_values();
+		$this->load->view('cart',$data);
+	}
+
+	/* --------          Contact page end     -------- */
+
 	public function account()
 	{
 		$this->load->view('account');
 	}
-	public function cart()
-	{
-		$this->load->view('cart');
-	}
+	
 	public function checkout_0()
 	{
 		$this->load->view('checkout_0');

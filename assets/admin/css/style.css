@@ -21,17 +21,15 @@
 .fl{
 	float:left;
 }
-<<<<<<< HEAD
 .error_admin_check{
    border: 5px solid red !important;
-=======
+}
 .image_icon{
 	height: 44px;
     width: 43px;
     cursor: pointer;
     margin-left:5px;
     margin-top:5px;
->>>>>>> 820fa09382cd4ab86418b94b1f260a98aaf90d26
 }
 .edit_category_image{
 	cursor: pointer;
@@ -41,11 +39,11 @@
     width: 50px;
     position: relative;
 }
-.error_msg_reg,.error_msg_del,.photo_labelError,.product_error,.product_error_message{
+.error_msg_reg,.error_msg_del,.photo_labelError,.product_error,.product_error_message,.person_error{
   color: #ff0000;
   font-size: 12px;
 }
-.error_msg_del,.photo_labelError,.product_error,.product_error_message{
+.error_msg_del,.photo_labelError,.product_error,.product_error_message,.person_error_message{
   display: none;
 }
 @media(max-width: 640px){
