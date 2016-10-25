@@ -45,12 +45,12 @@
                                     <strong>
                                         Phone number
                                     </strong>
-                                    : +88-01680531352
+                                    : 0413-4308884, 88709 68989
                                     <br>
                                     <strong>
                                         Email us
                                     </strong>
-                                    : contact@tanimdesign.net
+                                    : help@yourweb.com
                                 </p>
 
 
@@ -71,12 +71,12 @@
                                     <strong>
                                         Phone number
                                     </strong>
-                                    : +88-01680531352
+                                    : 0413-4308884, 88709 68989
                                     <br>
                                     <strong>
                                         Email us
                                     </strong>
-                                    : sales@tanimdesign.net
+                                    : help@yourweb.com
                                 </p>
 
 
@@ -103,7 +103,7 @@
                                     <strong>
                                         Email us
                                     </strong>
-                                    : feedback@tanimdesign.net
+                                    : help@yourweb.com
                                 </p>
 
                             </div>
@@ -117,17 +117,17 @@
                                     <strong>
                                         Corporate Sales
                                     </strong>
-                                    : Corporate@tanimdesign.net
+                                    : help@yourweb.com
                                     <br>
                                     <strong>
                                         Careers
                                     </strong>
-                                    : Careers@tanimdesign.net
+                                    : help@yourweb.com
                                     <br>
                                     <strong>
                                         Press Relations
                                     </strong>
-                                    : pr@tanimdesign.net
+                                    : help@yourweb.com
                                     <br>
                                 </p>
 

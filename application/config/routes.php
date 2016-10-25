@@ -45,6 +45,7 @@ $route['default_controller'] = "index";
 /* Routes for end user side by siva*/
 
 $route['products_view'] = 'index/products_list';
+$route['product_details/(:any)'] = 'index/product_details/$1';
 $route['recipients_view/(:any)'] = 'index/recipients_list/$1';
 $route['about_us'] = 'index/about_details';
 $route['contact_us'] = 'index/contact_details';
@@ -68,11 +69,15 @@ $route['login'] = 'index/login';
 $route['my_address'] = 'index/my_address';
 $route['order_list'] = 'index/order_list';
 $route['order_status'] = 'index/order_status';
-$route['product_details'] = 'index/product_details';
 $route['thanks_for_order'] = 'index/thanks_for_order';
 $route['user_information'] = 'index/user_information';
 $route['welcome_message'] = 'index/welcome_message';
 $route['wishlist'] = 'index/wishlist';
+$route['portfolio'] = 'index/portfolio';
+$route['pre_wedding'] = 'index/pre_wedding';
+$route['post_wedding'] = 'index/post_wedding';
+$route['track_order'] = 'index/track_order';
+$route['recipient_category'] = 'index/recipient_category';
 
 //Route url for admin
 $route['admin'] = 'admin/login/index_login';

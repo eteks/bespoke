@@ -259,10 +259,9 @@
                            data-placement="left">
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
-
-                        <div class="image">
-                            <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/30.jpg" alt="img" class="img-responsive"></a>
-                            <div class="product_name"><a><span>Product Name</span></a></div>
+                       <div class="image product_images">
+                            <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/30.jpg" alt="img" class="img-responsive images_alignment"></a>
+							<div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
                             <h4><a href="<?php echo base_url(); ?>product_details">aliquam erat volutpat</a></h4>
@@ -291,9 +290,9 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
+                        <div class="image product_images">
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/31.jpg" alt="img"
-                                                                class="img-responsive"></a>
+                                                                class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
@@ -323,9 +322,9 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
+                        <div class="image product_images">
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/34.jpg" alt="img"
-                                                                class="img-responsive"></a>
+                                                                class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
@@ -355,10 +354,10 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
+                        <div class="image product_images">
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/35.jpg" alt="img"
-                                                                class="img-responsive"></a>
-                            <div class="product_name"><a><span>Product Name</span></a></div>
+                                                                class="img-responsive images_alignment"></a>
+                        	<div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
                             <h4><a href="<?php echo base_url(); ?>product_details">humanitatis per</a></h4>
@@ -387,10 +386,10 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
+                        <div class="image product_images">
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/33.jpg" alt="img"
-                                                                class="img-responsive"></a>
-                            <div class="product_name"><a><span>Product Name</span></a></div>
+                                                                class="img-responsive images_alignment"></a>
+                     		<div class="product_name"><a><span>Product Name</span></a></div>
                          </div>
                         <div class="description">
                             <h4><a href="<?php echo base_url(); ?>product_details">Eodem modo typi</a></h4>
@@ -419,10 +418,10 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
+                        <div class="image product_images">
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/10.jpg" alt="img"
-                                                                class="img-responsive"></a>
-                            <div class="product_name"><a><span>Product Name</span></a></div>
+                                                                class="img-responsive images_alignment"></a>
+                        	<div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
                             <h4><a href="<?php echo base_url(); ?>product_details">sequitur mutationem </a></h4>
@@ -451,10 +450,10 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
+                        <div class="image product_images">
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/37.jpg" alt="img"
-                                                                class="img-responsive"></a>
-                            <div class="product_name"><a><span>Product Name</span></a></div>
+                                                                class="img-responsive images_alignment"></a>
+                        	<div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
                             <h4><a href="<?php echo base_url(); ?>product_details">consuetudium lectorum.</a></h4>
@@ -483,10 +482,10 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
+                        <div class="image product_images">
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/16.jpg" alt="img"
-                                                                class="img-responsive"></a>
-                            <div class="product_name"><a><span>Product Name</span></a></div>
+                                                                class="img-responsive images_alignment"></a>
+                        	<div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
                             <h4><a href="<?php echo base_url(); ?>product_details">parum claram</a></h4>
@@ -515,10 +514,10 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
+                        <div class="image product_images">
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/19.jpg" alt="img"
-                                                                class="img-responsive"></a>
-                            <div class="product_name"><a><span>Product Name</span></a></div>
+                                                                class="img-responsive images_alignment"></a>
+                        	<div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
                             <h4><a href="<?php echo base_url(); ?>product_details">duis dolore </a></h4>
@@ -547,9 +546,9 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
+                        <div class="image product_images">
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/15.jpg" alt="img"
-                                                                class="img-responsive"></a>
+                                                                class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
@@ -579,9 +578,9 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
+                        <div class="image product_images">
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/14.jpg" alt="img"
-                                                                class="img-responsive"></a>
+                                                                class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
@@ -611,9 +610,9 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
+                        <div class="image product_images">
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/17.jpg" alt="img"
-                                                                class="img-responsive"></a>
+                                                                class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
