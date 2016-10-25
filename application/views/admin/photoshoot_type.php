@@ -39,8 +39,8 @@
         <i class="glyphicon glyphicon-edit icon-white"></i>
         Add 
         </a>
-        <input type="hidden" class="table_name" value="shopping_category">
-        <input type="hidden" class="field_name" value="category_id">
+        <input type="hidden" class="table_name" value="shopping_photo_shoot_display_details">
+        <input type="hidden" class="field_name" value="display_id">
         <input type="hidden" class="action" value="<?php echo base_url(); ?>index.php/admin/delete">
         <table class="table table-striped table-bordered bootstrap-datatable datatable responsive ">
             <thead>
@@ -60,7 +60,7 @@
                 <td class="center"><span class="<?php if($ptype["display_status"] ==1 ){ ?>label-success<?php } ?> label label-default"><?php if($ptype["display_status"] ==1 )echo "Active";else echo "InActive"; ?></span></td>
                 <td><?php echo date("d/m/Y", strtotime($ptype["display_createddate"])); ?></td>
                 <td class="center">
-                    <a class="btn btn-info" href="<?php echo base_url(); ?>photography/edit_photoshoot_type/<?php echo $ptype["display_id"] ?>">
+                    <a class="btn btn-info" href="<?php echo base_url(); ?>admin/photography/edit_photoshoot_type/<?php echo $ptype["display_id"] ?>">
                         <i class="glyphicon glyphicon-edit icon-white"></i>
                         Edit
                     </a>

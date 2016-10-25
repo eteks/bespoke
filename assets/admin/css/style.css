@@ -633,6 +633,15 @@
 	min-width: 175px !important;
 	max-width: 175px !important;
 }
+.couple_form_group{
+  /*display: none;*/
+}
+.couple_form_group > input {
+  margin-top: 10px;
+}
+.address_form_group > textarea{
+  height: 116px;
+}
 // ===========================
 //        IMAGE UPLOAD
 // ===========================
