@@ -519,4 +519,18 @@ $(document).ready(function() {
         $(this).parents('.attribute_group').find('.multiple_checkbox_hidden').val(subcategory_array);
         // alert($(this).parents('.attribute_group').find('.multiple_checkbox_hidden').val());
     });
+    $('body').delegate("#photoshoot_person_detail",'submit',function(e){ 
+        $('.person_default_field').each(function(){
+            if($(this).val() == ""){
+                $error = true;    
+                $('.person_error').text($(this).parents('.person_field').find('.person_error_message').text()).show(); 
+                $('.person_error').addClass('error_input_field');
+            return false;
+            }   
+            else{
+                $('.person_error').removeClass('error_input_field');
+            }    
+        });
+        return false;
+    });
 });
