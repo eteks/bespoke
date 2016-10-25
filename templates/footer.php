@@ -147,7 +147,7 @@
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+<script src="assets/js/jquery/jquery-1.10.1.min.js">
 </script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script>
@@ -159,7 +159,16 @@
     });
 
 </script>
+<!-- Other JS Files -->
+    <script type="text/javascript" src="assets/js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="assets/js/jasny-bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/SmoothScroll.js"></script>
+    <script type="text/javascript" src="assets/js/nivo-lightbox.js"></script>
 
+    <!-- Custom Javascripts
+    ================================================== -->
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    
 <!-- include jqueryCycle plugin -->
 <script src="assets/js/jquery.cycle2.min.js"></script>
 
@@ -188,7 +197,7 @@
 <script type="text/javascript" src="assets/js/smoothproducts.min.js"></script>
 
 <!-- jQuery select2 // custom select   -->
-<script src="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+<script src="assets/js/select2.min.js"></script>
 
 <!-- include touchspin.js // touch friendly input spinner component   -->
 <script src="assets/js/bootstrap.touchspin.js"></script>

@@ -434,8 +434,8 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/30.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/30.jpg" alt="img" class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
@@ -465,8 +465,8 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/31.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/31.jpg" alt="img" class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
@@ -496,8 +496,8 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/34.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/34.jpg" alt="img" class="img-responsive images_alignment"></a>
 							<div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
@@ -527,8 +527,8 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/35.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/35.jpg" alt="img" class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                        </div>
                         <div class="description">
@@ -558,8 +558,8 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/33.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/33.jpg" alt="img" class="img-responsive images_alignment"></a>
                         	<div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
@@ -589,8 +589,8 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/10.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/10.jpg" alt="img" class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
@@ -620,8 +620,8 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/37.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/37.jpg" alt="img" class="img-responsive images_alignment"></a>
                         	<div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
@@ -651,8 +651,8 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/16.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/16.jpg" alt="img" class="img-responsive images_alignment"></a>
                         	<div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
@@ -682,8 +682,8 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/19.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/19.jpg" alt="img" class="img-responsive images_alignment"></a>
                         	<div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
@@ -713,8 +713,8 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/15.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/15.jpg" alt="img" class="img-responsive images_alignment"></a>
 							<div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
@@ -744,8 +744,8 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/14.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/14.jpg" alt="img" class="img-responsive images_alignment"></a>
 						    <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
@@ -775,8 +775,8 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/17.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/17.jpg" alt="img" class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">

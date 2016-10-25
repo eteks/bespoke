@@ -104,9 +104,8 @@
                        data-placement="left">
                         <i class="glyphicon glyphicon-heart"></i>
                     </a>
-                    <div class="image">
-                        <a href="product-details.php"><img src="images/product/34.jpg" alt="img"
-                                                            class="img-responsive"></a>
+                    <div class="image product_images">
+                        <a href="product-details.php"><img src="images/product/34.jpg" alt="img" class="img-responsive images_alignment"></a>
                         <!-- <div class="promotion"><span class="new-product"> NEW</span> <span
                                 class="discount">15% OFF</span></div> -->
                             <div class="product_name"><a><span>Product Name</span></a></div>
@@ -125,9 +124,8 @@
                        data-placement="left">
                         <i class="glyphicon glyphicon-heart"></i>
                     </a>
-                    <div class="image">
-                        <a href="product-details.php"><img src="images/product/30.jpg" alt="img"
-                                                            class="img-responsive"></a>
+                    <div class="image product_images">
+                        <a href="product-details.php"><img src="images/product/30.jpg" alt="img" class="img-responsive images_alignment"></a>
                         <!-- <div class="promotion"><span class="discount">15% OFF</span></div> -->
                         <div class="product_name"><a><span>Product Name</span></a></div>
                     </div>
@@ -145,9 +143,9 @@
                        data-placement="left">
                         <i class="glyphicon glyphicon-heart"></i>
                     </a>
-                    <div class="image">
+                    <div class="image product_images">
                         <a href="product-details.php"><img src="images/product/36.jpg" alt="img"
-                                                            class="img-responsive"></a>
+                                                            class="img-responsive images_alignment"></a>
                           <div class="product_name"><a><span>Product Name</span></a></div>
                         <!-- <div class="promotion"><span class="new-product"> NEW</span></div> -->
                     </div>
@@ -167,8 +165,8 @@
                         <i class="glyphicon glyphicon-heart"></i>
                     </a>
 
-                    <div class="image">
-                        <a href="product-details.php"><img src="images/product/9.jpg" alt="img" class="img-responsive"></a>
+                    <div class="image product_images">
+                        <a href="product-details.php"><img src="images/product/9.jpg" alt="img" class="img-responsive images_alignment"></a>
                         <div class="product_name"><a><span>Product Name</span></a></div>
                     </div>
                     <div class="description">
@@ -187,8 +185,8 @@
                         <i class="glyphicon glyphicon-heart"></i>
                     </a>
 
-                    <div class="image">
-                        <a href="product-details.php"><img src="images/product/12.jpg" alt="img" class="img-responsive"></a>
+                    <div class="image product_images">
+                        <a href="product-details.php"><img src="images/product/12.jpg" alt="img" class="img-responsive images_alignment"></a>
                         <div class="product_name"><a><span>Product Name</span></a></div>
                     </div>
                     <div class="description">
@@ -205,8 +203,8 @@
                        data-placement="left">
                         <i class="glyphicon glyphicon-heart"></i>
                     </a>
-                    <div class="image">
-                        <a href="product-details.php"><img src="images/product/13.jpg" alt="img" class="img-responsive"></a>
+                    <div class="image product_images">
+                        <a href="product-details.php"><img src="images/product/13.jpg" alt="img" class="img-responsive images_alignment"></a>
                         <div class="product_name"><a><span>Product Name</span></a></div>
                     </div>
                     <div class="description">
@@ -224,8 +222,8 @@
                         <i class="glyphicon glyphicon-heart"></i>
                     </a>
 
-                    <div class="image">
-                        <a href="product-details.php"><img src="images/product/21.jpg" alt="img" class="img-responsive"></a>
+                    <div class="image product_images">
+                        <a href="product-details.php"><img src="images/product/21.jpg" alt="img" class="img-responsive images_alignment"></a>
                         <div class="product_name"><a><span>Product Name</span></a></div>
                    </div>
                     <div class="description">
@@ -244,8 +242,8 @@
                         <i class="glyphicon glyphicon-heart"></i>
                     </a>
 
-                    <div class="image">
-                        <a href="product-details.php"><img src="images/product/24.jpg" alt="img" class="img-responsive"></a>
+                    <div class="image product_images">
+                        <a href="product-details.php"><img src="images/product/24.jpg" alt="img" class="img-responsive images_alignment"></a>
                         <div class="product_name"><a><span>Product Name</span></a></div>
                     </div>
                     <div class="description">
@@ -262,8 +260,8 @@
                        data-placement="left">
                         <i class="glyphicon glyphicon-heart"></i>
                     </a>
-                    <div class="image">
-                        <a href="product-details.php"><img src="images/product/15.jpg" alt="img" class="img-responsive"></a>
+                    <div class="image product_images">
+                        <a href="product-details.php"><img src="images/product/15.jpg" alt="img" class="img-responsive images_alignment"></a>
                         <div class="product_name"><a><span>Product Name</span></a></div>
                     </div>
                     <div class="description">
@@ -536,9 +534,9 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
+                        <div class="image product_images">
                             <a href="product-details.php"><img src="images/product/30.jpg" alt="img"
-                                                                class="img-responsive"></a>
+                                                                class="img-responsive images_alignment"></a>
                              <div class="product_name"><a><span>Product Name</span></a></div>
                             <!-- <div class="promotion"><span class="new-product"> NEW</span> <span
                                     class="discount">15% OFF</span></div> -->
@@ -560,9 +558,9 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
+                        <div class="image product_images">
                             <a href="product-details.php"><img src="images/product/31.jpg" alt="img"
-                                                                class="img-responsive"></a>
+                                                                class="img-responsive images_alignment"></a>
  							<div class="product_name"><a><span>Product Name</span></a></div>
                             <!-- <div class="promotion"><span class="discount">15% OFF</span></div> -->
                         </div>
@@ -582,9 +580,9 @@
                            data-placement="left">
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
-                        <div class="image">
+                        <div class="image product_images">
                             <a href="product-details.php"><img src="images/product/34.jpg" alt="img"
-                                                                class="img-responsive"></a>
+                                                                class="img-responsive images_alignment"></a>
 							<div class="product_name"><a><span>Product Name</span></a></div>
                             <!-- <div class="promotion"><span class="new-product"> NEW</span></div> -->
                         </div>
@@ -603,8 +601,8 @@
                            data-placement="left">
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/12.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/12.jpg" alt="img" class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
@@ -622,8 +620,8 @@
                            data-placement="left">
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/33.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/33.jpg" alt="img" class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
@@ -643,8 +641,8 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/10.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/10.jpg" alt="img" class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                          </div>
                         <div class="description">
@@ -664,8 +662,8 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/37.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/37.jpg" alt="img" class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
@@ -684,8 +682,8 @@
                            data-placement="left">
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/35.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/35.jpg" alt="img" class="img-responsive images_alignment"></a>
                         	<div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
@@ -705,8 +703,8 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/13.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/13.jpg" alt="img" class="img-responsive images_alignment"></a>
                         	<div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
                         <div class="description">
@@ -724,8 +722,8 @@
                            data-placement="left">
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/21.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/21.jpg" alt="img" class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                             <!-- <div class="promotion"><span class="new-product"> NEW</span> <span class="discount">15% OFF</span></div> -->
                         </div>
@@ -745,8 +743,8 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/14.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/14.jpg" alt="img" class="img-responsive images_alignment"></a>
 							<div class="product_name"><a><span>Product Name</span></a></div>
                             <!-- <div class="promotion"><span class="discount">15% OFF</span></div> -->
                         </div>
@@ -765,8 +763,8 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
 
-                        <div class="image">
-                            <a href="product-details.php"><img src="images/product/17.jpg" alt="img" class="img-responsive"></a>
+                        <div class="image product_images">
+                            <a href="product-details.php"><img src="images/product/17.jpg" alt="img" class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                             <!-- <div class="promotion"><span class="new-product"> NEW</span></div> -->
                         </div>
@@ -791,7 +789,7 @@
     </div>
     <!--/.featuredPostContainer-->
 
-    <hr class="no-margin-top">
+    <!-- <hr class="no-margin-top">
     <div class="width100 section-block ">
         <div class="row featureImg">
             <div class="col-md-3 col-sm-3 col-xs-6"><a href="category.php"><img src="images/site/new-collection-1.jpg"
@@ -807,11 +805,11 @@
                                                                                  class="img-responsive" alt="img"></a>
             </div>
         </div>
-        <!--/.row-->
-    </div>
+        !--/.row--
+    </div> -->
     <!--/.section-block-->
 
-    <div class="width100 section-block">
+    <!-- <div class="width100 section-block">
         <h3 class="section-title"><span> BRAND</span> <a id="nextBrand" class="link pull-right carousel-nav"> <i
                 class="fa fa-angle-right"></i></a> <a id="prevBrand" class="link pull-right carousel-nav"> <i
                 class="fa fa-angle-left"></i> </a></h3>
@@ -838,8 +836,8 @@
                 </ul>
             </div>
         </div>
-        <!--/.row-->
-    </div>
+        !--/.row--
+    </div> -->
     <!--/.section-block-->
 
 </div>

@@ -14,6 +14,12 @@
     <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Other Css files -->
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/jasny-bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/nivo-lightbox.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/themes/default/default.css">
     <!-- styles needed by smoothproducts.js for product zoom  -->
     <link rel="stylesheet" href="assets/css/smoothproducts.css">
     <link href="assets/plugins/rating/bootstrap-rating.css" rel="stylesheet">
@@ -25,6 +31,7 @@
     <!-- styles needed by footable  -->
     <link href="assets/css/footable-0.1.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/footable.sortable-0.1.css" rel="stylesheet" type="text/css"/>
+    
     <!-- Just for debugging purposes. -->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -39,7 +46,10 @@
             elements: true
         };
     </script>
+    <!-- Modernizr
+    ================================================== -->
     <script src="assets/js/pace.min.js"></script>
+    <script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
 </head>
 
 <body>
@@ -84,7 +94,7 @@
             <div class="modal-footer">
                 <p class="text-center"> Not here before? <a data-toggle="modal" data-dismiss="modal"
                                                             href="#ModalSignup"> Sign Up. </a> <br>
-                    <a href="forgot-password.html"> Lost your password? </a></p>
+                    <a href="forgot-password.php"> Lost your password? </a></p>
             </div>
         </div>
         <!-- /.modal-content -->
@@ -164,11 +174,11 @@
                 <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
                     <div class="pull-left ">
                         <ul class="userMenu ">
-                            <li><a href="#"> <span class="hidden-xs">HELP</span><i
-                                    class="glyphicon glyphicon-info-sign hide visible-xs "></i> </a></li>
-                            <li class="phone-number"><a href="callto:+12025550151"> <span> <i
+                            <!-- <li><a href="#"> <span class="hidden-xs">HELP</span><i
+                                    class="glyphicon glyphicon-info-sign hide visible-xs "></i> </a></li> -->
+                            <li class="phone-number"><a href="callto:+0000000000"> <span> <i
                                     class="glyphicon glyphicon-phone-alt "></i></span> <span class="hidden-xs"
-                                                                                             style="margin-left:5px"> +1-202-555-0151 </span>
+                                                                                             style="margin-left:5px"> +0-000-000-0000 </span>
                             </a></li>
                         </ul>
                     </div>
@@ -742,10 +752,9 @@
                         </li>
                     </ul>
                 </li> -->
-				<li><a href="#"> PHOTO SHOOT </a></li>
+				<li><a href="portfolio.php"> PHOTOGRAPHY </a></li>
             </ul>
             </ul>
-
             <!--- this part will be hidden for mobile version -->
             <div class="nav navbar-nav navbar-right hidden-xs">
                 <div class="dropdown  cartMenu "><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i
