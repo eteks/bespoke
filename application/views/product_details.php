@@ -205,8 +205,8 @@
             <div class="product-tab w100 clearfix">
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#details" data-toggle="tab">Details</a></li>
-                    <li><a href="#size" data-toggle="tab">Size</a></li>
-                    <li><a href="#shipping" data-toggle="tab">Shipping</a></li>
+                    <!-- <li><a href="#size" data-toggle="tab">Size</a></li> -->
+                    <!-- <li><a href="#shipping" data-toggle="tab">Shipping</a></li> -->
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content">
@@ -216,8 +216,6 @@
                         echo $product_details['product_description'];
                         endif;
                         ?>
-
-
                     </div>
                     <div class="tab-pane" id="size"> 
                         16" waist<br>
@@ -266,7 +264,6 @@
             <div style="clear:both"></div>
                 <div class="product-share clearfix">
                     <p> SHARE </p>
-<<<<<<< HEAD
                     <div class="socialIcon">
                         <span class='st_facebook_large' displayText='Facebook'></span>
                         <span class='st_googleplus_large' displayText='Google +'></span>
