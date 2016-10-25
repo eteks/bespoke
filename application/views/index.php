@@ -109,19 +109,19 @@
                         <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist" data-placement="left">
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
-                        <div class="image">
+                        <div class="image product_images">
                             <a href="#">
-                                <img src="<?php echo base_url().$new_arr['product_upload_image']; ?>"  alt="img" class="img-responsive">
+                                <img src="<?php echo base_url().$new_arr['product_upload_image']; ?>"  alt="img" class="img-responsive images_alignment">
                             </a>
                             <div class="product_name">
-                                <a href="<?php echo base_url(); ?>product_details">
+                                <a href="<?php echo base_url(); ?>product_details/<?php echo $new_arr['product_id']; ?>">
                                     <?php echo $new_arr['product_title']; ?>
                                 </a>
                             </div>
                         </div>
                         <div class="description">
                             <h4>
-                                <a href="<?php echo base_url(); ?>product_details"><?php echo $new_arr['product_title']; ?> </a>
+                                <a href="<?php echo base_url(); ?>product_details/<?php echo $new_arr['product_id']; ?>"><?php echo $new_arr['product_title']; ?> </a>
                             </h4>
                             <p> <?php echo $new_arr['product_description']; ?> </p>
                         </div>
@@ -129,7 +129,7 @@
                             <span> &#8377; <?php echo $new_arr['product_price']; ?> </span>
                         </div>
                         <div class="action-control">
-                            <a data-toggle="modal" class="btn btn-primary" href="#" data-target="#productSetailsModalAjax"> 
+                            <a data-toggle="modal" class="btn btn-primary add_to_cart_popup" href="#" data-target="#productSetailsModalAjax" data-pro_id="<?php echo $new_arr['product_id']; ?>"> 
                                 <span class="add2cart">
                                     <i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart 
                                 </span> 
@@ -143,6 +143,7 @@
                 ?>
             </div> <!--/.productslider-->
         </div> <!--/.featuredPostContainer-->
+    </div> <!-- /main container -->
 
     <!-- ************  New Arrivals End  ***************  -->
 
@@ -172,7 +173,7 @@
     <!-- Main component call to action -->
 
     <!-- ************  Featured products Start  ***************  -->
-
+    <div class="container main-container">
     <div class="morePost row featuredPostContainer style2 globalPaddingTop ">
         <h3 class="section-title style2 text-center"><span>FEATURED PRODUCT</span></h3>
         <div class="container">
@@ -187,19 +188,19 @@
                         <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist" data-placement="left">
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
-                        <div class="image">
+                        <div class="image product_images">
                             <a href="#">
-                                <img src="<?php echo base_url().$fea_arr['product_upload_image']; ?>" alt="img" class="img-responsive">
+                                <img src="<?php echo base_url().$fea_arr['product_upload_image']; ?>" alt="img" class="img-responsive images_alignment">
                             </a>
                             <div class="product_name">
-                                <a href="<?php echo base_url(); ?>product_details">
+                                <a href="<?php echo base_url(); ?>product_details/<?php echo $fea_arr['product_id']; ?>">
                                     <?php echo $fea_arr['product_title']; ?>
                                 </a>
                             </div>
                         </div>
                         <div class="description">
                             <h4>
-                                <a href="<?php echo base_url(); ?>product_details">
+                                <a href="<?php echo base_url(); ?>product_details/<?php echo $fea_arr['product_id']; ?>">
                                     <?php echo $fea_arr['product_title']; ?>
                                 </a>
                             </h4>
@@ -209,7 +210,7 @@
                             <span> &#8377; <?php echo $fea_arr['product_price']; ?> </span> 
                         </div>
                         <div class="action-control">
-                            <a data-toggle="modal" class="btn btn-primary" data-target="#productSetailsModalAjax"> 
+                            <a data-toggle="modal" class="btn btn-primary add_to_cart_popup" data-target="#productSetailsModalAjax" data-pro_id="<?php echo $fea_arr['product_id']; ?>">
                                 <span class="add2cart">
                                     <i class="glyphicon glyphicon-shopping-cart"> </i> 
                                         Add to cart 
@@ -229,7 +230,7 @@
             </div> <!-- /.row -->
             <div class="row">
                 <div class="load-more-block text-center">
-                    <a id="load_more_featured" class="btn btn-thin"> 
+                    <a id="load_more_featured" class="btn btn-thin load_more_featured"> 
                         <i class="fa fa-plus-sign">+</i> load more products
                     </a>
                     <input type="hidden" value="4" id="load_more_featured_value" />     
@@ -240,7 +241,7 @@
 
     <!-- ************  Featured products End  ***************  -->
 
-    <hr class="no-margin-top">
+    <!-- <hr class="no-margin-top">
     <div class="width100 section-block ">
         <div class="row featureImg">
             <div class="col-md-3 col-sm-3 col-xs-6"><a href="<?php echo base_url(); ?>category"><img src="<?php echo base_url(); ?>assets/img/site/new-collection-1.jpg"
@@ -256,11 +257,11 @@
                                                                                  class="img-responsive" alt="img"></a>
             </div>
         </div>
-        <!--/.row-->
-    </div>
+        !--/.row--
+    </div> -->
     <!--/.section-block-->
 
-    <div class="width100 section-block">
+    <!-- <div class="width100 section-block">
         <h3 class="section-title"><span> BRAND</span> <a id="nextBrand" class="link pull-right carousel-nav"> <i
                 class="fa fa-angle-right"></i></a> <a id="prevBrand" class="link pull-right carousel-nav"> <i
                 class="fa fa-angle-left"></i> </a></h3>
@@ -287,8 +288,8 @@
                 </ul>
             </div>
         </div>
-        <!--/.row-->
-    </div>
+        !--/.row--
+    </div> -->
     <!--/.section-block-->
 
 </div>
@@ -315,135 +316,10 @@
 <div class="modal fade" id="productSetailsModalAjax" tabindex="-1" role="dialog"
      aria-labelledby="productSetailsModalAjaxLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
-          <button aria-hidden="true" data-dismiss="modal" class="close" type="button"> ×</button>
-<div class="col-lg-5 col-md-5 col-sm-5  col-xs-12">
-
-    <!-- product Image -->
-
-    <div class="main-image  col-lg-12 no-padding style3">
-        <a class="product-largeimg-link" href="<?php echo base_url(); ?>product_details"><img
-                src="<?php echo base_url(); ?>assets/img/product_details/low-res-white/1.jpg" class="img-responsive product-largeimg"
-                alt="img">
-        </a>
-    </div>
-    <!--/.main-image-->
-
-    <div class="modal-product-thumb">
-        <a class="thumbLink selected"><img data-large="<?php echo base_url(); ?>assets/img/product_details/low-res-white/1.jpg" alt="img"
-                                           class="img-responsive" src="<?php echo base_url(); ?>assets/img/product_details/low-res-white/1.jpg">
-        </a>
-        <a class="thumbLink"><img data-large="<?php echo base_url(); ?>assets/img/product_details/low-res-white/2.jpg" alt="img"
-                                  class="img-responsive"
-                                  src="<?php echo base_url(); ?>assets/img/product_details/low-res-white/2.jpg">
-        </a>
-        <a class="thumbLink"><img data-large="<?php echo base_url(); ?>assets/img/product_details/low-res-white/3.jpg" alt="img"
-                                  class="img-responsive"
-                                  src="<?php echo base_url(); ?>assets/img/product_details/low-res-white/3.jpg">
-        </a>
-    </div>
-    <!--/.modal-product-thumb-->
-</div>
-<!--/ product Image-->
-
-
-<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 modal-details no-padding">
-    <div class="modal-details-inner">
-        <h1 class="product-title"> Lorem ipsum dolor sit amet</h2>
-
-            <h3 class="product-code">Product Code : DEN1098</h3>
-
-            <div class="product-price"><span class="price-sales"> $70</span> <span
-                    class="price-standard">$95</span></div>
-            <div class="details-description">
-                <p>In scelerisque libero ut elit porttitor commodo Suspendisse laoreet magna. </p>
-            </div>
-            <div class="color-details"><span class="selected-color"><strong>COLOR</strong></span>
-                <ul class="swatches Color">
-                    <li class="selected">
-                        <a style="background-color:#f1f40e"> </a>
-                    </li>
-                    <li>
-                        <a style="background-color:#adadad"> </a>
-                    </li>
-                    <li>
-                        <a style="background-color:#4EC67F"> </a>
-                    </li>
-                </ul>
-            </div>
-            <!--/.color-details-->
-
-            <div class="productFilter productFilterLook2">
-                <div class="row">
-                    <div class="col-lg-6 col-sm-6 col-xs-6">
-                        <div class="filterBox">
-                            <select class="form-control">
-                                <option value="strawberries" selected>Quantity</option>
-                                <option value="mango">1</option>
-                                <option value="bananas">2</option>
-                                <option value="watermelon">3</option>
-                                <option value="grapes">4</option>
-                                <option value="oranges">5</option>
-                                <option value="pineapple">6</option>
-                                <option value="peaches">7</option>
-                                <option value="cherries">8</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-sm-6 col-xs-6">
-                        <div class="filterBox">
-                            <select class="form-control">
-                                <option value="strawberries" selected>Size</option>
-                                <option value="mango">XL</option>
-                                <option value="bananas">XXL</option>
-                                <option value="watermelon">M</option>
-                                <option value="apples">L</option>
-                                <option value="apples">S</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- productFilter -->
-            <div class="cart-actions">
-                <div class="addto row">
-                    <div class="col-lg-6">
-                        <button onclick="productAddToCartForm.submit(this);"
-                                class="button btn-block btn-cart cart first" title="Add to Cart"
-                                type="button">
-                            Add to Cart
-                        </button>
-                    </div>
-                    <div class="col-lg-6"><a class="link-wishlist wishlist btn-block ">Add to Wishlist</a>
-                    </div>
-                </div>
-            </div>
-            <!--/.cart-actions-->
-
-            <div class="product-share clearfix">
-                <p> SHARE </p>
-
-                <div class="socialIcon">
-                    <a href="#"> <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="#"> <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="#"> <i class="fa fa-google-plus"></i>
-                    </a>
-                    <a href="#"> <i class="fa fa-pinterest"></i>
-                    </a>
-                </div>
-            </div>
-            <!--/.product-share-->
-    </div>
-    <!--/.modal-details-inner-->
-</div>
-<!--/.modal-details-->
-<div class="clear"></div>
-         </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
+        <div class="modal-content" id="model_content_section">
+           
+        </div> <!-- /.modal-content -->
+    </div> <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
 <!-- End Modal -->

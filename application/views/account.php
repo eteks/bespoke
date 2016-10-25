@@ -24,23 +24,23 @@
                             <div class="thumbnail equalheight"><a title="Orders" href="<?php echo base_url(); ?>order_list"><i
                                     class="fa fa-calendar"></i> Order history </a></div>
                         </li>
-                        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
+                        <!-- <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
                             <div class="thumbnail equalheight"><a title="My addresses" href="<?php echo base_url(); ?>my_address"><i
                                     class="fa fa-map-marker"></i> My addresses</a></div>
                         </li>
                         <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
                             <div class="thumbnail equalheight"><a title="Add  address" href="<?php echo base_url(); ?>add_address"> <i
                                     class="fa fa-edit"> </i> Add address</a></div>
-                        </li>
+                        </li> -->
                         <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
                             <div class="thumbnail equalheight"><a title="Personal information"
                                                                   href="<?php echo base_url(); ?>user_information"><i class="fa fa-cog"></i>
                                 Personal information</a></div>
                         </li>
-                        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
+                        <!-- <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
                             <div class="thumbnail equalheight"><a title="My wishlists" href="<?php echo base_url(); ?>wishlist"><i
                                     class="fa fa-heart"></i> My wishlists </a></div>
-                        </li>
+                        </li> -->
                     </ul>
                     <div class="clear clearfix"></div>
                 </div>

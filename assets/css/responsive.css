@@ -1,0 +1,114 @@
+/*===========================================*/
+/* This is the Responsive CSS for Sailor Theme
+/* Theme Author: Jenn and Lian and Tanh
+/* Theme URL: ThemeForces
+/* Created : November 20, 2014
+/* Latest Update : November 20, 2014
+/*===========================================*/
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width:768px) and (max-width:1024px) { 
+    .hover-text h2 { font-size: 20px }
+    .small-box .hover-text,
+    .large-box .hover-text { padding: 20px }
+}
+/* Google Nexus 7 (portrait and landscape) ----------- */
+@media only screen and (min-width:500px) and (max-width:966px) { 
+     section#portfolio {margin-top: 1px;}
+  }
+/* Tablets (portrait) ----------- */
+@media only screen and (min-width:500px) and (max-width:966px) and (orientation:portrait) { 
+    #portfolio .small-box { height: 320px }
+    p.excerpt {
+        padding-top: 20px;
+        font-size: 12px;
+        line-height: 16px;
+    }
+    #portfolio .large-box {
+        height: 500px;
+    }
+    #portfolio .small-box {
+        height: 250px;
+    }
+    .large-box .hover-text a.btn.read-more-btn {
+        top: 400px;
+    }
+    .small-box img.img-responsive {
+        width: -webkit-calc(100% + 180px);
+        width: calc(100% + 180px);
+        max-width: 200%;
+        -webkit-transform: translateX(-100px) translateY(-20px);
+    }
+    .large-box img.img-responsive {
+        max-width: 200%;
+        transform: translateX(-150px) translateY(-90px);
+        -webkit-transform: translateX(-150px) translateY(-190px);
+    }
+    .quote blockquote { font-size: 40px }
+}
+/* Tablets (portrait) ----------- */
+@media only screen and (max-width:603px) and (orientation:portrait) { 
+    h1 { font-size: 100px }
+    #portfolio .large-box,
+    #portfolio .small-box,
+    #blog .blog-box {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width:320px) and (max-width:480px) { 
+    h1 { font-size: 80px }
+    h2 { font-size: 20px }
+    h4 { font-size: 16px }
+    p.excerpt { padding-top: 12px }
+    #portfolio .large-box, 
+    #portfolio .small-box, 
+    #blog .blog-box {
+        width: 100%;
+    }
+    .hover-text h2 { font-size: 22px }
+    #portfolio .large-box { height: 540px }
+    .large-box .hover-text a.btn.read-more-btn {top: 450px}
+    section#portfolio.gallery, 
+    section#portfolio.albums {margin-top: 65px;}
+ }
+    
+
+/* Mobile/Smartphones (portrait) ----------- */
+@media only screen and (max-width:360px) and (orientation:portrait) { 
+    #portfolio .small-box {height: 250px;}
+    p.excerpt {
+        padding-top: 12px;
+    }
+    .small-box .hover-text .ptitle{
+        .padding: 0px 5px
+    }
+    .small-box .hover-text,
+    .large-box .hover-text {
+         padding: 25px;
+    }
+    #portfolio .large-box,
+    .large-box .hover-text {height: 500px;}
+    .large-box .hover-text a.btn.read-more-btn {top: 400px;}  
+}
+
+/* iPhones (portrait) ----------- */
+@media only screen and (max-width:320px) and (orientation:portrait) { 
+    .small-box img.img-responsive {
+        width: -webkit-calc(100% + 180px);
+        width: calc(100% + 180px);
+        max-width: 200%;
+        -webkit-transform: translateX(-100px) translateY(-20px);
+    }
+    #portfolio .large-box, .large-box .hover-text {
+        height: 480px;
+    }
+    section#portfolio.gallery, 
+    section#portfolio.albums{margin-top: 65px;}
+    .large-box img.img-responsive {
+        width: -webkit-calc(100% + 220px);
+        width: calc(100% + 220px);
+        max-width: 200%;
+    }
+}

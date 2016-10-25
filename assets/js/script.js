@@ -303,7 +303,7 @@ $(document).ready(function () {
     $('div.has-equal-height-child > div.is-equal').responsiveEqualHeightGrid();
 
     // product details color switch 
-    $(".swatches li").click(function () {
+    $(document).on('click','.swatches li',function () {
         $(".swatches li.selected").removeClass("selected");
         $(this).addClass('selected');
     });

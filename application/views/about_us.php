@@ -6,7 +6,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="parallax-content clearfix animated ">
                         <h1 class="x2large">
-                            ABOUT TSHOP
+                            ABOUT BESPOKE
                         </h1>
                         <h5 class="parallaxSubtitle">
                             Lorem ipsum dolor sit amet consectetuer

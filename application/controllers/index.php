@@ -91,7 +91,8 @@ class Index extends CI_Controller {
 
  //    }
 
-    /* --------          Header page end     -------- */
+
+	/* --------          Header page end     -------- */
 
     /* --------          Index page start     -------- */
 
@@ -101,6 +102,63 @@ class Index extends CI_Controller {
 		// if (!$this->user) {
 		// 	$data['login_url'] = $this->facebook->getLoginUrl(array('redirect_uri' => site_url('index/facebooklogin'),'scope' => array("email")));
 		// }
+
+		/* ------          Google Login    ----- */
+		// Include the google api php libraries
+        include_once APPPATH."libraries/google-api-php-client/Google_Client.php";
+        include_once APPPATH."libraries/google-api-php-client/contrib/Google_Oauth2Service.php";
+        
+        // Google Project API Credentials
+        $clientId = '803855437633-3bvq3m2akbgeu7ilrfr668fr3j5c5a4p.apps.googleusercontent.com';
+        $clientSecret = 'qSzTTivFedKAhWtH0CI7iJp-';
+        $redirectUrl = 'http://localhost/bespoke';
+        
+        // Google Client Configuration
+        $gClient = new Google_Client();
+        $gClient->setApplicationName('Login to bespoke.com');
+        $gClient->setClientId($clientId);
+        $gClient->setClientSecret($clientSecret);
+        $gClient->setRedirectUri($redirectUrl);
+        $google_oauthV2 = new Google_Oauth2Service($gClient);
+
+        if (isset($_REQUEST['code'])) {
+            $gClient->authenticate();
+            $this->session->set_userdata('token', $gClient->getAccessToken());
+            redirect($redirectUrl);
+        }
+
+        $token = $this->session->userdata('token');
+        if (!empty($token)) {
+            $gClient->setAccessToken($token);
+        }
+
+        if ($gClient->getAccessToken()) {
+            $userProfile = $google_oauthV2->userinfo->get();
+
+            // Preparing data for database insertion
+            $userData['oauth_provider'] = 'google';
+            $userData['id'] = $userProfile['id'];
+            $userData['email'] = $userProfile['email'];
+            $userData['user_name'] = $userProfile['name'];
+            $userData['first_name'] = $userProfile['given_name'];
+            // Insert or update user data
+
+	        if(!empty($userData)){
+               $status = $this->index_model->get_glogin_status($userData);
+            	if($status==0) {
+       		  		echo "Already exists! Please Check your mail for bespoke login credentials";
+       		  		$this->session->unset_userdata('token');
+        			redirect(base_url());
+               	}
+            } 
+            else {
+               echo "Login failed";
+            }
+        } 
+        else {
+            $data['authUrl'] = $gClient->createAuthUrl();
+        }
+        /* ------          Google end    ----- */
 		$default_credentials = $this->index_model->get_credentials();
 		$product_list = $this->index_model->get_product_list();
 		$data['new_arrivals'] = $product_list['new_arrivals'];
@@ -136,10 +194,74 @@ class Index extends CI_Controller {
 	// Product list page
 	public function products_list()
 	{
-		$this->load->view('category');
+		$sidebar_list = $this->index_model->listing_data();
+		$data['error'] = $sidebar_list['error'];
+		if($data['error'] != 1) {
+			$data['rec_name'] = $sidebar_list['rec_name'];
+			$data['cat_name'] = $sidebar_list['cat_name'];
+			$data['subcategory_name'] = $sidebar_list['subcategory_name'];
+			$data['subcategory_list'] = $sidebar_list['subcategory_list'];
+			$data['product_list'] = $sidebar_list['product_list'];
+			$data_atribute = $sidebar_list['attribute_list'];
+			$out = array();
+			if(!empty($data_atribute)) {
+				foreach ($data_atribute as $key => $row) {
+					foreach ($row as $k => $r) {
+						if(!isset($out[$row['product_attribute_id']][$row['product_attribute_value_id']])) {
+							$out[$row['product_attribute_id']]['product_attribute_value_id'][$row['product_attribute_value_id']] = $row['product_attribute_value'];
+				    	}
+				    	if($k == 'product_attribute') {
+	     					$out[$row['product_attribute_id']][$k] = $row[$k];
+	     				}
+			    	}
+				}
+			}
+			$data['attribute_list'] = $out;
+			$this->load->view('category',$data);
+		}
+		else {
+			redirect(base_url().'nopage');
+		}
 	}
 
 	/* --------          Listing page end     -------- */
+
+	/* --------          product details start     -------- */
+
+	public function product_details()
+	{
+		$product_details = $this->index_model->get_product_info();
+		$data['error'] = $product_details['error'];
+		if($data['error'] != 1) {
+			$data['product_details'] = $product_details['product_details'];
+			$data_attributes_values	= $product_details['product_attributes'];
+			$out = array();
+			if(!empty($data_attributes_values)) {
+				foreach ($data_attributes_values as $key => $row) {
+					foreach ($row as $k => $r) {
+						if(!isset($out[$row['product_attribute_id']][$row['product_attribute_value_id']])) {
+							$out[$row['product_attribute_id']]['product_attribute_value_id'][$row['product_attribute_value_id']] = $row['product_attribute_value'];
+				    	}
+				    	if($k == 'product_attribute') {
+	     					$out[$row['product_attribute_id']][$k] = $row[$k];
+	     				}
+			    	}
+				}
+			}
+			$data['product_attributes'] = $out;
+			$data['product_gallery'] = $product_details['product_gallery'];
+			$data['recommanded_products'] = $product_details['recommanded_products'];
+			$data['default_group'] = $product_details['default_group'];
+			$this->load->view('product_details',$data);		
+		}
+		else {
+			redirect(base_url().'nopage');
+		}	
+	}
+
+	/* --------          product details end     -------- */
+
+
 
 	/* --------          Recipients page start     -------- */
 
@@ -209,7 +331,7 @@ class Index extends CI_Controller {
 	{
 		$this->load->view('form');
 	}
-	public function error_page()
+	public function nopage()
 	{
 		$this->load->view('error_page');
 	}
@@ -233,10 +355,6 @@ class Index extends CI_Controller {
 	{
 		$this->load->view('order_status');
 	}
-	public function product_details()
-	{
-		$this->load->view('product_details');
-	}
 	public function thanks_for_order()
 	{
 		$this->load->view('thanks_for_order');
@@ -252,6 +370,26 @@ class Index extends CI_Controller {
 	public function wishlist()
 	{
 		$this->load->view('wishlist');
+	}
+	public function portfolio()
+	{
+		$this->load->view('portfolio');
+	}
+	public function pre_wedding()
+	{
+		$this->load->view('pre_wedding');
+	}
+	public function post_wedding()
+	{
+		$this->load->view('post_wedding');
+	}
+	public function track_order()
+	{
+		$this->load->view('track_order');
+	}
+	public function recipient_category()
+	{
+		$this->load->view('recipient_category');
 	}
 }
 

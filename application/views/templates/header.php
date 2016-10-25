@@ -15,6 +15,12 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
+    <!-- Other Css files -->
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/jasny-bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/nivo-lightbox.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/themes/default/default.css">
     <!-- styles needed by smoothproducts.js for product zoom  -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/smoothproducts.css">
     <link href="<?php echo base_url(); ?>assets/plugins/rating/bootstrap-rating.css" rel="stylesheet">
@@ -70,7 +76,7 @@
                 <div class="modal-footer">
                     <p class="text-center"> Not here before? 
                         <a data-toggle="modal" data-dismiss="modal" href="#ModalSignup"> Sign Up. </a> <br>
-                        <a href="forgot-password.html"> Lost your password? </a>
+                        <a href="<?php echo base_url(); ?>forgot_password"> Lost your password? </a>
                     </p>
                 </div>
             </div> <!-- /.modal-content -->
@@ -92,7 +98,7 @@
                     <h5 style="padding:10px 0 10px 0;" class="text-center"> OR </h5>
 
                     <div class="control-group">
-                        <a class="gplus_button btn  btn-block btn-lg " href=""> SIGNUP WITH
+                        <a class="gplus_button btn  btn-block btn-lg " href="<?php echo $authUrl; ?>"> SIGNUP WITH
                         GOOGLE + </a>
                     </div>
                     <h5 style="padding:10px 0 10px 0;" class="text-center"> OR </h5>
@@ -146,10 +152,10 @@
                 <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
                     <div class="pull-left ">
                         <ul class="userMenu ">
-                            <li><a href="#"> <span class="hidden-xs">HELP</span><i
-                                    class="glyphicon glyphicon-info-sign hide visible-xs "></i> </a></li>
-                            <li class="phone-number"><a href="callto:+12025550151"> <span> <i
-                                    class="glyphicon glyphicon-phone-alt "></i></span> <span class="hidden-xs" style="margin-left:5px"> +1-202-555-0151 </span>
+                            <!-- <li><a href="#"> <span class="hidden-xs">HELP</span><i
+                                    class="glyphicon glyphicon-info-sign hide visible-xs "></i> </a></li> -->
+                            <li class="phone-number"><a href="callto:+0000000000"> <span> <i
+                                    class="glyphicon glyphicon-phone-alt "></i></span> <span class="hidden-xs" style="margin-left:5px"> +0-000-000-0000 </span>
                             </a></li>
                         </ul>
                     </div>
@@ -370,12 +376,17 @@
                             ?>
                             <ul class="col-lg-2  col-sm-2 col-md-2  unstyled noMarginLeft">
                                 <li>
-                                    <p><strong> <?php echo $cat_value['category_name']; ?> </strong></p>
+                                    <p>
+                                        <strong> 
+                                            <a href="<?php echo base_url(); ?>products_view/?rec=<?php echo $rec_key; ?>&cat=<?php echo $cat_key; ?>">
+                                                <?php echo $cat_value['category_name']; ?> 
+                                            </a>
+                                        </strong></p>
                                 </li>
                                 <?php
                                 foreach ($cat_value['subcategory_id'] as $sub_key => $sub_value) :
                                 ?>
-                                <li><a href="<?php echo base_url(); ?>products_view/<?php echo $sub_key; ?>"> <?php echo $sub_value; ?> </a></li>
+                                <li><a href="<?php echo base_url(); ?>products_view/?rec=<?php echo $rec_key; ?>&cat=<?php echo $cat_key; ?>&sub=<?php echo $sub_key; ?>"> <?php echo $sub_value; ?> </a></li>
                                 <?php
                                 endforeach;
                                 ?>
@@ -390,7 +401,7 @@
                 endforeach;
                 endif;
                 ?>
-                <li><a href="#"> PHOTO SHOOT </a></li>
+                <li><a href="<?php echo base_url(); ?>portfolio"> PHOTOGRAPHY </a></li>
             </ul>
             </ul>
 
