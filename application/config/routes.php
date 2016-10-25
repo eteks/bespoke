@@ -55,12 +55,7 @@ $route['glogin'] = 'index/glogin';
 
 $route['account'] = 'index/account';
 $route['cart'] = 'index/cart';
-$route['checkout_0'] = 'index/checkout_0';
-$route['checkout_1'] = 'index/checkout_1';
-$route['checkout_2'] = 'index/checkout_2';
-$route['checkout_3'] = 'index/checkout_3';
-$route['checkout_4'] = 'index/checkout_4';
-$route['checkout_5'] = 'index/checkout_5';
+$route['checkout'] = 'index/checkout';
 $route['forgot_password'] = 'index/forgot_password';
 $route['form'] = 'index/form';
 $route['error_page'] = 'index/error_page';

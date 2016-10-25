@@ -117,7 +117,7 @@
             <div class="contentBox">
                 <div class="w100 costDetails">
                     <div class="table-block" id="order-detail-content">
-                        <a class="btn btn-primary btn-lg btn-block basket_section_button" id="checkout_button" title="checkout" href="<?php echo base_url(); ?>checkout_0" style="margin-bottom:20px"> 
+                        <a class="btn btn-primary btn-lg btn-block basket_section_button" id="checkout_button" title="checkout" href="<?php echo base_url(); ?>checkout" style="margin-bottom:20px"> 
                             Proceed to checkout &nbsp; 
                             <i class="fa fa-arrow-right"></i> 
                         </a>

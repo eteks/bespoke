@@ -313,30 +313,9 @@ class Index extends CI_Controller {
 	{
 		$this->load->view('account');
 	}
-	
-	public function checkout_0()
+	public function checkout()
 	{
-		$this->load->view('checkout_0');
-	}
-	public function checkout_1()
-	{
-		$this->load->view('checkout_1');
-	}
-	public function checkout_2()
-	{
-		$this->load->view('checkout_2');
-	}
-	public function checkout_3()
-	{
-		$this->load->view('checkout_3');
-	}
-	public function checkout_4()
-	{
-		$this->load->view('checkout_4');
-	}
-	public function checkout_5()
-	{
-		$this->load->view('checkout_5');
+		$this->load->view('checkout');
 	}
 	public function forgot_password()
 	{
