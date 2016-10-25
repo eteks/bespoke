@@ -109,6 +109,8 @@ $route['adminindex/loadcategory_reference'] = 'adminindex/loadcategory_reference
 $route['adminindex/product_attribute_sets'] = 'adminindex/product_attribute_sets';
 // $route['adminindex/delete/(:any)/(:any)'] = 'adminindex/delete';
 $route['photography/add_photoshoot_type'] = 'photography/add_photoshoot_type';
+$route['photography/photoshoot_type'] = 'photography/photoshoot_type';
+$route['photography/edit_photoshoot_type'] = 'photography/edit_photoshoot_type';
 
 
 

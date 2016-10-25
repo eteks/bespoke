@@ -33,7 +33,7 @@ class Photography extends CI_Controller {
 	             'rules'   => 'trim|required|xss_clean'
 	          ),   
 	    );
-	 //    $this->form_validation->set_rules($validation_rules);
+	    $this->form_validation->set_rules($validation_rules);
 	    if ($this->form_validation->run() == FALSE) {
 	            foreach($validation_rules as $row){
 		            $field = $row['field'];          //getting field name
@@ -53,11 +53,11 @@ class Photography extends CI_Controller {
 				}
 				else{
 					$data = array(
-					'photoshoot_type' => $this->input->post('photoshoot_type'),
-					'photoshoot_description' => $this->input->post('photoshoot_description'),
-					'photoshoot_type_status' => $this->input->post('photoshoot_type_status'),
+					'display_title' => $this->input->post('photoshoot_type'),
+					'display_description' => $this->input->post('photoshoot_description'),
+					'display_status' => $this->input->post('photoshoot_type_status'),
 					);
-					$result = $this->photography->insert_photoshoot_type($data);
+					$result = $this->photographymodel->insert_photoshoot_type($data);
 					if($result)
 						$status['error_message'] = "PhotoShoot Type Created Successfully!";
 					else
@@ -67,11 +67,19 @@ class Photography extends CI_Controller {
     	}
     	if(isset($_POST))
     		$status['photoshoot_type_data'] = array(
-					'photoshoot_type' => $this->input->post('category_name'),
+					'photoshoot_type' => $this->input->post('photoshoot_type'),
 					'photoshoot_description' => $this->input->post('photoshoot_description'),
 					'photoshoot_type_status' => $this->input->post('photoshoot_type_status'),
 					);
-		print_r($status['error_message']);
+		// print_r($status['error_message']);
 		$this->load->view('admin/add_photoshoot_type',$status);
+	}
+	public function photoshoot_type()
+	{	
+		//get list of category from database and store it in array variable 'category' with key 'category_list'
+		$photoshoot_type['photoshoot_type_list'] = $this->photographymodel->get_photoshoot_type();
+		
+		//call the category views i.e rendered page and pass the category data in the array variable 'category'
+		$this->load->view('admin/photoshoot_type',$photoshoot_type);
 	}
 }
