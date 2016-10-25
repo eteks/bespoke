@@ -46,7 +46,7 @@
     <thead>
     <tr>
 		<th class="product product_name_len">Subcategory Name</th>
-        <th class="product">Recipient Name & Categories</th>
+        <th class="product category_name_cat">Recipient Name & Categories</th>
 		<!-- <th class="product">Categories</th> -->
 		<th class="product_small">Status</th>
 		<th class="product_small">Created Date</th>
@@ -61,12 +61,12 @@
 <table>
     <tr>
         <th class="subcategory_scroll_title_a">Recipient Name</td>
-        <th class="subcategory_scroll_title_b">Category Name</td>
+        <th class="subcategory_scroll_title_b subcat_name_width">Category Name</td>
 
     </tr>
     <tr class="bottom_border_line">
         <td><?php echo $subcat["recipient_type"] ?></td>
-        <td class="subcategory_scroll_b">
+        <td class="subcategory_scroll_b subcat_name_width">
         	<table>
             <?php 
                 if(sizeof($subcat["category_name"]) > 1){
@@ -81,7 +81,7 @@
     </tr>
      <tr  class="bottom_border_line">
         <td><?php echo $subcat["recipient_type"] ?></td>
-        <td class="subcategory_scroll_b">
+        <td class="subcategory_scroll_b subcat_name_width">
         	<table>
             <?php 
                 if(sizeof($subcat["category_name"]) > 1){

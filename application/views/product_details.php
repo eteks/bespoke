@@ -191,8 +191,12 @@
 
         <div id="SimilarProductSlider">
             <div class="item">
-                <div class="product"><a class="product-image"> <img src="<?php echo base_url(); ?>assets/img/product/a1.jpg" alt="img"> </a>
-
+                <div class="product">
+                	<div class="liked_product">
+	                	<a href="#">
+	                		<img src="<?php echo base_url(); ?>assets/img/product/a1.jpg" alt="img" class="liked_product_images"> 
+	                	</a>
+					</div>
                     <div class="description">
                         <h4><a href="san-remo-spaghetti">YOUR LIFE</a></h4>
 
@@ -203,8 +207,12 @@
             <!--/.item-->
 
             <div class="item">
-                <div class="product"><a class="product-image"> <img src="<?php echo base_url(); ?>assets/img/product/a2.jpg" alt="img"> </a>
-
+                <div class="product">
+                	<div class="liked_product">
+	                	<a href="#"> 
+	                		<img src="<?php echo base_url(); ?>assets/img/product/a2.jpg" alt="img" class="liked_product_images">
+	                	</a>
+					</div>
                     <div class="description">
                         <h4><a href="san-remo-spaghetti">RED CROWN</a></h4>
 
@@ -215,8 +223,12 @@
             <!--/.item-->
 
             <div class="item">
-                <div class="product"><a class="product-image"> <img src="<?php echo base_url(); ?>assets/img/product/a3.jpg" alt="img"> </a>
-
+                <div class="product">
+                	<div class="liked_product">
+	                	<a href="#"> 
+	                		<img src="<?php echo base_url(); ?>assets/img/product/a3.jpg" alt="img" class="liked_product_images">
+	                	</a>
+					</div>
                     <div class="description">
                         <h4><a href="san-remo-spaghetti">WHITE GOLD</a></h4>
 
@@ -227,8 +239,12 @@
             <!--/.item-->
 
             <div class="item">
-                <div class="product"><a class="product-image"> <img src="<?php echo base_url(); ?>assets/img/product/a4.jpg" alt="img"> </a>
-
+                <div class="product">
+                	<div class="liked_product">
+	                	<a href="#">
+	                		<img src="<?php echo base_url(); ?>assets/img/product/a4.jpg" alt="img" class="liked_product_images">
+	                	</a>
+					</div>
                     <div class="description">
                         <h4><a href="san-remo-spaghetti">DENIM 4240</a></h4>
 
@@ -239,8 +255,12 @@
             <!--/.item-->
 
             <div class="item">
-                <div class="product"><a class="product-image"> <img src="<?php echo base_url(); ?>assets/img/product/30.jpg" alt="img"> </a>
-
+                <div class="product">
+                	<div class="liked_product">
+	                	<a href="#"> 
+	                		<img src="<?php echo base_url(); ?>assets/img/product/30.jpg" alt="img" class="liked_product_images">
+	                	</a>
+					</div>
                     <div class="description">
                         <h4><a href="san-remo-spaghetti">CROWN ROCK</a></h4>
 
@@ -251,8 +271,12 @@
             <!--/.item-->
 
             <div class="item">
-                <div class="product"><a class="product-image"> <img src="<?php echo base_url(); ?>assets/img/product/a5.jpg" alt="img"> </a>
-
+                <div class="product">
+                	<div class="liked_product">
+	                	<a href="#"> 
+	                		<img src="<?php echo base_url(); ?>assets/img/product/a5.jpg" alt="img" class="liked_product_images"> 
+	                	</a>
+					</div>
                     <div class="description">
                         <h4><a href="san-remo-spaghetti">SLIM ROCK</a></h4>
 
@@ -263,8 +287,12 @@
             <!--/.item-->
 
             <div class="item">
-                <div class="product"><a class="product-image"> <img src="<?php echo base_url(); ?>assets/img/product/36.jpg" alt="img"> </a>
-
+                <div class="product">
+                	<div class="liked_product">
+	                	<a href="#"> 
+	                		<img src="<?php echo base_url(); ?>assets/img/product/36.jpg" alt="img" class="liked_product_images">
+	                	</a>
+					</div>
                     <div class="description">
                         <h4><a href="san-remo-spaghetti">ROCK T-Shirts </a></h4>
 
@@ -275,8 +303,12 @@
             <!--/.item-->
 
             <div class="item">
-                <div class="product"><a class="product-image"> <img src="<?php echo base_url(); ?>assets/img/product/13.jpg" alt="img"> </a>
-
+                <div class="product">
+                	<div class="liked_product">
+	                	<a href="#">
+	                		<img src="<?php echo base_url(); ?>assets/img/product/13.jpg" alt="img" class="liked_product_images">
+	                	</a>
+                   </div>
                     <div class="description">
                         <h4><a href="san-remo-spaghetti">Denim T-Shirts </a></h4>
                         <div class="price"><span>$43</span></div>

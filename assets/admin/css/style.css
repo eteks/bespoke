@@ -62,7 +62,8 @@
 }
 }
 .product_tab{
-	background-color: #4fbfa8;
+	background-color: #c81d6a;
+	color: #fff !important;
     border-radius: 4px;
     margin-bottom: 20px;
     padding: 8px 15px;
@@ -602,23 +603,32 @@
     border-left: 0 solid #000 !important;
     border-top: 0 solid #000 !important;
     line-height: 22px;
-    }
+}
 .subcategory_scroll_title_a{    
     font-size: 12px !important;
     background-color:#eeeeee;
     padding: 5px 10px;
-    }
+}
 .subcategory_scroll_title_b{    
     font-size: 12px !important;
     background-color:#eeeeee;
     padding: 5px 10px;
-    }
+}
+.category_name_cat{
+	width: 300 !important;
+	min-width:300px !important;
+	max-width: 300px !important;
+}
 .product_name_len{
 	min-width:200px !important;
 	max-width: 200px !important;
 }
 .bottom_border_line{
 	border-bottom: 1px solid #eeeeee !important;
+}
+.subcat_name_width{
+	min-width: 175px !important;
+	max-width: 175px !important;
 }
 // ===========================
 //        IMAGE UPLOAD

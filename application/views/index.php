@@ -109,9 +109,9 @@
                         <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist" data-placement="left">
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
-                        <div class="image">
+                        <div class="image product_images">
                             <a href="#">
-                                <img src="<?php echo base_url().$new_arr['product_upload_image']; ?>"  alt="img" class="img-responsive">
+                                <img src="<?php echo base_url().$new_arr['product_upload_image']; ?>"  alt="img" class="img-responsive images_alignment">
                             </a>
                             <div class="product_name">
                                 <a href="<?php echo base_url(); ?>product_details">
@@ -187,9 +187,9 @@
                         <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist" data-placement="left">
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
-                        <div class="image">
+                        <div class="image product_images">
                             <a href="#">
-                                <img src="<?php echo base_url().$fea_arr['product_upload_image']; ?>" alt="img" class="img-responsive">
+                                <img src="<?php echo base_url().$fea_arr['product_upload_image']; ?>" alt="img" class="img-responsive images_alignment">
                             </a>
                             <div class="product_name">
                                 <a href="<?php echo base_url(); ?>product_details">
@@ -240,7 +240,7 @@
 
     <!-- ************  Featured products End  ***************  -->
 
-    <hr class="no-margin-top">
+    <!-- <hr class="no-margin-top">
     <div class="width100 section-block ">
         <div class="row featureImg">
             <div class="col-md-3 col-sm-3 col-xs-6"><a href="<?php echo base_url(); ?>category"><img src="<?php echo base_url(); ?>assets/img/site/new-collection-1.jpg"
@@ -256,11 +256,11 @@
                                                                                  class="img-responsive" alt="img"></a>
             </div>
         </div>
-        <!--/.row-->
-    </div>
+        !--/.row--
+    </div> -->
     <!--/.section-block-->
 
-    <div class="width100 section-block">
+    <!-- <div class="width100 section-block">
         <h3 class="section-title"><span> BRAND</span> <a id="nextBrand" class="link pull-right carousel-nav"> <i
                 class="fa fa-angle-right"></i></a> <a id="prevBrand" class="link pull-right carousel-nav"> <i
                 class="fa fa-angle-left"></i> </a></h3>
@@ -287,8 +287,8 @@
                 </ul>
             </div>
         </div>
-        <!--/.row-->
-    </div>
+        !--/.row--
+    </div> -->
     <!--/.section-block-->
 
 </div>
