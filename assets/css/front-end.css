@@ -95,3 +95,10 @@ a {
 .add_to_cart_status {
     display: none;
 }
+.delete_item_cart_list i {
+    font-size: 11px !important;
+}
+.product_quantity {
+    width : 62% !important;
+    margin: 0 auto;
+}

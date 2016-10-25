@@ -211,12 +211,13 @@
 
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span
-                    class="sr-only"> Toggle navigation </span> <span class="icon-bar"> </span> <span
-                    class="icon-bar"> </span> <span class="icon-bar"> </span></button>
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-cart"><i
-                    class="fa fa-shopping-cart colorWhite"> </i> <span
-                    class="cartRespons colorWhite"> Cart ($210.00) </span></button>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only"> Toggle navigation </span> <span class="icon-bar"> </span> 
+                <span class="icon-bar"> </span> <span class="icon-bar"> </span>
+            </button>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-cart">    <i class="fa fa-shopping-cart colorWhite"> </i> 
+                <span class="cartRespons colorWhite"> Cart ($210.00) </span>
+            </button>
             <a class="navbar-brand " href="<?php echo base_url(); ?>"> 
                 <img src="<?php echo base_url(); ?>assets/img/logo.png" alt="Bespoke"> 
             </a>
@@ -254,108 +255,18 @@
                             <td style="width:15%" class="miniCartSubtotal"><span> $8.80 </span></td>
                             <td style="width:5%" class="delete"><a> x </a></td>
                         </tr>
-                        <tr class="miniCartProduct">
-                            <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/2.jpg" alt="img"> </a>
-                                </div>
-                            </td>
-                            <td style="width:40%">
-                                <div class="miniCartDescription">
-                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
-                                    <span class="size"> 12 x 1.5 L </span>
-
-                                    <div class="price"><span> $8.80 </span></div>
-                                </div>
-                            </td>
-                            <td style="width:10%" class="miniCartQuantity"><a> X 1 </a></td>
-                            <td style="width:15%" class="miniCartSubtotal"><span> $8.80 </span></td>
-                            <td style="width:5%" class="delete"><a> x </a></td>
-                        </tr>
-                        <tr class="miniCartProduct">
-                            <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/5.jpg" alt="img"> </a>
-                                </div>
-                            </td>
-                            <td style="width:40%">
-                                <div class="miniCartDescription">
-                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
-                                    <span class="size"> 12 x 1.5 L </span>
-
-                                    <div class="price"><span> $8.80 </span></div>
-                                </div>
-                            </td>
-                            <td style="width:10%" class="miniCartQuantity"><a> X 1 </a></td>
-                            <td style="width:15%" class="miniCartSubtotal"><span> $8.80 </span></td>
-                            <td style="width:5%" class="delete"><a> x </a></td>
-                        </tr>
-                        <tr class="miniCartProduct">
-                            <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
-                                </div>
-                            </td>
-                            <td style="width:40%">
-                                <div class="miniCartDescription">
-                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
-                                    <span class="size"> 12 x 1.5 L </span>
-
-                                    <div class="price"><span> $8.80 </span></div>
-                                </div>
-                            </td>
-                            <td style="width:10%" class="miniCartQuantity"><a> X 1 </a></td>
-                            <td style="width:15%" class="miniCartSubtotal"><span> $8.80 </span></td>
-                            <td style="width:5%" class="delete"><a> x </a></td>
-                        </tr>
-                        <tr class="miniCartProduct">
-                            <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img"> </a>
-                                </div>
-                            </td>
-                            <td style="width:40%">
-                                <div class="miniCartDescription">
-                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
-                                    <span class="size"> 12 x 1.5 L </span>
-
-                                    <div class="price"><span> $8.80 </span></div>
-                                </div>
-                            </td>
-                            <td style="width:10%" class="miniCartQuantity"><a> X 1 </a></td>
-                            <td style="width:15%" class="miniCartSubtotal"><span> $8.80 </span></td>
-                            <td style="width:5%" class="delete"><a> x </a></td>
-                        </tr>
-                        <tr class="miniCartProduct">
-                            <td style="width:20%" class="miniCartProductThumb">
-                                <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/4.jpg" alt="img"> </a>
-                                </div>
-                            </td>
-                            <td style="width:40%">
-                                <div class="miniCartDescription">
-                                    <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
-                                    <span class="size"> 12 x 1.5 L </span>
-
-                                    <div class="price"><span> $8.80 </span></div>
-                                </div>
-                            </td>
-                            <td style="width:10%" class="miniCartQuantity"><a> X 1 </a></td>
-                            <td style="width:15%" class="miniCartSubtotal"><span> $8.80 </span></td>
-                            <td style="width:5%" class="delete"><a> x </a></td>
-                        </tr>
                         </tbody>
                     </table>
-                </div>
-                <!--/.miniCartTable-->
-
+                </div> <!--/.miniCartTable-->
                 <div class="miniCartFooter  miniCartFooterInMobile text-right">
                     <h3 class="text-right subtotal"> Subtotal: $210 </h3>
-                    <a class="btn btn-sm btn-danger" href="<?php echo base_url(); ?>cart"> <i class="fa fa-shopping-cart"> </i> VIEW CART
-                    </a> <a href="checkout-0.html"
-                            class="btn btn-sm btn-primary"> CHECKOUT </a></div>
-                <!--/.miniCartFooter-->
-
-            </div>
-            <!--/.cartMenu-->
-        </div>
-        <!--/.navbar-cart-->
-
+                    <a class="btn btn-sm btn-danger" href="<?php echo base_url(); ?>cart"> 
+                        <i class="fa fa-shopping-cart"> </i> VIEW CART
+                    </a> 
+                    <a href="checkout-0.html" class="btn btn-sm btn-primary"> CHECKOUT </a>
+                </div> <!--/.miniCartFooter-->
+            </div> <!--/.cartMenu-->
+        </div> <!--/.navbar-cart-->
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="<?php echo base_url(); ?>"> Home </a></li>
@@ -407,132 +318,74 @@
 
             <!--- this part will be hidden for mobile version -->
             <div class="nav navbar-nav navbar-right hidden-xs">
-                <div class="dropdown  cartMenu "><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i
-                        class="fa fa-shopping-cart"> </i> <span class="cartRespons"> Cart ($210.00) </span> <b
-                        class="caret"> </b> </a>
-
+                <div class="dropdown  cartMenu ">
                     <div class="dropdown-menu col-lg-4 col-xs-12 col-md-4 ">
                         <div class="w100 miniCartTable scroll-pane">
                             <table>
                                 <tbody>
-                                <tr class="miniCartProduct">
-                                    <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img">
-                                        </a></div>
-                                    </td>
-                                    <td style="width:40%">
-                                        <div class="miniCartDescription">
-                                            <h4><a href="<?php echo base_url(); ?>product_details"> TSHOP Tshirt DO9 </a></h4>
-                                            <span class="size"> 12 x 1.5 L </span>
-
-                                            <div class="price"><span> $22 </span></div>
-                                        </div>
-                                    </td>
-                                    <td style="width:10%" class="miniCartQuantity"><a> X 1 </a></td>
-                                    <td style="width:15%" class="miniCartSubtotal"><span> $33 </span></td>
-                                    <td style="width:5%" class="delete"><a> x </a></td>
-                                </tr>
-                                <tr class="miniCartProduct">
-                                    <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/2.jpg" alt="img">
-                                        </a></div>
-                                    </td>
-                                    <td style="width:40%">
-                                        <div class="miniCartDescription">
-                                            <h4><a href="<?php echo base_url(); ?>product_details"> TShir TSHOP 09 </a></h4>
-                                            <span class="size"> 12 x 1.5 L </span>
-
-                                            <div class="price"><span> $15 </span></div>
-                                        </div>
-                                    </td>
-                                    <td style="width:10%" class="miniCartQuantity"><a> X 1 </a></td>
-                                    <td style="width:15%" class="miniCartSubtotal"><span> $120 </span></td>
-                                    <td style="width:5%" class="delete"><a> x </a></td>
-                                </tr>
-                                <tr class="miniCartProduct">
-                                    <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/5.jpg" alt="img">
-                                        </a></div>
-                                    </td>
-                                    <td style="width:40%">
-                                        <div class="miniCartDescription">
-                                            <h4><a href="<?php echo base_url(); ?>product_details"> Tshir 2014 </a></h4>
-                                            <span class="size"> 12 x 1.5 L </span>
-
-                                            <div class="price"><span> $30 </span></div>
-                                        </div>
-                                    </td>
-                                    <td style="width:10%" class="miniCartQuantity"><a> X 1 </a></td>
-                                    <td style="width:15%" class="miniCartSubtotal"><span> $80 </span></td>
-                                    <td style="width:5%" class="delete"><a> x </a></td>
-                                </tr>
-                                <tr class="miniCartProduct">
-                                    <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/3.jpg" alt="img">
-                                        </a></div>
-                                    </td>
-                                    <td style="width:40%">
-                                        <div class="miniCartDescription">
-                                            <h4><a href="<?php echo base_url(); ?>product_details"> TSHOP T shirt DO20 </a></h4>
-                                            <span class="size"> 12 x 1.5 L </span>
-
-                                            <div class="price"><span> $15 </span></div>
-                                        </div>
-                                    </td>
-                                    <td style="width:10%" class="miniCartQuantity"><a> X 1 </a></td>
-                                    <td style="width:15%" class="miniCartSubtotal"><span> $55 </span></td>
-                                    <td style="width:5%" class="delete"><a> x </a></td>
-                                </tr>
-                                <tr class="miniCartProduct">
-                                    <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/product/4.jpg" alt="img">
-                                        </a></div>
-                                    </td>
-                                    <td style="width:40%">
-                                        <div class="miniCartDescription">
-                                            <h4><a href="<?php echo base_url(); ?>product_details"> T shirt Black </a></h4>
-                                            <span class="size"> 12 x 1.5 L </span>
-
-                                            <div class="price"><span> $44 </span></div>
-                                        </div>
-                                    </td>
-                                    <td style="width:10%" class="miniCartQuantity"><a> X 1 </a></td>
-                                    <td style="width:15%" class="miniCartSubtotal"><span> $40 </span></td>
-                                    <td style="width:5%" class="delete"><a> x </a></td>
-                                </tr>
-                                <tr class="miniCartProduct">
-                                    <td style="width:20%" class="miniCartProductThumb">
-                                        <div><a href="<?php echo base_url(); ?>product_details"> <img src="<?php echo base_url(); ?>assets/img/site/winter.jpg"
-                                                                                  alt="img"> </a></div>
-                                    </td>
-                                    <td style="width:40%">
-                                        <div class="miniCartDescription">
-                                            <h4><a href="<?php echo base_url(); ?>product_details"> G Star T shirt </a></h4>
-                                            <span class="size"> 12 x 1.5 L </span>
-
-                                            <div class="price"><span> $80 </span></div>
-                                        </div>
-                                    </td>
-                                    <td style="width:10%" class="miniCartQuantity"><a> X 1 </a></td>
-                                    <td style="width:15%" class="miniCartSubtotal"><span> $8.80 </span></td>
-                                    <td style="width:5%" class="delete"><a> x </a></td>
-                                </tr>
+                                    <?php
+                                    $total = 0;
+                                    if(!empty($add_to_cart_list)) :
+                                    foreach ($add_to_cart_list as $cart_list) :
+                                    ?>
+                                    <tr class="miniCartProduct">
+                                        <td style="width:20%" class="miniCartProductThumb">
+                                            <div>
+                                                <a href="<?php echo base_url(); ?>product_details/<?php echo $cart_list['product_id']; ?>"> 
+                                                    <img src="<?php echo base_url().$cart_list['product_upload_image']; ?>" alt="img">
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td style="width:40%">
+                                            <div class="miniCartDescription">
+                                                <h4>
+                                                    <a href="<?php echo base_url(); ?>product_details/<?php echo $cart_list['product_id']; ?>">     <?php echo $cart_list['product_title']; ?>
+                                                    </a>
+                                                </h4>
+                                                <div class="price"><span> &#8377; <?php echo $cart_list['orderitem_price']; ?> </span></div>
+                                            </div>
+                                        </td>
+                                        <td style="width:10%" class="miniCartQuantity"><a> X <?php echo $cart_list['orderitem_quantity']; ?> </a></td>
+                                        <?php
+                                        $product_total = number_format($cart_list['orderitem_quantity']*$cart_list['orderitem_price'],2); 
+                                        ?>
+                                        <td style="width:15%" class="miniCartSubtotal">
+                                            <span> &#8377;  <?php echo $product_total; ?> </span>
+                                        </td>
+                                        <td class="delete" style="width:5%">
+                                            <a class="delete_item_cart_list" data-pro_id="<?php echo $cart_list['product_id']; ?>" data-grp_id="<?php echo $cart_list['orderitem_product_attribute_group_id']; ?>"> 
+                                                <i class="glyphicon glyphicon-trash fa-2x"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <?php 
+                                    $total +=  $cart_list['orderitem_quantity']*$cart_list['orderitem_price']; 
+                                    ?> 
+                                    <?php
+                                    endforeach;
+                                    endif;
+                                    ?>
                                 </tbody>
                             </table>
-                        </div>
-                        <!--/.miniCartTable-->
-
+                        </div> <!--/.miniCartTable-->
                         <div class="miniCartFooter text-right">
-                            <h3 class="text-right subtotal"> Subtotal: $210 </h3>
-                            <a class="btn btn-sm btn-danger" href="<?php echo base_url(); ?>cart"> <i class="fa fa-shopping-cart"> </i> VIEW
-                                CART </a><a
-                                class="btn btn-sm btn-primary"> CHECKOUT </a></div>
-                        <!--/.miniCartFooter-->
+                            <h3 class="text-right subtotal"> Subtotal: &#8377; <?php echo number_format(ceil($total),2); ?> </h3>
+                              <a class="btn btn-sm btn-danger" href="<?php echo base_url(); ?>cart"> 
+                                <i class="fa fa-shopping-cart"> </i> 
+                                VIEW CART 
+                            </a>
+                            <a class="btn btn-sm btn-primary"> CHECKOUT </a>
+                        </div> <!--/.miniCartFooter-->
+                    </div> <!--/.dropdown-menu-->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+                        <i class="fa fa-shopping-cart"> </i> 
+                        <span class="cartRespons"> Cart (&#8377;<?php echo number_format(ceil($total),2); ?>) </span> 
+                        <b class="caret"> </b> 
+                    </a>
 
-                    </div>
-                    <!--/.dropdown-menu-->
-                </div>
-                <!--/.cartMenu-->
+                </div> <!--/.cartMenu-->
+
+
 
                 <div class="search-box">
                     <div class="input-group">
