@@ -108,10 +108,12 @@ $route['adminindex/edit_product_attributes/(:any)'] = 'adminindex/edit_product_a
 $route['adminindex/loadcategory_reference'] = 'adminindex/loadcategory_reference';
 $route['adminindex/product_attribute_sets'] = 'adminindex/product_attribute_sets';
 // $route['adminindex/delete/(:any)/(:any)'] = 'adminindex/delete';
-$route['photography/add_photoshoot_type'] = 'photography/add_photoshoot_type';
 $route['photography/photoshoot_type'] = 'photography/photoshoot_type';
-$route['photography/edit_photoshoot_type'] = 'photography/edit_photoshoot_type';
-
+$route['photography/add_photoshoot_type'] = 'photography/add_photoshoot_type';
+$route['photography/edit_photoshoot_type/(:any)'] = 'photography/edit_photoshoot_type';
+$route['photography/photoshoot_person_detail'] = 'photography/photoshoot_person_detail';
+$route['photography/add_photoshoot_person_detail'] = 'photography/add_photoshoot_person_detail';
+$route['photography/edit_photoshoot_person_detail/(:any)'] = 'photography/edit_photoshoot_person_detail';
 
 
 $route['adminindex/area'] = 'adminindex/area';

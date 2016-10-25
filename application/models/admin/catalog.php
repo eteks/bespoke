@@ -80,20 +80,40 @@ class Catalog extends CI_Model {
 		//return all records in array format to the controller
 		return $query->result_array();
 	}
-	public function insert_subcategory($data,$recipient_data,$category_data)
+	public function insert_subcategory($data)
 	{	
+		// echo "<pre>";
+		// 	print_r($subcategory_category_map_data);
+		// 	 echo "</pre>";
+		// echo "test";
+		// $category_mapping_id = $data['category_data'];
+		$data_subcategory_group =  $data['subcategory_group'];
+		$data_subcategory_basic = $data['subcategory_basic'];
+		// $data_subcategory_attributes = isset($data['subcategory_attributes'])?$data['subcategory_attributes']:"";
+		
 		// Query to insert data in database
-		$this->db->insert('shopping_subcategory', $data);
+		$this->db->insert('shopping_subcategory',$data_subcategory_basic);
 		//get inserted subcategory id to map in subcategory category relationship table
+		// $this->db->distinct();
 		$subcategory_id = $this->db->insert_id();
-		foreach($category_data as $value) {
+		// echo "<pre>";
+		// print_r($data_subcategory_group);
+		// echo "</pre>";
+		foreach($data_subcategory_group as $value) {
+			$recipient_id = $value[0];
+			$category_mapping_id = explode(",",$value[1]);
+			// print_r(explode(",",$value[1]));
+			foreach ($category_mapping_id as $value_cat) {
+				// print_r($category_mapping_id);
+			
 		$subcategory_category_recipient_map = array(
                 					'subcategory_mapping_id' => $subcategory_id,
-	               					'recipient_mapping_id' => $recipient_data,
-	               					'category_mapping_id' => $value
+                					'recipient_mapping_id' => $recipient_id,
+	               					'category_mapping_id' => $value_cat,
              						);
 		$this->db->insert('shopping_subcategory_category_and_recipient', $subcategory_category_recipient_map);
 		}
+	}
 		if ($this->db->affected_rows() > 0) {
 			return true;
 		}
@@ -101,6 +121,7 @@ class Catalog extends CI_Model {
 	}	
 	public function update_subcategory($data)
 	{	
+		
 		$category = $data['post_category'];
 		$subcategory_data = $data['post_subcategory'];
 		if(!empty($category['removed_category_data'])){

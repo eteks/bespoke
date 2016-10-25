@@ -6879,3 +6879,113 @@ span.line {
 }
 }
 .mob_phone{font-size: 29px !important;}
+.liked_product div{
+  background: none repeat scroll 0 0 rgba( 183, 11, 89, 0.5);
+}
+.liked_product{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  margin-bottom:30px;
+  overflow:hidden;
+}
+.liked_product img{
+  max-width: 213px;
+  /*position: relative;
+  top: 0;
+  left: 0;*/
+  z-index: 6;
+  /*margin:0 auto;*/
+  cursor:pointer;
+  -moz-transition:all 1s;
+  -webkit-transition:all 1s;
+  -o-transition:all 1s;
+  -ms-transition:all 1s;
+  transition:all 1s;
+}
+.liked_product div{
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:10;
+  width:100%;
+  height:100%;
+  text-align:center;
+  transform:scale(0);
+  transition:all .6s;
+  opacity:0;
+}
+.liked_product:hover div{
+  transform:scale(1);
+  opacity:1;
+}
+.liked_product div a{
+  color: #FFFFFF;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 40%;
+  padding-bottom: 10px;
+  text-decoration: none;
+  cursor: default;
+  text-transform: capitalize;
+}
+@media(max-width: 767px){
+	.liked_product div{
+  background: none repeat scroll 0 0 rgba( 183, 11, 89, 0.5);
+}
+.liked_product{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  margin-bottom:30px;
+  overflow:hidden;
+}
+.liked_product img{
+  max-width: 340px;
+  /*position: relative;
+  top: 0;
+  left: 0;*/
+  z-index: 6;
+  /*margin:0 auto;*/
+  cursor:pointer;
+  -moz-transition:all 1s;
+  -webkit-transition:all 1s;
+  -o-transition:all 1s;
+  -ms-transition:all 1s;
+  transition:all 1s;
+}
+.liked_product div{
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:10;
+  width:100%;
+  height:100%;
+  text-align:center;
+  transform:scale(0);
+  transition:all .6s;
+  opacity:0;
+}
+.liked_product:hover div{
+  transform:scale(1);
+  opacity:1;
+}
+.liked_product div a{
+  color: #FFFFFF;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 30%;
+  padding-bottom: 10px;
+  text-decoration: none;
+  cursor: default;
+  text-transform: capitalize;
+  text-align: center !important;
+  margin-left: 65px !important;
+}
+}

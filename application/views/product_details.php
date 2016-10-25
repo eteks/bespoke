@@ -286,6 +286,7 @@
                             <a class="product-image" href="<?php echo base_url(); ?>product_details/<?php echo $rec_data['product_id']; ?>"> 
                                 <img src="<?php echo base_url().$rec_data['product_upload_image'] ?>" alt="img" class="liked_product_images"> 
                             </a>
+                            <div class="detail_product_name"><a href="<?php echo base_url(); ?>product_details/<?php echo $rec_data['product_id']; ?>"><span><?php echo $rec_data['product_title']; ?> </span></a></div>
                         </div>
                         <div class="description">
                             <h4>
