@@ -21,17 +21,15 @@
 .fl{
 	float:left;
 }
-<<<<<<< HEAD
 .error_admin_check{
    border: 5px solid red !important;
-=======
+}
 .image_icon{
 	height: 44px;
     width: 43px;
     cursor: pointer;
     margin-left:5px;
     margin-top:5px;
->>>>>>> 820fa09382cd4ab86418b94b1f260a98aaf90d26
 }
 .edit_category_image{
 	cursor: pointer;
