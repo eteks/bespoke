@@ -33,12 +33,14 @@ class ElasticSearch
 
     private function call($path, $method = 'GET', $data = null)
     {
-        if (!$this -> index) {
-            throw new Exception('$this->index needs a value');
-        }
+        // echo "call";
+        // if (!$this -> index) {
+        //     throw new Exception('$this->index needs a value');
+        // }
 
-        $url = $this -> server . '/' . $this -> index . '/' . $path;
-
+        // $url = $this -> server . '/' . $this -> index . '/' . $path;
+        $url = $this -> server . $this -> index . '/' . $path;
+        echo $url;
         $headers = array('Accept: application/json', 'Content-Type: application/json', );
 
         $ch = curl_init();
@@ -207,6 +209,7 @@ class ElasticSearch
 
     public function get($type, $id)
     {
+        echo "get";
         return $this -> call($type . '/' . $id, 'GET');
     }
 

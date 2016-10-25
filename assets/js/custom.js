@@ -27,3 +27,19 @@ function centerContent()
         });
     }
 }()); // Added by siva for price filter
+
+function add_to_cart_color_panel() {
+    //Details page
+    if($('.color_panel_details').length > 0) {
+        $('.color_panel_details:first') .addClass('selected');
+        var val_id= $('.color_panel_details:first').find('a').data('val_id');
+        $('.hidden_color_panel').val(val_id);
+    }
+}
+$(document).ready(function() {
+
+    
+    add_to_cart_color_panel();
+
+
+});

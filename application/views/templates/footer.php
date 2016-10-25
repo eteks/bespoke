@@ -264,5 +264,6 @@
 <!-- external javascript --> 
 <script src="<?php echo base_url(); ?>assets/js/custom.js"></script>  
 <script src="<?php echo base_url(); ?>assets/js/ajax-call.js"></script> 
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 </body>
 </html>

@@ -45,6 +45,7 @@ $route['default_controller'] = "index";
 /* Routes for end user side by siva*/
 
 $route['products_view'] = 'index/products_list';
+$route['product_details/(:any)'] = 'index/product_details/$1';
 $route['recipients_view/(:any)'] = 'index/recipients_list/$1';
 $route['about_us'] = 'index/about_details';
 $route['contact_us'] = 'index/contact_details';
@@ -68,7 +69,6 @@ $route['login'] = 'index/login';
 $route['my_address'] = 'index/my_address';
 $route['order_list'] = 'index/order_list';
 $route['order_status'] = 'index/order_status';
-$route['product_details'] = 'index/product_details';
 $route['thanks_for_order'] = 'index/thanks_for_order';
 $route['user_information'] = 'index/user_information';
 $route['welcome_message'] = 'index/welcome_message';
@@ -108,8 +108,12 @@ $route['adminindex/edit_product_attributes/(:any)'] = 'adminindex/edit_product_a
 $route['adminindex/loadcategory_reference'] = 'adminindex/loadcategory_reference';
 $route['adminindex/product_attribute_sets'] = 'adminindex/product_attribute_sets';
 // $route['adminindex/delete/(:any)/(:any)'] = 'adminindex/delete';
+$route['photography/photoshoot_type'] = 'photography/photoshoot_type';
 $route['photography/add_photoshoot_type'] = 'photography/add_photoshoot_type';
-
+$route['photography/edit_photoshoot_type/(:any)'] = 'photography/edit_photoshoot_type';
+$route['photography/photoshoot_person_detail'] = 'photography/photoshoot_person_detail';
+$route['photography/add_photoshoot_person_detail'] = 'photography/add_photoshoot_person_detail';
+$route['photography/edit_photoshoot_person_detail/(:any)'] = 'photography/edit_photoshoot_person_detail';
 
 
 $route['adminindex/area'] = 'adminindex/area';

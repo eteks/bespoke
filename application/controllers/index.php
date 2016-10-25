@@ -217,9 +217,6 @@ class Index extends CI_Controller {
 				}
 			}
 			$data['attribute_list'] = $out;
-			// echo "<pre>";
-			// print_r($out);
-			// echo "</pre>";
 			$this->load->view('category',$data);
 		}
 		else {
@@ -228,6 +225,43 @@ class Index extends CI_Controller {
 	}
 
 	/* --------          Listing page end     -------- */
+
+	/* --------          product details start     -------- */
+
+	public function product_details()
+	{
+		$product_details = $this->index_model->get_product_info();
+		$data['error'] = $product_details['error'];
+		if($data['error'] != 1) {
+			$data['product_details'] = $product_details['product_details'];
+			$data_attributes_values	= $product_details['product_attributes'];
+			$out = array();
+			if(!empty($data_attributes_values)) {
+				foreach ($data_attributes_values as $key => $row) {
+					foreach ($row as $k => $r) {
+						if(!isset($out[$row['product_attribute_id']][$row['product_attribute_value_id']])) {
+							$out[$row['product_attribute_id']]['product_attribute_value_id'][$row['product_attribute_value_id']] = $row['product_attribute_value'];
+				    	}
+				    	if($k == 'product_attribute') {
+	     					$out[$row['product_attribute_id']][$k] = $row[$k];
+	     				}
+			    	}
+				}
+			}
+			$data['product_attributes'] = $out;
+			$data['product_gallery'] = $product_details['product_gallery'];
+			$data['recommanded_products'] = $product_details['recommanded_products'];
+			$data['default_group'] = $product_details['default_group'];
+			$this->load->view('product_details',$data);		
+		}
+		else {
+			redirect(base_url().'nopage');
+		}	
+	}
+
+	/* --------          product details end     -------- */
+
+
 
 	/* --------          Recipients page start     -------- */
 
@@ -320,10 +354,6 @@ class Index extends CI_Controller {
 	public function order_status()
 	{
 		$this->load->view('order_status');
-	}
-	public function product_details()
-	{
-		$this->load->view('product_details');
 	}
 	public function thanks_for_order()
 	{

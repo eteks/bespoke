@@ -365,7 +365,7 @@
                 foreach ($menubar_fields as $rec_key => $rec_value) :
                 ?>
                 <li class="dropdown megamenu-80width ">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="<?php echo base_url(); ?>recipients_view/rec/<?php echo $rec_key; ?>"> 
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="<?php echo base_url(); ?>recipients_view/<?php echo $rec_key; ?>"> 
                         <?php echo $rec_value['recipient_type']; ?>
                         <b class="caret"> </b> 
                     </a>

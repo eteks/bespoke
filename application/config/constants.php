@@ -42,6 +42,10 @@ define('FILETYPE_ALLOWED','jpg|jpeg|png|gif');
 //array for product attributes input tags
 define('INPUT_TAGS',serialize(array("dropdown"=>"Dropdown",
         "textfield"=>"Texfield")));
+//array to get person relationship status
+define('RELATIONSHIP_STATUS',serialize(array("single"=>"Single",
+        "couple"=>"Couple")));
+
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
