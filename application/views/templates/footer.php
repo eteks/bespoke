@@ -6,10 +6,15 @@
                     <h3> Support </h3>
                     <ul>
                         <li class="supportLi">
-                            <p> Lorem ipsum dolor sit amet, consectetur </p>
-                            <h4><a class="inline" href="callto:+12025550151"> <strong> <i class="fa fa-phone"> </i> +1-202-555-0151 </strong> </a></h4>
+                            <p> M/S Shadav Agencies,<br /> 
+                            	#113, St. Therease Street,<br /> 
+                            	Pondicherry - 605 001.
+                            </p>
+                            <h4><a class="inline" href="callto:+0413-4308884"> <strong> <i class="fa fa-phone"> </i> 0413-4308884 </strong> </a></h4>
+                            <h4><a class="inline" href="callto:+88709 68989"> <strong> <i class="fa fa-mobile-phone mob_phone"> </i>  88709 68989 </strong> </a></h4>
                             <h4><a class="inline" href="mailto:help@yourweb.com"> <i class="fa fa-envelope-o"> </i>
                                 help@yourweb.com </a></h4>
+                               
                         </li>
                     </ul>
                 </div>
@@ -158,7 +163,7 @@
     var baseurl = "<?php echo base_url(); ?>";
 </script>
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+<script src="<?php echo base_url(); ?>assets/js/jquery/jquery-1.10.1.min.js">
 </script>
 <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
 <script>
@@ -168,8 +173,12 @@
         $('#modalAds').modal('show');
         $('#modalAds').removeClass('hide');
     });
-
 </script>
+<!-- Other JS Files -->
+    <script src="<?php echo base_url(); ?>assets/js/jquery.easing.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/jasny-bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/SmoothScroll.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/nivo-lightbox.js"></script>
 
 <!-- include jqueryCycle plugin -->
 <script src="<?php echo base_url(); ?>assets/js/jquery.cycle2.min.js"></script>
@@ -199,7 +208,7 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/smoothproducts.min.js"></script>
 
 <!-- jQuery select2 // custom select   -->
-<script src="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/select2.min.js"></script>
 
 <!-- include touchspin.js // touch friendly input spinner component   -->
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.touchspin.js"></script>
@@ -246,6 +255,10 @@
     };
 </script>
 <script src="<?php echo base_url(); ?>assets/js/pace.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/modernizr.custom.js"></script>
+<!-- Custom Javascripts
+    ================================================== -->
+<script src="<?php echo base_url(); ?>assets/js/main.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/range_picker.js"></script> <!-- price range-->
 
 <!-- external javascript --> 

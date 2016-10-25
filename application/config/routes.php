@@ -73,6 +73,11 @@ $route['thanks_for_order'] = 'index/thanks_for_order';
 $route['user_information'] = 'index/user_information';
 $route['welcome_message'] = 'index/welcome_message';
 $route['wishlist'] = 'index/wishlist';
+$route['portfolio'] = 'index/portfolio';
+$route['pre_wedding'] = 'index/pre_wedding';
+$route['post_wedding'] = 'index/post_wedding';
+$route['track_order'] = 'index/track_order';
+$route['recipient_category'] = 'index/recipient_category';
 
 //Route url for admin
 $route['admin'] = 'admin/login/index_login';

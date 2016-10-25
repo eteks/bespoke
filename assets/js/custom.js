@@ -1,3 +1,18 @@
+$(window).load(function()
+{
+	centerContent();
+});
+$(window).resize(function()
+{
+	centerContent();
+});
+function centerContent()
+{
+	$('.images_alignment,.liked_product_images').each(function(){
+		$(this).css("margin-left", -($(this).width())/2);
+		$(this).css("margin-top", -($(this).height())/2);
+	});
+}
 ;(function() {
     "use strict";
     if($('#price_range_filter_value').length > 0) {
@@ -21,8 +36,6 @@ function add_to_cart_color_panel() {
         $('.hidden_color_panel').val(val_id);
     }
 }
-
-
 $(document).ready(function() {
 
     

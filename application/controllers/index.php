@@ -371,6 +371,26 @@ class Index extends CI_Controller {
 	{
 		$this->load->view('wishlist');
 	}
+	public function portfolio()
+	{
+		$this->load->view('portfolio');
+	}
+	public function pre_wedding()
+	{
+		$this->load->view('pre_wedding');
+	}
+	public function post_wedding()
+	{
+		$this->load->view('post_wedding');
+	}
+	public function track_order()
+	{
+		$this->load->view('track_order');
+	}
+	public function recipient_category()
+	{
+		$this->load->view('recipient_category');
+	}
 }
 
 /* End of file welcome.php */

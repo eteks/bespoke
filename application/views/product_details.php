@@ -266,6 +266,7 @@
             <div style="clear:both"></div>
                 <div class="product-share clearfix">
                     <p> SHARE </p>
+<<<<<<< HEAD
                     <div class="socialIcon">
                         <span class='st_facebook_large' displayText='Facebook'></span>
                         <span class='st_googleplus_large' displayText='Google +'></span>
@@ -282,9 +283,11 @@
                 ?>
                 <div class="item">
                     <div class="product">
-                        <a class="product-image" href="<?php echo base_url(); ?>product_details/<?php echo $rec_data['product_id']; ?>"> 
-                            <img src="<?php echo base_url().$rec_data['product_upload_image'] ?>" alt="img"> 
-                        </a>
+                        <div class="liked_product">
+                            <a class="product-image" href="<?php echo base_url(); ?>product_details/<?php echo $rec_data['product_id']; ?>"> 
+                                <img src="<?php echo base_url().$rec_data['product_upload_image'] ?>" alt="img" class="liked_product_images"> 
+                            </a>
+                        </div>
                         <div class="description">
                             <h4>
                                 <a href="san-remo-spaghetti" href="<?php echo base_url(); ?>product_details/<?php echo $rec_data['product_id']; ?>"> 

@@ -12,6 +12,11 @@ class Login extends CI_Controller {
 	}
 	public function index_login()
 	{	
+		$id = 1337;
+		$data = array("name"=>"nisse", "age"=>"14", "sex"=>"male");
+		// $return_data  = $this->elasticsearch->add("people", $id, $data);
+		// echo $return_data;
+
 		if($this->session->userdata('logged_in'))
 			redirect('admin/dashboard');
 		$status = array();//array is initialized
