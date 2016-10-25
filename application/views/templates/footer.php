@@ -259,6 +259,8 @@
 <!-- Custom Javascripts
     ================================================== -->
 <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/range_picker.js"></script> <!-- price range-->
+
 <!-- external javascript --> 
 <script src="<?php echo base_url(); ?>assets/js/custom.js"></script>  
 <script src="<?php echo base_url(); ?>assets/js/ajax-call.js"></script> 

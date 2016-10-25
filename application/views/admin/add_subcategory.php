@@ -74,7 +74,7 @@
                     <label class="control-label" for="sel_c">Choose Category<span class="fill_symbol">*</span></label>
                         <div class="multiple_dropdown"> 
                             <div class="select_multiple_option">
-                                <a>
+                                <a id="admin_check">
                                     <span id="category_act">Select Category</span><i class="fa fa-caret-down"  aria-hidden="true"></i>  
                                     <p class="multiSel"></p>  
                                 </a>
@@ -82,7 +82,7 @@
                             <div class="mutliSelect">
                                 <ul>
                                 <?php foreach ($category_list as $cat):
-                                    echo "<li><input type='checkbox' name='select_category[]' id='subcategory_name' value='".$cat["category_id"]."'".set_checkbox('select_category[]', $cat["category_id"], false)."/><span class='multiple_checkbox multple_checkbox_inactive'>".$cat["category_name"]."</span></li>";
+                                    echo "<li><input type='checkbox' name='select_category[]' class='admin_users_checkbox' id='subcategory_name' value='".$cat["category_id"]."'".set_checkbox('select_category[]', $cat["category_id"], false)."/><span class='multiple_checkbox multple_checkbox_inactive'>".$cat["category_name"]."</span></li>";
                                 endforeach ?>
                                 </ul>
                                     </div>
@@ -118,8 +118,9 @@
     </div>
     <!--/span-->
  <script>
-// Load area based on city
-jQuery("#recipient_act").on('change',function () {
+// Load area based on recipient
+ $(document).delegate(".attribute_validate",'change',function(){
+        var selected_val =$(this);
         selected_recipient = $.trim($('option:selected',this).text());
         selected_recipient_id = $('option:selected',this).val();
         form_data = {'selected_recipient_id':selected_recipient_id};
@@ -134,13 +135,13 @@ jQuery("#recipient_act").on('change',function () {
                 var options = '';   
                 if(obj.length!=0){               
                   $.each(obj, function(i){
-                    options += '<li><input type="checkbox" name="select_category[]" class="subcategory_name" value="" /><span class="multiple_checkbox multple_checkbox_inactive">'+obj[i].category_name+'</span></li>';
+                    options += '<li><input type="checkbox" name="select_category[]" class="subcategory_name" value="'+obj[i].category_id+'" /><span class="multiple_checkbox multple_checkbox_inactive">'+obj[i].category_name+'</span></li>';
                   });  
                 }   
                 else{
                     alert('No Category added for '+selected_recipient);    
                 }  
-                $('.mutliSelect ul').html(options);       
+                 selected_val.parents('.attribute_group').find('.mutliSelect ul').html(options);       
                }
            });
        }        
