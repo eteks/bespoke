@@ -224,10 +224,26 @@ class Index extends CI_Controller {
 
 	/* --------          Recipients page start     -------- */
 
-	// Category and subcategory list page
-	public function recipients_list()
+	public function recipient_category()
 	{
-		$this->load->view('recipients');
+		// Google plus login
+		$glogin_values = $this->header_footer->google_plus_login();
+		$data['google_url'] = $glogin_values['glogin_url'];
+		$data['social_login_status'] = $glogin_values['status'];
+
+		// Get navbar fields
+		$data['menubar_fields'] = $this->header_footer->menu_bar_fields();
+
+		// Cart items
+		$data['add_to_cart_list'] = $this->index_model->get_add_to_cart_list();
+
+		// Get all recipients in footer
+		$data['all_recipients'] = $this->index_model->get_all_recipients();
+
+		// Get category list
+		
+
+		$this->load->view('recipient_category',$data);
 	}
 
 	/* --------          Recipients page end     -------- */
@@ -318,10 +334,8 @@ class Index extends CI_Controller {
 	{
 		$this->load->view('track_order');
 	}
-	public function recipient_category()
-	{
-		$this->load->view('recipient_category');
-	}
+
+
 }
 
 /* End of file welcome.php */

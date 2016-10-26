@@ -113,7 +113,7 @@ $(document).ready(function() {
     });
 //Checkout page validation add by velpandi
 //  Moibile number validation
-$("#InputMobile,#InputZip").keypress(function (e) {
+$(document).on('keypress',"#InputMobile,#InputZip",function (e) {
     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
         return false;
     }

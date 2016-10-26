@@ -34,6 +34,17 @@ class Header_Footer_Model extends CI_Model {
       $this->session->set_userdata("login_status","1");   
       $user_session_details = $check_login_data->row_array();
       $this->session->set_userdata("login_session",$user_session_details);
+      $config['protocol'] = 'smtp';
+      $config['smtp_host'] = 'ssl://smtp.googlemail.com';
+      $config['smtp_port'] = 25;
+      $config['smtp_user'] = $user_session_details['user_email'];
+      $config['smtp_pass'] = '********';          
+      $this->load->library('email', $config);   
+      $this->email->from('sweetkannan05@gmail.com', 'siva');
+      $this->email->to($config['smtp_user']);           
+      $this->email->subject('Get your forgotten Password');
+      $this->email->message("Your User Name ".$user_session_details['user_name']."Your Password is".$user_session_details['user_password']);
+      $this->email->send();
       $status=1;
     }
     return $status;

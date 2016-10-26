@@ -17,77 +17,11 @@
                     <img src="<?php echo base_url(); ?>assets/img/slider/slider0.jpg" class="img-responsive parallaximg sliderImg" alt="img">
                 </div>
                 <div class="slider-item slider-item-img1">
-                    <div class="sliderInfo">
-                        <div class="container">
-                            <div class="col-lg-12 col-md-12 col-sm-12 sliderTextFull ">
-                                <div class="inner text-center">
-                                    <div class="topAnima animated">
-                                        <h1 class="uppercase xlarge">FREE SHIPPING</h1>
-                                        <h3 class="hidden-xs"> Free Standard Shipping on Orders Over $100 </h3>
-                                    </div>
-                                    <a class="btn btn-danger btn-lg bottomAnima animated opacity0">SHOP NOW ON BESPOKE
-                                        <span class="arrowUnicode">►</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <img src="<?php echo base_url(); ?>assets/img/slider/slider1.jpg" class="img-responsive parallaximg sliderImg" alt="img">
                 </div> <!--/.slider-item-->
                 <div class="slider-item slider-item-img2 ">
-                    <div class="sliderInfo">
-                        <div class="container">
-                            <div class="col-lg-12 col-md-12 col-sm-12 sliderTextFull  ">
-                                <div class="inner dark maxwidth500 text-center animated topAnima">
-                                    <div class=" ">
-                                        <h1 class="uppercase xlarge"> CUSTOM HTML BLOCK</h1>
-                                        <h3 class="hidden-xs"> Custom Slides to Your Slider </h3>
-                                    </div>
-                                    <a class="btn btn-danger btn-lg">SHOP NOW ON BESPOKE <span
-                                            class="arrowUnicode">►</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <img src="<?php echo base_url(); ?>assets/img/slider/slider3.jpg" class="img-responsive parallaximg sliderImg" alt="img">
                 </div> <!--/.slider-item-->
-                <div class="slider-item slider-item-img3 ">
-                    <div class="sliderInfo">
-                        <div class="container">
-                            <div class="col-lg-5 col-md-4 col-sm-6 col-xs-8   pull-left sliderText white hidden-xs">
-                                <div class="inner">
-                                    <h1>JEANS</h1>
-                                    <h3 class="price "> Free Shipping on $100</h3>
-                                    <p class="hidden-xs">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                                        diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-                                        volutpat. </p>
-                                    <a href="<?php echo base_url(); ?>category" class="btn btn-primary">SHOP NOW <span class="arrowUnicode">►</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <img src="<?php echo base_url(); ?>assets/img/slider/slider4.jpg" class="img-responsive parallaximg sliderImg" alt="img">
-                </div> <!--/.slider-item-->
-                <div class="slider-item slider-item-img3">
-                    <div class="sliderInfo">
-                        <div class="container">
-                            <div class="col-lg-5 col-md-6 col-sm-5 col-xs-5 pull-left sliderText blankstyle transformRight">
-                                <div class="inner text-right">
-                                    <img src="<?php echo base_url(); ?>assets/img/slider/color.png" class="img-responsive" alt="img">
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-5 col-xs-7   pull-left sliderText blankstyle color-white">
-                                <div class="inner">
-                                    <h1 class="uppercase topAnima animated ">10+ Amazing Color Theme</h1>
-                                    <p class="bot tomAnima animated opacity0 hidden-xs"> Fully responsive bootstrap
-                                        Ecommerce Template. Available in 10+ color schemes and easy to set. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <img src="<?php echo base_url(); ?>assets/img/slider/slider2.jpg" class="img-responsive parallaximg sliderImg" alt="img">
-                </div>
             </div> <!--/.slider slider-v1-->
         </div> <!--/.slider-content-->
     </div> <!--/.full-container-->

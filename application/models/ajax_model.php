@@ -56,7 +56,55 @@ class Ajax_Model extends CI_Model {
             $this->session->set_userdata("login_session",$user_session_details);
             $status = "success";
         }
-        echo $status;
+        return $status;
+    } 
+
+    //  Get registration status
+    public function get_forget_password_status() {
+        $validation_rules = array(
+            array(
+                 'field'   => 'forget_email',
+                 'label'   => 'Email',
+                 'rules'   => 'trim|required|valid_email|xss_clean'
+              ), 
+        );
+        $this->form_validation->set_rules($validation_rules);
+
+        if ($this->form_validation->run() == FALSE) {   
+            foreach($validation_rules as $row){
+                $field = $row['field'];         //getting field name
+                $error = form_error($field);    //getting error for field name
+                //form_error() is inbuilt function
+                //if error is their for field then only add in $errors_array array
+                if($error){
+                    $status = strip_tags($error);
+                    break;
+                }
+            }
+        }
+        else {
+          $forget_where = '(user_email="'.$this->input->post('forget_email').'")';
+          $forget_query = $this->db->get_where('shopping_users',$forget_where)->row_array();
+
+          if(count($forget_query) != 0) {
+            $config['protocol'] = 'smtp';
+            $config['smtp_host'] = 'ssl://smtp.googlemail.com';
+            $config['smtp_port'] = 25;
+            $config['smtp_user'] = $forget_query['user_email'];
+            $config['smtp_pass'] = '********';          
+            $this->load->library('email', $config);   
+            $this->email->from('sweetkannan05@gmail.com', 'siva');
+            $this->email->to($config['smtp_user']);           
+            $this->email->subject('Get your forgotten Password');
+            $this->email->message("Your registered password is ".$forget_query['user_password']);
+            $this->email->send();
+            $status = "Mail has sent successfully";
+          }
+          else {
+            $status = "Invalid Email";
+          }
+        }
+        return $status;
     } 
 
     //  Get login status
