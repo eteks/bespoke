@@ -3,8 +3,8 @@
     <div class="row">
         <div class="breadcrumbDiv col-lg-12">
             <ul class="breadcrumb">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="cart.php">Cart</a></li>
+                <li><a href="<?php echo base_url(); ?>index.php">Home</a></li>
+                <li><a href="<?php echo base_url(); ?>cart">Cart</a></li>
                 <li class="active"> Checkout</li>
             </ul>
         </div>

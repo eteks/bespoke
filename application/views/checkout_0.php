@@ -3,7 +3,7 @@
     <div class="row">
         <div class="breadcrumbDiv col-lg-12">
             <ul class="breadcrumb">
-                <li><a href="index.php">Home</a></li>
+                <li><a href="<?php echo base_url(); ?>index.php">Home</a></li>
                 <li class="active"> Authentication</li>
             </ul>
         </div>
