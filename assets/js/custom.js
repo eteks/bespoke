@@ -111,8 +111,94 @@ $(document).ready(function() {
        
         this_parent.find('.update_basket_details').attr('data-quantity',this_value);
     });
+//Checkout page validation add by velpandi
+//  Moibile number validation
+$("#InputMobile,#InputZip").keypress(function (e) {
+    if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        return false;
+    }
+});
 
+// Checkout address button
+$(document).on('click','#checkout_address_submit',function() {
 
+    var text_field = ["InputName","InputLastName","InputAddress","InputAddress2","InputEmail","InputMobile","InputZip","InputState","InputCity","InputArea"];
+    var email_val = $('#InputEmail');
+    var phone_val = $('#InputMobile');
+    var zip_val = $('#InputZip');
+
+    // Empty validation
+    for(var i=0;i<text_field.length;i++) {
+        var current_field = $('#'+text_field[i]);
+        if(current_field.val() != '') {
+           current_field.removeClass('error_field');
+        }
+        else {
+            current_field.addClass('error_field');
+        }
+    }
+
+    // Email validation
+    if (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email_val.val())) {
+        email_val.addClass("error_mail_field");
+    }
+    else {
+        email_val.removeClass("error_mail_field");
+    }
+
+    //  Number validation
+    if(phone_val.val().length < 10) {
+        phone_val.addClass("error_mobile_field");
+    }
+    else {
+        phone_val.removeClass("error_mobile_field"); 
+    }
+
+    //  Zip validation
+    if(zip_val.val().length < 4) {
+        zip_val.addClass("error_zip_field");
+    }
+    else {
+        zip_val.removeClass("error_zip_field"); 
+    }
+
+    //  Display error message
+    if($('input').hasClass('error_field') || $('select').hasClass('error_field')) {
+        $('.error_msg').html("Please fill out all fields");   
+        $('.error_msg').slideDown();
+    }
+    else if($('input').hasClass('error_zip_field')){
+        $('.error_msg').html("Please enter valid postal code");
+        $('.error_msg').slideDown();
+    }
+    else if($('input').hasClass('error_mobile_field')){
+        $('.error_msg').html("Please enter valid mobile number");
+        $('.error_msg').slideDown();
+    }
+    else if($('input').hasClass('error_mail_field')){
+        $('.error_msg').html("Please enter valid email address");
+        $('.error_msg').slideDown();
+    }
+    else {
+        $('.error_msg').slideUp();
+        $('#checkout_address').hide();
+        $('#checkout_order').slideDown(800);
+        $('.address_label').removeClass('active');
+        $('.address_label').addClass('disabled');
+        $('.order_label').removeClass('disabled');
+        $('.order_label').addClass('active');
+    }
+    return false;
+});
+// Checkout address button
+$('#checkout_order_submit').on('click',function() {
+    $('#checkout_order').hide();
+    $('#checkout_address').slideDown(800);
+    $('.order_label').removeClass('active');
+    $('.order_label').addClass('disabled');
+    $('.address_label').removeClass('disabled');
+    $('.address_label').addClass('active');
+});
 
 
 

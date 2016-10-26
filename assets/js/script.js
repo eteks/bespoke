@@ -515,18 +515,18 @@ $(document).ready(function () {
     // For stylish input check box 
 
 
-    $(document).ready(function () {
+    // $(document).ready(function () {
 
-        $('input').iCheck({
-            // checkboxClass: 'icheckbox_minimal-green',
-            // radioClass: 'iradio_minimal-green'
+    //     $('input').iCheck({
+    //         // checkboxClass: 'icheckbox_minimal-green',
+    //         // radioClass: 'iradio_minimal-green'
 
-            checkboxClass: 'icheckbox_square-green iCheck-margin',
-            radioClass: 'iradio_square-green iChk iCheck-margin'
-        });
+    //         checkboxClass: 'icheckbox_square-green iCheck-margin',
+    //         radioClass: 'iradio_square-green iChk iCheck-margin'
+    //     });
 
 
-    });
+    // });
 
 
 
@@ -534,9 +534,9 @@ $(document).ready(function () {
 
     // $("select").minimalect(); // REMOVED with  selct2.min.js
 
-    $(document).ready(function () {
-        $('select').select2();
-    });
+    // $(document).ready(function () {
+    //     $('select').select2();
+    // });
 
     // cart quantity changer sniper
     $("input[name='quanitySniper']").TouchSpin({

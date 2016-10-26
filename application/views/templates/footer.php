@@ -197,7 +197,7 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.mCustomScrollbar.js"></script>
 
 <!-- include icheck plugin // customized checkboxes and radio buttons   -->
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/icheck-1.x/icheck.min.js"></script>
+<!-- <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/icheck-1.x/icheck.min.js"></script> -->
 
 <!-- include grid.js // for equal Div height  -->
 <script src="<?php echo base_url(); ?>assets/js/grids.js"></script>
@@ -208,7 +208,7 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/smoothproducts.min.js"></script>
 
 <!-- jQuery select2 // custom select   -->
-<script src="<?php echo base_url(); ?>assets/js/select2.min.js"></script>
+<!-- <script src="<?php echo base_url(); ?>assets/js/select2.min.js"></script> -->
 
 <!-- include touchspin.js // touch friendly input spinner component   -->
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.touchspin.js"></script>
@@ -263,7 +263,8 @@
 
 <!-- external javascript --> 
 <script src="<?php echo base_url(); ?>assets/js/custom.js"></script>  
-<script src="<?php echo base_url(); ?>assets/js/ajax-call.js"></script> 
+<script src="<?php echo base_url(); ?>assets/js/ajax-call.js"></script>
+<!-- Social sharing  -->
 <!-- <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script> -->
 </body>
 </html>

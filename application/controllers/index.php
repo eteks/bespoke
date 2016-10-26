@@ -10,6 +10,7 @@ class Index extends CI_Controller {
         $this->load->model('index_model');
         $this->load->helper('url');
         $this->load->library('session');
+        $this->load->library('../controllers/header_footer');
         // Load facebook library and pass associative array which contains appId and secret key
   //   	$this->load->library('facebook', array('appId' => '517864548414083', 'secret' => '6cec86f66448fee37b24bb7e7c71a390'));
   //   	// Get user's login information
@@ -23,166 +24,35 @@ class Index extends CI_Controller {
     {
         $this->session->unset_userdata('login_status');
         $this->session->unset_userdata('login_session');
-		// unset($_SESSION['access_token']);
+		$this->session->unset_userdata('token');
         redirect(base_url()); 
     }
-
-    // Facebook login
-	// public function facebooklogin()
- //    {
- //    	if($this->user) {
- //    		// $user_profile = $this->facebook->api('/me/');
- //    		$user_profile = $this->facebook->api('/me?fields=id,first_name,name,last_name,email');
- //    		print_r($user_profile);
- //    		$user_password = random_string('alnum',8);
- //    		$user_name_id = random_string('alnum',4);
- //    		$user_name = $user_profile['name'].' '.$user_name_id;
-   			
- //   			$check_already_where = '(user_email="'.$user_profile['email'].'")';
- //            $check_already_data = $this->db->get_where('shopping_users',$check_already_where);
-
- //            if($check_already_data -> num_rows() > 0) {
- //            	echo "Already exists! Please Check your mail for bespoke login credentials";
- //            }
- //            else {
- //            	$reg_data = array(
-	//                 'user_name' => $user_name,
-	//                 'user_password' => $user_password,
-	//                 'user_email' => $user_profile['email'],
-	//                 'user_status' => '1'
-	//             );
-	//             $this->db->insert('shopping_users', $reg_data);
-	//             $user_id = $this->db->insert_id();
-	//             $check_login_where = '(user_id="'.$user_id.'")';
-	//             $check_login_data = $this->db->get_where('shopping_users',$check_login_where);
-	//             // $this->facebook->destroysession();
-	//             $this->session->set_userdata("login_status","1");   
-	//             $user_session_details = $check_login_data->row_array();
-	//             $this->session->set_userdata("login_session",$user_session_details);
-	//             redirect('index');
-	//             $this->facebook->destroysession();
-	// 			// $config['useragent']      = "CodeIgniter";
-	// 			// $config['mailpath']       = "/usr/sbin/sendmail -t -i";
-	// 			// $config['protocol'] = 'smtp';
-	// 			// $config['smtp_host'] = 'ssl://smtp.gmail.com'; //change this
-	// 			// $config['smtp_port'] = '465';
-	// 			// $config['smtp_user'] = 'sweetkannan05@gmail.com'; //change this
-	// 			// // $config['smtp_pass'] = '*****'; //change this
-	// 			// $config['mailtype'] = 'html';
-	// 			// $config['charset'] = 'iso-8859-1';
-	// 			// $config['wordwrap'] = TRUE;
-	// 			// // $config['newline'] = "\r\n"; //use double quotes to comply with RFC 822 standard
-
-	// 			// $this->load->library('email');
-	// 			// $this->email->initialize($config);
-	// 			// $this->email->set_newline('\r\n');
-	// 			// $this->email->from('sweetkannan05@gmail.com', 'your Name');
-	// 			// $this->email->to('sweetkannan05@gmail.com');
-	// 			// $this->email->subject('Your Subject here.. ');
-	// 			// $this->email->message('Your Message here..');
-	// 			// if (!$this->email->send()) {
-	// 			// 	echo 'Your e-mail has not been sent!';
-	// 			// }	
-	// 		 //  	else {
-	// 		 //    	echo 'Your e-mail has been sent!';
-	// 		 //  	}
-	//         }
-	//    	}
-
- //    }
-
-
-	/* --------          Header page end     -------- */
 
     /* --------          Index page start     -------- */
 
     // product list page
 	public function index()
 	{
-		// if (!$this->user) {
-		// 	$data['login_url'] = $this->facebook->getLoginUrl(array('redirect_uri' => site_url('index/facebooklogin'),'scope' => array("email")));
-		// }
+		// Google plus login
+		$glogin_values = $this->header_footer->google_plus_login();
+		$data['google_url'] = $glogin_values['glogin_url'];
+		$data['social_login_status'] = $glogin_values['status'];
 
-		/* ------          Google Login    ----- */
-		// Include the google api php libraries
-        include_once APPPATH."libraries/google-api-php-client/Google_Client.php";
-        include_once APPPATH."libraries/google-api-php-client/contrib/Google_Oauth2Service.php";
-        
-        // Google Project API Credentials
-        $clientId = '803855437633-3bvq3m2akbgeu7ilrfr668fr3j5c5a4p.apps.googleusercontent.com';
-        $clientSecret = 'qSzTTivFedKAhWtH0CI7iJp-';
-        $redirectUrl = 'http://localhost/bespoke';
-        
-        // Google Client Configuration
-        $gClient = new Google_Client();
-        $gClient->setApplicationName('Login to bespoke.com');
-        $gClient->setClientId($clientId);
-        $gClient->setClientSecret($clientSecret);
-        $gClient->setRedirectUri($redirectUrl);
-        $google_oauthV2 = new Google_Oauth2Service($gClient);
+		// Get navbar fields
+		$data['menubar_fields'] = $this->header_footer->menu_bar_fields();
 
-        if (isset($_REQUEST['code'])) {
-            $gClient->authenticate();
-            $this->session->set_userdata('token', $gClient->getAccessToken());
-            redirect($redirectUrl);
-        }
+		// Cart items
+		$data['add_to_cart_list'] = $this->index_model->get_add_to_cart_list();
 
-        $token = $this->session->userdata('token');
-        if (!empty($token)) {
-            $gClient->setAccessToken($token);
-        }
+		// Get all recipients in footer
+		$data['all_recipients'] = $this->index_model->get_all_recipients();
 
-        if ($gClient->getAccessToken()) {
-            $userProfile = $google_oauthV2->userinfo->get();
-
-            // Preparing data for database insertion
-            $userData['oauth_provider'] = 'google';
-            $userData['id'] = $userProfile['id'];
-            $userData['email'] = $userProfile['email'];
-            $userData['user_name'] = $userProfile['name'];
-            $userData['first_name'] = $userProfile['given_name'];
-            // Insert or update user data
-
-	        if(!empty($userData)){
-               $status = $this->index_model->get_glogin_status($userData);
-            	if($status==0) {
-       		  		echo "Already exists! Please Check your mail for bespoke login credentials";
-       		  		$this->session->unset_userdata('token');
-        			redirect(base_url());
-               	}
-            } 
-            else {
-               echo "Login failed";
-            }
-        } 
-        else {
-            $data['authUrl'] = $gClient->createAuthUrl();
-        }
-        /* ------          Google end    ----- */
 		$default_credentials = $this->index_model->get_credentials();
 		$product_list = $this->index_model->get_product_list();
 		$data['new_arrivals'] = $product_list['new_arrivals'];
 		$data['featured_products'] = $product_list['featured_products'];
-		$data_values_navbar = $this->index_model->get_menubar_fields();
-		$out = array();
-		if(!empty($data_values_navbar)) {
-			foreach ($data_values_navbar as $key => $row) {
-				foreach ($row as $k => $r) {
-					if(!isset($out[$row['recipient_id']][$row['category_id']][$row['subcategory_id']])) {
-						$out[$row['recipient_id']]['category_id'][$row['category_id']]['subcategory_id'][$row['subcategory_id']] = $row['subcategory_name'];
-				    }
-				    if($k == 'recipient_type') {
-	     				$out[$row['recipient_id']][$k] = $row[$k];
-	     			}
-	     			else if($k == 'category_name') {
-	     				$out[$row['recipient_id']]['category_id'][$row['category_id']][$k] = $row[$k];
-	     			}
-			    }
-			}
-		}
-		$data['menubar_fields'] = $out;
+	
 		$data['featured_remaining_products'] = $product_list['featured_remaining_products'];
-		$data['all_recipients'] = $this->index_model->get_all_recipients();
 
 		$data['add_to_cart_list'] = $this->index_model->get_add_to_cart_list();
 
@@ -201,6 +71,20 @@ class Index extends CI_Controller {
 	// Product list page
 	public function products_list()
 	{
+		// Google plus login
+		$glogin_values = $this->header_footer->google_plus_login();
+		$data['google_url'] = $glogin_values['glogin_url'];
+		$data['social_login_status'] = $glogin_values['status'];
+
+		// Get navbar fields
+		$data['menubar_fields'] = $this->header_footer->menu_bar_fields();
+
+		// Cart items
+		$data['add_to_cart_list'] = $this->index_model->get_add_to_cart_list();
+
+		// Get all recipients in footer
+		$data['all_recipients'] = $this->index_model->get_all_recipients();
+
 		$sidebar_list = $this->index_model->listing_data();
 		$data['error'] = $sidebar_list['error'];
 		if($data['error'] != 1) {
@@ -236,7 +120,21 @@ class Index extends CI_Controller {
 	/* --------          product details start     -------- */
 
 	public function product_details()
-	{
+	{	
+		// Google plus login
+		$glogin_values = $this->header_footer->google_plus_login();
+		$data['google_url'] = $glogin_values['glogin_url'];
+		$data['social_login_status'] = $glogin_values['status'];
+
+		// Get navbar fields
+		$data['menubar_fields'] = $this->header_footer->menu_bar_fields();
+
+		// Cart items
+		$data['add_to_cart_list'] = $this->index_model->get_add_to_cart_list();
+
+		// Get all recipients in footer
+		$data['all_recipients'] = $this->index_model->get_all_recipients();
+
 		$product_details = $this->index_model->get_product_info();
 		$data['error'] = $product_details['error'];
 		if($data['error'] != 1) {
@@ -268,7 +166,61 @@ class Index extends CI_Controller {
 
 	/* --------          product details end     -------- */
 
+	/* --------          Cart page start     -------- */
 
+	public function cart()
+	{	
+		// Google plus login
+		$glogin_values = $this->header_footer->google_plus_login();
+		$data['google_url'] = $glogin_values['glogin_url'];
+		$data['social_login_status'] = $glogin_values['status'];
+
+		// Get navbar fields
+		$data['menubar_fields'] = $this->header_footer->menu_bar_fields();
+
+		// Cart items
+		$data['add_to_cart_list'] = $this->index_model->get_add_to_cart_list();
+
+		// Get all recipients in footer
+		$data['all_recipients'] = $this->index_model->get_all_recipients();
+
+		// Product details in cart
+		$data['product_details'] = $this->index_model->get_basket_product_values();
+		$this->load->view('cart',$data);
+	}
+
+	/* --------          Cart page end     -------- */
+
+	/* --------          Chackout page start     -------- */
+
+	public function checkout()
+	{	
+		// Google plus login
+		$glogin_values = $this->header_footer->google_plus_login();
+		$data['google_url'] = $glogin_values['glogin_url'];
+		$data['social_login_status'] = $glogin_values['status'];
+
+		// Get navbar fields
+		$data['menubar_fields'] = $this->header_footer->menu_bar_fields();
+
+		// Cart items
+		$data['add_to_cart_list'] = $this->index_model->get_add_to_cart_list();
+
+		// Get all recipients in footer
+		$data['all_recipients'] = $this->index_model->get_all_recipients();
+
+		// Product details in checkout
+		$data['product_details'] = $this->index_model->get_basket_product_values();
+
+		// Get product session
+		$data['orderitem_session_id_checkout'] = $this->session->userdata('user_session_id');
+
+		// Get state
+		$data['state'] = $this->index_model->get_state();
+		$this->load->view('checkout',$data);
+	}
+
+	/* --------          Chackout page end     -------- */
 
 	/* --------          Recipients page start     -------- */
 
@@ -298,24 +250,9 @@ class Index extends CI_Controller {
 
 	/* --------          Contact page end     -------- */
 	
-
-	/* --------          Contact page start     -------- */
-
-	public function cart()
-	{	
-		$data['product_details'] = $this->index_model->get_basket_product_values();
-		$this->load->view('cart',$data);
-	}
-
-	/* --------          Contact page end     -------- */
-
 	public function account()
 	{
 		$this->load->view('account');
-	}
-	public function checkout()
-	{
-		$this->load->view('checkout');
 	}
 	public function forgot_password()
 	{

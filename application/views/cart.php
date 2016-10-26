@@ -68,7 +68,7 @@
                                     </td>
                                     <td class="delete">
                                         <a class="delete_item_cart_list" data-pro_id="<?php echo $pro_val['product_id']; ?>" data-grp_id="<?php echo $pro_val['orderitem_product_attribute_group_id']; ?>"> 
-                                                <i class="glyphicon glyphicon-trash fa-2x"></i>
+                                            <i class="glyphicon glyphicon-trash fa-2x"></i>
                                         </a>
                                     </td>
                                     <td>

@@ -244,7 +244,7 @@ $(document).ajaxComplete(function() {
 
     /* -----------    Add to cart popup end  ---------- */
 
-
+    /* -----------    Delete items in cart start  ---------- */
 
     // Removing items in basket
     $(".delete_item_cart_list").on('click',function() {
@@ -263,6 +263,9 @@ $(document).ajaxComplete(function() {
         });
     });
 
+    /* -----------    Delete items in cart end  ---------- */
+
+    /* -----------    Update items in cart start  ---------- */
 
     // Updating items in basket
     $("#updation_button").on('click',function() {
@@ -287,6 +290,163 @@ $(document).ajaxComplete(function() {
                     $('.updations_status').html(res);
                     $('.updations_status').slideDown(350);
 
+                }
+            }
+        });
+    });
+
+    /* -----------    Update items in cart end  ---------- */
+
+
+    /* -----------    State City Area With Shipping Amount start  ---------- */
+
+
+    // Load city based on state
+    $(document).on('change','.che_state',function() {
+        var state_id = $(this).val();
+        var state_name = $('option:selected',$(this)).text();
+        if(state_id!='') {    
+            jQuery.ajax({
+            type: "POST",
+            url: baseurl+"ajax_controller/get_city",
+            data: {state_id: state_id},
+                success: function(res) {
+                    if (res)
+                    {
+                        var obj = JSON.parse(res);
+                        var options = '<option value="">Please select city</option>';   
+                        if(obj.length!=0){               
+                            $.each(obj, function(i){
+                                options += '<option value="'+obj[i].city_id+'">'+obj[i].city_name+'</option>';
+                          });  
+                        }   
+                        else{
+                            alert('No City added for '+state_name);    
+                        }  
+                        $('.che_city').html(options); 
+                    }
+                }
+            });
+        }
+    });
+
+    // Load area based on city
+    $(document).on('change','.che_city',function() {
+        var city_id = $(this).val();
+        var city_name = $('option:selected',$(this)).text();
+        var state_id = $(".che_state").val();
+        if(city_id!='' && state_id!='') {    
+            jQuery.ajax({
+            type: "POST",
+            url: baseurl+"ajax_controller/get_area",
+            data: {city_id: city_id , state_id: state_id},
+                success: function(res) {
+                    if (res)
+                    {
+                        var obj = JSON.parse(res);
+                        var options = '<option value="">Please select area</option>';   
+                        if(obj.length!=0){               
+                            $.each(obj, function(i){
+                                options += '<option value="'+obj[i].area_id+'">'+obj[i].area_name+'</option>';
+                          });  
+                        }   
+                        else{
+                            alert('No Area added for '+city_name);    
+                        }  
+                        $('.che_area').html(options); 
+                    }
+                }
+            });
+        }
+    });
+
+    // Load shipping amount based on area
+    $(document).on('change','.che_area',function() {
+        var area_id = $(this).val();
+        if($('.ordinary_total_amount').length > 0) {
+            var sub_total = parseFloat($('.ordinary_total_amount').val().replace(',',''));
+        }
+
+        if(area_id!='') {    
+            jQuery.ajax({
+            type: "POST",
+            url: baseurl+"ajax_controller/get_area_shipping",
+            data: {area_id: area_id},
+                success: function(res) {
+                    if (res)
+                    {   
+                        var shipping_amount = parseFloat(res.replace(',',''));
+                        var total_amount = sub_total + shipping_amount;
+                        var total_amount_final = Math.ceil(total_amount).toLocaleString('en-US', {minimumFractionDigits: 2});
+                        var total_paymnet =  total_amount_final.replace(',','');
+                        $('.ordinary_shipping_amount').html(res);
+                        $('.product_final_amount').html(total_amount_final);  
+                        $('.total_amount_hidden').val(total_paymnet);             
+                    }
+                }
+            });
+        }
+    });
+
+    /* -----------    State City Area With Shipping Amount end  ---------- */
+
+    /* -----------    Checkout default address start  ---------- */
+      // Order status verification
+    $('#checkout_profile_details').on('click',function() {
+        if($('.ordinary_total_amount').length > 0) {
+            var sub_total = parseFloat($('.ordinary_total_amount').val().replace(',',''));
+        }
+        if($(this).is(':checked')) {
+            var user_value = 1;     
+            jQuery.ajax({
+                type: "POST",
+                url: baseurl+"ajax_controller/checkout_profile_detail",
+                data: {user_value : user_value},
+                success: function(res) {
+                    if(res) {
+                        $('.checkout_content').html(res);
+                        var shipping_amt = $('.shipping_checkout_area').val();
+                        var shipping_amount = parseFloat(shipping_amt.replace(',',''));
+                        var total_amount = sub_total + shipping_amount;
+                        var total_amount_final = Math.ceil(total_amount).toLocaleString('en-US', {minimumFractionDigits: 2});
+                        var total_paymnet =  total_amount_final.replace(',','');
+                        $('.ordinary_shipping_amount').html(shipping_amt);
+                        $('.product_final_amount').html(total_amount_final);  
+                        $('.total_amount_hidden').val(total_paymnet);
+                    }
+                }
+            });
+        }
+    });
+
+    /* -----------    Checkout default address end  ---------- */
+
+    // Order status verification
+    $('#checkout_form').on('submit',function(e) {
+        e.preventDefault();
+        var updation={};
+        $('.amount_structure').each(function() {
+            var product_id = $(this).find('.delete_item_cart_list').data('pro_id');
+            var product_group_id = $(this).find('.delete_item_cart_list').data('grp_id');
+            var product_quantity = $(this).find('.delete_item_cart_list').val();
+            updation[product_id] = product_group_id + ',' +  product_quantity;
+        });
+
+        jQuery.ajax({
+            type: "POST",
+            url: baseurl+"ajax_controller/update_baseket_product",
+            data: {updation_det : order_status},
+            success: function(res) {
+                if (res)
+                {                      
+                    if(res=="success") {
+                        $('#checkout_form').unbind();    
+                        $('#checkout_form').submit();
+                    }  
+                    else {
+                        $('.oreder_status_error').html(res);
+                        $('.oreder_status').slideDown();
+                    }           
                 }
             }
         });
