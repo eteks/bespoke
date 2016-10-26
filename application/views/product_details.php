@@ -177,7 +177,8 @@
             </div>
             <!-- productFilter -->
             <div class="cart-actions">
-                <p class="add_to_cart_status"> </p>
+                <p><i class="fa fa-check color-in"></i><p class="add_to_cart_status"> </p></p>
+                <p><i class="fa fa-times-circle color-out"></i><p class="add_to_cart_status"> </p></p>
                 <div class="addto row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <input type="hidden" class="add_to_cart_button_cond" value="true" />

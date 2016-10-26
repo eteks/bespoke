@@ -7047,3 +7047,15 @@ fieldset[disabled] .btn-primary.active {
 	text-transform: uppercase;
 	padding: 5px;
 }
+.color-out {
+    color: #D8000C;
+}
+.recipient_title{
+	text-transform: uppercase !important;
+}
+.description_height{
+	min-height: 50px !important;
+}
+.recipient_product{
+	height: 350px !important;
+}
