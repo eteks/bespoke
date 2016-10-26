@@ -60,7 +60,7 @@
             <td><?php echo $person['person_name'] ?></td>
             <td class="center" style="width:100% !important"><?php echo $person['person_relationshlp_status'] ?></td> 
             <td class="center" style="width:100% !important"><?php echo $person['person_address'] ?></td>
-            <td class="center">
+            <td class="center photoshoot_images_photo">
             	<?php foreach ($photoshoot_person_image_list as $img):
                     if ($img['photo_shoot_person_mapping_id'] == $person['person_id']){
                         $image_path = base_url().$img["photo_shoot_upload_image"];

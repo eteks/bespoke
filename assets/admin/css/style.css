@@ -43,7 +43,7 @@
   color: #ff0000;
   font-size: 12px;
 }
-.error_msg_del,.photo_labelError,.product_error,.product_error_message,.person_error_message{
+.error_msg_del,.photo_labelError,.product_error,.product_error_message,.person_error_message,.person_photo_error_message{
   display: none;
 }
 @media(max-width: 640px){
@@ -161,8 +161,10 @@
     font-size: 12px;
 }
 .add-rmv-btn {
-    float: left;
-    margin-top: 12px;
+    float: right;
+    margin-right: -130px;
+    margin-top: -30px;
+    /*margin-top: 12px;*/
 }
 .clr-screen{
 	clear:both;
@@ -703,10 +705,19 @@
     border: 1px solid #cccccc;
     margin-bottom: 10px;
     padding: 10px;
-    width: 280px;
+    width: 158px;
 }
 .photoshoot_image_clone > .photoshoot_image_group_status{
-    width: 163px;
+     margin-left: 18px;
+     width: 100px;
+}
+.photoshoot_images_photo{   
+    display: block !important;
+    max-height: 150px !important;
+    min-height: 50px !important;
+    overflow-y: auto;
+    min-width: 260px !important;
+    max-width: 260px !important;
 }
 // ===========================
 //        IMAGE UPLOAD
@@ -782,7 +793,7 @@
         color: #eb1c24 !important;
     }
     .simpleFilePreview_remove{
-        right: 3px !important;
+        right: 10px !important;
         text-align:center;
         top: 25px !important;
     }

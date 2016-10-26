@@ -9,7 +9,7 @@
 }
 
 .site-color {
-    color: #4ec67f !important;
+    color: #c81d6a !important;
 }
 
 a:hover,
@@ -25,7 +25,7 @@ a.link,
 }
 
 .search-close {
-    color: #4bb777;
+    color: #c81d6a;
 }
 
 .searchInputBox .search-btn {
@@ -232,21 +232,21 @@ sp-current:visited {
 }
 
 #pager2 span.cycle-pager-active {
-    background: #4ec67f !important;
+    background: #c81d6a !important;
 }
 
 #pager2 span {
-    border: 2px solid #4ec67f;
+    border: 2px solid #c81d6a;
 }
 
 .orderStep li.active a {
-    background: #4ec67f;
+    background: #c81d6a;
 }
 
 .orderStep li.active a:after {
-    border-top-color: #4ec67f !important;
+    border-top-color: #c81d6a !important;
 }
 
 .orderStep li a {
-    background: #66de97;
+    background: #c81d6a;
 }

@@ -3,8 +3,8 @@
     <div class="row">
         <div class="breadcrumbDiv col-lg-12">
             <ul class="breadcrumb">
-                <li><a href="index.php"> Home </a></li>
-                <li><a href="<?php echo base_url(); ?>account_1"> Authentication </a></li>
+                <li><a href="<?php echo base_url(); ?>index.php"> Home </a></li>
+                <li><a href="<?php echo base_url(); ?>account"> Account </a></li>
                 <li class="active"> Forgot your password</li>
             </ul>
         </div>

@@ -520,17 +520,24 @@ $(document).ready(function() {
         // alert($(this).parents('.attribute_group').find('.multiple_checkbox_hidden').val());
     });
     $('body').delegate("#photoshoot_person_detail",'submit',function(e){ 
+        $error = false;
         $('.person_default_field').each(function(){
             if($(this).val() == ""){
                 $error = true;    
-                $('.person_error').text($(this).parents('.person_field').find('.person_error_message').text()).show(); 
+                if($(this).attr('type') == "file")
+                    $('.person_error').text($(this).parents('.person_field').find('.person_photo_error_message').text()).show(); 
+                else
+                    $('.person_error').text($(this).parents('.person_field').find('.person_error_message').text()).show(); 
                 $('.person_error').addClass('error_input_field');
-            return false;
+                return false;
             }   
             else{
                 $('.person_error').removeClass('error_input_field');
             }    
         });
-        return false;
+        if(!$error)
+            return true;
+        else
+            return false;
     });
 });

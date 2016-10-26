@@ -90,10 +90,12 @@
 	                            <div class="add-rmv-btn">
 	                                <input value="Add" class="btn submit-btn btn-default photoshoot_image_add_btn photoshoot_image_action_btn" type="button">
 	                                <input value="Remove" class="btn submit-btn btn-default photoshoot_image_remove_btn photoshoot_image_action_btn photoshoot_image_btn_disabled" type="button">
-                            	</div>
-                            </div>
+                                </div>
+                                <div class="clr-screen"></div>                  
+                            </div>                            
 	                    </div> <!--  photoshoot_image_group -->
-                        <span class="person_error_message">The Person Photo field is required</span>
+	                    <span class="person_photo_error_message">The Person Photo field is required</span>
+                        <span class="person_error_message">The Person Photo Status field is required</span>
                         <span class="upload_limit">(Maximum Upload size 1MB and Max Upload dimensions 450px * 600px)</span>   
                     </div>
                     <div class="control-group person_field">
