@@ -105,11 +105,11 @@
     <!-- ************  Featured products Start  ***************  -->
 
     <div class="morePost row featuredPostContainer style2 globalPaddingTop ">
-        <h3 class="section-title style2 text-center"><span>CATEGORIES BY NAME</span></h3>
+        <h3 class="section-title style2 text-center recipient_title"><span>Categories for name</span></h3>
 
         <div class="container">
             <div class="row xsResponse">
-                <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                <div class="item recipient_product col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="product">
                         <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
                            data-placement="left">
@@ -123,17 +123,13 @@
                             <!-- <div class="promotion"><span class="new-product"> NEW</span> <span
                                     class="discount">15% OFF</span></div> -->
                         </div>
-                        <div class="description">
+                        <div class="description description_height">
                             <h4><a href="<?php echo base_url(); ?>product_details">aliquam erat volutpat</a></h4>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <span class="size">XL / XXL / S </span></div>
-                        <div class="price"><span>$25</span> <span class="old-price">$75</span></div>
-                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                       </div>
                     </div>
                 </div>
                 <!--/.item-->
-                <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                <div class="item recipient_product col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="product">
                         <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
                            data-placement="left">
@@ -146,17 +142,13 @@
  							<div class="product_name"><a><span>Product Name</span></a></div>
                             <!-- <div class="promotion"><span class="discount">15% OFF</span></div> -->
                         </div>
-                        <div class="description">
+                        <div class="description description_height">
                             <h4><a href="<?php echo base_url(); ?>product_details">ullamcorper suscipit lobortis </a></h4>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <span class="size">XL / XXL / S </span></div>
-                        <div class="price"><span>$25</span></div>
-                       <div class="action-control"><a data-toggle="modal" class="btn btn-primary" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                       </div>
                     </div>
                 </div>
                 <!--/.item-->
-                <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                <div class="item recipient_product col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="product">
                         <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
                            data-placement="left">
@@ -168,16 +160,13 @@
 							<div class="product_name"><a><span>Product Name</span></a></div>
                             <!-- <div class="promotion"><span class="new-product"> NEW</span></div> -->
                         </div>
-                        <div class="description">
+                        <div class="description description_height">
                             <h4><a href="<?php echo base_url(); ?>product_details">demonstraverunt lectores </a></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <span class="size">XL / XXL / S </span></div>
-                        <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        </div>
                     </div>
                 </div>
                 <!--/.item-->
-                <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                <div class="item recipient_product col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="product">
                         <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
                            data-placement="left">
@@ -187,16 +176,13 @@
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/12.jpg" alt="img" class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
-                        <div class="description">
+                        <div class="description description_height">
                             <h4><a href="<?php echo base_url(); ?>product_details">humanitatis per</a></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <span class="size">XL / XXL / S </span></div>
-                        <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        </div>
                     </div>
                 </div>
                 <!--/.item-->
-                <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                <div class="item recipient_product col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="product">
                         <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
                            data-placement="left">
@@ -206,17 +192,13 @@
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/33.jpg" alt="img" class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
-                        <div class="description">
+                        <div class="description description_height">
                             <h4><a href="<?php echo base_url(); ?>product_details">Eodem modo typi</a></h4>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <span class="size">XL / XXL / S </span></div>
-                        <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                       </div>
                     </div>
                 </div>
                 <!--/.item-->
-                <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                <div class="item recipient_product col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="product">
                         <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
                            data-placement="left">
@@ -227,17 +209,13 @@
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/10.jpg" alt="img" class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                          </div>
-                        <div class="description">
+                        <div class="description description_height">
                             <h4><a href="<?php echo base_url(); ?>product_details">sequitur mutationem </a></h4>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <span class="size">XL / XXL / S </span></div>
-                        <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        </div>
                     </div>
                 </div>
                 <!--/.item-->
-                <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                <div class="item recipient_product col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="product">
                         <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
                            data-placement="left">
@@ -248,17 +226,13 @@
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/37.jpg" alt="img" class="img-responsive images_alignment"></a>
                             <div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
-                        <div class="description">
+                        <div class="description description_height">
                             <h4><a href="<?php echo base_url(); ?>product_details">consuetudium lectorum.</a></h4>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <span class="size">XL / XXL / S </span></div>
-                        <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                       </div>
                     </div>
                 </div>
                 <!--/.item-->
-                <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                <div class="item recipient_product col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="product">
                         <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
                            data-placement="left">
@@ -268,17 +242,13 @@
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/35.jpg" alt="img" class="img-responsive images_alignment"></a>
                         	<div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
-                        <div class="description">
+                        <div class="description description_height">
                             <h4><a href="<?php echo base_url(); ?>product_details">parum claram</a></h4>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <span class="size">XL / XXL / S </span></div>
-                        <div class="price"><span>$25</span> <span class="old-price">$75</span></div>
-                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        </div>
                     </div>
                 </div>
                 <!--/.item-->
-                <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                <div class="item recipient_product col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="product">
                         <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
                            data-placement="left">
@@ -289,16 +259,13 @@
                             <a href="<?php echo base_url(); ?>product_details"><img src="<?php echo base_url(); ?>assets/img/product/13.jpg" alt="img" class="img-responsive images_alignment"></a>
                         	<div class="product_name"><a><span>Product Name</span></a></div>
                         </div>
-                        <div class="description">
+                        <div class="description description_height">
                             <h4><a href="<?php echo base_url(); ?>product_details">duis dolore </a></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <span class="size">XL / XXL / S </span></div>
-                        <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        </div>
                     </div>
                 </div>
                 <!--/.item-->
-                <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                <div class="item recipient_product col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="product">
                         <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
                            data-placement="left">
@@ -309,17 +276,13 @@
                             <div class="product_name"><a><span>Product Name</span></a></div>
                             <!-- <div class="promotion"><span class="new-product"> NEW</span> <span class="discount">15% OFF</span></div> -->
                         </div>
-                        <div class="description">
+                        <div class="description description_height">
                             <h4><a href="<?php echo base_url(); ?>product_details">aliquam erat volutpat</a></h4>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <span class="size">XL / XXL / S </span></div>
-                        <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+						</div>
                     </div>
                 </div>
                 <!--/.item-->
-                <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                <div class="item recipient_product col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="product">
                         <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist" data-placement="left">
                             <i class="glyphicon glyphicon-heart"></i>
@@ -330,16 +293,13 @@
 							<div class="product_name"><a><span>Product Name</span></a></div>
                             <!-- <div class="promotion"><span class="discount">15% OFF</span></div> -->
                         </div>
-                        <div class="description">
+                        <div class="description description_height">
                             <h4><a href="<?php echo base_url(); ?>product_details">ullamcorper suscipit lobortis </a></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <span class="size">XL / XXL / S </span></div>
-                        <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                       </div>
                     </div>
                 </div>
                 <!--/.item-->
-                <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                <div class="item recipient_product col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="product">
                         <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist" data-placement="left">
                             <i class="glyphicon glyphicon-heart"></i>
@@ -350,13 +310,10 @@
                             <div class="product_name"><a><span>Product Name</span></a></div>
                             <!-- <div class="promotion"><span class="new-product"> NEW</span></div> -->
                         </div>
-                        <div class="description">
+                        <div class="description description_height">
                             <h4><a href="<?php echo base_url(); ?>product_details">demonstraverunt lectores </a></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <span class="size">XL / XXL / S </span></div>
-                        <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a data-toggle="modal" class="btn btn-primary" data-target="#productSetailsModalAjax"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
-                    </div>
+                        </div>
+                     </div>
                 </div>
                 <!--/.item-->
             </div>

@@ -46,7 +46,7 @@ $route['default_controller'] = "index";
 
 $route['products_view'] = 'index/products_list';
 $route['product_details/(:any)'] = 'index/product_details/$1';
-$route['recipients_view/(:any)'] = 'index/recipients_list/$1';
+$route['recipient_category/(:any)'] = 'index/recipient_category/$1';
 $route['about_us'] = 'index/about_details';
 $route['contact_us'] = 'index/contact_details';
 $route['glogin'] = 'index/glogin';
@@ -77,7 +77,6 @@ $route['portfolio'] = 'index/portfolio';
 $route['pre_wedding'] = 'index/pre_wedding';
 $route['post_wedding'] = 'index/post_wedding';
 $route['track_order'] = 'index/track_order';
-$route['recipient_category'] = 'index/recipient_category';
 
 //Route url for admin
 $route['admin'] = 'admin/login/index_login';
