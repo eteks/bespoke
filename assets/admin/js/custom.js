@@ -540,4 +540,14 @@ $(document).ready(function() {
         else
             return false;
     });
+    $(document).delegate(".person_relationship_act",'change',function () {
+        if($(this).val() == "couple"){
+            $('input[name="person_bride_name"],input[name="person_groom_name"]').addClass('person_default_field');
+            $('.couple_form_group').show();
+        }
+        else{
+            $('input[name="person_bride_name"],input[name="person_groom_name"]').removeClass('person_default_field');
+            $('.couple_form_group').hide();
+        }
+    });
 });
