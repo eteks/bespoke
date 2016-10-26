@@ -111,12 +111,40 @@ class Ajax_Controller extends CI_Controller {
         else {
             redirect(base_url().'nopage');
         }
-
-
-
-
     }
 
+    // Get city based on state
+    public function get_city()
+    {   
+        $data = $this->ajax_model->get_city_data();
+        echo json_encode($data);
+    }
+
+    // Get area based on city
+    public function get_area()
+    {   
+        $data = $this->ajax_model->get_area_data();
+        echo json_encode($data);
+    }
+
+    // Get shipping amount based on area
+    public function get_area_shipping()
+    {   
+        $data = $this->ajax_model->get_area_shipping_amount();
+        echo $data;
+    }
+
+    // Get default address in checkout page
+    public function checkout_profile_detail()
+    {   
+        $data_values = $this->ajax_model->get_checkout_profile_detail();
+        $data['profile_details'] = $data_values['profile_details'];
+        $data['state'] = $data_values['state'];
+        $data['profile_get_city'] = $data_values['profile_get_city'];
+        $data['profile_get_area'] = $data_values['profile_get_area'];
+        $data['shipping_amount'] = $data_values['shipping_amount'];
+        $this->load->view('checkout',$data,false);
+    }
 
 
 

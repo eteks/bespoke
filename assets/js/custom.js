@@ -120,7 +120,7 @@ $("#InputMobile,#InputZip").keypress(function (e) {
 });
 
 // Checkout address button
-$('#checkout_address_submit').on('click',function() {
+$(document).on('click','#checkout_address_submit',function() {
 
     var text_field = ["InputName","InputLastName","InputAddress","InputAddress2","InputEmail","InputMobile","InputZip","InputState","InputCity","InputArea"];
     var email_val = $('#InputEmail');

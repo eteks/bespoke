@@ -357,9 +357,59 @@ class Ajax_Model extends CI_Model {
     return $data;
   }
 
+  //  Get city data based on state
+  public function get_city_data() {
+    if($this->input->post('state_id')) {
+      $city_where='(city_state_id="'.$this->input->post('state_id').'" and city_status= 1)';
+      $query = $this->db->get_where('shopping_city',$city_where)->result_array();
+    }
+    return $query;
+  }
 
+  //  Get area data based on city
+  public function get_area_data() {
+    if($this->input->post('city_id') && $this->input->post('state_id')) {
+      $area_where='(area_state_id="'.$this->input->post('state_id').'" and area_city_id="'.$this->input->post('city_id').'" and area_status= 1)';
+      $query = $this->db->get_where('shopping_area',$area_where)->result_array();
+    }
+    return $query;
+  }
 
+  //  Get shipiing amount data based on area
+  public function get_area_shipping_amount() {
+    if($this->input->post('area_id')) {
+      $area_where='(area_id="'.$this->input->post('area_id').'")';
+      $query = $this->db->get_where('shopping_area',$area_where)->row_array();
+    }
+    return $query['area_delivery_charge'];
+  }
 
+  // Get default address in checkout page
+  public function get_checkout_profile_detail() {
+    $profile_details['profile_get_city'] = array();
+    $profile_details['profile_get_area'] = array();
+    $profile_details['shipping_amount'] = array();
+    if($this->input->post('user_value')) {
+      $current_session = $this->session->userdata("login_session");
+      $profile_user_where = '(user_id="'.$current_session['user_id'].'")';
+      $profile_details['profile_details'] = $this->db->get_where('shopping_users',$profile_user_where)->row_array();
+      $profile_state_where = '(state_status=1)';
+      $profile_details['state'] = $this->db->get_where('shopping_state',$profile_state_where)->result_array();
+      if(!empty($profile_details['profile_details']['user_state_id']) && !empty($profile_details['profile_details']['user_city_id'])) {
+        $profile_area_where = '(area_state_id="'.$profile_details['profile_details']['user_state_id'].'" and area_city_id="'.$profile_details['profile_details']['user_city_id'].'" and area_status=1)';
+        $profile_details['profile_get_area'] = $this->db->get_where('shopping_area',$profile_area_where)->result_array();
+      }
+      if(!empty($profile_details['profile_details']['user_state_id'])) {
+        $profile_city_where = '(city_state_id="'.$profile_details['profile_details']['user_state_id'].'" and city_status=1)';
+        $profile_details['profile_get_city'] = $this->db->get_where('shopping_city',$profile_city_where)->result_array(); 
+      }
+      if(!empty($profile_details['profile_details']['user_area_id'])) {
+        $profile_shipping_where = '(area_id="'.$profile_details['profile_details']['user_area_id'].'" and area_status=1)';
+        $profile_details['shipping_amount'] = $this->db->get_where('shopping_area',$profile_shipping_where)->row_array();
+      }
+    }
+      return $profile_details;    
+  }
 
 
 }

@@ -69,7 +69,7 @@
                                     </td>
                                     <td class="delete">
                                         <a class="delete_item_cart_list" data-pro_id="<?php echo $pro_val['product_id']; ?>" data-grp_id="<?php echo $pro_val['orderitem_product_attribute_group_id']; ?>"> 
-                                                <i class="glyphicon glyphicon-trash fa-2x"></i>
+                                            <i class="glyphicon glyphicon-trash fa-2x"></i>
                                         </a>
                                     </td>
                                     <td>
@@ -118,7 +118,7 @@
             <div class="contentBox">
                 <div class="w100 costDetails">
                     <div class="table-block" id="order-detail-content">
-                        <a class="btn btn-primary btn-lg btn-block basket_section_button" id="checkout_button" title="checkout" href="<?php echo base_url(); ?>checkout_0" style="margin-bottom:20px"> 
+                        <a class="btn btn-primary btn-lg btn-block basket_section_button" id="checkout_button" title="checkout" href="<?php echo base_url(); ?>checkout" style="margin-bottom:20px"> 
                             Proceed to checkout &nbsp; 
                             <i class="fa fa-arrow-right"></i> 
                         </a>

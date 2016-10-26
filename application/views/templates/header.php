@@ -98,7 +98,7 @@
                     <h5 style="padding:10px 0 10px 0;" class="text-center"> OR </h5>
 
                     <div class="control-group">
-                        <a class="gplus_button btn  btn-block btn-lg " href="<?php echo $authUrl; ?>"> SIGNUP WITH
+                        <a class="gplus_button btn  btn-block btn-lg " href="<?php if(!empty($google_url)) : echo $google_url; endif; ?>"> SIGNUP WITH
                         GOOGLE + </a>
                     </div>
                     <h5 style="padding:10px 0 10px 0;" class="text-center"> OR </h5>
@@ -207,6 +207,7 @@
             </div>
         </div>
     </div>
+    <!-- <p class="social_login_status"> <?php if(!empty($social_login_status) && $social_login_status!=1) : echo $social_login_status; endif; ?> </p> -->
     <!--/.navbar-top-->
 
     <div class="container">
@@ -319,13 +320,15 @@
             <!--- this part will be hidden for mobile version -->
             <div class="nav navbar-nav navbar-right hidden-xs">
                 <div class="dropdown  cartMenu ">
+                    <?php
+                    $total = 0;
+                    if(!empty($add_to_cart_list)) :
+                    ?>
                     <div class="dropdown-menu col-lg-4 col-xs-12 col-md-4 ">
                         <div class="w100 miniCartTable scroll-pane">
                             <table>
                                 <tbody>
                                     <?php
-                                    $total = 0;
-                                    if(!empty($add_to_cart_list)) :
                                     foreach ($add_to_cart_list as $cart_list) :
                                     ?>
                                     <tr class="miniCartProduct">
@@ -363,7 +366,6 @@
                                     ?> 
                                     <?php
                                     endforeach;
-                                    endif;
                                     ?>
                                 </tbody>
                             </table>
@@ -374,44 +376,35 @@
                                 <i class="fa fa-shopping-cart"> </i> 
                                 VIEW CART 
                             </a>
-                            <a class="btn btn-sm btn-primary"> CHECKOUT </a>
+                            <a class="btn btn-sm btn-primary" href="<?php echo base_url(); ?>checkout"> CHECKOUT </a>
                         </div> <!--/.miniCartFooter-->
                     </div> <!--/.dropdown-menu-->
+                    <?php
+                    endif;
+                    ?>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
                         <i class="fa fa-shopping-cart"> </i> 
                         <span class="cartRespons"> Cart (&#8377;<?php echo number_format(ceil($total),2); ?>) </span> 
                         <b class="caret"> </b> 
                     </a>
-
                 </div> <!--/.cartMenu-->
-
-
-
                 <div class="search-box">
                     <div class="input-group">
                         <button class="btn btn-nobg getFullSearch" type="button"><i class="fa fa-search search-icon"> </i></button>
-                    </div>
-                    <!-- /input-group -->
-
-                </div>
-                <!--/.search-box -->
-            </div>
-            <!--/.navbar-nav hidden-xs-->
-        </div>
-        <!--/.nav-collapse -->
-
-    </div>
-    <!--/.container -->
-
-    <div class="search-full text-right"><a class="pull-right search-close"> <i class=" fa fa-times-circle"> </i> </a>
-
+                    </div> <!-- /input-group -->
+                  </div> <!--/.search-box -->
+            </div> <!--/.navbar-nav hidden-xs-->
+        </div> <!--/.nav-collapse -->
+    </div> <!--/.container -->
+    <div class="search-full text-right">
+        <a class="pull-right search-close"> 
+            <i class=" fa fa-times-circle"> </i> 
+        </a>
         <div class="searchInputBox pull-right">
-            <input type="search" data-searchurl="search?=" name="q" placeholder="start typing and hit enter to search"
-                   class="search-input">
-            <button class="btn-nobg search-btn" type="submit"><i class="fa fa-search"> </i></button>
+            <input type="search" data-searchurl="search?=" name="q" placeholder="start typing and hit enter to search" class="search-input">
+            <button class="btn-nobg search-btn" type="submit">
+                <i class="fa fa-search"> </i>
+            </button>
         </div>
-    </div>
-    <!--/.search-full-->
-
-</div>
-<!-- /.Fixed navbar  -->
+    </div> <!--/.search-full-->
+</div> <!-- /.Fixed navbar  -->
