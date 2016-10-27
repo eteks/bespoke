@@ -39,6 +39,20 @@ $config['admin_base_url'] = '/bespoke/admin';
 $config['index_page'] = '';
 
 /*
+/*
+|--------------------------------------------------------------------------
+| Google plus login credentials
+|--------------------------------------------------------------------------
+|
+| Typically this will be your index.php file, unless you've renamed it to
+| something else. If you are using mod_rewrite to remove the page set this
+| variable so that it is blank.
+|
+*/
+$config['google_id'] = '803855437633-3bvq3m2akbgeu7ilrfr668fr3j5c5a4p.apps.googleusercontent.com';
+$config['google_secret_key'] = 'qSzTTivFedKAhWtH0CI7iJp-';
+
+/*
 |--------------------------------------------------------------------------
 | URI PROTOCOL
 |--------------------------------------------------------------------------

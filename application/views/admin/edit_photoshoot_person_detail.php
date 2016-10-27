@@ -7,7 +7,6 @@
         <noscript>
             <div class="alert alert-block col-md-12">
                 <h4 class="alert-heading">Warning!</h4>
-
                 <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
                     enabled to use this site.</p>
             </div>
@@ -21,7 +20,7 @@
             <a href="#">Home</a>
         </li>
         <li>
-            <a href="#">Add Photoshoot Person Detail</a>
+            <a href="#">Edit Photoshoot Person Detail</a>
         </li>
     </ul>
 </div>
@@ -30,7 +29,7 @@
     <div class="box col-md-12">
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-edit"></i> Add Photoshoot Person Detail</h2>
+                <h2><i class="glyphicon glyphicon-edit"></i> Edit Photoshoot Person Detail</h2>
 
                 <div class="box-icon">
                     <a href="#" class="btn btn-setting btn-round btn-default"><i
@@ -51,7 +50,7 @@
                 <form role="form" method="POST" action="<?php echo base_url(); ?>admin/photography/add_photoshoot_person_detail" enctype="multipart/form-data" class="form_submit" name="photoshoot_person_detail_form" id="photoshoot_person_detail">
                     <div class="form-group person_field">
                         <label for="exampleInputEmail1">Person Name<span class="fill_symbol"> *</span></label>
-                        <input type="text" class="form-control person_default_field" id="category_name" placeholder="Enter Person Name" name="person_name" value="<?php echo set_value('person_name');?>">
+                        <input type="text" class="form-control person_default_field" id="category_name" placeholder="Enter Person Name" name="person_name" value="<?php if(!empty($giftproduct_data['product_title'])) echo $giftproduct_data['product_title']; ?>">
                         <span class="person_error_message">The Person Name field is required</span>
                     </div>  
                     <div class="control-group person_field">

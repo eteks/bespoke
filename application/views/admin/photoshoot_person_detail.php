@@ -60,13 +60,13 @@
             <td><?php echo $person['person_name'] ?></td>
             <td class="center" style="width:100% !important"><?php echo $person['person_relationshlp_status'] ?></td> 
             <td class="center" style="width:100% !important"><?php echo $person['person_address'] ?></td>
-            <td class="center">
-                <?php foreach ($photoshoot_person_image_list as $img):
+            <td class="center photoshoot_images_photo">
+            	<?php foreach ($photoshoot_person_image_list as $img):
                     if ($img['photo_shoot_person_mapping_id'] == $person['person_id']){
                         $image_path = base_url().$img["photo_shoot_upload_image"];
-                        echo "<a href='".$image_path."' target='_blank'><img class='image_icon' src='".$image_path."'><span class='photoshoot_image_status'>Active</span></a>";
+                        echo "<div class='photo_shoot_image'><a href='".$image_path."' target='_blank'><img class='image_icon' src='".$image_path."'></a><div class='product_name'><a a href='".$image_path."' target='_blank'><span>InActive</span></a></div></div>";
                     }
-                endforeach ?>
+                endforeach ?> 
             </td>
             <td class="center" style="width:100% !important"><?php echo $person['display_title'] ?></td> 
             <td class="center" style="width:100% !important"><span class="<?php if($person["person_status"] ==1 ){ ?>label-success<?php } ?> label label-default"><?php if($person["person_status"] ==1 )echo "Active";else echo "InActive"; ?></span></td>

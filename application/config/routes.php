@@ -39,14 +39,14 @@
 */
 
 $route['default_controller'] = "index";
-// $route['404_override'] = 'index/nopage';
+$route['404_override'] = 'index/nopage';
 
 
 /* Routes for end user side by siva*/
 
 $route['products_view'] = 'index/products_list';
 $route['product_details/(:any)'] = 'index/product_details/$1';
-$route['recipients_view/(:any)'] = 'index/recipients_list/$1';
+$route['recipient_category/(:any)'] = 'index/recipient_category/$1';
 $route['about_us'] = 'index/about_details';
 $route['contact_us'] = 'index/contact_details';
 $route['glogin'] = 'index/glogin';
@@ -55,12 +55,7 @@ $route['glogin'] = 'index/glogin';
 
 $route['account'] = 'index/account';
 $route['cart'] = 'index/cart';
-$route['checkout_0'] = 'index/checkout_0';
-$route['checkout_1'] = 'index/checkout_1';
-$route['checkout_2'] = 'index/checkout_2';
-$route['checkout_3'] = 'index/checkout_3';
-$route['checkout_4'] = 'index/checkout_4';
-$route['checkout_5'] = 'index/checkout_5';
+$route['checkout'] = 'index/checkout';
 $route['forgot_password'] = 'index/forgot_password';
 $route['form'] = 'index/form';
 $route['error_page'] = 'index/error_page';
@@ -77,7 +72,6 @@ $route['portfolio'] = 'index/portfolio';
 $route['pre_wedding'] = 'index/pre_wedding';
 $route['post_wedding'] = 'index/post_wedding';
 $route['track_order'] = 'index/track_order';
-$route['recipient_category'] = 'index/recipient_category';
 
 //Route url for admin
 $route['admin'] = 'admin/login/index_login';

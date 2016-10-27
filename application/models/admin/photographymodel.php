@@ -59,5 +59,33 @@ class Photographymodel extends CI_Model {
 		//return all records in array format to the controller
 		return $query;
 	}	
-	
+	public function insert_photoshoot_person_detail($data)
+	{	
+		$data_person_basic = $data['person_basic'];
+		$data_person_photos = $data['person_photos'];
+		// Query to insert data in database
+		$this->db->insert('shopping_photo_shoot_person_details', $data_person_basic);
+		//get inserted photoshoot person id to map in upload photos relationship table
+		$person_id = $this->db->insert_id();
+		foreach($data_person_photos as $key => $value) {
+			$person_photos_map = array(
+                					'photo_shoot_personsdfsd_mapping_id' => $person_id,
+                					'photo_shoot_upload_image' => $value[0],
+                					'photo_shoot_upload_image_status' => $value[1],
+             						);
+			$this->db->insert('shopping_photo_shoot_upload_image', $person_photos_map);
+		}
+		// if ($this->db->trans_status() === FALSE){
+		//     $this->db->trans_rollback();
+		//     return false;
+		// }
+		// else{
+		//     $this->db->trans_commit();
+		//     return true;
+		// }
+		if ($this->db->affected_rows() > 0) {
+			return true;
+		}
+		return false;
+	}	
 }

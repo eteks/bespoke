@@ -7,7 +7,8 @@ class Ajax_Controller extends CI_Controller {
         parent::__construct();
         $this->load->helper('url');
         $this->load->model('ajax_model');
-        $this->load->library('session');  
+        $this->load->library('session'); 
+        $this->load->library('email');   
         $this->load->library('form_validation');  
     }
      
@@ -17,6 +18,13 @@ class Ajax_Controller extends CI_Controller {
 		$data = $this->ajax_model->get_registeration_status();
 		echo $data;
 	}
+
+    // Registration
+    public function forget_password()
+    {   
+        $data = $this->ajax_model->get_forget_password_status();
+        echo $data;
+    }
 
     // Login
     public function login()
@@ -70,6 +78,83 @@ class Ajax_Controller extends CI_Controller {
             redirect(base_url().'nopage');
         }   
     }
+
+    // Add to cart- add items in cart
+    public function add_to_cart_details()
+    {   
+        $data_values = $this->ajax_model->insert_product_to_cart();
+        $data['error'] = $data_values['error'];
+        if($data['error'] != 1) {
+            $data['status'] = $data_values['status'];
+            echo $data['status'];
+        }
+        else {
+            redirect(base_url().'nopage');
+        }
+    }
+
+    // Remove items in cart
+    public function remove_cart_product()
+    {   
+        $data_values = $this->ajax_model->get_status_remove_items();
+        $data['error'] = $data_values['error'];
+        if($data['error'] != 1) {
+            $data['status'] = $data_values['status'];
+            echo $data['status'];
+        }
+        else {
+            redirect(base_url().'nopage');
+        }
+    }
+
+    // Update products in basket
+    public function update_baseket_product()
+    {   
+        $data_values = $this->ajax_model->get_update_product();
+        $data['error'] = $data_values['error'];
+        if($data['error'] != 1) {
+            $data['status'] = $data_values['status'];
+            echo $data['status'];
+        }
+        else {
+            redirect(base_url().'nopage');
+        }
+    }
+
+    // Get city based on state
+    public function get_city()
+    {   
+        $data = $this->ajax_model->get_city_data();
+        echo json_encode($data);
+    }
+
+    // Get area based on city
+    public function get_area()
+    {   
+        $data = $this->ajax_model->get_area_data();
+        echo json_encode($data);
+    }
+
+    // Get shipping amount based on area
+    public function get_area_shipping()
+    {   
+        $data = $this->ajax_model->get_area_shipping_amount();
+        echo $data;
+    }
+
+    // Get default address in checkout page
+    public function checkout_profile_detail()
+    {   
+        $data_values = $this->ajax_model->get_checkout_profile_detail();
+        $data['profile_details'] = $data_values['profile_details'];
+        $data['state'] = $data_values['state'];
+        $data['profile_get_city'] = $data_values['profile_get_city'];
+        $data['profile_get_area'] = $data_values['profile_get_area'];
+        $data['shipping_amount'] = $data_values['shipping_amount'];
+        $this->load->view('checkout',$data,false);
+    }
+
+
 
         
 

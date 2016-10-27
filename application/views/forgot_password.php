@@ -3,8 +3,7 @@
     <div class="row">
         <div class="breadcrumbDiv col-lg-12">
             <ul class="breadcrumb">
-                <li><a href="index.php"> Home </a></li>
-                <li><a href="<?php echo base_url(); ?>account_1"> Authentication </a></li>
+                <li><a href="<?php echo base_url(); ?>"> Home </a></li>
                 <li class="active"> Forgot your password</li>
             </ul>
         </div>
@@ -19,17 +18,21 @@
                     <p> To reset your password, enter the email address you use to sign in to site. We will then send
                         you a new password. </p>
 
-                    <form role="form">
+                    <form method="POST" action="ajax_controller/forget_password" id="forgetten_password">
+                        <p class="registration_status"> </p>
                         <div class="form-group">
                             <label for="exampleInputEmail1"> Email address </label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                            <input name="forget_email" class="form-control input" size="20" placeholder="Enter Email" type="text">
                         </div>
-                        <button type="submit" class="btn   btn-primary"><i class="fa fa-unlock"> </i> Retrieve Password
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-unlock"> </i> Retrieve Password
                         </button>
                     </form>
                     <div class="clear clearfix">
                         <ul class="pager">
-                            <li class="previous pull-right"><a href="<?php echo base_url(); ?>account_1"> &larr; Back to Login </a></li>
+                            <li class="previous pull-right">
+                                <a href="<?php echo base_url(); ?>"> &larr; Back to Home </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -46,4 +49,4 @@
 <!-- /wrapper -->
 
 <div class="gap"></div>
-<?php include "templates/header.php"; ?>
+<?php include "templates/footer.php"; ?>

@@ -495,8 +495,22 @@ $(document).ready(function() {
     $(document).delegate(".select_multiple_option a",'click',function () {
       $(this).parents('.multiple_dropdown').children('.mutliSelect').slideToggle('fast');
       // $(".mutliSelect ul").slideToggle('fast');
+    });      
+    // Clone process for Photography Person Detail    
+    var cloneCount_image = 1;
+    $(document).delegate('.photoshoot_image_add_btn','click',function (e) {
+            cloneCount_image = cloneCount_image + 1;
+            cloneelement = $(this).parents('.photoshoot_image_group').find('.photoshoot_image_clone:last').clone();
+            //After clone the element, assign one unique id and append to particular parent class
+            cloneelement.attr('id', 'photoshoot_image_clone'+cloneCount_image).appendTo($(this).parents('.photoshoot_image_group'));
+            //To remove add button from previous clone attribute
+            cloneelement.siblings('#photoshoot_image_clone'+(cloneCount_image-1)).find('.photoshoot_image_add_btn').remove();
+            cloneelement.siblings('#photoshoot_image_clone'+(cloneCount_image-1)).find('.photoshoot_image_remove_btn').removeClass('photoshoot_image_btn_disabled');
     });
-subcategory_array = [];
+    $(document).delegate('.photoshoot_image_remove_btn','click',function () {
+        $(this).parents('.photoshoot_image_clone').remove();
+    });
+    subcategory_array = [];
     $(document).on('click','.subcategory_checkbox',function(){
         if($(this). prop("checked") == true && $.inArray($(this).val(), subcategory_array) == -1)
             subcategory_array.push($(this).val());
@@ -505,5 +519,35 @@ subcategory_array = [];
         $(this).parents('.attribute_group').find('.multiple_checkbox_hidden').val(subcategory_array);
         // alert($(this).parents('.attribute_group').find('.multiple_checkbox_hidden').val());
     });
-
+    $('body').delegate("#photoshoot_person_detail",'submit',function(e){ 
+        $error = false;
+        $('.person_default_field').each(function(){
+            if($(this).val() == ""){
+                $error = true;    
+                if($(this).attr('type') == "file")
+                    $('.person_error').text($(this).parents('.person_field').find('.person_photo_error_message').text()).show(); 
+                else
+                    $('.person_error').text($(this).parents('.person_field').find('.person_error_message').text()).show(); 
+                $('.person_error').addClass('error_input_field');
+                return false;
+            }   
+            else{
+                $('.person_error').removeClass('error_input_field');
+            }    
+        });
+        if(!$error)
+            return true;
+        else
+            return false;
+    });
+    $(document).delegate(".person_relationship_act",'change',function () {
+        if($(this).val() == "couple"){
+            $('input[name="person_bride_name"],input[name="person_groom_name"]').addClass('person_default_field');
+            $('.couple_form_group').show();
+        }
+        else{
+            $('input[name="person_bride_name"],input[name="person_groom_name"]').removeClass('person_default_field');
+            $('.couple_form_group').hide();
+        }
+    });
 });
