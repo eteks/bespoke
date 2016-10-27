@@ -82,7 +82,7 @@
                         <!-- <input type="file" id="category_image" name="category_image"> -->
                         <div class="photoshoot_image_group">
                         	<div class="photoshoot_image_clone" id="photoshoot_image_clone1">
-		                  		<input type='file' id='image_upload' name='person_image[]' class="photoshoot_image_group_file person_default_field" /> 
+		                  		<input type='file' id='image_upload' name='person_image[]' class="image_file_input photoshoot_image_group_file person_default_field" /> 
 		                        <select name="photoshoot_person_status[]" id="sel_a" class="product-type-filter form-control photoshoot_image_group_status person_default_field">
 	                                <option value="">Status</option>
 	                                <option value="1" <?php echo set_select('photoshoot_person_status', '1',false); ?>>Active</option>

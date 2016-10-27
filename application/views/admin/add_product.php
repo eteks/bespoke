@@ -43,7 +43,7 @@
              <span class="product_error"></span>
              <span class="photo_labelError">Invalid file type</span> 
              <p class="error_msg_reg test_product"><?php if (isset($error_message)) echo $error_message; ?></p>
-             <form role="form" method="POST" action="<?php echo base_url(); ?>index.php/admin/adminindex/add_product" enctype="multipart/form-data" name="product_form" id="add_product" class="form_submit">
+             <form role="form" method="POST" action="<?php echo base_url(); ?>admin/adminindex/add_product" enctype="multipart/form-data" name="product_form" id="add_product" class="form_submit">
              <input type="hidden" value="0">
              <input type="hidden" class="attribute_check_status" name="attribute_check_status" value="<?php if(isset($attribute_check_status)) 
                 echo $attribute_check_status; ?>">
@@ -56,7 +56,7 @@
                     <div class="form-group">
                         <label for="category_image">Product Image<span class="fill_symbol"> *</span></label>
                         <!-- <input type="file" id="category_image" name="product_image[]" multiple="multiple" class="product_default_field"> -->
-                        <input type='file' id='image_upload' name='product_image[]' multiple='multiple' class="product_default_field" /> 
+                        <input type='file' name='product_image[]' multiple='multiple' class="product_default_field image_file_input" /> 
                         <span class="product_error_message">The Product Image field is required</span>
                         <span class="upload_limit">(Maximum Upload size 1MB and Max Upload dimensions 450px * 600px)</span>   
                     </div>
@@ -67,6 +67,18 @@
                         <textarea type="text" class="form-control product_default_field product_lables" id="description" placeholder="Enter description" name="product_description"><?php echo set_value('product_description');?></textarea>
                         <span class="product_error_message">The Product Desciption field is required</span>
                     </div> 
+                    <div class="control-group">
+                        <label class="control-label" for="sel_c">Choose Recipient<span class="fill_symbol"> *</span></label>
+                        <div class="controls">
+                            <select id="sel_c" class="product-type-filter form-control recipient_act product_default_field product_lables" name="select_recipient">
+                            <option value="">Select Recipient</option>
+                            <?php foreach ($recipient_list as $rec): ?>
+                                <option value="<?php echo $rec["recipient_id"] ?>"><?php echo $rec["recipient_type"] ?></option>
+                            <?php endforeach ?>
+                            </select>
+                            <span class="product_error_message">The Product Recipient field is required</span>
+                        </div>
+                    </div>
                     <div class="control-group">
                         <label class="control-label" for="sel_c">Choose Category<span class="fill_symbol"> *</span></label>
                         <div class="controls">
@@ -86,15 +98,6 @@
                             <option value="">Select Subcategory</option>
                             </select>
                             <span class="product_error_message">The Product Subcategory field is required</span>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="sel_c">Choose Recipient<span class="fill_symbol"> *</span></label>
-                        <div class="controls">
-                            <select id="sel_c" class="product-type-filter form-control recipient_act product_default_field product_lables" name="select_recipient">
-                            <option value="">Select Recipient</option>
-                            </select>
-                            <span class="product_error_message">The Product Recipient field is required</span>
                         </div>
                     </div>
                      <div class="form-group price_group">

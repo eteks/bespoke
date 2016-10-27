@@ -80,7 +80,7 @@
             <td class="center" style="width:100% !important"><span class="<?php if($product["product_status"] ==1 ){ ?>label-success<?php } ?> label label-default"><?php if($product["product_status"] ==1 )echo "Active";else echo "InActive"; ?></span></td>
             <td><?php echo date("d/m/Y", strtotime($product["product_createddate"])); ?></td>
             <td class="center">
-                <a class="btn btn-info" href="<?php echo base_url(); ?>index.php/admin/adminindex/edit_giftproduct/<?php echo $product["product_id"]; ?>">
+                <a class="btn btn-info" href="<?php echo base_url(); ?>index.php/admin/adminindex/edit_product/<?php echo $product["product_id"]; ?>">
                     <i class="glyphicon glyphicon-edit icon-white"></i>
                     Edit
                 </a>

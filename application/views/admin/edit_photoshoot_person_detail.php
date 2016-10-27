@@ -50,7 +50,7 @@
                 <form role="form" method="POST" action="<?php echo base_url(); ?>admin/photography/add_photoshoot_person_detail" enctype="multipart/form-data" class="form_submit" name="photoshoot_person_detail_form" id="photoshoot_person_detail">
                     <div class="form-group person_field">
                         <label for="exampleInputEmail1">Person Name<span class="fill_symbol"> *</span></label>
-                        <input type="text" class="form-control person_default_field" id="category_name" placeholder="Enter Person Name" name="person_name" value="<?php if(!empty($giftproduct_data['product_title'])) echo $giftproduct_data['product_title']; ?>">
+                        <input type="text" class="form-control person_default_field" id="category_name" placeholder="Enter Person Name" name="person_name" value="<?php if(!empty($product_data['product_title'])) echo $product_data['product_title']; ?>">
                         <span class="person_error_message">The Person Name field is required</span>
                     </div>  
                     <div class="control-group person_field">
@@ -81,7 +81,7 @@
                         <!-- <input type="file" id="category_image" name="category_image"> -->
                         <div class="photoshoot_image_group">
                         	<div class="photoshoot_image_clone" id="photoshoot_image_clone1">
-		                  		<input type='file' id='image_upload' name='person_image[]' class="photoshoot_image_group_file person_default_field" /> 
+		                  		<input type='file' id='image_upload' name='person_image[]' class="image_file_input photoshoot_image_group_file person_default_field" /> 
 		                        <select name="photoshoot_person_status[]" id="sel_a" class="product-type-filter form-control photoshoot_image_group_status person_default_field">
 	                                <option value="">Status</option>
 	                                <option value="1" <?php echo set_select('photoshoot_person_status', '1',false); ?>>Active</option>
