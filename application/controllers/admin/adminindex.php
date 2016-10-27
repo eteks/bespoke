@@ -358,6 +358,11 @@ class Adminindex extends CI_Controller {
 		             'rules'   => 'trim|required|xss_clean|callback_edit_unique[shopping_subcategory.subcategory_id.subcategory_name.'.$id.']'
 		          ),
 		       array(
+	             'field'   => 'select_recipient[]',
+	             'label'   => 'Select Recipient',
+	             'rules'   => 'required'
+	           ),
+		       array(
 	             'field'   => 'select_category[]',
 	             'label'   => 'Select Category',
 	             'rules'   => 'required'
@@ -396,6 +401,11 @@ class Adminindex extends CI_Controller {
 					'category_data' => $this->input->post('select_category'),
 					'removed_category_data' => $this->input->post('removed_category')
 					);
+					$data['post_recipient'] = array(
+					'recipient_data' => $this->input->post('select_recipient'),
+					'removed_recipient_data' => $this->input->post('removed_recipient')
+					);
+					$data['subcategory_group'] = array_map(null,$_POST['select_recipient'],$_POST['multiple_checkbox_hidden']);
 					$result = $this->catalog->update_subcategory($data);
 					if($result)
 						$status['error_message'] = "SubCategory Updated Successfully!";
@@ -405,9 +415,27 @@ class Adminindex extends CI_Controller {
     		}
 		}
 		$subcatgory_return = $this->catalog->get_subcategory_data($id);
+		$subcategory_detail = $subcatgory_return['subcategory_data'];
+		$subcategory_detail = $subcatgory_return['subcategory_category'];
+		$res = array();
+		foreach($subcategory_detail as $arr)
+		{
+		    foreach($arr as $k => $v)
+		    {
+		        if($k == 'category_mapping_id')
+		            $res[$arr['recipient_mapping_id']][$k] = $this->get_arrayvalues_bykeyvalue($subcategory_detail, $k, 'recipient_mapping_id', $arr['recipient_mapping_id']);
+		        else
+		            $res[$arr['recipient_mapping_id']][$k] = $v;
+		    }
+		}
+		// echo "<pre>";
+		// print_r($res);
+		// echo "</pre>";
+		$status['subcategory_split'] = $res;
 		$status['subcategory_data'] = $subcatgory_return['subcategory_data'];
 		$status['subcategory_category'] = $subcatgory_return['subcategory_category'];
 		$status['category_list'] = $this->catalog->get_categories();
+		$status['recipient_list'] = $this->catalog->get_recipient();
 		// print_r($data);
 		$this->load->view('admin/edit_subcategory',$status);
 	}

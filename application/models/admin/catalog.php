@@ -120,52 +120,66 @@ class Catalog extends CI_Model {
 		return false;
 	}	
 	public function update_subcategory($data)
-	{	
-		
-		$category = $data['post_category'];
-		$subcategory_data = $data['post_subcategory'];
-		if(!empty($category['removed_category_data'])){
-			$condition = "subcategory_mapping_id =". $subcategory_data['subcategory_id'] ." AND category_mapping_id IN(".$category['removed_category_data'].")";
-			$this->db->from('shopping_subcategory_category');
-			$this->db->where($condition);
-			$this->db->delete();
-			// trans_complete() function is used to check whether updated query successfully run or not
-			if ($this->db->trans_complete() == false) {
-				return false;
-			}
+	{			
+		// $category = $data['post_category'];
+		// $subcategory_data = $data['post_subcategory'];
+		// if(!empty($category['removed_category_data'])){
+		// 	$condition = "subcategory_mapping_id =". $subcategory_data['subcategory_id'] ." AND category_mapping_id IN(".$category['removed_category_data'].")";
+		// 	$this->db->from('shopping_subcategory_category');
+		// 	$this->db->where($condition);
+		// 	$this->db->delete();
+		// 	// trans_complete() function is used to check whether updated query successfully run or not
+		// 	if ($this->db->trans_complete() == false) {
+		// 		return false;
+		// 	}
+
+		$data_subcategory_basic = $data['subcategory_basic'];
+		$data_subcategory_files = $data['subcategory_files'];
+		// echo "<pre>";
+		// print_r($data_product_files);
+		// echo "</pre>";
+		$data_subcategory_attributes_exists = isset($data['subcategory_attributes_exists'])?$data['subcategory_attributes_exists']:"";
+		// echo "<pre>";
+		// print_r($data_product_attributes_exists);
+		// echo "</pre>";
+		$data_subcategory_attributes_new = isset($data['subcategory_attributes_new'])?$data['subcategory_attributes_new']:"";
+		$this->db->where('subcategory_id', $data_subcategory_basic['subcategory_id']);
+		$this->db->update('shopping_subcategory', $data_subcategory_basic);
+
+		// To insert newly added images while update product
+		$subcategory_id = $data_subcategory_basic['subcategory_id'];
+		foreach($data_subcategory_group as $value) {
+			$recipient_id = $value[0];
+			$category_mapping_id = explode(",",$value[1]);
+			// print_r(explode(",",$value[1]));
+			foreach ($category_mapping_id as $value_cat) {
+				// print_r($category_mapping_id);
+			
+		$subcategory_category_recipient_map = array(
+                					'subcategory_mapping_id' => $subcategory_id,
+                					'recipient_mapping_id' => $recipient_id,
+	               					'category_mapping_id' => $value_cat,
+             						);
+		$this->db->insert('shopping_subcategory_category_and_recipient', $subcategory_category_recipient_map);
 		}
-		foreach($category['category_data'] as $value) {
-			$subcategory_category_map_data = array(
-				'subcategory_mapping_id' => $subcategory_data['subcategory_id'],
-				'category_mapping_id' => $value,
-			);
-			$this->db->select('*');
-			$this->db->from('shopping_subcategory_category');
-			$this->db->where($subcategory_category_map_data);
-			$query = $this->db->get();
-			if($query->num_rows() == 0)
-				$this->db->insert('shopping_subcategory_category', $subcategory_category_map_data);
-		}
-		$this->db->where('subcategory_id', $subcategory_data['subcategory_id']);
-		$this->db->update('shopping_subcategory', $subcategory_data);
+	}
 		// trans_complete() function is used to check whether updated query successfully run or not
 		if ($this->db->trans_complete() == false) {
 			return false;
 		}
 		return true;	
-	}	
+	}
 	public function get_subcategory_data($id)
 	{	
 		$query['subcategory_data'] = $this->db->get_where('shopping_subcategory', array('subcategory_id' => $id))->row_array();
 		// $query['subcategory_category'] = $this->db->get_where('shopping_subcategory_category', array('subcategory_mapping_id' => $id))->result_array();
-		$this->db->select('category_mapping_id');
+		$this->db->select('*');
 		$this->db->from('shopping_subcategory_category_and_recipient');
 		$this->db->where('subcategory_mapping_id',$id);
-		$get_data = $this->db->get()->result();
-		$query['subcategory_category'] = array();
-		foreach($get_data as $row){
-            array_push($query['subcategory_category'],$row->category_mapping_id);
-        }
+		$query['subcategory_category'] = $this->db->get()->result_array();
+		// echo "<pre>";
+		// print_r($get_data);
+		// echo "</pre>";
 		return $query;
 	}
 	public function get_recipient()
