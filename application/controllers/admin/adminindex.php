@@ -358,6 +358,11 @@ class Adminindex extends CI_Controller {
 		             'rules'   => 'trim|required|xss_clean|callback_edit_unique[shopping_subcategory.subcategory_id.subcategory_name.'.$id.']'
 		          ),
 		       array(
+	             'field'   => 'select_recipient[]',
+	             'label'   => 'Select Recipient',
+	             'rules'   => 'required'
+	           ),
+		       array(
 	             'field'   => 'select_category[]',
 	             'label'   => 'Select Category',
 	             'rules'   => 'required'
@@ -396,6 +401,11 @@ class Adminindex extends CI_Controller {
 					'category_data' => $this->input->post('select_category'),
 					'removed_category_data' => $this->input->post('removed_category')
 					);
+					$data['post_recipient'] = array(
+					'recipient_data' => $this->input->post('select_recipient'),
+					'removed_recipient_data' => $this->input->post('removed_recipient')
+					);
+					$data['subcategory_group'] = array_map(null,$_POST['select_recipient'],$_POST['multiple_checkbox_hidden']);
 					$result = $this->catalog->update_subcategory($data);
 					if($result)
 						$status['error_message'] = "SubCategory Updated Successfully!";
@@ -405,9 +415,27 @@ class Adminindex extends CI_Controller {
     		}
 		}
 		$subcatgory_return = $this->catalog->get_subcategory_data($id);
+		$subcategory_detail = $subcatgory_return['subcategory_data'];
+		$subcategory_detail = $subcatgory_return['subcategory_category'];
+		$res = array();
+		foreach($subcategory_detail as $arr)
+		{
+		    foreach($arr as $k => $v)
+		    {
+		        if($k == 'category_mapping_id')
+		            $res[$arr['recipient_mapping_id']][$k] = $this->get_arrayvalues_bykeyvalue($subcategory_detail, $k, 'recipient_mapping_id', $arr['recipient_mapping_id']);
+		        else
+		            $res[$arr['recipient_mapping_id']][$k] = $v;
+		    }
+		}
+		// echo "<pre>";
+		// print_r($res);
+		// echo "</pre>";
+		$status['subcategory_split'] = $res;
 		$status['subcategory_data'] = $subcatgory_return['subcategory_data'];
 		$status['subcategory_category'] = $subcatgory_return['subcategory_category'];
 		$status['category_list'] = $this->catalog->get_categories();
+		$status['recipient_list'] = $this->catalog->get_recipient();
 		// print_r($data);
 		$this->load->view('admin/edit_subcategory',$status);
 	}
@@ -562,14 +590,14 @@ class Adminindex extends CI_Controller {
 		// print_r($data);
 		$this->load->view('admin/edit_recipient',$status);
 	}
-	public function giftproduct()
+	public function product()
 	{	
 		//get list of products from database and store it in array variable 'product' with key 'product_list'
 		$product_data = $this->catalog->get_products();
 		$product['product_list'] = $product_data['product_result'];
 		$product['product_image'] = $product_data['product_image'];	
 		//call the product views i.e rendered page and pass the product data in the array variable 'product'
-		$this->load->view('admin/giftproduct',$product);
+		$this->load->view('admin/product',$product);
 	}
 	public function add_product()
 	{	
@@ -650,11 +678,15 @@ class Adminindex extends CI_Controller {
 
 		// print_r($status);	
 		$status['category_list'] = $this->catalog->get_categories();
+		$status['recipient_list'] = $this->catalog->get_recipient();
 		$status['attribute_list'] = $this->catalog->get_product_attributes();
 		$this->load->view('admin/add_product',$status);
 	}
-	public function edit_giftproduct()
+	public function edit_product()
 	{
+			// echo "<pre>";
+		// print_r($_FILES['product_image']);
+		// echo "</pre>";
 		// Code runs before data post i.e. to redirect edit product page with their id
 		$id = $this->uri->segment(4);
 		if (empty($id))
@@ -663,6 +695,7 @@ class Adminindex extends CI_Controller {
 		}
 		
 		$status = array();//array is initialized
+		$product_image = array();
 		
 		//Code runs after data post i.e. while update product
 	    if(!empty($_POST)){
@@ -706,18 +739,55 @@ class Adminindex extends CI_Controller {
 				// echo "<pre>";
 		  //   	print_r($data);
 		  //   	echo "</pre>";
-				$result = $this->catalog->update_product($data);
-				if($result)
-					$status['error_message'] = "Product Updated Successfully!";
+				//To pass newly upload image while edit product
+				$filesCount = count($_FILES['product_image']['name']);
+				if(!empty($_FILES['product_image']['name']) && $filesCount > 1){
+					for($i = 0; $i < $filesCount-1; $i++){
+						// array_push($product_image,$_FILES['userFiles']['name'][$i]);
+						$_FILES['userFile']['name'] = $_FILES['product_image']['name'][$i];
+		                $_FILES['userFile']['type'] = $_FILES['product_image']['type'][$i];
+		                $_FILES['userFile']['tmp_name'] = $_FILES['product_image']['tmp_name'][$i];
+		                $_FILES['userFile']['error'] = $_FILES['product_image']['error'][$i];
+		                $_FILES['userFile']['size'] = $_FILES['product_image']['size'][$i];
+
+						$config['upload_path'] = FCPATH.ADMIN_MEDIA_PATH; 
+						$config['allowed_types'] = FILETYPE_ALLOWED;//FILETYPE_ALLOWED which is defined constantly in constants file
+						$config['file_name'] = $_FILES['product_image']['name'][$i];
+
+						$this->upload->initialize($config);
+						if($this->upload->do_upload('userFile')){
+						    $uploadData = $this->upload->data();
+						    array_push($product_image,ADMIN_MEDIA_PATH.$uploadData['file_name']);
+							$product_image[$i] = ADMIN_MEDIA_PATH.$uploadData['file_name'];
+						}else{
+							$errors = $this->upload->display_errors();
+						    // array_push($product_image,'');
+						    $product_image[$i] = '';
+						}
+					}
+				}
+				if (!empty($errors)) {
+					$status['error_message'] = strip_tags($errors);
+				}
+				else{
+					$data['product_files'] = $product_image;
+					$data['removed_product'] = $_POST['edit_remove_photos'];
+					$result = $this->catalog->update_product($data);
+					if($result)
+						$status['error_message'] = "Product Updated Successfully!";
+				}		
 	    	}
 	    	else
 	    		$status['error_message'] = "Product Title Already Exists!";	
 	    }
-	    $query_result = $this->catalog->get_giftproduct_data($id);
-	    $status['giftproduct_data'] = $query_result['product_list'];
-	    $status['giftproduct_image'] = $query_result['product_image'];
+	    $query_result = $this->catalog->get_product_data($id);
+	    $status['product_data'] = $query_result['product_list'];
+	    $status['product_image'] = $query_result['product_image'];
+	    // echo "<pre>";
+	    // print_r($status['product_image']);
+	    // echo "</pre>";
 		$status['subcategory_list'] = $query_result['subcategory_list'];
-		$status['recipient_list'] = $query_result['recipient_list'];
+		$status['recipient_list'] = $this->catalog->get_recipient();
 		$resatt = array();
 		foreach($query_result['product_attribute_list'] as $arr)
 		{
@@ -734,7 +804,7 @@ class Adminindex extends CI_Controller {
 		$status['product_attribute_list'] = $resatt;
 		$status['category_list'] = $this->catalog->get_categories();
 		$status['attribute_list'] = $this->catalog->get_product_attributes();
-		$this->load->view('admin/edit_giftproduct',$status);
+		$this->load->view('admin/edit_product',$status);
 	}
 	public function product_attributes()
 	{	
@@ -1475,8 +1545,16 @@ class Adminindex extends CI_Controller {
 	{	
 		$category_id=$_POST['category_id'];	
 		$category_name = $_POST['category_name'];	
-		$category_reference_data = $this->catalog->get_category_reference($category_id);
+		$recipient_id = $_POST['recipient_id'];	
+		$category_reference_data = $this->catalog->get_category_reference($category_id,$recipient_id);
 		echo json_encode($category_reference_data);
+	}
+	public function loadrecipient_reference()
+	{	
+		$recipient_id=$_POST['recipient_id'];	
+		$recipient_type = $_POST['recipient_type'];	
+		$recipient_reference_data = $this->catalog->get_recipient_reference($recipient_id);
+		echo json_encode($recipient_reference_data);
 	}
 	public function order()
 	{

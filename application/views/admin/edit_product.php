@@ -45,34 +45,103 @@
              <p class="error_msg_reg test_product"><?php if (isset($error_message)) echo $error_message; ?></p>
              <?php 
                 // echo "<pre>";
-                // print_r($giftproduct_data);
+                // print_r($product_data);
                 // echo "</pre>";
              // echo "<pre>";
-             // print_r($giftproduct_image);
+             // print_r($product_image);
              // echo "</pre>";
              ?>
-             <form role="form" method="POST" action="<?php echo base_url(); ?>index.php/admin/adminindex/edit_giftproduct/<?php echo $giftproduct_data["product_id"]; ?>" enctype="multipart/form-data" name="product_form" id="edit_giftproduct" class="form_submit">
+             <form role="form" method="POST" action="<?php echo base_url(); ?>index.php/admin/adminindex/edit_product/<?php echo $product_data["product_id"]; ?>" enctype="multipart/form-data" name="product_form" id="edit_product" class="form_submit">
              <input type="hidden" value="0">
              <input type="hidden" class="attribute_check_status" name="attribute_check_status" value="<?php if(sizeof($product_attribute_list) > 0) 
                 echo "1"; ?>">
              <p class="product_tab">Basic Product Details</p>
                     <div class="form-group">
                         <label for="titlename">Product Title<span class="fill_symbol"> *</span></label>
-                        <input type="text" class="form-control product_default_field product_lables" id="titlename" placeholder="Enter title Name" name="product_title" value="<?php if(!empty($giftproduct_data['product_title'])) echo $giftproduct_data['product_title']; ?>">
+                        <input type="text" class="form-control product_default_field product_lables" id="titlename" placeholder="Enter title Name" name="product_title" value="<?php if(!empty($product_data['product_title'])) echo $product_data['product_title']; ?>">
                         <span class="product_error_message">The Product Title field is required</span>
                     </div>  
+                    <div class="form-group">
+                        <label for="category_image">Product Image<span class="fill_symbol"> *</span></label>
+                        <!-- <input type='file' id='image_upload' name='product_image[]' multiple='multiple' class="product_default_field" />  -->
+                        <?php if (sizeof($product_image) > 0){ ?>
+                            <div class="simpleFilePreview_multiUI edit_image_available">
+                            <span class="simpleFilePreview_shiftRight simpleFilePreview_shifter"></span>
+                            <div class="simpleFilePreview_multiClip">
+                            <ul class="simpleFilePreview_multi" style="width: 535px;">
+                            <?php 
+                            $i = 0;
+                            $product_image_details = array();
+                            foreach ($product_image as $key => $value) { ?>
+                                <?php 
+                                array_push($product_image_details,$value['product_upload_image_id'])?>
+                                <li id="simpleFilePreview_<?php echo $i; ?>" class="simpleFilePreview" data-sfpallowmultiple="1">
+                                <input type="hidden" class="product_upload_image_id" value="<?php echo $value['product_upload_image_id'];?>">
+                                    <a class="simpleFilePreview_input" style="display: none;">
+                                        <span class="simpleFilePreview_inputButtonText">
+                                        <i class="fa fa-plus-circle fa_small"></i>
+                                        </span>
+                                    </a>
+                                    <span class="simpleFilePreview_remove" style="display: none;">Remove</span>
+                                    <input class="simpleFilePreview_formInput image_update" type="file" style="width: 61px; height: 61px;z-index:0 !important;">
+                                    <img id="clean_img" class="edit_after_save simpleFilePreview_preview " title="Remove this file" src="<?php echo base_url().$value['product_upload_image'] ?>">
+                                    <!-- <span class="upload_image_remove">Remove</span> -->
+                                </li>
+                            <?php 
+                                $i++;
+                            } ?>
+                            </ul>
+                            </div>
+                            <span class="simpleFilePreview_shiftLeft simpleFilePreview_shifter"></span>
+                            </div>
+                        <?php } else {?>
+                            <div class="simpleFilePreview_multiUI edit_image_notavailable">
+                              <span class="simpleFilePreview_shiftRight simpleFilePreview_shifter"></span>
+                              <div class="simpleFilePreview_multiClip">
+                                  <ul class="simpleFilePreview_multi" style="width: 560px;">
+                                    <li id="simpleFilePreview_0" class="simpleFilePreview" data-sfpallowmultiple="1">
+                                    <a class="simpleFilePreview_input">
+                                    <span class="simpleFilePreview_inputButtonText">
+                                    <i class="fa fa-plus-circle fa_small"></i>
+                                    </span>
+                                    </a>
+                                    <span class="simpleFilePreview_remove" style="display: none;">Remove</span>
+                                    <input type='file' name='product_image[]' multiple='multiple' class="product_default_field image_file_input" />     
+                                    </li>
+                                  </ul>
+                              </div>
+                              <span class="simpleFilePreview_shiftLeft simpleFilePreview_shifter"></span>
+                          </div>
+                        <?php } ?>
+                        <span class="product_error_message">The Product Image field is required</span>
+                        <span class="upload_limit">(Maximum Upload size 1MB and Max Upload dimensions 450px * 600px)</span> 
+                        <input type="hidden" name="edit_remove_photos" class="edit_remove_photos" value="">  
+                        <input type="hidden" name="edit_hidden_photos" class="edit_hidden_photos" value="<?php if(!empty($product_image_details)) echo implode(",", $product_image_details);?>">
+                    </div>
                      <div class="form-group">
                         <label for="description">Description<span class="fill_symbol"> *</span></label>
-                        <textarea type="text" class="form-control product_default_field product_lables" id="description" placeholder="Enter description" name="product_description"><?php if(!empty($giftproduct_data['product_description'])) echo $giftproduct_data['product_description']; ?></textarea>
+                        <textarea type="text" class="form-control product_default_field product_lables" id="description" placeholder="Enter description" name="product_description"><?php if(!empty($product_data['product_description'])) echo $product_data['product_description']; ?></textarea>
                         <span class="product_error_message">The Product Desciption field is required</span>
                     </div> 
+                    <div class="control-group">
+                        <label class="control-label" for="sel_c">Choose Recipient<span class="fill_symbol"> *</span></label>
+                        <div class="controls">
+                            <select id="sel_c" class="product-type-filter form-control recipient_act product_default_field product_lables" name="select_recipient">
+                            <option value="">Select Recipient</option>
+                                <?php foreach ($recipient_list as $rec): ?>
+                                    <option value="<?php echo $rec["recipient_id"] ?>" <?php if($rec["recipient_id"]== $product_data['product_recipient_id']) echo "selected"; ?>><?php echo $rec["recipient_type"] ?></option>
+                                <?php endforeach ?>
+                            </select>
+                            <span class="product_error_message">The Product Recipient field is required</span>
+                        </div>
+                    </div>
                     <div class="control-group">
                         <label class="control-label" for="sel_c">Choose Category<span class="fill_symbol"> *</span></label>
                         <div class="controls">
                             <select id="sel_c" class="product-type-filter form-control category_act product_default_field product_lables" name="select_category">
                             <option value="">Select Category</option>
                                 <?php foreach ($category_list as $cat): ?>
-                                    <option value="<?php echo $cat["category_id"] ?>" <?php if($cat["category_id"]== $giftproduct_data['product_category_id']) echo "selected"; ?>><?php echo $cat["category_name"] ?></option>
+                                    <option value="<?php echo $cat["category_id"] ?>" <?php if($cat["category_id"]== $product_data['product_category_id']) echo "selected"; ?>><?php echo $cat["category_name"] ?></option>
                                 <?php endforeach ?>
                             </select>
                             <span class="product_error_message">The product Category field is required</span>
@@ -84,48 +153,36 @@
                             <select id="sel_c" class="product-type-filter form-control subcategory_act product_default_field product_lables" name="select_subcategory">
                                 <option value="">Select Subcategory</option>
                                 <?php foreach ($subcategory_list as $subcat): ?>
-                                    <option value="<?php echo $subcat["subcategory_id"] ?>" <?php if($subcat["subcategory_id"]== $giftproduct_data['product_subcategory_id']) echo "selected"; ?>><?php echo $subcat["subcategory_name"] ?></option>
+                                    <option value="<?php echo $subcat["subcategory_id"] ?>" <?php if($subcat["subcategory_id"]== $product_data['product_subcategory_id']) echo "selected"; ?>><?php echo $subcat["subcategory_name"] ?></option>
                                 <?php endforeach ?>
                             </select>
                             <span class="product_error_message">The Product Subcategory field is required</span>
                         </div>
                     </div>
-                    <div class="control-group">
-                        <label class="control-label" for="sel_c">Choose Recipient<span class="fill_symbol"> *</span></label>
-                        <div class="controls">
-                            <select id="sel_c" class="product-type-filter form-control recipient_act product_default_field product_lables" name="select_recipient">
-                            <option value="">Select Recipient</option>
-                                <?php foreach ($recipient_list as $rec): ?>
-                                    <option value="<?php echo $rec["recipient_id"] ?>" <?php if($rec["recipient_id"]== $giftproduct_data['product_recipient_id']) echo "selected"; ?>><?php echo $rec["recipient_type"] ?></option>
-                                <?php endforeach ?>
-                            </select>
-                            <span class="product_error_message">The Product Recipient field is required</span>
-                        </div>
-                    </div>
-                         <div class="form-group price_group" style="<?php if(sizeof($product_attribute_list) > 0) echo 'display:none'; ?>">
-                            <label for="price">Price<span class="fill_symbol"> *</span></label>
-                            <input type="text" class="form-control price product_default_field product_lables" id="product_price" placeholder="Enter price" value="<?php if(!empty($giftproduct_data['product_price'])) echo $giftproduct_data['product_price']; ?>">
-                            <span class="product_error_message">The Product Price field is required</span>
-                        </div> 
-                        <input type="hidden" name="product_price" id="product_price_hidden">
-                        <div class="form-group items_group" style="<?php if(sizeof($product_attribute_list) > 0) echo 'display:none'; ?>">
-                            <label for="total_iteams">Total Items<span class="fill_symbol"> *</span></label>
-                            <input type="text" class="form-control totalitem product_default_field product_lables" id="product_totalitems" placeholder="Enter total items" value="<?php if(!empty($giftproduct_data['product_totalitems'])) echo $giftproduct_data['product_totalitems']; ?>">
-                            <span class="product_error_message">The Product Totalitems field is required</span>
-                        </div> 
-                        <input type="hidden" name="product_totalitems" id="product_totalitems_hidden">
-                    <!-- <div class="form-group">
-                        <label for="sold">Sold</label>
-                        <input type="text" class="form-control" id="sold" placeholder="Enter Sold" disabled="">
-                        <input type="hidden" name="product_sold">
-                    </div>  -->
+                     <div class="form-group price_group" style="<?php if(sizeof($product_attribute_list) > 0) echo 'display:none'; ?>">
+                        <label for="price">Price<span class="fill_symbol"> *</span></label>
+                        <input type="text" class="form-control price product_default_field product_lables" id="product_price" placeholder="Enter price" value="<?php if(!empty($product_data['product_price'])) echo $product_data['product_price']; ?>">
+                        <span class="product_error_message">The Product Price field is required</span>
+                    </div> 
+                    <input type="hidden" name="product_price" id="product_price_hidden">
+                    <div class="form-group items_group" style="<?php if(sizeof($product_attribute_list) > 0) echo 'display:none'; ?>">
+                        <label for="total_iteams">Total Items<span class="fill_symbol"> *</span></label>
+                        <input type="text" class="form-control totalitem product_default_field product_lables" id="product_totalitems" placeholder="Enter total items" value="<?php if(!empty($product_data['product_totalitems'])) echo $product_data['product_totalitems']; ?>">
+                        <span class="product_error_message">The Product Totalitems field is required</span>
+                    </div> 
+                    <input type="hidden" name="product_totalitems" id="product_totalitems_hidden">
+                <!-- <div class="form-group">
+                    <label for="sold">Sold</label>
+                    <input type="text" class="form-control" id="sold" placeholder="Enter Sold" disabled="">
+                    <input type="hidden" name="product_sold">
+                </div>  -->
                     <div class="control-group">
                         <label class="control-label" for="sel_c">Status<span class="fill_symbol"> *</span></label>
                         <div class="controls">
                             <select name="product_status" id="sel_c" class="product-type-filter form-control city_act product_default_field product_lables">
                                 <option value="">Select</option>
-                                <option value="1" <?php if($giftproduct_data['product_status'] == 1) echo "selected"; ?>>Active</option>
-                                <option value="0" <?php if($giftproduct_data['product_status'] == 0) echo "selected"; ?>>Inactive</option>
+                                <option value="1" <?php if($product_data['product_status'] == 1) echo "selected"; ?>>Active</option>
+                                <option value="0" <?php if($product_data['product_status'] == 0) echo "selected"; ?>>Inactive</option>
                             </select>
                             <span class="product_error_message">The Product Status field is required</span>
                         </div>

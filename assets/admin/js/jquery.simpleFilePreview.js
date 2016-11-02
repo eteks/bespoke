@@ -1,6 +1,10 @@
 ;
 (function($) {
-    var edit_remove_photos = "";
+    // var edit_remove_photos = "";
+    if($('.edit_hidden_photos').length){
+        var product_hidden_image = $('.edit_hidden_photos').val().split(',');
+        product_hidden_image_remove = [];
+    }  
     $.fn.simpleFilePreview = function(o) {
         var n = this;
         if (!n || !n.length) {
@@ -70,6 +74,9 @@
                             if (p.attr('data-sfpallowmultiple') == 1 && !p.find('.simpleFilePreview_preview').length) {
                                 var newId = $.simpleFilePreview.uid++;
                                 var newN = p.clone(true).attr('id', "simpleFilePreview_" + newId);
+                                //custom code
+                                newN.find('.product_upload_image_id').val("");
+                                
                                 newN.find('input.simpleFilePreview_formInput').attr('id', newN.find('input.simpleFilePreview_formInput').attr('id') + '_' + newId).val('');
                                 if ($('.simpleFilePreview_multiUI').hasClass('edit_image_notavailable')) {
                                     newN.find('.simpleFilePreview_input').css('display', 'block');
@@ -135,18 +142,26 @@
                 $(this).parents('.simpleFilePreview').find('.simpleFilePreview_remove').hide();
             }).on('click', '.simpleFilePreview_preview', function() {
                 var p = $(this).parents('.simpleFilePreview');
-                if (p.attr('data-sfpallowmultiple') == 1 && p.siblings('.simpleFilePreview').length && !p.parents('#upload_photos_div').children().hasClass('error_input_field')) {
+                // if (p.attr('data-sfpallowmultiple') == 1 && p.siblings('.simpleFilePreview').length && !p.parents('#upload_photos_div').children().hasClass('error_input_field')) {
+                if (p.attr('data-sfpallowmultiple') == 1 && p.siblings('.simpleFilePreview').length && !$('.photo_labelError').hasClass('error_input_field')) {
                     if (p.hasClass('simpleFilePreview_existing')) {
                         p.parent().append("<input type='hidden' id='" + p.attr('id') + "_remove' name='removeFiles[]' value='" + p.attr('data-sfprid') + "' />");
                     }
                     p.parents('.simpleFilePreview_multi').width('-=' + p.width());
-                    if(edit_remove_photos == "")
-                        edit_remove_photos += $(this).attr('src');
-                    else
-                        edit_remove_photos = edit_remove_photos + ","+ $(this).attr('src');         
-                    var regex = new RegExp("/media/", 'g');
-                    $('.edit_remove_photos').val(edit_remove_photos.replace(regex,""));
+                    if($('.edit_hidden_photos').length){
+                        //own code to pass the remove product image id to hidden variable
+                        image_id = $(this).parents('.simpleFilePreview').find('.product_upload_image_id').val();
+                        if(image_id){
+                            remove_data = $.grep(product_hidden_image, function( n, i ) {
+                                return n == image_id;
+                            });
+                            product_hidden_image_remove.push(remove_data);
+                            $('.edit_remove_photos').val(product_hidden_image_remove);
+                        }                       
+                    }                 
                     p.remove();
+                    if($('.simpleFilePreview_formInput').length == 1)
+                        $('.simpleFilePreview_formInput').addClass('product_default_field');
                 } else {
                     if (p.hasClass('simpleFilePreview_existing')) {
                         p.find('input.simpleFilePreview_formInput').show();
@@ -189,7 +204,9 @@
     var setup = function(n, o) {
         var isMulti = n.is('[multiple]');
         n = n.removeAttr('multiple').addClass('simpleFilePreview_formInput');
-        if (window.location.href.indexOf("edit_postad_detail") <= -1) {
+        //this condition to check create div of simplefilepreview only while add product image
+        //when edit product page load, it restricts to create simplepreview div because, we manually load this file in own custom.js when window load
+        if (window.location.href.indexOf("edit_giftproduct") <= -1) {
             var c = $("<" + ((isMulti) ? 'li' : 'div') + " id='simpleFilePreview_" + ($.simpleFilePreview.uid++) + "' class='simpleFilePreview' data-sfpallowmultiple='" + ((isMulti) ? 1 : 0) + "'>" + "<a class='simpleFilePreview_input'><span class='simpleFilePreview_inputButtonText'>" + o.buttonContent + "</span></a>" + "<span class='simpleFilePreview_remove'>" + o.removeContent + "</span>" + "</" + ((isMulti) ? 'li' : 'div') + ">");
             n.before(c);
             c.append(n);

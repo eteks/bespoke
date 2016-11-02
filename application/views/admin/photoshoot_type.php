@@ -46,7 +46,7 @@
             <thead>
            <tr>
         	<th class="product">Photoshoot Type</th>
-        	<th class="product">Photoshoot </th>
+        	<th class="product">Description</th>
         	<th class="product_small">Status</th>
         	<th class="product_small">Created Date</th>
         	<th class="product_small">Actions</th>
