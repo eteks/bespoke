@@ -74,7 +74,7 @@
 	                                    </div>
 	                                    <div class="form-group required">
 	                                        <label for="InputLastName">Last Name <sup>*</sup> </label>
-	                                        <input required type="text" class="form-control" id="InputLastName" placeholder="Last Name" maxlength="20" value="<?php if(!empty($profile_details['user_last_name'])) : echo $profile_details['user_last_name']; endif;?>">
+	                                        <input for="InputLastName" class="form-control" id="InputLastName" placeholder="Last Name" maxlength="20" value="<?php if(!empty($profile_details['user_last_name'])) : echo $profile_details['user_last_name']; endif;?>">
 	                                    </div>
 	                                    <div class="form-group required">
 	                                        <label for="InputAddress"> Address (Line 1) <sup>*</sup> </label>

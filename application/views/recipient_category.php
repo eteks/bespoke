@@ -14,10 +14,10 @@
             <div class="slider slider-v1" data-cycle-swipe=true data-cycle-prev=".prevControl"
                  data-cycle-next=".nextControl" data-cycle-loader="wait">
                 <div class="slider-item slider-item-img1">
-                    <img src="<?php echo base_url(); ?>assets/img/slider/slider0.jpg" class="img-responsive parallaximg sliderImg" alt="img">
+                    <img src="<?php echo base_url(); ?>assets/img/slider/slider-men0.jpg" class="img-responsive parallaximg sliderImg" alt="img">
                 </div>
                 <div class="slider-item slider-item-img1">
-                    <div class="sliderInfo">
+                    <!-- <div class="sliderInfo">
                         <div class="container">
                             <div class="col-lg-12 col-md-12 col-sm-12 sliderTextFull ">
                                 <div class="inner text-center">
@@ -31,11 +31,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <img src="<?php echo base_url(); ?>assets/img/slider/slider1.jpg" class="img-responsive parallaximg sliderImg" alt="img">
+                    </div> -->
+                    <img src="<?php echo base_url(); ?>assets/img/slider/slider-men1.jpg" class="img-responsive parallaximg sliderImg" alt="img">
                 </div> <!--/.slider-item-->
                 <div class="slider-item slider-item-img2 ">
-                    <div class="sliderInfo">
+                    <!-- <div class="sliderInfo">
                         <div class="container">
                             <div class="col-lg-12 col-md-12 col-sm-12 sliderTextFull  ">
                                 <div class="inner dark maxwidth500 text-center animated topAnima">
@@ -49,11 +49,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <img src="<?php echo base_url(); ?>assets/img/slider/slider3.jpg" class="img-responsive parallaximg sliderImg" alt="img">
+                    </div> -->
+                    <img src="<?php echo base_url(); ?>assets/img/slider/slider-men2.jpg" class="img-responsive parallaximg sliderImg" alt="img">
                 </div> <!--/.slider-item-->
                 <div class="slider-item slider-item-img3 ">
-                    <div class="sliderInfo">
+                    <!-- <div class="sliderInfo">
                         <div class="container">
                             <div class="col-lg-5 col-md-4 col-sm-6 col-xs-8   pull-left sliderText white hidden-xs">
                                 <div class="inner">
@@ -66,11 +66,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <img src="<?php echo base_url(); ?>assets/img/slider/slider4.jpg" class="img-responsive parallaximg sliderImg" alt="img">
+                    </div> -->
+                    <img src="<?php echo base_url(); ?>assets/img/slider/slider-men3.jpg" class="img-responsive parallaximg sliderImg" alt="img">
                 </div> <!--/.slider-item-->
                 <div class="slider-item slider-item-img3">
-                    <div class="sliderInfo">
+                    <!-- <div class="sliderInfo">
                         <div class="container">
                             <div class="col-lg-5 col-md-6 col-sm-5 col-xs-5 pull-left sliderText blankstyle transformRight">
                                 <div class="inner text-right">
@@ -85,8 +85,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <img src="<?php echo base_url(); ?>assets/img/slider/slider2.jpg" class="img-responsive parallaximg sliderImg" alt="img">
+                    </div> -->
+                    <img src="<?php echo base_url(); ?>assets/img/slider/slider-men4.jpg" class="img-responsive parallaximg sliderImg" alt="img">
                 </div>
             </div> <!--/.slider slider-v1-->
         </div> <!--/.slider-content-->

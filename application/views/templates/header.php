@@ -16,7 +16,7 @@
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
     <!-- Other Css files -->
-    <link href="assets/css/responsive.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/responsive.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/jasny-bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/nivo-lightbox.css">
@@ -277,7 +277,7 @@
                 foreach ($menubar_fields as $rec_key => $rec_value) :
                 ?>
                 <li class="dropdown megamenu-80width ">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="<?php echo base_url(); ?>recipient_category/<?php echo $rec_key; ?>"> 
+                    <a class="dropdown-toggle" href="<?php echo base_url(); ?>recipient_category/<?php echo $rec_key; ?>"> <!-- data-toggle="dropdown" -->
                         <?php echo $rec_value['recipient_type']; ?>
                         <b class="caret"> </b> 
                     </a>
