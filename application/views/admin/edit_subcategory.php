@@ -53,7 +53,7 @@
                         value="<?php if(!empty($subcategory_data['subcategory_name'])) echo $subcategory_data['subcategory_name']; ?>" >
                     </div>  
                     <div class="attribute_main_block" id="subcategory_status">
-                        <?php foreach ($subcategory_split as $recipient):?>                        
+                        <?php foreach ($subcategory_split as $rec_cat):?>                        
                         <div class="attribute_group subcategory_group" id="attribute_group1">
                             <div class="form-group attribute_block">
                                 <div class="clone_attribute_group">
@@ -63,11 +63,11 @@
                                             <div class="controls">
                                             <select name="select_recipient[]" id="select_recipient" class="product-type-filter form-control fl label-boxes field_validate attribute_option_validate attribute_validate att_equal recipient_checkbox">
                                                 <option value="">Select Recipient</option>
-                                                    <?php foreach ($recipient_list as $recipient): ?>
+                                                    <?php foreach ($recipient_list as $rec): ?>
                                                      <?php   
-                                                        if($subcategory_data['recipient_id'] == $recipient["recipient_id"])  echo "<option selected value='".$recipient["recipient_id"]."'>".$recipient['recipient_type']."</option>";
+                                                        if($rec['recipient_id'] == $rec_cat["recipient_mapping_id"])  echo "<option selected value='".$rec["recipient_id"]."'>".$rec['recipient_type']."</option>";
                                                         else
-                                                            echo "<option value='".$recipient["recipient_id"]."'>".$recipient['recipient_type']."</option>";
+                                                            echo "<option value='".$rec["recipient_id"]."'>".$rec['recipient_type']."</option>";
                                                     ?>
                                                     <?php endforeach; ?>
                                                 </select>
@@ -85,8 +85,14 @@
                             </div>
                             <div class="mutliSelect">
                                 <ul>
+                                <!-- <?php 
+                                    $condition = is_array($rec_cat["category_mapping_id"]) || str_split("",$rec_cat["category_mapping_id"]);
+                                    echo "<pre>";
+                                    print_r($condition);
+                                    echo "</pre>";
+                                ?> -->
                                 <?php foreach ($category_list as $cat):
-                                    $condition = in_array($cat["category_id"], $subcategory_category)?"checked":"";
+                                    $condition = in_array($cat["category_id"],$rec_cat["category_mapping_id"])?"checked":"";
                                     echo "<li><input type='checkbox' name='select_category[]' id='subcategory_name' class='edit_multiple_checkbox' 
                                     value='".$cat["category_id"]."'".$condition."/><span class='multiple_checkbox multple_checkbox_inactive edit_multiple_checkbox' value='".$cat["category_id"]."'".$condition.">".$cat["category_name"]."</span></li>";
                                 endforeach ?>

@@ -178,7 +178,7 @@ class Catalog extends CI_Model {
 		$this->db->where('subcategory_mapping_id',$id);
 		$query['subcategory_category'] = $this->db->get()->result_array();
 		// echo "<pre>";
-		// print_r($get_data);
+		// print_r($query);
 		// echo "</pre>";
 		return $query;
 	}

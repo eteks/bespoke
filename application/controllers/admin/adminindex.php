@@ -341,6 +341,7 @@ class Adminindex extends CI_Controller {
 	public function edit_subcategory()
 	{	
 		// print_r($_POST);
+		$subcategory_group = array();
 		$id = $this->uri->segment(4);
 		// echo "id".$id;
 		if (empty($id))
