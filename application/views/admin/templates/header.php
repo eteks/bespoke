@@ -97,7 +97,7 @@
                             <li class="<?php if($uri_segment =="add_subcategory"||$uri_segment =="edit_subcategory"){echo "active";}?>"><a href="<?php echo base_url(); ?>admin/adminindex/subcategory">Subcategory </a></li>
                             <li class="<?php if($uri_segment =="add_recipient"||$uri_segment =="edit_recipient"){echo "active";}?>"><a href="<?php echo base_url(); ?>admin/adminindex/recipient">Recipient</a></li>
                             <li class="<?php if($uri_segment =="add_product_attributes"||$uri_segment =="edit_product_attributes"){echo "active";}?>"><a href="<?php echo base_url(); ?>admin/adminindex/product_attributes">Product Attributes </a></li>
-                            <li class="<?php if($uri_segment =="add_product"||$uri_segment =="edit_giftproduct"){echo "active";}?>"><a href="<?php echo base_url(); ?>admin/adminindex/giftproduct">Product </a></li>
+                            <li class="<?php if($uri_segment =="add_product"||$uri_segment =="edit_product"){echo "active";}?>"><a href="<?php echo base_url(); ?>admin/adminindex/product">Product </a></li>
                             <li><a href="<?php echo base_url(); ?>admin/adminindex/product_attribute_sets">Product Attributes Sets </a></li>
                             </ul>
                             </li>

@@ -6253,7 +6253,7 @@ div.quickview {
 ===========================================*/
 .nopadding {
     padding: 0;
-    margin-top: -1px;
+    margin-top: 0px;
 }
 .albums{ 
     margin-top: 100px !important;
@@ -7044,7 +7044,7 @@ fieldset[disabled] .btn-primary.active {
 	color: #c81d6a;
 	font-size:16px;
 	font-weight: 500;
-	text-transform: uppercase;
+	text-align: center;
 	padding: 5px;
 	margin: 0 auto !important;
     text-align: center;

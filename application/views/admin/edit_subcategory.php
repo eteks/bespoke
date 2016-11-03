@@ -52,12 +52,34 @@
                         <input type="text" class="form-control" id="subcategory_name" name="edit_subcategory_name" placeholder="Enter SubCategory Name"
                         value="<?php if(!empty($subcategory_data['subcategory_name'])) echo $subcategory_data['subcategory_name']; ?>" >
                     </div>  
-                    <div class="control-group">
-                        <label class="control-label" for="sel_c">Choose Category<span class="fill_symbol"> *</span></label>
-                          <div class="multiple_dropdown"> 
+                    <div class="attribute_main_block" id="subcategory_status">
+                        <?php foreach ($subcategory_split as $recipient):?>                        
+                        <div class="attribute_group subcategory_group" id="attribute_group1">
+                            <div class="form-group attribute_block">
+                                <div class="clone_attribute_group">
+                                    <div class="clone_attribute" id="clone_attribute1">
+                                        <div class="control-group">
+                                            <label class="control-label" for="sel_c">Choose Recipient<span class="fill_symbol">*</span></label>
+                                            <div class="controls">
+                                            <select name="select_recipient[]" id="select_recipient" class="product-type-filter form-control fl label-boxes field_validate attribute_option_validate attribute_validate att_equal recipient_checkbox">
+                                                <option value="">Select Recipient</option>
+                                                    <?php foreach ($recipient_list as $recipient): ?>
+                                                     <?php   
+                                                        if($subcategory_data['recipient_id'] == $recipient["recipient_id"])  echo "<option selected value='".$recipient["recipient_id"]."'>".$recipient['recipient_type']."</option>";
+                                                        else
+                                                            echo "<option value='".$recipient["recipient_id"]."'>".$recipient['recipient_type']."</option>";
+                                                    ?>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                                <span class="product_error_message">The product Category field is required</span>
+                                            </div>
+                                        </div>
+                                <div class="control-group">
+                    <label class="control-label" for="sel_c">Choose Category<span class="fill_symbol">*</span></label>
+                        <div class="multiple_dropdown"> 
                             <div class="select_multiple_option">
-                                <a id="admin_check">
-                                    <span class="hida">Select</span>  <i class="fa fa-caret-down"  aria-hidden="true"></i>  
+                                <a class="attribute_validate_category">
+                                    <span id="category_act">Select Category</span><i class="fa fa-caret-down"  aria-hidden="true"></i>  
                                     <p class="multiSel"></p>  
                                 </a>
                             </div>
@@ -70,9 +92,23 @@
                                 endforeach ?>
                                 </ul>
                             </div>
-                        </div>
-                        <input type="hidden" class="checkbox_array_hidden" name="removed_category">
+                                    </div>
+                                    </div>
+                                    </div> <!--  clone_attribute -->
+                               </div> <!-- clone_attribute_group -->
+                                 <div class="clr-screen"></div>
+
+                            </div>
+                            <div class="group group_action">
+                                <input type="button" value="Add" class="btn submit-btn btn-default attibute_add product-btns">
+                                <input type="button" value="Remove" class="btn submit-btn btn-default attibute_remove product-btns attribute_btn_disabled">      
+                            </div>  
+                            <input type="hidden" class="multiple_checkbox_hidden" name="multiple_checkbox_hidden[]" value=""> 
+                        </div> 
+                        <?php endforeach; ?>
                     </div>
+
+
                     <div class="control-group">
                         <label class="control-label" for="sel_c">Status<span class="fill_symbol"> *</span></label>
                         <div class="controls">
@@ -96,6 +132,36 @@
         </div>
     </div>
     <!--/span-->
+     <script>
+// Load area based on recipient
+ $(document).delegate(".attribute_validate",'change',function(){
+        var selected_val =$(this);
+        selected_recipient = $.trim($('option:selected',this).text());
+        selected_recipient_id = $('option:selected',this).val();
+        form_data = {'selected_recipient_id':selected_recipient_id};
+        if(selected_recipient != 'Select Recipient'){
+            $.ajax({
+               type: "POST",
+               url: "<?php echo base_url(); ?>" + "admin/adminindex/ajax_subcategory",
+               data: form_data,
+               cache: false,
+               success: function(data) { 
+                var obj = JSON.parse(data);
+                var options = '';   
+                if(obj.length!=0){               
+                  $.each(obj, function(i){
+                    options += '<li><input type="checkbox" name="select_category[]" class="subcategory_name subcategory_checkbox" value="'+obj[i].category_id+'" /><span class="multiple_checkbox multple_checkbox_inactive">'+obj[i].category_name+'</span></li>';
+                  });  
+                }   
+                else{
+                    alert('No Category added for '+selected_recipient);    
+                }  
+                 selected_val.parents('.attribute_group').find('.mutliSelect ul').html(options);       
+               }
+           });
+       }        
+    });
+     </script>
 </div><!--/row-->
     <!-- content ends -->
     </div><!--/#content.col-md-0-->

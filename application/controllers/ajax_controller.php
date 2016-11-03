@@ -7,7 +7,8 @@ class Ajax_Controller extends CI_Controller {
         parent::__construct();
         $this->load->helper('url');
         $this->load->model('ajax_model');
-        $this->load->library('session');  
+        $this->load->library('session'); 
+        $this->load->library('email');   
         $this->load->library('form_validation');  
     }
      
@@ -17,6 +18,13 @@ class Ajax_Controller extends CI_Controller {
 		$data = $this->ajax_model->get_registeration_status();
 		echo $data;
 	}
+
+    // Registration
+    public function forget_password()
+    {   
+        $data = $this->ajax_model->get_forget_password_status();
+        echo $data;
+    }
 
     // Login
     public function login()

@@ -14,8 +14,11 @@
 a {
 	cursor : pointer !important;
 }
-.active_sub_cat a{
+.active_sub_cat {
 	color: #c81d6a !important;
+}
+.subcategory_section_ajax:hover {
+   color: #c81d6a !important;     
 }
 
 /* --------------         Price range slider start       --------------------- */

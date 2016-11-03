@@ -120,52 +120,66 @@ class Catalog extends CI_Model {
 		return false;
 	}	
 	public function update_subcategory($data)
-	{	
-		
-		$category = $data['post_category'];
-		$subcategory_data = $data['post_subcategory'];
-		if(!empty($category['removed_category_data'])){
-			$condition = "subcategory_mapping_id =". $subcategory_data['subcategory_id'] ." AND category_mapping_id IN(".$category['removed_category_data'].")";
-			$this->db->from('shopping_subcategory_category');
-			$this->db->where($condition);
-			$this->db->delete();
-			// trans_complete() function is used to check whether updated query successfully run or not
-			if ($this->db->trans_complete() == false) {
-				return false;
-			}
+	{			
+		// $category = $data['post_category'];
+		// $subcategory_data = $data['post_subcategory'];
+		// if(!empty($category['removed_category_data'])){
+		// 	$condition = "subcategory_mapping_id =". $subcategory_data['subcategory_id'] ." AND category_mapping_id IN(".$category['removed_category_data'].")";
+		// 	$this->db->from('shopping_subcategory_category');
+		// 	$this->db->where($condition);
+		// 	$this->db->delete();
+		// 	// trans_complete() function is used to check whether updated query successfully run or not
+		// 	if ($this->db->trans_complete() == false) {
+		// 		return false;
+		// 	}
+
+		$data_subcategory_basic = $data['subcategory_basic'];
+		$data_subcategory_files = $data['subcategory_files'];
+		// echo "<pre>";
+		// print_r($data_product_files);
+		// echo "</pre>";
+		$data_subcategory_attributes_exists = isset($data['subcategory_attributes_exists'])?$data['subcategory_attributes_exists']:"";
+		// echo "<pre>";
+		// print_r($data_product_attributes_exists);
+		// echo "</pre>";
+		$data_subcategory_attributes_new = isset($data['subcategory_attributes_new'])?$data['subcategory_attributes_new']:"";
+		$this->db->where('subcategory_id', $data_subcategory_basic['subcategory_id']);
+		$this->db->update('shopping_subcategory', $data_subcategory_basic);
+
+		// To insert newly added images while update product
+		$subcategory_id = $data_subcategory_basic['subcategory_id'];
+		foreach($data_subcategory_group as $value) {
+			$recipient_id = $value[0];
+			$category_mapping_id = explode(",",$value[1]);
+			// print_r(explode(",",$value[1]));
+			foreach ($category_mapping_id as $value_cat) {
+				// print_r($category_mapping_id);
+			
+		$subcategory_category_recipient_map = array(
+                					'subcategory_mapping_id' => $subcategory_id,
+                					'recipient_mapping_id' => $recipient_id,
+	               					'category_mapping_id' => $value_cat,
+             						);
+		$this->db->insert('shopping_subcategory_category_and_recipient', $subcategory_category_recipient_map);
 		}
-		foreach($category['category_data'] as $value) {
-			$subcategory_category_map_data = array(
-				'subcategory_mapping_id' => $subcategory_data['subcategory_id'],
-				'category_mapping_id' => $value,
-			);
-			$this->db->select('*');
-			$this->db->from('shopping_subcategory_category');
-			$this->db->where($subcategory_category_map_data);
-			$query = $this->db->get();
-			if($query->num_rows() == 0)
-				$this->db->insert('shopping_subcategory_category', $subcategory_category_map_data);
-		}
-		$this->db->where('subcategory_id', $subcategory_data['subcategory_id']);
-		$this->db->update('shopping_subcategory', $subcategory_data);
+	}
 		// trans_complete() function is used to check whether updated query successfully run or not
 		if ($this->db->trans_complete() == false) {
 			return false;
 		}
 		return true;	
-	}	
+	}
 	public function get_subcategory_data($id)
 	{	
 		$query['subcategory_data'] = $this->db->get_where('shopping_subcategory', array('subcategory_id' => $id))->row_array();
 		// $query['subcategory_category'] = $this->db->get_where('shopping_subcategory_category', array('subcategory_mapping_id' => $id))->result_array();
-		$this->db->select('category_mapping_id');
+		$this->db->select('*');
 		$this->db->from('shopping_subcategory_category_and_recipient');
 		$this->db->where('subcategory_mapping_id',$id);
-		$get_data = $this->db->get()->result();
-		$query['subcategory_category'] = array();
-		foreach($get_data as $row){
-            array_push($query['subcategory_category'],$row->category_mapping_id);
-        }
+		$query['subcategory_category'] = $this->db->get()->result_array();
+		// echo "<pre>";
+		// print_r($get_data);
+		// echo "</pre>";
 		return $query;
 	}
 	public function get_recipient()
@@ -329,26 +343,53 @@ class Catalog extends CI_Model {
 		//return all records in array format to the controller
 		return $query;
 	}
-	public function get_category_reference($id)
+	// public function get_category_reference($id)
+	// {	
+	// 	$condition = "subcat.category_mapping_id =".$id;
+	// 	$this->db->select('sub.subcategory_id,sub.subcategory_name');
+	// 	$this->db->from('shopping_subcategory AS sub');
+	// 	$this->db->join('shopping_subcategory_category AS subcat', 'subcat.subcategory_mapping_id = sub.subcategory_id', 'left');
+	// 	$this->db->where($condition);
+	// 	$this->db->order_by('subcategory_name','asc');
+	// 	$this->db->group_by('subcategory_name');
+	// 	$query['subcategory_category'] = $this->db->get()->result_array();
+
+	// 	// $query = $this->db->get()->result_array();
+
+	// 	$condition = "reccat.category_mapping_id =".$id;
+	// 	$this->db->select('rec.recipient_id,rec.recipient_type');
+	// 	$this->db->from('shopping_recipient AS rec');
+	// 	$this->db->join('shopping_recipient_category AS reccat', 'reccat.recipient_mapping_id = rec.recipient_id', 'left');
+	// 	$this->db->where($condition);
+	// 	$this->db->order_by('recipient_type','asc');
+	// 	$this->db->group_by('recipient_type');
+	// 	$query['recipient_category'] = $this->db->get()->result_array();
+
+	// 	//return all records in array format to the controller
+	// 	return $query;
+	// }
+	public function get_category_reference($categoryid,$recipient_id)
 	{	
-		$condition = "subcat.category_mapping_id =".$id;
+		$condition = "subcatrec.recipient_mapping_id =".$recipient_id." AND subcatrec.category_mapping_id =".$categoryid;
 		$this->db->select('sub.subcategory_id,sub.subcategory_name');
 		$this->db->from('shopping_subcategory AS sub');
-		$this->db->join('shopping_subcategory_category AS subcat', 'subcat.subcategory_mapping_id = sub.subcategory_id', 'left');
+		$this->db->join('shopping_subcategory_category_and_recipient AS subcatrec', 'subcatrec.subcategory_mapping_id = sub.subcategory_id', 'left');
 		$this->db->where($condition);
 		$this->db->order_by('subcategory_name','asc');
 		$this->db->group_by('subcategory_name');
-		$query['subcategory_category'] = $this->db->get()->result_array();
+		$query['subcategory_data'] = $this->db->get()->result_array();
 
-		// $query = $this->db->get()->result_array();
-
-		$condition = "reccat.category_mapping_id =".$id;
-		$this->db->select('rec.recipient_id,rec.recipient_type');
-		$this->db->from('shopping_recipient AS rec');
-		$this->db->join('shopping_recipient_category AS reccat', 'reccat.recipient_mapping_id = rec.recipient_id', 'left');
+		//return all records in array format to the controller
+		return $query;
+	}
+	public function get_recipient_reference($id)
+	{	
+		$condition = "reccat.recipient_mapping_id =".$id;
+		$this->db->select('cat.category_id,cat.category_name');
+		$this->db->from('shopping_recipient_category AS reccat');
+		$this->db->join('shopping_category AS cat', 'cat.category_id = reccat.category_mapping_id', 'INNER');
 		$this->db->where($condition);
-		$this->db->order_by('recipient_type','asc');
-		$this->db->group_by('recipient_type');
+		$this->db->order_by('category_name','asc');
 		$query['recipient_category'] = $this->db->get()->result_array();
 
 		//return all records in array format to the controller
@@ -460,7 +501,7 @@ class Catalog extends CI_Model {
 		}
 		return true;
 	}
-	public function get_giftproduct_data($id)
+	public function get_product_data($id)
 	{	
 		//Get Product default field data
 		$this->db->select('*');
@@ -478,10 +519,13 @@ class Catalog extends CI_Model {
 		$this->db->order_by('product_createddate','desc');
 		$query['product_image'] = $this->db->get()->result_array();
 
+		$recipient_id = $query['product_list']['product_recipient_id'];
+		$recipient_reference = $this->get_recipient_reference($recipient_id);
+		$query['category_list'] = $recipient_reference['recipient_category'];
+
 		$category_id = $query['product_list']['product_category_id'];
-		$category_reference = $this->get_category_reference($category_id);
-		$query['subcategory_list'] = $category_reference['subcategory_category'];
-		$query['recipient_list'] = $category_reference['recipient_category'];
+		$category_reference = $this->get_category_reference($category_id,$recipient_id);
+		$query['subcategory_list'] = $category_reference['subcategory_data'];
 
 		//Get Product Attribute Data
 
@@ -496,7 +540,10 @@ class Catalog extends CI_Model {
 	public function update_product($data)
 	{	
 		$data_product_basic = $data['product_basic'];
-		// $data_product_files = $data['product_files'];
+		$data_product_files = $data['product_files'];
+		// echo "<pre>";
+		// print_r($data_product_files);
+		// echo "</pre>";
 		$data_product_attributes_exists = isset($data['product_attributes_exists'])?$data['product_attributes_exists']:"";
 		// echo "<pre>";
 		// print_r($data_product_attributes_exists);
@@ -504,6 +551,33 @@ class Catalog extends CI_Model {
 		$data_product_attributes_new = isset($data['product_attributes_new'])?$data['product_attributes_new']:"";
 		$this->db->where('product_id', $data_product_basic['product_id']);
 		$this->db->update('shopping_product', $data_product_basic);
+
+		// To insert newly added images while update product
+		$product_id = $data_product_basic['product_id'];
+		foreach($data_product_files as $key => $value) {
+			$product_image_map = array(
+                					'product_mapping_id' => $product_id,
+                					'product_upload_image' => $value,
+             						);
+			$this->db->insert('shopping_product_upload_image', $product_image_map);
+		}
+		//Code to remove image
+		if(!empty($data['removed_product'])){
+			// To remove image from folder
+			$condition = "product_upload_image_id IN(".$data['removed_product'].")";
+			$this->db->select('product_upload_image');
+			$this->db->from('shopping_product_upload_image');
+			$this->db->where($condition);
+			$removedimage = $this->db->get()->result_array();
+			foreach ($removedimage as $key => $value) {
+				unlink(FCPATH.$value['product_upload_image']);
+			}
+			// To remove the photos which is removed while update product
+			$condition = "product_upload_image_id IN(".$data['removed_product'].")";
+			$this->db->from('shopping_product_upload_image');
+			$this->db->where($condition);
+			$this->db->delete();				
+		}
 		// To update and remove existing attributes
 		if(!empty($data_product_attributes_exists)){
 			foreach($data_product_attributes_exists as $key=>$value){

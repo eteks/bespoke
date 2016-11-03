@@ -29,7 +29,7 @@
             <div class="row userInfo">
                 <div class="col-xs-12 col-sm-12">
                     <div class="cartContent w100">
-                    	<p class="updations_status"> </p>
+                        <p class="updations_status"> </p>
                         <table class="cartTable table-responsive" style="width:100%">
                             <tbody>
                                 <tr class="CartProduct cartTableHeader">
@@ -173,10 +173,8 @@
 
         </div>
         <!--/rightSidebar-->
-
     </div>
     <!--/row-->
-
     <div style="clear:both"></div>
 </div>
 <!-- /.main-container -->

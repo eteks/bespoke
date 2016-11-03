@@ -13,10 +13,12 @@ function centerContent()
 		$(this).css("margin-top", -($(this).height())/2);
 	});
 }
+
+function price_filter() {
 ;(function() {
     "use strict";
     if($('#price_range_filter_value').length > 0) {
-        var price_value = $('#price_range_filter_value').val().split(',');
+        var price_value = $('#price_range_filter_value').val().split(',');    
         $("#double_number_range").rangepicker({
         type: "double",
         startValue: 0,
@@ -26,7 +28,9 @@ function centerContent()
         }
         });
     }
-}()); // Added by siva for price filter
+
+}()); 
+} // Added by siva for price filter
 
 function add_to_cart_color_panel() {
     //Details page
@@ -37,7 +41,7 @@ function add_to_cart_color_panel() {
     }
 }
 $(document).ready(function() {
-
+    price_filter();
     add_to_cart_color_panel();
 
     $('body').bind("cut copy paste",function(e) {
@@ -113,7 +117,7 @@ $(document).ready(function() {
     });
 //Checkout page validation add by velpandi
 //  Moibile number validation
-$("#InputMobile,#InputZip").keypress(function (e) {
+$(document).on('keypress',"#InputMobile,#InputZip",function (e) {
     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
         return false;
     }

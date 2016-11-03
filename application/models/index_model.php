@@ -2,7 +2,7 @@
 
 class Index_Model extends CI_Model {
 
-	public function __construct()
+  public function __construct()
   {
     $this->load->database();
   }
@@ -51,7 +51,7 @@ class Index_Model extends CI_Model {
         $this->session->set_userdata("user_session_id","reg_user_".$user_id."_".$general_session_id);
       }
     }
-  }	
+  } 
 
 
 
@@ -155,56 +155,9 @@ class Index_Model extends CI_Model {
   {   
     $param_len = count($this->input->get());
     $query['error'] = 0;
-    if($this->input->get('rec') && $this->input->get('cat') && $param_len==2) {
 
-      // Get recipient name
-      $recipient_name_where = '(recipient_id="'.$this->input->get('rec').'")';
-      $query['rec_name'] = $this->db->get_where('shopping_recipient',$recipient_name_where)->row_array();
-
-      // Get category name
-      $category_name_where = '(category_id="'.$this->input->get('cat').'")';
-      $query['cat_name'] = $this->db->get_where('shopping_category',$category_name_where)->row_array();
-
-      // Get subcategory name
-      $query['subcategory_name'] = array();
-
-      // Get subcategory list
-      $sub_data_where = '(scrs.category_mapping_id="'.$this->input->get('cat').'" and scrs.recipient_mapping_id="'.$this->input->get('rec').'")';
-      $this->db->select('*');
-      $this->db->from('shopping_subcategory_category_and_recipient scrs');
-      $this->db->join('shopping_subcategory ss','scrs.subcategory_mapping_id=ss.subcategory_id','inner');
-      $this->db->where($sub_data_where);
-      $this->db->group_by('ss.subcategory_id');
-      $query['subcategory_list'] = $this->db->get()->result_array();
-
-      // Product list
-      $pro_data_where = '(p.product_recipient_id="'.$this->input->get('rec').'" and p.product_category_id="'.$this->input->get('cat').'" and (p.product_totalitems - p.product_sold) != 0)';
-      $this->db->select('*');
-      $this->db->from('shopping_product p');
-      $this->db->join('shopping_product_upload_image pui','p.product_id=pui.product_mapping_id','inner');
-      $this->db->where($pro_data_where);
-      $this->db->group_by('p.product_id');
-      $this->db->order_by('p.product_price');
-      $query['product_list'] = $this->db->get()->result_array();
-
-      // Attribute list
-      $query['attribute_list'] = array();
-      $rec_id = $this->input->get('rec');
-      $cat_id = $this->input->get('cat');
-      $attribute_list_query = $this->db->query("SELECT * FROM shopping_product_attribute_value AS c INNER JOIN ( SELECT product_attribute_group_id,product_mapping_id, SUBSTRING_INDEX( SUBSTRING_INDEX( t.product_attribute_value_combination_id, ',', n.n ) , ',', -1 ) value FROM shopping_product_attribute_group t CROSS JOIN numbers n WHERE n.n <=1 + ( LENGTH( t.product_attribute_value_combination_id ) - LENGTH( REPLACE( t.product_attribute_value_combination_id, ',', ''))) ) AS a  ON a.value = c.product_attribute_value_id INNER JOIN shopping_product_attribute AS pa ON c.product_attribute_id=pa.product_attribute_id INNER JOIN shopping_product AS sp ON a.product_mapping_id=sp.product_id where sp.product_recipient_id=$rec_id and sp.product_category_id=$cat_id group by(c.product_attribute_value_id)");
-      if($attribute_list_query->num_rows() > 0) {
-        $query['attribute_list'] = $attribute_list_query->result_array();  
-      }
-
-
-
-
-
-
-
-    }
-    else if($this->input->get('rec') && $this->input->get('cat') && $this->input->get('sub') && $param_len==3) {
-
+    if($this->input->get('rec') && $this->input->get('cat') && $this->input->get('sub')) 
+    {
       // Get recipient name
       $recipient_name_where = '(recipient_id="'.$this->input->get('rec').'")';
       $query['rec_name'] = $this->db->get_where('shopping_recipient',$recipient_name_where)->row_array();
@@ -227,14 +180,50 @@ class Index_Model extends CI_Model {
       $query['subcategory_list'] = $this->db->get()->result_array(); 
 
       // product list
-      $pro_data_where = '(p.product_recipient_id="'.$this->input->get('rec').'" and p.product_category_id="'.$this->input->get('cat').'" and p.product_subcategory_id="'.$this->input->get('sub').'" and (p.product_totalitems - p.product_sold) != 0)';
-      $this->db->select('*');
-      $this->db->from('shopping_product p');
-      $this->db->join('shopping_product_upload_image pui','p.product_id=pui.product_mapping_id','inner');
-      $this->db->where($pro_data_where);
-      $this->db->group_by('p.product_id');
-      $this->db->order_by('p.product_price');
-      $query['product_list'] = $this->db->get()->result_array();
+      if($this->input->get('attr')) {
+        // Attribute combination
+        $attribute_array = explode(",", $this->input->get('attr'));
+        $last_val = end($attribute_array);
+        $attr_cond = "";
+        foreach ($attribute_array as $attr_val) {
+          if($attr_val != $last_val) {
+            $attr_cond .= "find_in_set($attr_val, paga.product_attribute_value_combination_id) or ";
+          } 
+          else {
+            $attr_cond .= "find_in_set($attr_val, paga.product_attribute_value_combination_id) ";
+          } 
+        } 
+        if($this->input->get('s_val') && $this->input->get('e_val')) {
+          $pro_data_where = '(p.product_recipient_id="'.$this->input->get('rec').'" and p.product_status=1 and p.product_category_id="'.$this->input->get('cat').'" and p.product_subcategory_id="'.$this->input->get('sub').'" and (p.product_totalitems - p.product_sold) != 0 and (paga.product_attribute_group_price BETWEEN "'.$this->input->get('s_val').'" and "'.$this->input->get('e_val').'") and ('.$attr_cond.'))';
+        }
+        else {
+         $pro_data_where = '(p.product_recipient_id="'.$this->input->get('rec').'" and p.product_status=1 and p.product_category_id="'.$this->input->get('cat').'" and p.product_subcategory_id="'.$this->input->get('sub').'" and (p.product_totalitems - p.product_sold) != 0 and ('.$attr_cond.'))';
+        }
+
+        $this->db->select('*');
+        $this->db->from('shopping_product p');
+        $this->db->join('shopping_product_upload_image pui','p.product_id=pui.product_mapping_id','inner');
+        $this->db->join('shopping_product_attribute_group paga','p.product_id=paga.product_mapping_id','inner');
+        $this->db->where($pro_data_where);
+        $this->db->group_by('p.product_id');
+        $this->db->order_by('paga.product_attribute_group_price');
+        $query['product_list'] = $this->db->get()->result_array(); 
+      }
+      else {
+        if($this->input->get('s_val') && $this->input->get('e_val')) {
+          $pro_data_where = '(p.product_recipient_id="'.$this->input->get('rec').'" and p.product_status=1 and p.product_category_id="'.$this->input->get('cat').'" and p.product_subcategory_id="'.$this->input->get('sub').'" and (p.product_totalitems - p.product_sold) != 0 and (p.product_price BETWEEN "'.$this->input->get('s_val').'" and "'.$this->input->get('e_val').'"))';
+        }
+        else {
+          $pro_data_where = '(p.product_recipient_id="'.$this->input->get('rec').'" and p.product_status=1 and p.product_category_id="'.$this->input->get('cat').'" and p.product_subcategory_id="'.$this->input->get('sub').'" and (p.product_totalitems - p.product_sold) != 0)';
+        }
+        $this->db->select('*');
+        $this->db->from('shopping_product p');
+        $this->db->join('shopping_product_upload_image pui','p.product_id=pui.product_mapping_id','inner');
+        $this->db->where($pro_data_where);
+        $this->db->group_by('p.product_id');
+        $this->db->order_by('p.product_price');
+        $query['product_list'] = $this->db->get()->result_array();
+      }
 
       // Attribute list
       $query['attribute_list'] = array();
@@ -246,7 +235,76 @@ class Index_Model extends CI_Model {
         $query['attribute_list'] = $attribute_list_query->result_array();  
       }
 
+    }
+    else if($this->input->get('rec') && $this->input->get('cat')) 
+    {
+      // Get recipient name
+      $recipient_name_where = '(recipient_id="'.$this->input->get('rec').'")';
+      $query['rec_name'] = $this->db->get_where('shopping_recipient',$recipient_name_where)->row_array();
 
+      // Get category name
+      $category_name_where = '(category_id="'.$this->input->get('cat').'")';
+      $query['cat_name'] = $this->db->get_where('shopping_category',$category_name_where)->row_array();
+
+      // Get subcategory name
+      $query['subcategory_name'] = array();
+
+      // Get subcategory list
+      $sub_data_where = '(scrs.category_mapping_id="'.$this->input->get('cat').'" and scrs.recipient_mapping_id="'.$this->input->get('rec').'")';
+      $this->db->select('*');
+      $this->db->from('shopping_subcategory_category_and_recipient scrs');
+      $this->db->join('shopping_subcategory ss','scrs.subcategory_mapping_id=ss.subcategory_id','inner');
+      $this->db->where($sub_data_where);
+      $this->db->group_by('ss.subcategory_id');
+      $query['subcategory_list'] = $this->db->get()->result_array();
+
+      // Product list
+
+      if($this->input->get('attr')) {
+        if($this->input->get('s_val') && $this->input->get('e_val')) {
+          $pro_data_where = '(p.product_recipient_id="'.$this->input->get('rec').'" and p.product_status=1 and p.product_cate
+          gory_id="'.$this->input->get('cat').'" and (p.product_totalitems - p.product_sold) != 0 and (paga.product_attribute_group_price BETWEEN "'.$this->input->get('s_val').'" and "'.$this->input->get('e_val').'" ))';
+ 
+        }
+        else {
+          $pro_data_where = '(p.product_recipient_id="'.$this->input->get('rec').'" and p.product_status=1 and p.product_category_id="'.$this->input->get('cat').'" and (p.product_totalitems - p.product_sold) != 0)';
+        }
+
+        $this->db->select('*');
+        $this->db->from('shopping_product p');
+        $this->db->join('shopping_product_upload_image pui','p.product_id=pui.product_mapping_id','inner');
+        $this->db->join('shopping_product_attribute_group paga','p.product_id=paga.product_mapping_id','inner');  
+        $this->db->where($pro_data_where);
+        $this->db->group_by('p.product_id');
+        $this->db->order_by('p.product_price');
+        $query['product_list'] = $this->db->get()->result_array();
+      }
+      else {
+        if($this->input->get('s_val') && $this->input->get('e_val')) {
+          $pro_data_where = '(p.product_recipient_id="'.$this->input->get('rec').'" and p.product_status=1 and p.product_category_id="'.$this->input->get('cat').'" and (p.product_totalitems - p.product_sold) != 0 and (p.product_price BETWEEN "'.$this->input->get('s_val').'" and "'.$this->input->get('e_val').'"))';
+        }
+        else {
+          $pro_data_where = '(p.product_recipient_id="'.$this->input->get('rec').'" and p.product_status=1 and p.product_category_id="'.$this->input->get('cat').'" and (p.product_totalitems - p.product_sold) != 0)';
+        }
+
+        $this->db->select('*');
+        $this->db->from('shopping_product p');
+        $this->db->join('shopping_product_upload_image pui','p.product_id=pui.product_mapping_id','inner');
+        $this->db->where($pro_data_where);
+        $this->db->group_by('p.product_id');
+        $this->db->order_by('p.product_price');
+        $query['product_list'] = $this->db->get()->result_array();
+      }
+
+
+      // Attribute list
+      $query['attribute_list'] = array();
+      $rec_id = $this->input->get('rec');
+      $cat_id = $this->input->get('cat');
+      $attribute_list_query = $this->db->query("SELECT * FROM shopping_product_attribute_value AS c INNER JOIN ( SELECT product_attribute_group_id,product_mapping_id, SUBSTRING_INDEX( SUBSTRING_INDEX( t.product_attribute_value_combination_id, ',', n.n ) , ',', -1 ) value FROM shopping_product_attribute_group t CROSS JOIN numbers n WHERE n.n <=1 + ( LENGTH( t.product_attribute_value_combination_id ) - LENGTH( REPLACE( t.product_attribute_value_combination_id, ',', ''))) ) AS a  ON a.value = c.product_attribute_value_id INNER JOIN shopping_product_attribute AS pa ON c.product_attribute_id=pa.product_attribute_id INNER JOIN shopping_product AS sp ON a.product_mapping_id=sp.product_id where sp.product_recipient_id=$rec_id and sp.product_category_id=$cat_id group by(c.product_attribute_value_id)");
+      if($attribute_list_query->num_rows() > 0) {
+        $query['attribute_list'] = $attribute_list_query->result_array();  
+      }
     }
     else {
       $query['error'] = 1;
@@ -266,7 +324,7 @@ class Index_Model extends CI_Model {
 
   /* --------          Listing page end     -------- */
   
-    	
+      
   /* --------          Product detail page start     -------- */
 
   public function get_product_info()
@@ -388,12 +446,73 @@ class Index_Model extends CI_Model {
     return $query->result_array();
   }
 
+  /* --------          Recipient category page start     -------- */
 
+  public function get_recipients_category() {
+    if($this->uri->segment(2)) {
+      $slider_image_where = '(r.recipient_id="'.$this->uri->segment(2).'" and sui.slider_image_status=1)';
+      $this->db->select('*');
+      $this->db->from('shopping_recipient r');
+      $this->db->join('shopping_slider_upload_image sui','r.recipient_id=sui.slider_recipient_id','inner');
+      $this->db->where($slider_image_where);
+      $query['recipient_slider'] = $this->db->get()->result_array();
+      $rec_cat_where = '(src.recipient_mapping_id="'.$this->uri->segment(2).'")';
+      $this->db->select('*');
+      $this->db->from('shopping_recipient_category src');
+      $this->db->join('shopping_recipient sr','src.recipient_mapping_id=sr.recipient_id','inner');
+      $this->db->join('shopping_category sc','src.category_mapping_id=sc.category_id','inner');
+      $this->db->where($rec_cat_where);
+      $query['recipient_category'] = $this->db->get()->result_array();
+    }
+    return $query;
+  } 
+
+  /* --------          Recipient category page end     -------- */
+
+
+  /* --------         Photo shoot page start     -------- */
+
+  // Title page
+  public function get_image_gallery() {
+
+    $photo_shoot_where = '(tit.display_status=1 and per.person_status=1 and img.photo_shoot_upload_image_status=1)';
+    $this->db->select('*');
+    $this->db->from('shopping_photo_shoot_display_details tit');
+    $this->db->join('shopping_photo_shoot_person_details per','tit.display_id=per.person_display_id','inner');
+    $this->db->join('shopping_photo_shoot_upload_image img','per.person_id=img.photo_shoot_person_mapping_id','inner');
+    $this->db->where($photo_shoot_where);
+    $this->db->group_by('per.person_id');
+    $photo_gallery = $this->db->get()->result_array(); 
+    return $photo_gallery;
+  } 
+
+  // Image gallery
+  public function get_photo_shoot_gallery() {
+    $query['error'] = 0;  
+    if($this->uri->segment(2)) {
+      $photo_image_where = '(per.person_status=1 and img.photo_shoot_upload_image_status=1 and per.person_display_id="'.$this->uri->segment(2).'")';
+      $this->db->select('*');
+      $this->db->from('shopping_photo_shoot_person_details per');
+      $this->db->join('shopping_photo_shoot_upload_image img','per.person_id=img.photo_shoot_person_mapping_id','inner');
+      $this->db->where($photo_image_where);
+      $query['image_album'] = $this->db->get()->result_array(); 
+
+      $title_detail_where = '(display_id="'.$this->uri->segment(2).'" and display_status=1)';
+      $query['title_detail'] = $this->db->get_where('shopping_photo_shoot_display_details',$title_detail_where)->row_array();
+    }
+    else {
+      $query['error'] = 1;
+    }
+    return $query;
+  } 
+
+
+  /* --------          Photo shoot page end     -------- */
   
 
 
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+/* End of file Index_Model.php */
+/* Location: ./application/controllers/Index_Model.php */
 

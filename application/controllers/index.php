@@ -108,6 +108,13 @@ class Index extends CI_Controller {
 				}
 			}
 			$data['attribute_list'] = $out;
+
+			// echo "<pre>";
+			// print_r($data['product_list']);
+			// echo "<pre>";
+
+
+
 			$this->load->view('category',$data);
 		}
 		else {
@@ -191,7 +198,7 @@ class Index extends CI_Controller {
 
 	/* --------          Cart page end     -------- */
 
-	/* --------          Chackout page start     -------- */
+	/* --------          Checkout page start     -------- */
 
 	public function checkout()
 	{	
@@ -220,17 +227,137 @@ class Index extends CI_Controller {
 		$this->load->view('checkout',$data);
 	}
 
-	/* --------          Chackout page end     -------- */
+	/* --------          Checkout page end     -------- */
 
 	/* --------          Recipients page start     -------- */
 
-	// Category and subcategory list page
-	public function recipients_list()
+	public function recipient_category()
 	{
-		$this->load->view('recipients');
+		// Google plus login
+		$glogin_values = $this->header_footer->google_plus_login();
+		$data['google_url'] = $glogin_values['glogin_url'];
+		$data['social_login_status'] = $glogin_values['status'];
+
+		// Get navbar fields
+		$data['menubar_fields'] = $this->header_footer->menu_bar_fields();
+
+		// Cart items
+		$data['add_to_cart_list'] = $this->index_model->get_add_to_cart_list();
+
+		// Get all recipients in footer
+		$data['all_recipients'] = $this->index_model->get_all_recipients();
+
+		// Get category list
+		$data_values = $this->index_model->get_recipients_category();	
+		$data['recipient_slider'] = $data_values['recipient_slider'];
+		$data['recipient_category'] = $data_values['recipient_category'];
+		$this->load->view('recipient_category',$data);
 	}
 
 	/* --------          Recipients page end     -------- */
+
+
+	/* --------          Forget password page start     -------- */
+
+	public function forgot_password()
+	{
+		// Google plus login
+		$glogin_values = $this->header_footer->google_plus_login();
+		$data['google_url'] = $glogin_values['glogin_url'];
+		$data['social_login_status'] = $glogin_values['status'];
+
+		// Get navbar fields
+		$data['menubar_fields'] = $this->header_footer->menu_bar_fields();
+
+		// Cart items
+		$data['add_to_cart_list'] = $this->index_model->get_add_to_cart_list();
+
+		// Get all recipients in footer
+		$data['all_recipients'] = $this->index_model->get_all_recipients();
+		$this->load->view('forgot_password',$data);
+	}
+
+	/* --------          Forget password page end     -------- */
+
+	/* --------          Photo shoot page start     -------- */
+
+	public function portfolio()
+	{
+		// Google plus login
+		$glogin_values = $this->header_footer->google_plus_login();
+		$data['google_url'] = $glogin_values['glogin_url'];
+		$data['social_login_status'] = $glogin_values['status'];
+
+		// Get navbar fields
+		$data['menubar_fields'] = $this->header_footer->menu_bar_fields();
+
+		// Cart items
+		$data['add_to_cart_list'] = $this->index_model->get_add_to_cart_list();
+
+		// Get all recipients in footer
+		$data['all_recipients'] = $this->index_model->get_all_recipients();
+
+		// Get image gallery
+		$data_image_values = $this->index_model->get_image_gallery();
+		$out = array();
+		if(!empty($data_image_values)) {
+			foreach ($data_image_values as $key => $row) {
+				foreach ($row as $k => $r) {
+			    	if($k == 'display_title' || $k == 'display_description') {
+     					$out[$row['display_id']][$k] = $row[$k];
+	     			}
+	     			else {
+	     				if(!isset($out[$row['display_id']][$row['person_id']])) {
+							$out[$row['display_id']]['person_id'][$row['person_id']][$k] = $row[$k];
+			    		}
+	     			}
+			   	}
+			}
+		}
+		$data['photo_gallery'] = $out;
+		$this->load->view('portfolio',$data);
+	}
+
+	/* --------          Photo shoot page end     -------- */
+
+	/* --------          Photo shoot gallery start     -------- */
+
+	public function photo_shoot_gallery()
+	{
+		// Google plus login
+		$glogin_values = $this->header_footer->google_plus_login();
+		$data['google_url'] = $glogin_values['glogin_url'];
+		$data['social_login_status'] = $glogin_values['status'];
+
+		// Get navbar fields
+		$data['menubar_fields'] = $this->header_footer->menu_bar_fields();
+
+		// Cart items
+		$data['add_to_cart_list'] = $this->index_model->get_add_to_cart_list();
+
+		// Get all recipients in footer
+		$data['all_recipients'] = $this->index_model->get_all_recipients();
+
+		// Get photo shoot image gallery
+		$data_image_values = $this->index_model->get_photo_shoot_gallery();
+		$data['error'] = $data_image_values['error'];
+		if($data['error'] != 1) {
+			$data['title_detail'] = $data_image_values['title_detail'];
+			$data['image_album'] = $data_image_values['image_album'];
+		}
+		else {
+			redirect(base_url().'nopage');
+		}
+
+		// echo "<pre>";
+		// print_r($data['image_album']);
+		// echo "</pre>";
+
+
+		$this->load->view('photo_shoot_gallery',$data);
+	}
+
+	/* --------          Photo shoot page end     -------- */
 
 	/* --------          About page start     -------- */
 
@@ -253,10 +380,6 @@ class Index extends CI_Controller {
 	public function account()
 	{
 		$this->load->view('account');
-	}
-	public function forgot_password()
-	{
-		$this->load->view('forgot_password');
 	}
 	public function form()
 	{
@@ -302,10 +425,6 @@ class Index extends CI_Controller {
 	{
 		$this->load->view('wishlist');
 	}
-	public function portfolio()
-	{
-		$this->load->view('portfolio');
-	}
 	public function pre_wedding()
 	{
 		$this->load->view('pre_wedding');
@@ -318,10 +437,8 @@ class Index extends CI_Controller {
 	{
 		$this->load->view('track_order');
 	}
-	public function recipient_category()
-	{
-		$this->load->view('recipient_category');
-	}
+
+
 }
 
 /* End of file welcome.php */

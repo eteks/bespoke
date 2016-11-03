@@ -39,7 +39,7 @@
 */
 
 $route['default_controller'] = "index";
-// $route['404_override'] = 'index/nopage';
+$route['404_override'] = 'index/nopage';
 
 
 /* Routes for end user side by siva*/
@@ -47,6 +47,8 @@ $route['default_controller'] = "index";
 $route['products_view'] = 'index/products_list';
 $route['product_details/(:any)'] = 'index/product_details/$1';
 $route['recipient_category/(:any)'] = 'index/recipient_category/$1';
+$route['portfolio'] = 'index/portfolio';
+$route['photo_shoot_gallery/(:any)'] = 'index/photo_shoot_gallery/$1';
 $route['about_us'] = 'index/about_details';
 $route['contact_us'] = 'index/contact_details';
 $route['glogin'] = 'index/glogin';
@@ -68,7 +70,6 @@ $route['thanks_for_order'] = 'index/thanks_for_order';
 $route['user_information'] = 'index/user_information';
 $route['welcome_message'] = 'index/welcome_message';
 $route['wishlist'] = 'index/wishlist';
-$route['portfolio'] = 'index/portfolio';
 $route['pre_wedding'] = 'index/pre_wedding';
 $route['post_wedding'] = 'index/post_wedding';
 $route['track_order'] = 'index/track_order';
@@ -93,13 +94,14 @@ $route['adminindex/edit_subcategory/(:any)'] = 'adminindex/edit_subcategory';
 $route['adminindex/recipient'] = 'adminindex/recipient';
 $route['adminindex/add_recipient'] = 'adminindex/add_recipient';
 $route['adminindex/edit_recipient'] = 'adminindex/edit_recipient';
-$route['adminindex/giftproduct'] = 'adminindex/giftproduct';
+$route['adminindex/product'] = 'adminindex/product';
 $route['adminindex/add_product'] = 'adminindex/add_product';
-$route['adminindex/edit_giftproduct'] = 'adminindex/edit_giftproduct';
+$route['adminindex/edit_product'] = 'adminindex/edit_product';
 $route['adminindex/product_attributes'] = 'adminindex/product_attributes';
 $route['adminindex/add_product_attributes'] = 'adminindex/add_product_attributes';
 $route['adminindex/edit_product_attributes/(:any)'] = 'adminindex/edit_product_attributes';
 $route['adminindex/loadcategory_reference'] = 'adminindex/loadcategory_reference';
+$route['adminindex/loadrecipient_reference'] = 'adminindex/loadrecipient_reference';
 $route['adminindex/product_attribute_sets'] = 'adminindex/product_attribute_sets';
 // $route['adminindex/delete/(:any)/(:any)'] = 'adminindex/delete';
 $route['photography/photoshoot_type'] = 'photography/photoshoot_type';
