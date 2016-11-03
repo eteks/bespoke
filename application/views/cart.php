@@ -29,8 +29,7 @@
             <div class="row userInfo">
                 <div class="col-xs-12 col-sm-12">
                     <div class="cartContent w100">
-                    	<p><i class="fa fa-check color-in"></i> <p class="updations_status"> </p></p>
-                        <p><i class="fa fa-times-circle color-out"></i> <p class="updations_status"> </p></p>
+                        <p class="updations_status"> </p>
                         <table class="cartTable table-responsive" style="width:100%">
                             <tbody>
                                 <tr class="CartProduct cartTableHeader">
@@ -174,10 +173,8 @@
 
         </div>
         <!--/rightSidebar-->
-
     </div>
     <!--/row-->
-
     <div style="clear:both"></div>
 </div>
 <!-- /.main-container -->

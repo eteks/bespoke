@@ -1,4 +1,31 @@
+// It will call after window load and after ajax complete
+function image_after_window_ajax_load(){
+    if ($('.simpleFilePreview_multiUI').hasClass('edit_image_available')) {
+        image_clone = $('.simpleFilePreview_multi li:last').clone(true);
+        class_id = $('.simpleFilePreview_multi li:last').attr('id');
+        id_data = Number(class_id.split('_')[1]) + 1;
+        image_clone.find('.edit_after_save,.editpost_image_change,.simpleFilePreview_input').remove();
+        image_clone.find('.simpleFilePreview_formInput').removeClass('product_default_field').removeClass('image_update').attr('name','product_image[]');
+        image_clone.find('.product_upload_image_id').val("");
+        $('.simpleFilePreview_multi').append("<li id='simpleFilePreview_" + id_data + "' class='simpleFilePreview' data-sfpallowmultiple='1'>\
+                                          <a class='simpleFilePreview_input'>\
+                                          <span class='simpleFilePreview_inputButtonText'>\
+                                          <i class='fa fa-plus-circle fa_small'></i>\
+                                          </span></a>" + image_clone.html() + "</li>");
+    }
+}
+
+function simplefilepreview_function(){
+    $('.image_file_input').simpleFilePreview({
+        'buttonContent': '<i class="fa fa-plus-circle fa_small"></i>',
+        'shiftLeft': '',
+        'shiftRight': '',
+        'removeContent': 'Remove'
+    });
+}  
+
 $(document).ready(function() {
+    simplefilepreview_function();
     $("#add_area").validate({
         showErrors: function(errorMap, errorList) {
             $(".form-errors").html("All fields must be completed before you submit the form.");
@@ -19,14 +46,42 @@ $(document).ready(function() {
             $('.attribute_check_status').val('0');
         }
     });
-
+    $(document).delegate(".recipient_act",'change',function () {
+        selected_recipient = $.trim($('option:selected',this).text());
+        selected_recipient_id = $('option:selected',this).val();
+        form_data = {'recipient_type':selected_recipient,'recipient_id':selected_recipient_id};
+        // alert(JSON.stringify(form_data));
+        var category_options = '<option value="">Select Category</option>'; 
+        if(selected_recipient != 'Select Recipient'){
+             $.ajax({
+                   type: "POST",
+                   url: baseurl+"index.php/admin/adminindex/loadrecipient_reference",
+                   data: form_data,
+                   dataType: 'json',  
+                   cache: false,
+                   success: function(data) {  
+                        // alert(JSON.stringify(data)); 
+                        data_recipient = data['recipient_category'];
+                        if(data_recipient!=0){ 
+                          $.each(data_recipient, function(i){
+                            category_options += '<option value="'+data_recipient[i].category_id+'">'+data_recipient[i].category_name+'</option>';
+                          });  
+                        }   
+                        else{
+                            alert('No Category added for '+selected_recipient);    
+                        }  
+                        $('.category_act').html(category_options);          
+                       }
+                   });
+        }     
+    });
     $(document).delegate(".category_act",'change',function () {
         selected_category = $.trim($('option:selected',this).text());
         selected_category_id = $('option:selected',this).val();
-        form_data = {'category_name':selected_category,'category_id':selected_category_id};
+        recipient_id = $('.recipient_act').find('option:selected').val();
+        form_data = {'category_name':selected_category,'category_id':selected_category_id,'recipient_id':recipient_id};
         // alert(JSON.stringify(form_data));
-        var subcategory_options = '<option value="">Select SubCategory</option>'; 
-        var recipient_options = '<option value="">Select Recipient</option>';  
+        var subcategory_options = '<option value="">Select SubCategory</option>';  
         if(selected_category != 'Select Category'){
              $.ajax({
                    type: "POST",
@@ -36,8 +91,7 @@ $(document).ready(function() {
                    cache: false,
                     success: function(data) {  
                     // alert(JSON.stringify(data)); 
-                    data_subcategory = data['subcategory_category'];
-                    data_recipient = data['recipient_category'];
+                    data_subcategory = data['subcategory_data'];
                     if(data_subcategory!=0){ 
                       $.each(data_subcategory, function(i){
                         subcategory_options += '<option value="'+data_subcategory[i].subcategory_id+'">'+data_subcategory[i].subcategory_name+'</option>';
@@ -45,17 +99,8 @@ $(document).ready(function() {
                     }   
                     else{
                         alert('No SubCategory added for '+selected_category);    
-                    }  
-                    if(data_recipient!=0){ 
-                      $.each(data_recipient, function(i){
-                        recipient_options += '<option value="'+data_recipient[i].recipient_id+'">'+data_recipient[i].recipient_type+'</option>';
-                      });  
                     }   
-                    else{
-                        alert('No Recipient added for '+selected_category);    
-                    }    
-                    $('.subcategory_act').html(subcategory_options); 
-                    $('.recipient_act').html(recipient_options);          
+                    $('.subcategory_act').html(subcategory_options);        
                    }
             });
         }     
@@ -75,7 +120,6 @@ $(document).ready(function() {
                 $(this).removeClass('attribute_error');
             }
         });
-
         if(!$error){
             cloneCount = cloneCount +1;
             cloneelement = $(this).parents('.clone_attribute_group').find('.clone_attribute:last').clone();
@@ -90,7 +134,7 @@ $(document).ready(function() {
         }
     });
     var cloneCount_att = 1;
-    $(document).delegate('.attibute_add,subcategory_checkbox','click',function () {
+    $(document).delegate('.attibute_add','click',function () {
         $error = false;
         $(this).parents('.attribute_group').find('.attribute_validate').each(function(){
             if($(this).val() == '')
@@ -103,16 +147,6 @@ $(document).ready(function() {
                 $(this).removeClass('attribute_error');
             }
         });
-
-        var num = $(this).parents('.attribute_group').find("input[name='select_category[]']:checked").length;
-       if(num <= 0){
-        $error = true; 
-        $(this).parents('.attribute_group').find('.attribute_validate_category').addClass('attribute_error');
-       // alert("test1");
-   }else {
-       $(this).parents('.attribute_group').find('.attribute_validate_category').removeClass('attribute_error');
-       // alert("test2");
-   }
         if(!$error){
             var equal_check_array = [];
             $(this).parents('.attribute_group').find('.att_equal').each(function(){
@@ -153,7 +187,7 @@ $(document).ready(function() {
         $(this).parents('.attribute_group').remove();
     });
     // Commented for future use
-    // $("#add_giftproduct").submit(function(){ 
+    // $("#add_product").submit(function(){ 
     //     attribute_length = [];
     //     alert($('.attribute_group').length);
     //     if($('.attribute_group').length > 1){
@@ -186,8 +220,8 @@ $(document).ready(function() {
     //     // return false;   
     // });
 
-    $('body').delegate("#add_giftproduct,#edit_giftproduct #admin_check",'submit',function(e){ 
-    // $("#add_giftproduct").submit(function(){ 
+    $('body').delegate("#add_product,#edit_product #admin_check",'submit',function(e){ 
+    // $("#add_product").submit(function(){ 
         // e.preventDefault();
         var attribute_length = [];
         var sum = 0;
@@ -358,9 +392,13 @@ $(document).ready(function() {
            contentType: false,
            processData: false,
            // dataType: 'json',  
+           context: this, 
            success: function(data) {  
             $('.box-content').html(data);
             simplefilepreview_function();
+            if($(this).attr('id') == "edit_giftproduct"){
+                image_after_window_ajax_load();
+            }
             if($('.attribute_check_status').val() == '1'){
                 $('.attribute_main_block').show();
                 $('.price_group,.items_group').hide();
@@ -482,15 +520,35 @@ $(document).ready(function() {
       } else {
         alert("Your browser doesn't support to File API")
       }
-      simplefilepreview_function();
-      function simplefilepreview_function(){
-        $('#image_upload').simpleFilePreview({
-            'buttonContent': '<i class="fa fa-plus-circle fa_small"></i>',
-            'shiftLeft': '',
-            'shiftRight': '',
-            'removeContent': 'Remove'
+
+      $(".select_multiple_option a").on('click', function() {
+          $(".mutliSelect ul").slideToggle('fast');
+      });
+
+      $('.mutliSelect input[type="checkbox"]').on('click', function() {
+              var title =  $(this).next('span').text();
+              if ($(this).is(':checked')) {
+                if($('.select_content').length) {
+                    var html_comma = '<span class="module_comma"> , </span>';
+                    var html_content = '<span class="select_content" title="' + title + '">' + title + '</span>';
+                    var html = html_comma + html_content;
+                }
+                else
+                    var html = '<span class="select_content" title="' + title + '">' + title + '</span>';
+                $('.multiSel').append(html);
+                $(".hida").hide();
+              } else {
+                if($('span[title="' + title + '"]').index()==0) {
+                    $('span[title="' + title + '"]').next('.module_comma').remove();
+                    $('span[title="' + title + '"]').remove();
+                }
+                else {
+                    $('span[title="' + title + '"]').prev('.module_comma').remove();
+                    $('span[title="' + title + '"]').remove();
+                }
+
+              }
         });
-      }
   /*Code for slide toggle in admin part added by thangam*/
     $(document).delegate(".select_multiple_option a",'click',function () {
       $(this).parents('.multiple_dropdown').children('.mutliSelect').slideToggle('fast');
@@ -550,4 +608,8 @@ $(document).ready(function() {
             $('.couple_form_group').hide();
         }
     });
+});
+
+$(window).load(function() {
+    image_after_window_ajax_load();
 });

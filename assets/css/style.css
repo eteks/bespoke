@@ -521,6 +521,9 @@ also less file available btn.less
 p.required, .required sup {
     color: #E74C3C;
 }
+label sup{
+    color: #E74C3C !important;
+}
 
 .pagination li.active a {
     box-shadow: 0 0 9px rgba(0, 0, 0, 0.2) inset;
@@ -6250,7 +6253,7 @@ div.quickview {
 ===========================================*/
 .nopadding {
     padding: 0;
-    margin-top: -1px;
+    margin-top: 0px;
 }
 .albums{ 
     margin-top: 100px !important;
@@ -7032,23 +7035,19 @@ fieldset[disabled] .btn-primary.active {
 }
 .add_to_cart_status{
 	color: #c81d6a;
-	/*margin-bottom: 20px;*/
 	font-size:16px;
 	font-weight: 500;
 	text-transform: uppercase;
-	/*border: 1px solid #c81d6a;*/
 	padding: 5px;
 }
 .updations_status{
 	color: #c81d6a;
-	/*margin-bottom: 20px;*/
 	font-size:16px;
 	font-weight: 500;
-	text-transform: uppercase;
+	text-align: center;
 	padding: 5px;
-}
-.color-out {
-    color: #D8000C;
+	margin: 0 auto !important;
+    text-align: center;
 }
 .recipient_title{
 	text-transform: uppercase !important;
@@ -7058,4 +7057,46 @@ fieldset[disabled] .btn-primary.active {
 }
 .recipient_product{
 	height: 350px !important;
+}
+.quantity_field{
+	width:120px !important;
+	float: left !important;
+	position: absolute !important;
+}
+/*#incdec > button {
+    background-color: #fff;
+    border: none;
+    color: #c81d6a;
+    font-size: 17px;
+    height: 35px;
+    margin-left: 10px !important;
+    width: 35px;
+}*/
+#incdec > span a{
+    display: block;
+    font-size: 14px;
+    margin-bottom: -5px;
+    position: relative;
+    color: #c81d6a !important;
+    margin-left: 100px !important;
+    text-align: center;
+    width: 20px;
+}
+.quantity_field_popup{
+	width:120px !important;
+	float: left !important;
+	position: absolute !important;
+}
+#incrdecr > span a{
+    display: block;
+    font-size: 14px;
+    margin-bottom: -5px;
+    position: relative;
+    color: #c81d6a !important;
+    margin-left: 100px !important;
+    text-align: center;
+    width: 20px;
+}
+.clr-screen{
+	clear:both;
 }

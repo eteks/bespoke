@@ -13,10 +13,12 @@ function centerContent()
 		$(this).css("margin-top", -($(this).height())/2);
 	});
 }
+
+function price_filter() {
 ;(function() {
     "use strict";
     if($('#price_range_filter_value').length > 0) {
-        var price_value = $('#price_range_filter_value').val().split(',');
+        var price_value = $('#price_range_filter_value').val().split(',');    
         $("#double_number_range").rangepicker({
         type: "double",
         startValue: 0,
@@ -26,7 +28,9 @@ function centerContent()
         }
         });
     }
-}()); // Added by siva for price filter
+
+}()); 
+} // Added by siva for price filter
 
 function add_to_cart_color_panel() {
     //Details page
@@ -37,7 +41,7 @@ function add_to_cart_color_panel() {
     }
 }
 $(document).ready(function() {
-
+    price_filter();
     add_to_cart_color_panel();
 
     $('body').bind("cut copy paste",function(e) {
@@ -200,6 +204,36 @@ $('#checkout_order_submit').on('click',function() {
     $('.address_label').addClass('active');
 });
 
+$("#up").on('click',function(){
+        $("#incdec input").val(parseInt($("#incdec input").val())+1);
+    });
 
+    $("#down").on('click',function(){
+        var value = (parseInt($("#incdec input").val())-1);
+        var val = (value-1) < 0 ? 1 :value -1;
+        $("#incdec input").val(val);
+    });
+    
+    $("#incdec input").keypress(function (e) {
+    if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        return false;
+    }
+});
+
+$(document).on('click',"#increment_button",function(){
+        $("#incrdecr input").val(parseInt($("#incrdecr input").val())+1);
+    });
+
+    $(document).on('click',"#decrement_button",function(){
+        var value = (parseInt($("#incrdecr input").val())-1);
+        var val = (value-1) < 0 ? 1 :value -1;
+        $("#incrdecr input").val(val);
+    });
+    
+    $(document).on('keypress',"#incrdecr input",function (e) {
+    if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        return false;
+    }
+});
 
 }); // End document

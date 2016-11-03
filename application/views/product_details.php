@@ -126,7 +126,21 @@
             <div class="productFilter productFilterLook2">
                 <div class="row"> 
                     <div class="col-lg-6 col-sm-6 col-xs-6 attribute_section_list">
-                        <div class="filterBox">
+						<!-- <div id="incdec">
+							<label for="quantity"> Quantity </label>
+						    <input type="text" class="form-control" value="0" />
+						    <button id="up" ><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+						    <button id="down" ><i class="fa fa-minus-circle" aria-hidden="true"></i></button>
+						</div> -->
+						<div class="filterBox">
+                            <label> Quantity </label>
+                            <div id="incdec">
+							    <input type="text" class="form-control quantity_field" value="1" maxlength="5"/>
+							    <span id="up" ><a><i class="fa fa-plus-circle" aria-hidden="true"></i></a></span>							    
+							    <span id="down" ><a><i class="fa fa-minus-circle" aria-hidden="true"></i></a></span>
+						    </div>
+                        </div>
+                        <!-- <div class="filterBox">
                             <label> Quantity </label>
                             <select class="form-control" id="quantity_product_details">
                                 <option value="1">1</option>
@@ -138,7 +152,7 @@
                                 <option value="7">7</option>
                                 <option value="8">8</option>
                             </select>
-                        </div>
+                        </div> -->
                     </div>
                     <?php
                     if(!empty($product_attributes)) :
@@ -177,8 +191,7 @@
             </div>
             <!-- productFilter -->
             <div class="cart-actions">
-                <p><i class="fa fa-check color-in"></i><p class="add_to_cart_status"> </p></p>
-                <p><i class="fa fa-times-circle color-out"></i><p class="add_to_cart_status"> </p></p>
+                <p class="add_to_cart_status"> </p>
                 <div class="addto row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <input type="hidden" class="add_to_cart_button_cond" value="true" />
